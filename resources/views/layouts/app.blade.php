@@ -47,7 +47,7 @@
                 </li>
                 <li><a href="#" class="dropdown-toogle">Покупателям</a>
                     <ul>
-                        <li><a target="_blank" href="/img/sincerity_garant2.pdf">Гарантия</a></li>
+                        <li><a target="_blank" href="/garant/">Гарантия</a></li>
                         <li><a href="/delivery/">доставка</a></li>
                         <li><a href="/oplata/">онлайн-оплата</a></li>
                         <li><a href="/drive/">тест-драйв</a></li>
@@ -98,7 +98,7 @@
                         <div class="fTopBODYBL">
                             <h4>Покупателям:</h4>
                             <ul>
-                                <li><a target="_blank" href="/img/sincerity_garant2.pdf">Гарантия</a></li>
+                                <li><a target="_blank" href="/garant/">Гарантия</a></li>
                                 <li><a href="/delivery/">доставка</a></li>
                                 <li><a href="/oplata/">онлайн-оплата</a></li>
                                 <li><a href="/drive/">тест-драйв</a></li>
@@ -293,7 +293,7 @@
         </li>
         <li><a href="#" class="dropdown-toogle">Покупателям</a>
             <ul>
-                <li><a target="_blank" href="/img/sincerity_garant2.pdf">Гарантия</a></li>
+                <li><a target="_blank" href="/garant/">Гарантия</a></li>
                 <li><a href="/delivery/">доставка</a></li>
                 <li><a href="/oplata/">онлайн-оплата</a></li>
                 <li><a href="/drive/">тест-драйв</a></li>
