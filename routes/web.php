@@ -169,6 +169,7 @@ Route::post('/profile/update', 'HomeController@updateUser')->name('update_user')
 Route::post('/product/filter', 'ProductController@filterProduct')->name('filter_product');
 Route::get('/massage_chairs', 'ProductController@massageChairs')->name('massage_chairs');
 Route::get('/sales', 'ProductController@sales')->name('massage_chairs');
+Route::get('/present', 'ProductController@present')->name('massage_chairs');
 Route::get('/massagers', 'ProductController@massagers')->name('massagers');
 Route::get('/fitness_equipment', 'ProductController@fitnessQquipment')->name('fitness_equipment');
 Route::get('/household_products', 'ProductController@householdProducts')->name('household_products');

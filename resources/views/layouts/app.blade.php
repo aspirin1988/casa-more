@@ -79,7 +79,7 @@
                         <div class="fTopBODYBL">
                             <h4>Каталог товаров:</h4>
                             <ul>
-                                @foreach( App\Rubric::orderBy('order')->get() as $rubric )
+                                @foreach( App\Rubric::orderBy('order')->limit(4)->get() as $rubric )
                                     <li><a href="{{$rubric->getUrl()}}">{{$rubric->name}}</a></li>
                                 @endforeach
                             </ul>
@@ -88,17 +88,17 @@
                         <div class="fTopBODYBL">
                             <h4>Акции и скидки:</h4>
                             <ul>
-                                <li><a href="">скидки</a></li>
-                                <li><a href="">+ подарок</a></li>
-                                <li><a href="">новинки</a></li>
-                                <li><a href="">хиты продаж</a></li>
+                                <li><a href="/sales">скидки</a></li>
+                                <li><a href="/present">+ подарок</a></li>
+                                <li><a href="/new">новинки</a></li>
+                                <li><a href="/hit">хиты продаж</a></li>
                             </ul>
                         </div>
 
                         <div class="fTopBODYBL">
                             <h4>Покупателям:</h4>
                             <ul>
-                                <li><a target="_blank" href="/garant/">Гарантия</a></li>
+                                <li><a target="_blank" href="/img/sincerity_garant2.pdf">Гарантия</a></li>
                                 <li><a href="/delivery/">доставка</a></li>
                                 <li><a href="/oplata/">онлайн-оплата</a></li>
                                 <li><a href="/drive/">тест-драйв</a></li>
@@ -293,7 +293,7 @@
         </li>
         <li><a href="#" class="dropdown-toogle">Покупателям</a>
             <ul>
-                <li><a target="_blank" href="/garant/">Гарантия</a></li>
+                <li><a target="_blank" href="/img/sincerity_garant2.pdf">Гарантия</a></li>
                 <li><a href="/delivery/">доставка</a></li>
                 <li><a href="/oplata/">онлайн-оплата</a></li>
                 <li><a href="/drive/">тест-драйв</a></li>

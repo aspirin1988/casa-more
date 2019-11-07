@@ -22,6 +22,13 @@
                             </div>
                         </div>
                         <div class="uk-margin">
+                            <label class="uk-form-label" for="order">Order:*</label>
+                            <div class="uk-form-controls">
+                                <input v-model="list.order" class="uk-input" id="order" type="text"
+                                       placeholder="Поле для сортировки" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="uk-margin">
                             <label for="images" class="uk-form-label">Изображение для коталога:</label>
                             <div class="uk-form-controls">
                                 <div class="uk-my-fle uk-cursor-pointer">

@@ -6,7 +6,7 @@
         <div class="uk-margin">
             <article class="uk-comment uk-textarea uk-padding-small">
                 <header class="uk-comment-header uk-flex-middle uk-padding-small">
-                    <div class="uk-form-horizontal uk-margin-large">
+                    <div class="uk-margin-large">
                         <div class="uk-margin">
                             <label class="uk-form-label" for="name">Название:*</label>
                             <div class="uk-form-controls">
@@ -34,8 +34,8 @@
                                             <th>Для Mobile</th>
                                         </tr>
                                         </thead>
-                                        <tbody>
-                                        <tr v-for="(item , key ) in image_list">
+                                        <tbody uk-sortable="" @moved="update" ref="sort">
+                                        <tr v-for="(item , key ) in image_list" :data-obj="JSON.stringify(item)">
                                             <td class="uk-button-group">
                                                 <button class="uk-button uk-button-success uk-button-small"
                                                         uk-icon="check"
@@ -49,8 +49,8 @@
                                                        v-model="item.link" class="uk-input uk-form-width-medium">
                                             </td>
                                             <td :style="{background:item.color}">
-                                            <input type="text" placeholder="Цвет" autocomplete="off"
-                                                   v-model="item.color" class="uk-input uk-form-width-medium">
+                                                <input type="text" placeholder="Цвет" autocomplete="off"
+                                                       v-model="item.color" class="uk-input uk-form-width-medium">
                                             </td>
                                             <td>
                                                 <input type="text" placeholder="Заголовок" autocomplete="off"
@@ -58,7 +58,8 @@
                                             </td>
                                             <td>
                                                 <textarea type="text" placeholder="Описание" autocomplete="off"
-                                                          v-model="item.description" class="uk-textarea uk-form-width-medium"></textarea>
+                                                          v-model="item.description"
+                                                          class="uk-textarea uk-form-width-medium"></textarea>
                                             </td>
                                             <td>
                                                 <div class="uk-my-file uk-cursor-pointer">
@@ -205,9 +206,21 @@
             this.getData();
         },
         methods: {
-            getName:function(name){
+            update: function (e) {
+                let obj = [];
+                let list = this.$refs['sort'].querySelectorAll('tr');
+                for (let i = 0; i < list.length; i++) {
+                    let obj_ = JSON.parse(list[i].dataset['obj']);
+                    obj_.sort = i;
+                    obj.push(obj_);
+                }
+                console.log(obj);
+                this.image_list = [];
+                this.image_list = obj;
+            },
+            getName: function (name) {
                 let arr = name.split('/');
-                return arr[arr.length-1];
+                return arr[arr.length - 1];
             },
             SelectImage: function (item) {
                 this.current_image = item;
@@ -272,7 +285,7 @@
             Save: function (item) {
                 this.$http.post('/admin/slider/slide/update/' + item.id, item).then(response => {
                     console.log(item);
-                    this.image_list = response.data;
+                    // this.image_list = response.data;
                 });
             },
             Delete: function (item) {
@@ -281,11 +294,15 @@
                 });
             },
             pageSave: function () {
+                for (let i = 0; i < this.image_list.length; i++) {
+                    this.Save(this.image_list[i]);
+                }
                 if (this.$validator.run(this.list, this.rules)) {
                     this.$http.post('/admin/slider/save/' + this.id, this.list).then(response => {
                         UIkit.notification({message: 'Слайдер успешно обновлен!', status: 'success'});
                     });
                 }
+
             },
             onUpload: function (e) {
                 let files = e.target.files;

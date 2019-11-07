@@ -17,7 +17,7 @@ class Slider extends Model
 
     public function getItemsWithPhoto()
     {
-        $items = SliderItem::where(['slider_id' => $this->id])->get();
+        $items = SliderItem::where(['slider_id' => $this->id])->orderBy('sort','ASC')->get();
 
         foreach ($items as $key => $item) {
             $input = [];

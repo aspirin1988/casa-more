@@ -4221,11 +4221,9 @@ __webpack_require__.r(__webpack_exports__);
 
       var comparison = JSON.parse(localStorage.getItem('comparison'));
       this.$http.get("/product-comparison/get/?ids=" + comparison.join(',')).then(function (response) {
-        console.log(response.data);
+        console.log(response.data); // if (response.data.success) {
 
-        if (response.data.success) {
-          _this.list = response.data.result;
-        }
+        _this.list = response.data.result; // }
       });
     },
     classObject: function classObject(color) {
@@ -5751,6 +5749,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['id'],
   data: function data() {
@@ -6347,6 +6352,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['id'],
   data: function data() {
@@ -6369,6 +6375,20 @@ __webpack_require__.r(__webpack_exports__);
     this.getData();
   },
   methods: {
+    update: function update(e) {
+      var obj = [];
+      var list = this.$refs['sort'].querySelectorAll('tr');
+
+      for (var i = 0; i < list.length; i++) {
+        var obj_ = JSON.parse(list[i].dataset['obj']);
+        obj_.sort = i;
+        obj.push(obj_);
+      }
+
+      console.log(obj);
+      this.image_list = [];
+      this.image_list = obj;
+    },
     getName: function getName(name) {
       var arr = name.split('/');
       return arr[arr.length - 1];
@@ -6445,21 +6465,22 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     Save: function Save(item) {
-      var _this6 = this;
-
       this.$http.post('/admin/slider/slide/update/' + item.id, item).then(function (response) {
-        console.log(item);
-        _this6.image_list = response.data;
+        console.log(item); // this.image_list = response.data;
       });
     },
     Delete: function Delete(item) {
-      var _this7 = this;
+      var _this6 = this;
 
       this.$http["delete"]('/admin/slider/slide/delete/' + item.id).then(function (response) {
-        _this7.image_list = response.data;
+        _this6.image_list = response.data;
       });
     },
     pageSave: function pageSave() {
+      for (var i = 0; i < this.image_list.length; i++) {
+        this.Save(this.image_list[i]);
+      }
+
       if (this.$validator.run(this.list, this.rules)) {
         this.$http.post('/admin/slider/save/' + this.id, this.list).then(function (response) {
           UIkit.notification({
@@ -6470,7 +6491,7 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     onUpload: function onUpload(e) {
-      var _this8 = this;
+      var _this7 = this;
 
       var files = e.target.files;
       var formData = new FormData();
@@ -6491,7 +6512,7 @@ __webpack_require__.r(__webpack_exports__);
             status: 'success'
           });
 
-          _this8.getGalleryList();
+          _this7.getGalleryList();
         }
       })["catch"](function () {
         UIkit.notification({
@@ -50029,225 +50050,240 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "Specifications" }, [
-    _c("div", { staticClass: "Specifications-title" }, [
-      _vm._v("Сравнение товаров")
-    ]),
-    _vm._v(" "),
-    _c("table", [
-      _c("thead", [
-        _c(
-          "tr",
-          [
-            _c("th", { staticClass: "name-field" }, [_vm._v(" ")]),
-            _vm._v(" "),
-            _vm._l(_vm.list, function(item) {
-              return _c("th", { staticClass: "value-field" }, [
-                _vm._v(_vm._s(item.name))
-              ])
-            })
-          ],
-          2
-        )
+  return _c(
+    "div",
+    {
+      staticClass: "Specifications",
+      model: {
+        value: this.list.length,
+        callback: function($$v) {
+          _vm.$set(this.list, "length", $$v)
+        },
+        expression: "this.list.length"
+      }
+    },
+    [
+      _c("div", { staticClass: "Specifications-title" }, [
+        _vm._v("Сравнение товаров")
       ]),
       _vm._v(" "),
-      _c("tbody", [
-        _c(
-          "tr",
-          [
-            _c("td", { staticClass: "name-field" }, [_vm._v("Цвет:")]),
-            _vm._v(" "),
-            _vm._l(_vm.list, function(item) {
-              return _c(
-                "td",
-                { staticClass: "value-field" },
-                _vm._l(item.color, function(color) {
-                  return _c("span", { class: _vm.classObject(color) })
-                }),
-                0
-              )
-            })
-          ],
-          2
-        ),
+      _c("table", [
+        _c("thead", [
+          _c(
+            "tr",
+            [
+              _c("th", { staticClass: "name-field" }, [_vm._v(" ")]),
+              _vm._v(" "),
+              _vm._l(_vm.list, function(item) {
+                return _c("th", { staticClass: "value-field" }, [
+                  _vm._v(_vm._s(item.name))
+                ])
+              })
+            ],
+            2
+          )
+        ]),
         _vm._v(" "),
-        _c(
-          "tr",
-          [
-            _c("td", { staticClass: "name-field" }, [_vm._v("Вес:")]),
-            _vm._v(" "),
-            _vm._l(_vm.list, function(item) {
-              return _c("td", { staticClass: "value-field" }, [
-                _vm._v(
-                  "\n                " + _vm._s(item.weight) + "\n            "
+        _c("tbody", [
+          _c(
+            "tr",
+            [
+              _c("td", { staticClass: "name-field" }, [_vm._v("Цвет:")]),
+              _vm._v(" "),
+              _vm._l(_vm.list, function(item) {
+                return _c(
+                  "td",
+                  { staticClass: "value-field" },
+                  _vm._l(item.color, function(color) {
+                    return _c("span", { class: _vm.classObject(color) })
+                  }),
+                  0
                 )
-              ])
-            })
-          ],
-          2
-        ),
-        _vm._v(" "),
-        _c(
-          "tr",
-          [
-            _c("td", { staticClass: "name-field" }, [
-              _vm._v("Пульт дист. управления:")
-            ]),
-            _vm._v(" "),
-            _vm._l(_vm.list, function(item) {
-              return _c("td", { staticClass: "value-field" }, [
-                _vm._v(_vm._s(item.remote_controller))
-              ])
-            })
-          ],
-          2
-        ),
-        _vm._v(" "),
-        _c(
-          "tr",
-          [
-            _c("td", { staticClass: "name-field" }, [
-              _vm._v("Система Zero-G:")
-            ]),
-            _vm._v(" "),
-            _vm._l(_vm.list, function(item) {
-              return _c("td", { staticClass: "value-field" }, [
-                _vm._v(_vm._s(item.zero_g))
-              ])
-            })
-          ],
-          2
-        ),
-        _vm._v(" "),
-        _c(
-          "tr",
-          [
-            _c("td", { staticClass: "name-field" }, [_vm._v("Таймер:")]),
-            _vm._v(" "),
-            _vm._l(_vm.list, function(item) {
-              return _c("td", { staticClass: "value-field" }, [
-                _vm._v(_vm._s(item.timer))
-              ])
-            })
-          ],
-          2
-        ),
-        _vm._v(" "),
-        _c(
-          "tr",
-          [
-            _c("td", { staticClass: "name-field" }, [
-              _vm._v("Тип управления::")
-            ]),
-            _vm._v(" "),
-            _vm._l(_vm.list, function(item) {
-              return _c("td", { staticClass: "value-field" }, [
-                _vm._v(_vm._s(item.type_controller))
-              ])
-            })
-          ],
-          2
-        ),
-        _vm._v(" "),
-        _c(
-          "tr",
-          [
-            _c("td", { staticClass: "name-field" }, [
-              _vm._v("Кол-во программ:")
-            ]),
-            _vm._v(" "),
-            _vm._l(_vm.list, function(item) {
-              return _c("td", { staticClass: "value-field" }, [
-                _vm._v(_vm._s(item.count_program))
-              ])
-            })
-          ],
-          2
-        ),
-        _vm._v(" "),
-        _c(
-          "tr",
-          [
-            _c("td", { staticClass: "name-field" }, [_vm._v("Прогрев:")]),
-            _vm._v(" "),
-            _vm._l(_vm.list, function(item) {
-              return _c("td", { staticClass: "value-field" }, [
-                _vm._v(_vm._s(item.warming_up))
-              ])
-            })
-          ],
-          2
-        ),
-        _vm._v(" "),
-        _c(
-          "tr",
-          [
-            _c("td", { staticClass: "name-field" }, [
-              _vm._v("Область массажа:")
-            ]),
-            _vm._v(" "),
-            _vm._l(_vm.list, function(item) {
-              return _c("td", { staticClass: "value-field" }, [
-                _vm._v(_vm._s(item.massage_area))
-              ])
-            })
-          ],
-          2
-        ),
-        _vm._v(" "),
-        _c(
-          "tr",
-          [
-            _c("td", { staticClass: "name-field" }, [_vm._v("Наличие:")]),
-            _vm._v(" "),
-            _vm._l(_vm.list, function(item) {
-              return _c("td", { staticClass: "value-field" }, [
-                _vm._v(_vm._s(item.available))
-              ])
-            })
-          ],
-          2
-        ),
-        _vm._v(" "),
-        _c(
-          "tr",
-          [
-            _c("td", { staticClass: "name-field" }, [_vm._v("Цена:")]),
-            _vm._v(" "),
-            _vm._l(_vm.list, function(item) {
-              return _c("td", { staticClass: "value-field" }, [
-                _vm._v(_vm._s(item.price))
-              ])
-            })
-          ],
-          2
-        ),
-        _vm._v(" "),
-        _c(
-          "tr",
-          [
-            _c("td", { staticClass: "name-field" }, [_vm._v(" ")]),
-            _vm._v(" "),
-            _vm._l(_vm.list, function(item) {
-              return _c(
-                "td",
-                {
-                  staticClass: "name-field",
-                  on: {
-                    click: function($event) {
-                      return _vm.Delete(item.id)
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "tr",
+            [
+              _c("td", { staticClass: "name-field" }, [_vm._v("Вес:")]),
+              _vm._v(" "),
+              _vm._l(_vm.list, function(item) {
+                return _c("td", { staticClass: "value-field" }, [
+                  _vm._v(
+                    "\n                " +
+                      _vm._s(item.weight) +
+                      "\n            "
+                  )
+                ])
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "tr",
+            [
+              _c("td", { staticClass: "name-field" }, [
+                _vm._v("Пульт дист. управления:")
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.list, function(item) {
+                return _c("td", { staticClass: "value-field" }, [
+                  _vm._v(_vm._s(item.remote_controller))
+                ])
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "tr",
+            [
+              _c("td", { staticClass: "name-field" }, [
+                _vm._v("Система Zero-G:")
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.list, function(item) {
+                return _c("td", { staticClass: "value-field" }, [
+                  _vm._v(_vm._s(item.zero_g))
+                ])
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "tr",
+            [
+              _c("td", { staticClass: "name-field" }, [_vm._v("Таймер:")]),
+              _vm._v(" "),
+              _vm._l(_vm.list, function(item) {
+                return _c("td", { staticClass: "value-field" }, [
+                  _vm._v(_vm._s(item.timer))
+                ])
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "tr",
+            [
+              _c("td", { staticClass: "name-field" }, [
+                _vm._v("Тип управления::")
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.list, function(item) {
+                return _c("td", { staticClass: "value-field" }, [
+                  _vm._v(_vm._s(item.type_controller))
+                ])
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "tr",
+            [
+              _c("td", { staticClass: "name-field" }, [
+                _vm._v("Кол-во программ:")
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.list, function(item) {
+                return _c("td", { staticClass: "value-field" }, [
+                  _vm._v(_vm._s(item.count_program))
+                ])
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "tr",
+            [
+              _c("td", { staticClass: "name-field" }, [_vm._v("Прогрев:")]),
+              _vm._v(" "),
+              _vm._l(_vm.list, function(item) {
+                return _c("td", { staticClass: "value-field" }, [
+                  _vm._v(_vm._s(item.warming_up))
+                ])
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "tr",
+            [
+              _c("td", { staticClass: "name-field" }, [
+                _vm._v("Область массажа:")
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.list, function(item) {
+                return _c("td", { staticClass: "value-field" }, [
+                  _vm._v(_vm._s(item.massage_area))
+                ])
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "tr",
+            [
+              _c("td", { staticClass: "name-field" }, [_vm._v("Наличие:")]),
+              _vm._v(" "),
+              _vm._l(_vm.list, function(item) {
+                return _c("td", { staticClass: "value-field" }, [
+                  _vm._v(_vm._s(item.available))
+                ])
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "tr",
+            [
+              _c("td", { staticClass: "name-field" }, [_vm._v("Цена:")]),
+              _vm._v(" "),
+              _vm._l(_vm.list, function(item) {
+                return _c("td", { staticClass: "value-field" }, [
+                  _vm._v(_vm._s(item.price))
+                ])
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "tr",
+            [
+              _c("td", { staticClass: "name-field" }, [_vm._v(" ")]),
+              _vm._v(" "),
+              _vm._l(_vm.list, function(item) {
+                return _c(
+                  "td",
+                  {
+                    staticClass: "name-field",
+                    on: {
+                      click: function($event) {
+                        return _vm.Delete(item.id)
+                      }
                     }
-                  }
-                },
-                [_c("span", { staticClass: "close" })]
-              )
-            })
-          ],
-          2
-        )
+                  },
+                  [_c("span", { staticClass: "close" })]
+                )
+              })
+            ],
+            2
+          )
+        ])
       ])
-    ])
-  ])
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -53559,6 +53595,43 @@ var render = function() {
                 _c("div", { staticClass: "uk-margin" }, [
                   _c(
                     "label",
+                    { staticClass: "uk-form-label", attrs: { for: "order" } },
+                    [_vm._v("Order:*")]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "uk-form-controls" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.list.order,
+                          expression: "list.order"
+                        }
+                      ],
+                      staticClass: "uk-input",
+                      attrs: {
+                        id: "order",
+                        type: "text",
+                        placeholder: "Поле для сортировки",
+                        autocomplete: "off"
+                      },
+                      domProps: { value: _vm.list.order },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.list, "order", $event.target.value)
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "uk-margin" }, [
+                  _c(
+                    "label",
                     { staticClass: "uk-form-label", attrs: { for: "images" } },
                     [_vm._v("Изображение для коталога:")]
                   ),
@@ -54456,7 +54529,7 @@ var render = function() {
               staticClass: "uk-comment-header uk-flex-middle uk-padding-small"
             },
             [
-              _c("div", { staticClass: "uk-form-horizontal uk-margin-large" }, [
+              _c("div", { staticClass: "uk-margin-large" }, [
                 _c("div", { staticClass: "uk-margin" }, [
                   _c(
                     "label",
@@ -54524,271 +54597,295 @@ var render = function() {
                         _vm._v(" "),
                         _c(
                           "tbody",
+                          {
+                            ref: "sort",
+                            attrs: { "uk-sortable": "" },
+                            on: { moved: _vm.update }
+                          },
                           _vm._l(_vm.image_list, function(item, key) {
-                            return _c("tr", [
-                              _c("td", { staticClass: "uk-button-group" }, [
-                                _c("button", {
-                                  staticClass:
-                                    "uk-button uk-button-success uk-button-small",
-                                  attrs: { "uk-icon": "check" },
-                                  on: {
-                                    click: function($event) {
-                                      return _vm.Save(item)
+                            return _c(
+                              "tr",
+                              { attrs: { "data-obj": JSON.stringify(item) } },
+                              [
+                                _c("td", { staticClass: "uk-button-group" }, [
+                                  _c("button", {
+                                    staticClass:
+                                      "uk-button uk-button-success uk-button-small",
+                                    attrs: { "uk-icon": "check" },
+                                    on: {
+                                      click: function($event) {
+                                        return _vm.Save(item)
+                                      }
                                     }
-                                  }
-                                }),
+                                  }),
+                                  _vm._v(" "),
+                                  _c("button", {
+                                    staticClass:
+                                      "uk-button uk-button-danger uk-button-small",
+                                    attrs: { "uk-icon": "trash" },
+                                    on: {
+                                      click: function($event) {
+                                        return _vm.Delete(item)
+                                      }
+                                    }
+                                  })
+                                ]),
                                 _vm._v(" "),
-                                _c("button", {
-                                  staticClass:
-                                    "uk-button uk-button-danger uk-button-small",
-                                  attrs: { "uk-icon": "trash" },
-                                  on: {
-                                    click: function($event) {
-                                      return _vm.Delete(item)
-                                    }
-                                  }
-                                })
-                              ]),
-                              _vm._v(" "),
-                              _c("td", [
-                                _c("input", {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value: item.link,
-                                      expression: "item.link"
-                                    }
-                                  ],
-                                  staticClass: "uk-input uk-form-width-medium",
-                                  attrs: {
-                                    type: "text",
-                                    placeholder: "Ссылка",
-                                    autocomplete: "off"
-                                  },
-                                  domProps: { value: item.link },
-                                  on: {
-                                    input: function($event) {
-                                      if ($event.target.composing) {
-                                        return
-                                      }
-                                      _vm.$set(
-                                        item,
-                                        "link",
-                                        $event.target.value
-                                      )
-                                    }
-                                  }
-                                })
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { style: { background: item.color } }, [
-                                _c("input", {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value: item.color,
-                                      expression: "item.color"
-                                    }
-                                  ],
-                                  staticClass: "uk-input uk-form-width-medium",
-                                  attrs: {
-                                    type: "text",
-                                    placeholder: "Цвет",
-                                    autocomplete: "off"
-                                  },
-                                  domProps: { value: item.color },
-                                  on: {
-                                    input: function($event) {
-                                      if ($event.target.composing) {
-                                        return
-                                      }
-                                      _vm.$set(
-                                        item,
-                                        "color",
-                                        $event.target.value
-                                      )
-                                    }
-                                  }
-                                })
-                              ]),
-                              _vm._v(" "),
-                              _c("td", [
-                                _c("input", {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value: item.title,
-                                      expression: "item.title"
-                                    }
-                                  ],
-                                  staticClass: "uk-input uk-form-width-medium",
-                                  attrs: {
-                                    type: "text",
-                                    placeholder: "Заголовок",
-                                    autocomplete: "off"
-                                  },
-                                  domProps: { value: item.title },
-                                  on: {
-                                    input: function($event) {
-                                      if ($event.target.composing) {
-                                        return
-                                      }
-                                      _vm.$set(
-                                        item,
-                                        "title",
-                                        $event.target.value
-                                      )
-                                    }
-                                  }
-                                })
-                              ]),
-                              _vm._v(" "),
-                              _c("td", [
-                                _c("textarea", {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value: item.description,
-                                      expression: "item.description"
-                                    }
-                                  ],
-                                  staticClass:
-                                    "uk-textarea uk-form-width-medium",
-                                  attrs: {
-                                    type: "text",
-                                    placeholder: "Описание",
-                                    autocomplete: "off"
-                                  },
-                                  domProps: { value: item.description },
-                                  on: {
-                                    input: function($event) {
-                                      if ($event.target.composing) {
-                                        return
-                                      }
-                                      _vm.$set(
-                                        item,
-                                        "description",
-                                        $event.target.value
-                                      )
-                                    }
-                                  }
-                                })
-                              ]),
-                              _vm._v(" "),
-                              _c("td", [
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass: "uk-my-file uk-cursor-pointer"
-                                  },
-                                  [
-                                    _c(
-                                      "label",
+                                _c("td", [
+                                  _c("input", {
+                                    directives: [
                                       {
-                                        staticClass:
-                                          "uk-label uk-display-block uk-text-center",
-                                        attrs: { for: "" }
-                                      },
-                                      [_vm._v("desktop")]
-                                    ),
-                                    _vm._v(" "),
-                                    item.data.desktop
-                                      ? _c("img", {
-                                          staticStyle: {
-                                            width: "90px",
-                                            height: "auto"
-                                          },
-                                          attrs: {
-                                            src: item.data.desktop.image,
-                                            alt: ""
-                                          },
-                                          on: {
-                                            click: function($event) {
-                                              return _vm.imageGet(
-                                                "desktop",
-                                                key
-                                              )
-                                            }
-                                          }
-                                        })
-                                      : _c("img", {
-                                          staticStyle: {
-                                            width: "90px",
-                                            height: "auto"
-                                          },
-                                          attrs: {
-                                            src: "/img/empty.png",
-                                            alt: ""
-                                          },
-                                          on: {
-                                            click: function($event) {
-                                              return _vm.imageGet(
-                                                "desktop",
-                                                key
-                                              )
-                                            }
-                                          }
-                                        })
-                                  ]
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("td", [
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: item.link,
+                                        expression: "item.link"
+                                      }
+                                    ],
+                                    staticClass:
+                                      "uk-input uk-form-width-medium",
+                                    attrs: {
+                                      type: "text",
+                                      placeholder: "Ссылка",
+                                      autocomplete: "off"
+                                    },
+                                    domProps: { value: item.link },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          item,
+                                          "link",
+                                          $event.target.value
+                                        )
+                                      }
+                                    }
+                                  })
+                                ]),
+                                _vm._v(" "),
                                 _c(
-                                  "div",
-                                  {
-                                    staticClass: "uk-my-file uk-cursor-pointer"
-                                  },
+                                  "td",
+                                  { style: { background: item.color } },
                                   [
-                                    _c(
-                                      "label",
-                                      {
-                                        staticClass:
-                                          "uk-label uk-display-block uk-text-center",
-                                        attrs: { for: "" }
+                                    _c("input", {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: item.color,
+                                          expression: "item.color"
+                                        }
+                                      ],
+                                      staticClass:
+                                        "uk-input uk-form-width-medium",
+                                      attrs: {
+                                        type: "text",
+                                        placeholder: "Цвет",
+                                        autocomplete: "off"
                                       },
-                                      [_vm._v("mobile")]
-                                    ),
-                                    _vm._v(" "),
-                                    item.data.mobile
-                                      ? _c("img", {
-                                          staticStyle: {
-                                            width: "90px",
-                                            height: "auto"
-                                          },
-                                          attrs: {
-                                            src: item.data.mobile.image,
-                                            alt: ""
-                                          },
-                                          on: {
-                                            click: function($event) {
-                                              return _vm.imageGet("mobile", key)
-                                            }
+                                      domProps: { value: item.color },
+                                      on: {
+                                        input: function($event) {
+                                          if ($event.target.composing) {
+                                            return
                                           }
-                                        })
-                                      : _c("img", {
-                                          staticStyle: {
-                                            width: "90px",
-                                            height: "auto"
-                                          },
-                                          attrs: {
-                                            src: "/img/empty.png",
-                                            alt: ""
-                                          },
-                                          on: {
-                                            click: function($event) {
-                                              return _vm.imageGet("mobile", key)
-                                            }
-                                          }
-                                        })
+                                          _vm.$set(
+                                            item,
+                                            "color",
+                                            $event.target.value
+                                          )
+                                        }
+                                      }
+                                    })
                                   ]
-                                )
-                              ])
-                            ])
+                                ),
+                                _vm._v(" "),
+                                _c("td", [
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: item.title,
+                                        expression: "item.title"
+                                      }
+                                    ],
+                                    staticClass:
+                                      "uk-input uk-form-width-medium",
+                                    attrs: {
+                                      type: "text",
+                                      placeholder: "Заголовок",
+                                      autocomplete: "off"
+                                    },
+                                    domProps: { value: item.title },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          item,
+                                          "title",
+                                          $event.target.value
+                                        )
+                                      }
+                                    }
+                                  })
+                                ]),
+                                _vm._v(" "),
+                                _c("td", [
+                                  _c("textarea", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: item.description,
+                                        expression: "item.description"
+                                      }
+                                    ],
+                                    staticClass:
+                                      "uk-textarea uk-form-width-medium",
+                                    attrs: {
+                                      type: "text",
+                                      placeholder: "Описание",
+                                      autocomplete: "off"
+                                    },
+                                    domProps: { value: item.description },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          item,
+                                          "description",
+                                          $event.target.value
+                                        )
+                                      }
+                                    }
+                                  })
+                                ]),
+                                _vm._v(" "),
+                                _c("td", [
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "uk-my-file uk-cursor-pointer"
+                                    },
+                                    [
+                                      _c(
+                                        "label",
+                                        {
+                                          staticClass:
+                                            "uk-label uk-display-block uk-text-center",
+                                          attrs: { for: "" }
+                                        },
+                                        [_vm._v("desktop")]
+                                      ),
+                                      _vm._v(" "),
+                                      item.data.desktop
+                                        ? _c("img", {
+                                            staticStyle: {
+                                              width: "90px",
+                                              height: "auto"
+                                            },
+                                            attrs: {
+                                              src: item.data.desktop.image,
+                                              alt: ""
+                                            },
+                                            on: {
+                                              click: function($event) {
+                                                return _vm.imageGet(
+                                                  "desktop",
+                                                  key
+                                                )
+                                              }
+                                            }
+                                          })
+                                        : _c("img", {
+                                            staticStyle: {
+                                              width: "90px",
+                                              height: "auto"
+                                            },
+                                            attrs: {
+                                              src: "/img/empty.png",
+                                              alt: ""
+                                            },
+                                            on: {
+                                              click: function($event) {
+                                                return _vm.imageGet(
+                                                  "desktop",
+                                                  key
+                                                )
+                                              }
+                                            }
+                                          })
+                                    ]
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("td", [
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "uk-my-file uk-cursor-pointer"
+                                    },
+                                    [
+                                      _c(
+                                        "label",
+                                        {
+                                          staticClass:
+                                            "uk-label uk-display-block uk-text-center",
+                                          attrs: { for: "" }
+                                        },
+                                        [_vm._v("mobile")]
+                                      ),
+                                      _vm._v(" "),
+                                      item.data.mobile
+                                        ? _c("img", {
+                                            staticStyle: {
+                                              width: "90px",
+                                              height: "auto"
+                                            },
+                                            attrs: {
+                                              src: item.data.mobile.image,
+                                              alt: ""
+                                            },
+                                            on: {
+                                              click: function($event) {
+                                                return _vm.imageGet(
+                                                  "mobile",
+                                                  key
+                                                )
+                                              }
+                                            }
+                                          })
+                                        : _c("img", {
+                                            staticStyle: {
+                                              width: "90px",
+                                              height: "auto"
+                                            },
+                                            attrs: {
+                                              src: "/img/empty.png",
+                                              alt: ""
+                                            },
+                                            on: {
+                                              click: function($event) {
+                                                return _vm.imageGet(
+                                                  "mobile",
+                                                  key
+                                                )
+                                              }
+                                            }
+                                          })
+                                    ]
+                                  )
+                                ])
+                              ]
+                            )
                           }),
                           0
                         )

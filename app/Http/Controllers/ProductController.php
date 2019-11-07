@@ -136,6 +136,38 @@ class ProductController extends Controller
             'rubric' => $rubric,
         ]);
     }
+    public function present()
+    {
+        $title = "Подарок";
+
+        $filter = [
+
+        ];
+
+
+        $method = 'present';
+
+        $rubric = Rubric::where('slug', $method)->first();
+
+
+        $products = \App\Product::where('present')->get();
+
+        return view('product.massage_chairs', [
+            'title' => $title,
+            'products' => $products,
+            'min_price' => 0,
+            'max_price' => 0,
+            'colors' => [],
+            'method' => $method,
+            'filter' => $filter,
+
+            'weights' => [],
+            'programs' => [],
+            'massage_areas' => [],
+            'liked' => [],
+            'rubric' => $rubric,
+        ]);
+    }
 
     public function massagers()
     {

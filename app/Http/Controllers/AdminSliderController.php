@@ -39,7 +39,7 @@ class AdminSliderController extends Controller
     {
         $slider = Slider::where('id', $id)->first();
 
-        $items = SliderItem::where(['slider_id' => $id])->get();
+        $items = SliderItem::where(['slider_id' => $id])->orderBy('sort','asc')->get();
 
         foreach ($items as $key => $item) {
             $input = [];
@@ -96,6 +96,7 @@ class AdminSliderController extends Controller
         $description = $request->input('description');
         $title = $request->input('title');
         $color = $request->input('color');
+        $sort = $request->input('sort',0);
 
         if (isset($data['desktop']['id'])) {
             $desktop = $data['desktop']['id'];
@@ -112,6 +113,7 @@ class AdminSliderController extends Controller
             'description' => $description,
             'title' => $title,
             'color' => $color,
+            'sort' => $sort,
         ]);
 
         $items = SliderItem::where(['slider_id' => $item->slider_id])->get();
