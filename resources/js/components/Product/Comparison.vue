@@ -1,5 +1,5 @@
 <template>
-    <div class="Specifications" v-model="this.list.length">
+    <div class="Specifications" v-model="this.list.length > 0">
         <div class="Specifications-title">Сравнение товаров</div>
         <table>
             <thead>
