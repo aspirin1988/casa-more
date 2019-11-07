@@ -1,0 +1,30 @@
+.Specifications{
+    max-width: 1125px;
+}
+
+.Specifications .Specifications-title {
+    color: #010101;
+    font-family: Montserrat;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 50px;
+}
+
+.close{
+    display: block;
+    background: url(/img/close.png) no-repeat center center /cover;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    margin: 15px auto;
+    cursor: pointer;
+}
+
+
+.Specifications th:last-child .name-field, .Specifications tr:last-child .name-field {
+    border-bottom: none;
+}
+
+.Specifications th:last-child .value-field, .Specifications tr:last-child .value-field {
+    border-bottom: 1px solid #dedede;
+}

@@ -1,0 +1,1941 @@
+/* line 3, ../sass/form-in.scss */
+.FormIn {
+  padding-top: 46px;
+  padding-bottom: 150px;
+}
+/* line 7, ../sass/form-in.scss */
+.FormIn h1 {
+  color: #000;
+  font-size: 40px;
+  text-align: center;
+  font-weight: 500;
+}
+/* line 14, ../sass/form-in.scss */
+.FormIn h2 {
+  color: #000;
+  font-size: 25px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* line 23, ../sass/form-in.scss */
+.FormInTop {
+  display: flex;
+  margin-top: 44px;
+  margin-left: 1px;
+  justify-content: center;
+  width: 100%;
+}
+/* line 30, ../sass/form-in.scss */
+.FormInTop .FormInTopBtn {
+  background: transparent;
+  border: 1px solid #395669;
+  width: 224px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  color: #000;
+  cursor: pointer;
+  box-sizing: border-box;
+  font-size: 20px;
+  font-weight: 500;
+  margin-left: -1px;
+}
+/* line 44, ../sass/form-in.scss */
+.FormInTop .FormInTopBtn.active {
+  background: #395669;
+  color: #fff;
+}
+
+/* line 51, ../sass/form-in.scss */
+form {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+/* line 58, ../sass/form-in.scss */
+form label {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  padding-right: 38px;
+}
+/* line 64, ../sass/form-in.scss */
+form label:nth-child(3) {
+  margin-bottom: 60px;
+}
+/* line 68, ../sass/form-in.scss */
+form label:nth-child(4) {
+  margin-bottom: 23px;
+}
+/* line 72, ../sass/form-in.scss */
+form label span {
+  font-size: 20px;
+  font-weight: 500;
+  color: #000;
+  line-height: 1.4;
+  text-align: right;
+  width: calc(100% - 263px);
+}
+/* line 82, ../sass/form-in.scss */
+form .text {
+  border: none;
+  outline: none;
+  background: #f0f0f0;
+  box-sizing: border-box;
+  padding: 0 10px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 5px;
+  font-size: 13px;
+  width: 250px;
+  margin-left: 13px;
+  font-family: 'Montserrat', sans-serif;
+}
+/* line 97, ../sass/form-in.scss */
+form button {
+  margin: 0 auto;
+  border: 2px solid #395669;
+  width: intrinsic;
+  /* Safari/WebKit uses a non-standard name */
+  width: -moz-max-content;
+  /* Firefox/Gecko */
+  width: -webkit-max-content;
+  /* Chrome */
+  width: max-content;
+  height: 70px;
+  padding: 0 3em;
+  line-height: 60px;
+  text-align: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  font-size: 20px;
+  font-weight: 600;
+  background: transparent;
+  color: #395669;
+  margin-top: 22px;
+  text-transform: uppercase;
+}
+/* line 118, ../sass/form-in.scss */
+form .checkbox-form {
+  position: relative;
+  padding-left: 27px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  font-size: 10px;
+  overflow: hidden;
+  align-items: flex-start;
+  padding-right: 0;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+/* line 133, ../sass/form-in.scss */
+form .checkbox-form input[type="checkbox"] {
+  cursor: pointer;
+  position: absolute;
+  top: -100px;
+  left: -100px;
+}
+/* line 141, ../sass/form-in.scss */
+form .checkbox-form input[type="checkbox"]:checked ~ b:after {
+  visibility: visible;
+}
+/* line 147, ../sass/form-in.scss */
+form .checkbox-form b {
+  width: 14px;
+  height: 14px;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 2px solid #395669;
+  box-sizing: border-box;
+}
+/* line 157, ../sass/form-in.scss */
+form .checkbox-form b:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  background: #000;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+}
+/* line 170, ../sass/form-in.scss */
+form .checkbox-form a {
+  display: inline-block;
+  margin-left: 2px;
+  color: #395669;
+}
+
+/* line 178, ../sass/form-in.scss */
+.tab-form {
+  display: none;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+/* line 184, ../sass/form-in.scss */
+.tab-form.active {
+  display: block;
+}
+
+@media only screen and (max-width: 1199px) and (min-width: 710px) {
+  /* line 190, ../sass/form-in.scss */
+  .FormIn {
+    padding-top: 7vw;
+    padding-bottom: 10vw;
+  }
+  /* line 194, ../sass/form-in.scss */
+  .FormIn h1 {
+    font-size: 32px;
+  }
+  /* line 198, ../sass/form-in.scss */
+  .FormIn h2 {
+    font-size: 22px;
+  }
+
+  /* line 205, ../sass/form-in.scss */
+  form label {
+    margin-bottom: 20px;
+  }
+  /* line 208, ../sass/form-in.scss */
+  form label span {
+    font-size: 15px;
+  }
+  /* line 213, ../sass/form-in.scss */
+  form .text {
+    height: 45px;
+    line-height: 45px;
+  }
+  /* line 218, ../sass/form-in.scss */
+  form button {
+    height: 57px;
+    padding: 0 3em;
+    line-height: 55px;
+    font-size: 16px;
+    margin-top: 15px;
+  }
+
+  /* line 228, ../sass/form-in.scss */
+  .FormInTop .FormInTopBtn {
+    width: 160px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+  }
+  /* line 234, ../sass/form-in.scss */
+  .FormInTop .FormInTopBtn.exit {
+    margin-left: 20px;
+    background: url(../img/icon/Shap1.png) center center no-repeat;
+    background-size: 23px;
+    width: 60px;
+  }
+}
+@media only screen and (max-width: 709px) and (min-width: 120px) {
+  /* line 246, ../sass/form-in.scss */
+  .FormIn {
+    padding-top: 7vw;
+    overflow: hidden;
+    padding-bottom: 10vw;
+  }
+  /* line 250, ../sass/form-in.scss */
+  .FormIn h1 {
+    font-size: 6vw;
+  }
+  /* line 254, ../sass/form-in.scss */
+  .FormIn h2 {
+    font-size: 4.7vw;
+  }
+
+  /* line 259, ../sass/form-in.scss */
+  form {
+    margin-top: 3vw;
+    align-items: flex-end;
+  }
+  /* line 263, ../sass/form-in.scss */
+  form label {
+    margin-bottom: 4vw;
+    padding-right: 14vw;
+  }
+  /* line 267, ../sass/form-in.scss */
+  form label:nth-child(3) {
+    margin-bottom: 6vw;
+  }
+  /* line 271, ../sass/form-in.scss */
+  form label:nth-child(4) {
+    margin-bottom: 4vw;
+  }
+  /* line 275, ../sass/form-in.scss */
+  form label span {
+    font-size: 3vw;
+    width: auto;
+  }
+  /* line 281, ../sass/form-in.scss */
+  form .text {
+    height: 8vw;
+    line-height: 8vw;
+    width: 50vw;
+  }
+  /* line 287, ../sass/form-in.scss */
+  form button {
+    padding: 0 3em;
+    font-size: 3vw;
+    height: 11vw;
+    line-height: 11vw;
+    margin-top: 3vw;
+  }
+  /* line 295, ../sass/form-in.scss */
+  form .checkbox-form {
+    align-items: center;
+    justify-content: center;
+    padding: 0 0 0 20px;
+    display: flex;
+    font-size: 2vw;
+    min-height: 15px;
+  }
+
+  /* line 305, ../sass/form-in.scss */
+  .tab-form {
+    width: 100%;
+  }
+
+  /* line 309, ../sass/form-in.scss */
+  .FormInTop {
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+    margin-right: 0;
+    justify-content: center;
+    margin: 5vw auto;
+  }
+  /* line 316, ../sass/form-in.scss */
+  .FormInTop .FormInTopBtn {
+    width: 100%;
+    margin: auto;
+    height: 7vw;
+    line-height: 7vw;
+    font-size: 2.1vw;
+  }
+  /* line 323, ../sass/form-in.scss */
+  .FormInTop .FormInTopBtn.exit {
+    margin: 0 auto;
+    background: url(../img/icon/Shap1.png) center center no-repeat !important;
+    background-size: 3.5vw !important;
+    width: 40% !important;
+    margin-left: auto !important;
+  }
+}
+@media only screen and (max-width: 320px) and (min-width: 120px) {
+  /* line 338, ../sass/form-in.scss */
+  form .text {
+    height: 45px;
+    line-height: 45px;
+    width: 180px;
+  }
+}
+/* line 3, ../sass/cart-product.scss */
+.CartCardWr {
+  margin-top: 1px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* line 9, ../sass/cart-product.scss */
+.CartCard {
+  border: 1px solid #395669;
+  display: flex;
+  padding: 33px 30px 30px;
+  align-items: center;
+  position: relative;
+  margin-top: -1px;
+}
+/* line 17, ../sass/cart-product.scss */
+.CartCard .CartCardImg {
+  width: 55px;
+  height: 55px;
+  margin-right: 25px;
+  overflow: hidden;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+}
+/* line 26, ../sass/cart-product.scss */
+.CartCard .CartCardImg img {
+  display: block;
+  width: 100%;
+}
+/* line 32, ../sass/cart-product.scss */
+.CartCard h3 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.3;
+  width: 39%;
+  padding-right: 3%;
+  margin-bottom: 2%;
+  box-sizing: border-box;
+}
+/* line 42, ../sass/cart-product.scss */
+.CartCard .CartCardCount {
+  padding-right: 18px;
+  position: relative;
+  margin-bottom: 2%;
+}
+/* line 47, ../sass/cart-product.scss */
+.CartCard .CartCardCount span {
+  font-size: 8px;
+  cursor: pointer;
+  margin: 0;
+  position: absolute;
+  right: 0;
+}
+/* line 54, ../sass/cart-product.scss */
+.CartCard .CartCardCount span:hover {
+  font-weight: 700;
+  color: #000000;
+}
+/* line 59, ../sass/cart-product.scss */
+.CartCard .CartCardCount span.plus {
+  top: 9px;
+}
+/* line 63, ../sass/cart-product.scss */
+.CartCard .CartCardCount span.minus {
+  bottom: 10px;
+}
+/* line 68, ../sass/cart-product.scss */
+.CartCard .CartCardCount input {
+  width: 62px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+  outline: none;
+  border: none;
+  text-align: center;
+  color: #000000;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 51px;
+}
+/* line 81, ../sass/cart-product.scss */
+.CartCard .CartCardCount input::-webkit-outer-spin-button, .CartCard .CartCardCount input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+/* line 88, ../sass/cart-product.scss */
+.CartCard .CartCardPrice {
+  font-size: 20px;
+  font-weight: 700;
+  display: block;
+  line-height: 1.3;
+  margin-left: 39px;
+  margin-bottom: 2%;
+}
+/* line 96, ../sass/cart-product.scss */
+.CartCard .CartCardPrice small {
+  font-size: 15px;
+}
+/* line 101, ../sass/cart-product.scss */
+.CartCard .CartCardRemove {
+  position: absolute;
+  top: 35px;
+  right: 37px;
+}
+/* line 106, ../sass/cart-product.scss */
+.CartCard .CartCardRemove .CartCardRemoveBtn {
+  background: transparent;
+  font-weight: 700;
+  font-size: 35px;
+  outline: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+/* line 117, ../sass/cart-product.scss */
+.CartCard .CartCardRemove .CartCardRemoveBtn:hover {
+  color: #395669;
+}
+
+/* line 124, ../sass/cart-product.scss */
+.CartCardPriceAll {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 47px 0;
+  margin-left: 20px;
+  margin-right: 56px;
+}
+/* line 132, ../sass/cart-product.scss */
+.CartCardPriceAll > span {
+  color: #a2a2a2;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.3;
+  margin-right: 20px;
+}
+/* line 140, ../sass/cart-product.scss */
+.CartCardPriceAll .CartCardPriceAllR {
+  display: flex;
+  align-items: center;
+}
+/* line 144, ../sass/cart-product.scss */
+.CartCardPriceAll .CartCardPriceAllR b {
+  color: #000000;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+/* line 152, ../sass/cart-product.scss */
+.CartCardPriceAll .ProdPostGift {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: 40px;
+}
+/* line 158, ../sass/cart-product.scss */
+.CartCardPriceAll .ProdPostGift .item-gift {
+  width: 40px;
+  height: 40px;
+  background-color: #b351bc;
+  display: block;
+  border-radius: 50%;
+  position: relative;
+}
+/* line 167, ../sass/cart-product.scss */
+.CartCardPriceAll .ProdPostGift img {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+/* line 175, ../sass/cart-product.scss */
+.CartCardPriceAll .ProdPostGift:after {
+  content: '+';
+  position: absolute;
+  top: calc(50% - 15px);
+  left: -20px;
+  color: #b351bc;
+  font-size: 23px;
+  font-weight: 700;
+}
+/* line 185, ../sass/cart-product.scss */
+.CartCardPriceAll .ProdPostGift span {
+  color: #b351bc;
+  font-size: 12px;
+  font-weight: 700;
+  display: block;
+  margin-left: 9px;
+}
+
+@media only screen and (max-width: 1199px) and (min-width: 710px) {
+  /* line 196, ../sass/cart-product.scss */
+  .CartCard {
+    padding: 20px 20px 20px;
+  }
+  /* line 199, ../sass/cart-product.scss */
+  .CartCard h3 {
+    font-size: 17px;
+    line-height: 1.3;
+    width: 39%;
+    padding-right: 3%;
+    margin-bottom: 1%;
+  }
+  /* line 208, ../sass/cart-product.scss */
+  .CartCard .CartCardCount input {
+    width: 55px;
+    height: 38px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 48px;
+  }
+  /* line 218, ../sass/cart-product.scss */
+  .CartCard .CartCardPrice {
+    font-size: 17px;
+    font-weight: 700;
+    display: block;
+    line-height: 1.3;
+    margin-left: 36px;
+    margin-bottom: 1%;
+  }
+  /* line 227, ../sass/cart-product.scss */
+  .CartCard .CartCardRemove {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+  }
+  /* line 232, ../sass/cart-product.scss */
+  .CartCard .CartCardRemove .CartCardRemoveBtn {
+    font-size: 30px;
+  }
+
+  /* line 238, ../sass/cart-product.scss */
+  .CartCardPriceAll {
+    padding: 30px 0;
+  }
+  /* line 241, ../sass/cart-product.scss */
+  .CartCardPriceAll > span {
+    font-size: 16px;
+    margin-right: 15px;
+  }
+  /* line 247, ../sass/cart-product.scss */
+  .CartCardPriceAll .CartCardPriceAllR b {
+    font-size: 22px;
+  }
+  /* line 252, ../sass/cart-product.scss */
+  .CartCardPriceAll .ProdPostGift {
+    margin-left: 30px;
+  }
+  /* line 255, ../sass/cart-product.scss */
+  .CartCardPriceAll .ProdPostGift span {
+    font-size: 11px;
+  }
+}
+@media only screen and (max-width: 709px) and (min-width: 120px) {
+  /* line 263, ../sass/cart-product.scss */
+  .CartCard {
+    padding: 2vw;
+    padding-right: 25px;
+  }
+  /* line 267, ../sass/cart-product.scss */
+  .CartCard .CartCardImg {
+    width: 45px;
+    height: 45px;
+    margin-right: 2vw;
+  }
+  /* line 273, ../sass/cart-product.scss */
+  .CartCard h3 {
+    font-size: 3vw;
+    padding-right: 2%;
+    width: 35%;
+  }
+  /* line 281, ../sass/cart-product.scss */
+  .CartCard .CartCardCount input {
+    width: 7vw;
+    height: 8vw;
+    font-size: 2.5vw;
+    line-height: 8vw;
+  }
+  /* line 289, ../sass/cart-product.scss */
+  .CartCard .CartCardPrice {
+    font-size: 3.5vw;
+    margin-left: 2vw;
+  }
+  /* line 294, ../sass/cart-product.scss */
+  .CartCard .CartCardRemove {
+    top: 5vw;
+    right: 3vw;
+  }
+  /* line 298, ../sass/cart-product.scss */
+  .CartCard .CartCardRemove .CartCardRemoveBtn {
+    font-size: 5vw;
+  }
+
+  /* line 304, ../sass/cart-product.scss */
+  .CartCardPriceAll {
+    padding: 5vw 0;
+    margin: 0;
+  }
+  /* line 308, ../sass/cart-product.scss */
+  .CartCardPriceAll > span {
+    font-size: 4vw;
+    margin-right: 5vw;
+  }
+  /* line 315, ../sass/cart-product.scss */
+  .CartCardPriceAll .CartCardPriceAllR b {
+    font-size: 3.5vw;
+    line-height: 2.3;
+  }
+  /* line 320, ../sass/cart-product.scss */
+  .CartCardPriceAll .CartCardPriceAllR .item-gift {
+    width: 35px;
+    height: 35px;
+  }
+  /* line 328, ../sass/cart-product.scss */
+  .CartCardPriceAll .ProdPostGift img {
+    height: 107%;
+  }
+}
+/* line 3, ../sass/index/index-card.scss */
+.Card {
+  padding: 48px 0 0px;
+}
+/* line 6, ../sass/index/index-card.scss */
+.Card .container.sixteen.columns {
+  margin-right: 0px !important;
+}
+/* line 10, ../sass/index/index-card.scss */
+.Card .column, .Card .columns {
+  margin-left: 1%;
+  margin-right: 2%;
+}
+
+/* line 16, ../sass/index/index-card.scss */
+.CardWr {
+  position: relative;
+  width: calc(100% + 10px);
+}
+
+/* line 21, ../sass/index/index-card.scss */
+.slick-slide {
+  margin: 0 10px;
+}
+
+/* the parent */
+/* line 25, ../sass/index/index-card.scss */
+.slick-list {
+  margin: 0 -20px 0 0px !important;
+  width: calc(100% + 10px);
+}
+
+/* line 30, ../sass/index/index-card.scss */
+.CardBox {
+  background: #f3f3f3;
+  position: relative;
+  box-sizing: border-box;
+  color: #000;
+  padding: 25px 25px 35px 25px;
+  display: block;
+  overflow: hidden;
+  transition: .1s ease;
+  outline: none;
+}
+/* line 41, ../sass/index/index-card.scss */
+.CardBox:focus {
+  outline: none;
+}
+/* line 45, ../sass/index/index-card.scss */
+.CardBox:nth-child(4) {
+  margin-right: 0;
+}
+/* line 49, ../sass/index/index-card.scss */
+.CardBox .CardBoxImg {
+  height: 235px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+/* line 56, ../sass/index/index-card.scss */
+.CardBox .CardBoxImg img {
+  max-width: 100%;
+  display: block;
+}
+/* line 61, ../sass/index/index-card.scss */
+.CardBox .CardBoxImg .CardBoxImgGift {
+  width: 40px;
+  height: 40px;
+  background-color: #b351bc;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 50%;
+}
+/* line 71, ../sass/index/index-card.scss */
+.CardBox .CardBoxImg .CardBoxImgGift:after {
+  content: '+';
+  position: absolute;
+  top: calc(50% - 19px);
+  left: -17px;
+  color: #b351bc;
+  font-size: 23px;
+  font-weight: 700;
+}
+/* line 81, ../sass/index/index-card.scss */
+.CardBox .CardBoxImg .CardBoxImgGift img {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+/* line 91, ../sass/index/index-card.scss */
+.CardBox .CardDiscount {
+  position: absolute;
+  left: 0;
+  top: 16px;
+  z-index: 2;
+}
+/* line 97, ../sass/index/index-card.scss */
+.CardBox .CardDiscount span {
+  color: #181818;
+  font-size: 12px;
+  padding: 0 9px;
+  display: block;
+  font-weight: 700;
+  line-height: 23px;
+  text-transform: uppercase;
+  margin: 5px 0;
+  width: intrinsic;
+  width: -moz-max-content;
+  width: -webkit-max-content;
+  width: max-content;
+}
+/* line 111, ../sass/index/index-card.scss */
+.CardBox .CardDiscount span.item-hits {
+  background-color: #ffda2d;
+}
+/* line 115, ../sass/index/index-card.scss */
+.CardBox .CardDiscount span.item-new {
+  background-color: #62c852;
+  color: #fff;
+}
+/* line 120, ../sass/index/index-card.scss */
+.CardBox .CardDiscount span.item-disc {
+  background-color: #ff5071;
+  color: #fff;
+}
+/* line 125, ../sass/index/index-card.scss */
+.CardBox .CardDiscount span.item-gift {
+  width: 30px;
+  height: 30px;
+  background: #b351bc url(../img/icon/gift-img.png) center center no-repeat;
+  background-size: 17px 19px;
+  padding: 0;
+}
+/* line 135, ../sass/index/index-card.scss */
+.CardBox .CardBoxDesc {
+  margin-top: 18px;
+}
+/* line 138, ../sass/index/index-card.scss */
+.CardBox .CardBoxDesc .CardBoxColor {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 99;
+}
+/* line 144, ../sass/index/index-card.scss */
+.CardBox .CardBoxDesc .CardBoxColor i {
+  width: 8px;
+  height: 8px;
+  background-color: #000;
+  border-radius: 50%;
+  margin: 0 6px;
+  display: block;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  cursor: alias;
+}
+/* line 155, ../sass/index/index-card.scss */
+.CardBox .CardBoxDesc .CardBoxColor i.CardBoxColorActive {
+  border-radius: 0;
+}
+/* line 159, ../sass/index/index-card.scss */
+.CardBox .CardBoxDesc .CardBoxColor i:nth-child(2) {
+  background-color: #835a02;
+}
+/* line 163, ../sass/index/index-card.scss */
+.CardBox .CardBoxDesc .CardBoxColor i:nth-child(3) {
+  background-color: #e90000;
+}
+/* line 167, ../sass/index/index-card.scss */
+.CardBox .CardBoxDesc .CardBoxColor i:nth-child(4) {
+  border: 1px solid #c5c5c5;
+  background-color: #ffffff;
+}
+/* line 174, ../sass/index/index-card.scss */
+.CardBox .CardBoxDesc p {
+  opacity: 0.75;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.3;
+  margin-top: 18px;
+}
+/* line 182, ../sass/index/index-card.scss */
+.CardBox .CardBoxDesc h5 {
+  font-size: 23px;
+  font-weight: 500;
+  margin: 12px 0 13px;
+  line-height: 1.3;
+}
+/* line 189, ../sass/index/index-card.scss */
+.CardBox .CardBoxDesc .CardBoxPrice {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* line 194, ../sass/index/index-card.scss */
+.CardBox .CardBoxDesc .CardBoxPrice > span {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+/* line 199, ../sass/index/index-card.scss */
+.CardBox .CardBoxDesc .CardBoxPrice > span b {
+  font-size: 14px;
+}
+/* line 203, ../sass/index/index-card.scss */
+.CardBox .CardBoxDesc .CardBoxPrice > span small {
+  text-decoration: line-through;
+  opacity: 0.5;
+  font-size: 14px;
+  margin-left: 10px;
+  font-weight: 500;
+}
+/* line 212, ../sass/index/index-card.scss */
+.CardBox .CardBoxDesc .CardBoxPrice .CardBoxPriceLike {
+  outline: none;
+  background: url(../img/icon/Vector_Smart_Object.png) center center no-repeat;
+  background-size: contain;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+}
+.CardBox .CardBoxDesc .CardBoxPrice .CardBoxPriceLiked {
+  outline: none;
+  background: url(../img/icon/Vector_Smart.png) center center no-repeat;
+  background-size: contain;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+}
+/* line 225, ../sass/index/index-card.scss */
+.CardBox:hover {
+  background-color: #d7e4ed;
+}
+/* line 229, ../sass/index/index-card.scss */
+.CardBox a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
+
+/* line 240, ../sass/index/index-card.scss */
+.slick-arrow {
+  width: 35px;
+  height: 35px;
+  background-color: #f3f3f3;
+  cursor: pointer;
+  border-radius: 50%;
+  background-image: url(../img/icon/2-layers.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 11px 18px;
+  font-size: 0;
+  border: none;
+  outline: none;
+  position: absolute;
+  top: -60px;
+  z-index: 12;
+  right: 55px;
+}
+/* line 259, ../sass/index/index-card.scss */
+.slick-arrow.slick-next {
+  transform: rotate(180deg);
+  right: 10px;
+}
+/* line 264, ../sass/index/index-card.scss */
+.slick-arrow:hover {
+  background-color: #395669;
+  background-image: url(../img/icon/2-layers-h.png);
+}
+
+/* line 270, ../sass/index/index-card.scss */
+.tab-form {
+  display: none;
+}
+
+/* line 274, ../sass/index/index-card.scss */
+.tab-form.active {
+  display: block;
+}
+
+/* line 280, ../sass/index/index-card.scss */
+.CardTabs .tab {
+  position: relative;
+  outline: none;
+  cursor: pointer;
+  background-color: #f3f3f3;
+  box-sizing: border-box;
+  padding: 0 13px;
+  margin: 0 2px;
+  color: #010101;
+  line-height: 35px;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: inline-block;
+  width: intrinsic;
+  width: -moz-max-content;
+  width: -webkit-max-content;
+  width: max-content;
+}
+/* line 299, ../sass/index/index-card.scss */
+.CardTabs .tab:first-child {
+  margin: 0 5px 0 13px;
+}
+/* line 303, ../sass/index/index-card.scss */
+.CardTabs .tab.active {
+  background: #395669;
+  color: #fff;
+}
+/* line 309, ../sass/index/index-card.scss */
+.CardTabs .CardBox:hover {
+  background-color: #d7e4ed;
+}
+
+/* line 316, ../sass/index/index-card.scss */
+.CardNew .CardBox:hover {
+  background-color: #fbe4d6;
+}
+
+@media only screen and (min-width: 980px) and (max-width: 1199px) {
+  /* line 323, ../sass/index/index-card.scss */
+  .Card {
+    padding: 40px 0 0px;
+  }
+
+  /* line 326, ../sass/index/index-card.scss */
+  .CardBox {
+    padding: 20px 20px 25px 20px;
+  }
+  /* line 330, ../sass/index/index-card.scss */
+  .CardBox .CardBoxDesc h5 {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 8px 0 9px;
+    line-height: 1.3;
+  }
+  /* line 338, ../sass/index/index-card.scss */
+  .CardBox .CardBoxDesc .CardBoxPrice > span {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+}
+@media only screen and (min-width: 710px) and (max-width: 979px) {
+  /* line 351, ../sass/index/index-card.scss */
+  .CardBox .CardBoxDesc h5 {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 6px 0 8px;
+    line-height: 1.3;
+  }
+  /* line 358, ../sass/index/index-card.scss */
+  .CardBox .CardBoxDesc p {
+    opacity: 0.75;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-top: 15px;
+  }
+  /* line 367, ../sass/index/index-card.scss */
+  .CardBox .CardBoxDesc .CardBoxPrice > span {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+  /* line 373, ../sass/index/index-card.scss */
+  .CardBox .CardBoxDesc .CardBoxPrice .CardBoxPriceLike {
+    outline: none;
+    background: url(../img/icon/Vector_Smart_Object.png) center center no-repeat;
+    background-size: contain;
+    width: 21px;
+    height: 18px;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+  }
+  .CardBox .CardBoxDesc .CardBoxPrice .CardBoxPriceLiked {
+    outline: none;
+    background: url(../img/icon/Vector_Smart.png) center center no-repeat;
+    background-size: contain;
+    width: 21px;
+    height: 18px;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+  }
+}
+@media only screen and (min-width: 120px) and (max-width: 709px) {
+  /* line 389, ../sass/index/index-card.scss */
+  .Card {
+    padding: 7vw 0 0px;
+  }
+  /* line 392, ../sass/index/index-card.scss */
+  .Card .container.sixteen.columns {
+    margin-right: 0% !important;
+    margin-left: 2vw !important;
+  }
+
+  /* line 398, ../sass/index/index-card.scss */
+  .slick-slide {
+    margin: 0 0px;
+  }
+
+  /* line 402, ../sass/index/index-card.scss */
+  .CardBox {
+    padding: 5vw;
+    margin: auto 2vw;
+  }
+  /* line 407, ../sass/index/index-card.scss */
+  .CardBox .CardDiscount span {
+    color: #181818;
+    font-size: 3vw;
+    padding: 0 2vw;
+  }
+  /* line 415, ../sass/index/index-card.scss */
+  .CardBox .CardBoxDesc h5 {
+    font-size: 5vw;
+    font-weight: 500;
+    margin: 2vw 0 2vw;
+    line-height: 1.3;
+  }
+  /* line 422, ../sass/index/index-card.scss */
+  .CardBox .CardBoxDesc p {
+    opacity: 0.75;
+    font-size: 3vw;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-top: 3vw;
+  }
+  /* line 431, ../sass/index/index-card.scss */
+  .CardBox .CardBoxDesc .CardBoxPrice > span {
+    font-size: 4vw;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+  /* line 437, ../sass/index/index-card.scss */
+  .CardBox .CardBoxDesc .CardBoxPrice .CardBoxPriceLike {
+    outline: none;
+    background: url(../img/icon/Vector_Smart_Object.png) center center no-repeat;
+    background-size: contain;
+    width: 5vw;
+    height: 4vw;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+  }
+  .CardBox .CardBoxDesc .CardBoxPrice .CardBoxPriceLiked {
+    outline: none;
+    background: url(../img/icon/Vector_Smart.png) center center no-repeat;
+    background-size: contain;
+    width: 5vw;
+    height: 4vw;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+  }
+
+  /* line 452, ../sass/index/index-card.scss */
+  .CardTabs .tab {
+    padding: 0 2vw;
+    margin: 0 2px;
+    line-height: 8vw;
+    font-size: 3vw;
+    font-weight: 600;
+  }
+  /* line 459, ../sass/index/index-card.scss */
+  .CardTabs .tab:first-child {
+    margin: 0 1vw 0 1vw;
+  }
+
+  /* line 465, ../sass/index/index-card.scss */
+  .slick-arrow {
+    width: 8vw;
+    height: 8vw;
+    background-color: #f3f3f3;
+    cursor: pointer;
+    border-radius: 50%;
+    background-image: url(../img/icon/2-layers.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 2vw 3vw;
+    font-size: 0;
+    border: none;
+    outline: none;
+    position: absolute;
+    top: -12vw;
+    z-index: 12;
+    right: 12vw;
+  }
+
+  /* line 484, ../sass/index/index-card.scss */
+  .slick-arrow.slick-next {
+    transform: rotate(180deg);
+    right: 2vw;
+  }
+
+  /* line 489, ../sass/index/index-card.scss */
+  .slick-list {
+    margin: 0 0vw 0vw 0px !important;
+    width: calc(100% - 0vw);
+  }
+}
+/* line 3, ../sass/catalog.scss */
+.CategoryTop {
+  height: 350px;
+  box-sizing: border-box;
+  background: #000 url(../img/chairs.png) center center no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+/* line 11, ../sass/catalog.scss */
+.CategoryTop h1 {
+  color: #ffffff;
+  font-size: 49px;
+  font-weight: 500;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+}
+
+/* line 22, ../sass/catalog.scss */
+.Card.CardTpl {
+  padding: 0;
+}
+/* line 25, ../sass/catalog.scss */
+.Card.CardTpl .CardWr {
+  display: flex;
+  flex-wrap: wrap;
+}
+/* line 29, ../sass/catalog.scss */
+.Card.CardTpl .CardWr .CardBox {
+  margin-right: 20px;
+  width: calc(100% / 4 - 15px);
+  margin-bottom: 20px;
+}
+/* line 34, ../sass/catalog.scss */
+.Card.CardTpl .CardWr .CardBox:nth-child(4n) {
+  margin-right: 0;
+}
+
+/* line 41, ../sass/catalog.scss */
+.CardFilter {
+  max-width: 1920px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: -1px;
+  width: 100%;
+}
+/* line 49, ../sass/catalog.scss */
+.CardFilter li {
+  position: relative;
+  margin-left: -1px;
+  width: -webkit-fill-available;
+  max-width: 200px;
+}
+/* line 55, ../sass/catalog.scss */
+.CardFilter li button {
+  border: 1px solid #e8e8e8;
+  line-height: 67px;
+  text-align: center;
+  color: #000000;
+  font-size: 16px;
+  font-weight: 500;
+  background: transparent;
+  outline: none;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  padding-right: 45px;
+  padding-left: 20px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+/* line 74, ../sass/catalog.scss */
+.CardFilter li button.btn-active {
+  background: #395669;
+  color: #fff;
+  border: 1px solid #395669;
+  border-left: 1px solid #2d4657;
+  border-right: 1px solid  #2d4657;
+}
+/* line 81, ../sass/catalog.scss */
+.CardFilter li button.btn-active:after {
+  color: #fff;
+}
+/* line 86, ../sass/catalog.scss */
+.CardFilter li button:after {
+  content: '+';
+  position: absolute;
+  right: 20px;
+  color: #000000;
+  font-weight: 400;
+  transition: .5s all;
+  font-size: 28px;
+}
+/* line 97, ../sass/catalog.scss */
+.CardFilter li ul {
+  transition: .3s all;
+  position: absolute;
+  padding: 7px 60px 15px 21px;
+  padding-right: 21px;
+  width: intrinsic;
+  width: -moz-max-content;
+  width: -webkit-max-content;
+  width: max-content;
+  z-index: 4;
+  left: 0;
+  top: 68px;
+  transform: scaleY(0) translate(0%, 20%);
+  height: 0;
+  flex-direction: column;
+  box-sizing: border-box;
+  border: 1px solid #e8e8e8;
+  background-color: #ffffff;
+}
+/* line 117, ../sass/catalog.scss */
+.CardFilter li:hover {
+  background-color: #e8e8e8;
+}
+/* line 124, ../sass/catalog.scss */
+.CardFilter li.active button {
+  background: #395669;
+  color: #fff;
+  border: 1px solid #395669;
+  border-left: 1px solid #2d4657;
+  border-right: 1px solid  #2d4657;
+}
+/* line 131, ../sass/catalog.scss */
+.CardFilter li.active button:after {
+  transform: rotate(45deg);
+}
+/* line 136, ../sass/catalog.scss */
+.CardFilter li.active ul {
+  transition: .5s all;
+  transform: scaleY(1);
+  height: auto;
+}
+/* line 141, ../sass/catalog.scss */
+.CardFilter li.active ul li {
+  max-width: 275px;
+}
+/* line 144, ../sass/catalog.scss */
+.CardFilter li.active ul li:hover {
+  background-color: initial;
+}
+/* line 153, ../sass/catalog.scss */
+.CardFilter li:last-child button {
+  font-style: italic;
+  padding-left: 0;
+  padding-right: 0;
+}
+/* line 158, ../sass/catalog.scss */
+.CardFilter li:last-child button:after {
+  display: none;
+}
+/* line 163, ../sass/catalog.scss */
+.CardFilter li .CardFilterPriceTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 18px;
+  width: calc(275px - 42px);
+  margin-bottom: 21px;
+}
+/* line 171, ../sass/catalog.scss */
+.CardFilter li .CardFilterPriceTop label {
+  display: block;
+}
+/* line 174, ../sass/catalog.scss */
+.CardFilter li .CardFilterPriceTop label span {
+  color: #b7b7b7;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+}
+/* line 184, ../sass/catalog.scss */
+.CardFilter li .CardFilterPriceTop label .form-control {
+  background: #e8e8e8;
+  outline: none;
+  border: none;
+  width: 100px;
+  height: 40px;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+/* line 197, ../sass/catalog.scss */
+.CardFilter li .CardFilterPriceTop b {
+  font-weight: 700;
+  margin-bottom: 7px;
+}
+/* line 203, ../sass/catalog.scss */
+.CardFilter li .CardFilterPrice {
+  position: relative;
+  width: 100%;
+  background: #e8e8e8;
+  height: 5px;
+  margin-bottom: 20px;
+}
+/* line 210, ../sass/catalog.scss */
+.CardFilter li .CardFilterPrice .ui-slider-range {
+  width: 100%;
+  background: #395669;
+  height: 5px;
+  position: relative;
+}
+/* line 217, ../sass/catalog.scss */
+.CardFilter li .CardFilterPrice .ui-slider-handle {
+  width: 13px;
+  height: 13px;
+  border: 1px solid #395669;
+  display: block;
+  position: absolute;
+  top: -5px;
+  background: #fff;
+}
+
+/* line 230, ../sass/catalog.scss */
+.CardFilterCheck {
+  position: relative;
+}
+/* line 233, ../sass/catalog.scss */
+.CardFilterCheck input {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* line 240, ../sass/catalog.scss */
+.CardFilterCheck span {
+  padding-left: 20px;
+  color: #000000;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 8px 0;
+  display: block;
+  cursor: pointer;
+}
+/* line 250, ../sass/catalog.scss */
+.CardFilterCheck span:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 6px;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border: 1px solid #395669;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+/* line 264, ../sass/catalog.scss */
+.CardFilterCheck input:checked ~ span:before {
+  background: #395669;
+}
+
+/* line 269, ../sass/catalog.scss */
+.FilterSort {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 36px 0;
+}
+/* line 275, ../sass/catalog.scss */
+.FilterSort li {
+  margin: 0 15px;
+  color: #b7b7b7;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+/* line 282, ../sass/catalog.scss */
+.FilterSort li a {
+  color: #000000;
+  position: relative;
+}
+/* line 286, ../sass/catalog.scss */
+.FilterSort li a.active {
+  color: #395669;
+}
+/* line 289, ../sass/catalog.scss */
+.FilterSort li a.active:after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  right: -8px;
+  width: 5px;
+  height: 9px;
+  background: url(../img/icon/arrow-btn.png) center center no-repeat;
+  background-size: cover;
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+  /* line 308, ../sass/catalog.scss */
+  .CardFilter li button {
+    font-size: 15px;
+    padding-right: 43px;
+    padding-left: 18px;
+  }
+}
+@media only screen and (min-width: 980px) and (max-width: 1199px) {
+  /* line 319, ../sass/catalog.scss */
+  .CategoryTop h1 {
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: 500;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+  }
+
+  /* line 330, ../sass/catalog.scss */
+  .CardFilter {
+    width: 100%;
+  }
+  /* line 334, ../sass/catalog.scss */
+  .CardFilter li button {
+    line-height: 55px;
+    font-size: 12px;
+    font-weight: 500;
+    width: 100%;
+    padding-right: 32px;
+    padding-left: 9px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  /* line 344, ../sass/catalog.scss */
+  .CardFilter li button:after {
+    content: '+';
+    position: absolute;
+    right: 10px;
+    color: #000000;
+    font-weight: 400;
+    transition: .5s all;
+    font-size: 22px;
+  }
+  /* line 356, ../sass/catalog.scss */
+  .CardFilter li ul {
+    padding: 7px 40px 10px 10px;
+    z-index: 4;
+    left: 0;
+    top: 55px;
+  }
+  /* line 363, ../sass/catalog.scss */
+  .CardFilter li .CardFilterPriceTop {
+    margin-top: 14px;
+    width: calc(255px - 42px);
+    margin-bottom: 16px;
+  }
+  /* line 370, ../sass/catalog.scss */
+  .CardFilter li .CardFilterPriceTop label span {
+    font-size: 10px;
+  }
+  /* line 374, ../sass/catalog.scss */
+  .CardFilter li .CardFilterPriceTop label .form-control {
+    width: 90px;
+    height: 35px;
+    font-size: 12px;
+  }
+  /* line 382, ../sass/catalog.scss */
+  .CardFilter li .CardFilterPrice {
+    margin-bottom: 15px;
+  }
+  /* line 388, ../sass/catalog.scss */
+  .CardFilter li.active ul {
+    padding-right: 10px;
+  }
+
+  /* line 396, ../sass/catalog.scss */
+  .CardFilterCheck span {
+    padding-left: 18px;
+    font-size: 13px;
+    margin: 7px 0;
+  }
+
+  /* line 403, ../sass/catalog.scss */
+  .FilterSort {
+    margin: 26px 0;
+  }
+  /* line 406, ../sass/catalog.scss */
+  .FilterSort li {
+    margin: 0 11px;
+    color: #b7b7b7;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  /* line 417, ../sass/catalog.scss */
+  .Card.CardTpl .CardWr .CardBox {
+    margin-right: 15px;
+    width: calc(100% / 4 - 12px);
+    margin-bottom: 15px;
+  }
+}
+@media only screen and (min-width: 710px) and (max-width: 979px) {
+  /* line 427, ../sass/catalog.scss */
+  .CategoryTop {
+    height: 300px;
+  }
+  /* line 430, ../sass/catalog.scss */
+  .CategoryTop h1 {
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 500;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+  }
+
+  /* line 441, ../sass/catalog.scss */
+  .CardFilter {
+    width: 100%;
+  }
+  /* line 445, ../sass/catalog.scss */
+  .CardFilter li button {
+    line-height: 43px;
+    font-size: 10px;
+    font-weight: 500;
+    width: 100%;
+    padding-right: 23px;
+    padding-left: 5px;
+  }
+  /* line 453, ../sass/catalog.scss */
+  .CardFilter li button:after {
+    content: '+';
+    position: absolute;
+    right: 10px;
+    color: #000000;
+    font-weight: 400;
+    transition: .5s all;
+    font-size: 17px;
+  }
+  /* line 465, ../sass/catalog.scss */
+  .CardFilter li ul {
+    padding: 5px 20px 7px 7px;
+    z-index: 4;
+    left: 0;
+    top: 44px;
+  }
+  /* line 472, ../sass/catalog.scss */
+  .CardFilter li .CardFilterPriceTop {
+    margin-top: 10px;
+    width: calc(255px - 42px);
+    margin-bottom: 15px;
+  }
+  /* line 479, ../sass/catalog.scss */
+  .CardFilter li .CardFilterPriceTop label span {
+    font-size: 10px;
+  }
+  /* line 483, ../sass/catalog.scss */
+  .CardFilter li .CardFilterPriceTop label .form-control {
+    width: 90px;
+    height: 35px;
+    font-size: 12px;
+  }
+  /* line 491, ../sass/catalog.scss */
+  .CardFilter li .CardFilterPrice {
+    margin-bottom: 15px;
+  }
+  /* line 497, ../sass/catalog.scss */
+  .CardFilter li.active ul {
+    padding-right: 10px;
+  }
+
+  /* line 505, ../sass/catalog.scss */
+  .CardFilterCheck span {
+    padding-left: 15px;
+    font-size: 11px;
+    margin: 7px 0;
+  }
+  /* line 510, ../sass/catalog.scss */
+  .CardFilterCheck span:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 9px;
+    height: 9px;
+    border: 1px solid #395669;
+    box-sizing: border-box;
+    background-color: #ffffff;
+  }
+
+  /* line 525, ../sass/catalog.scss */
+  .FilterSort {
+    margin: 20px 0;
+  }
+  /* line 528, ../sass/catalog.scss */
+  .FilterSort li {
+    margin: 0 10px;
+    color: #b7b7b7;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  /* line 539, ../sass/catalog.scss */
+  .Card.CardTpl .CardWr .CardBox {
+    margin-right: 10px;
+    width: calc(100% / 3 - 10px);
+    margin-bottom: 10px;
+    padding: 15px 15px 25px 15px;
+  }
+  /* line 545, ../sass/catalog.scss */
+  .Card.CardTpl .CardWr .CardBox:nth-child(3n) {
+    margin-right: 0px;
+  }
+  /* line 549, ../sass/catalog.scss */
+  .Card.CardTpl .CardWr .CardBox:nth-child(4n) {
+    margin-right: 10px;
+  }
+}
+@media only screen and (min-width: 120px) and (max-width: 709px) {
+  /* line 558, ../sass/catalog.scss */
+  .CategoryTop {
+    height: 50vw;
+  }
+  /* line 561, ../sass/catalog.scss */
+  .CategoryTop h1 {
+    font-size: 6vw;
+    width: 62%;
+  }
+
+  /* line 567, ../sass/catalog.scss */
+  .CardFilter {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  /* line 571, ../sass/catalog.scss */
+  .CardFilter li {
+    max-width: 50%;
+  }
+  /* line 574, ../sass/catalog.scss */
+  .CardFilter li button {
+    line-height: calc(10vw - 2px);
+    font-size: 3vw;
+    font-weight: 500;
+    width: 100%;
+    height: 10vw;
+    padding-right: 6vw;
+    padding-left: 6vw;
+  }
+  /* line 583, ../sass/catalog.scss */
+  .CardFilter li button:after {
+    content: '+';
+    position: absolute;
+    right: 4vw;
+    color: #000000;
+    font-weight: 400;
+    transition: .5s all;
+    font-size: 5vw;
+  }
+  /* line 594, ../sass/catalog.scss */
+  .CardFilter li .CardFilterPriceTop {
+    margin-top: 14px;
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  /* line 601, ../sass/catalog.scss */
+  .CardFilter li .CardFilterPriceTop label span {
+    font-size: 10px;
+  }
+  /* line 605, ../sass/catalog.scss */
+  .CardFilter li .CardFilterPriceTop label .form-control {
+    width: 75px;
+    height: 30px;
+    font-size: 10px;
+  }
+  /* line 612, ../sass/catalog.scss */
+  .CardFilter li .CardFilterPriceTop b {
+    margin-bottom: 3px;
+  }
+  /* line 617, ../sass/catalog.scss */
+  .CardFilter li .CardFilterPrice {
+    margin-bottom: 15px;
+  }
+  /* line 623, ../sass/catalog.scss */
+  .CardFilter li.active ul {
+    padding-right: 4vw;
+  }
+  /* line 629, ../sass/catalog.scss */
+  .CardFilter li ul {
+    padding: 2vw 4vw 2vw 4vw;
+    z-index: 4;
+    left: 0;
+    top: 10vw;
+    width: 100%;
+  }
+
+  /* line 640, ../sass/catalog.scss */
+  .CardFilterCheck span {
+    padding-left: 5vw;
+    font-size: 3vw;
+    margin: 2vw 0;
+  }
+  /* line 645, ../sass/catalog.scss */
+  .CardFilterCheck span:before {
+    top: 0.5vw;
+    left: 0;
+    width: 3vw;
+    height: 3vw;
+  }
+
+  /* line 654, ../sass/catalog.scss */
+  .FilterSort {
+    margin: 5vw 0;
+  }
+  /* line 657, ../sass/catalog.scss */
+  .FilterSort li {
+    margin: 0 2vw;
+    color: #b7b7b7;
+    font-size: 3vw;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+  /* line 664, ../sass/catalog.scss */
+  .FilterSort li a.active:after {
+    content: '';
+    position: absolute;
+    top: 1vw;
+    right: -2vw;
+    width: 1vw;
+    height: 2vw;
+    background: url(../img/icon/arrow-btn.png) center center no-repeat;
+    background-size: cover;
+  }
+
+  /* line 679, ../sass/catalog.scss */
+  .Card.CardTpl .CardWr .CardBox {
+    margin-right: 0px;
+    width: 100%;
+    margin-bottom: 2vw;
+    padding: 5vw;
+  }
+  /* line 685, ../sass/catalog.scss */
+  .Card.CardTpl .CardWr .CardBox:nth-child(3n) {
+    margin-right: 0px;
+  }
+  /* line 689, ../sass/catalog.scss */
+  .Card.CardTpl .CardWr .CardBox:nth-child(4n) {
+    margin-right: 0px;
+  }
+}
+/* line 11, ../sass/form-in-post.scss */
+.FormIn {
+  overflow: hidden;
+}
+
+/* line 17, ../sass/form-in-post.scss */
+.FormInTop .FormInTopBtn.exit {
+  margin-left: 20px;
+  background: url(../img/icon/Shap1.png) center center no-repeat;
+  background-size: 26px;
+  width: 60px;
+}
+
+/* line 25, ../sass/form-in-post.scss */
+#form-2, #form-3 {
+  max-width: initial;
+  position: relative;
+}
+
+/* line 34, ../sass/form-in-post.scss */
+#form-4 form label:nth-child(1) {
+  margin-bottom: 60px;
+}
+
+/* line 40, ../sass/form-in-post.scss */
+.CardWr {
+  margin-top: 40px;
+}
+
+/* line 44, ../sass/form-in-post.scss */
+.CartCardPriceAll {
+  position: relative;
+}
+/* line 49, ../sass/form-in-post.scss */
+.CartCardPriceAll:last-child:after {
+  display: none;
+}
+/* line 54, ../sass/form-in-post.scss */
+.CartCardPriceAll:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  border-top: 1px solid #e9e9e9;
+  width: 300%;
+}
+
+/* line 64, ../sass/form-in-post.scss */
+.CartCardWr {
+  margin-top: 40px;
+}
+/* line 67, ../sass/form-in-post.scss */
+.CartCardWr h5 {
+  color: #b1b1b1;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.3;
+  margin-bottom: 25px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+}
+
+/* line 85, ../sass/form-in-post.scss */
+.CardBox .CardBoxDesc .CardBoxPrice .CardBoxPriceLike {
+  background: url(../img/icon/VectorSmartObject2.png) center center no-repeat;
+  background-size: contain;
+}
+
+@media only screen and (max-width: 1199px) and (min-width: 710px) {
+  /* line 95, ../sass/form-in-post.scss */
+  .CartCardWr h5 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+}
+@media only screen and (max-width: 709px) and (min-width: 120px) {
+  /* line 107, ../sass/form-in-post.scss */
+  #form-4 form label:nth-child(1) {
+    margin-bottom: 9vw;
+  }
+
+  /* line 114, ../sass/form-in-post.scss */
+  .CartCardWr {
+    margin-top: 6vw;
+  }
+  /* line 117, ../sass/form-in-post.scss */
+  .CartCardWr h5 {
+    font-size: 4vw;
+    margin-bottom: 4vw;
+  }
+}
+
+
+@keyframes first-animation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.rotate{
+    animation: first-animation 2s infinite, another-animation 1s;
+}

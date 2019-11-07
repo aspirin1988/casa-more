@@ -1,0 +1,667 @@
+/* line 3, ../sass/catalog.scss */
+.CategoryTop {
+  height: 350px;
+  box-sizing: border-box;
+  background: #000 url(../img/chairs.png) center center no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+/* line 11, ../sass/catalog.scss */
+.CategoryTop h1 {
+  color: #ffffff;
+  font-size: 49px;
+  font-weight: 500;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+}
+
+/* line 22, ../sass/catalog.scss */
+.Card.CardTpl {
+  padding: 0;
+}
+/* line 25, ../sass/catalog.scss */
+.Card.CardTpl .CardWr {
+  display: flex;
+  flex-wrap: wrap;
+}
+/* line 29, ../sass/catalog.scss */
+.Card.CardTpl .CardWr .CardBox {
+  margin-right: 20px;
+  width: calc(100% / 4 - 15px);
+  margin-bottom: 20px;
+}
+.Card.CardTpl .CardWr .CardBox:hover {
+  background-color: #d7e4ed;
+}
+/* line 34, ../sass/catalog.scss */
+.Card.CardTpl .CardWr .CardBox:nth-child(4n) {
+  margin-right: 0;
+}
+
+/* line 41, ../sass/catalog.scss */
+.CardFilter {
+  max-width: 1920px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: -1px;
+  width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 175px));
+}
+/* line 49, ../sass/catalog.scss */
+.CardFilter li {
+  position: relative;
+  margin-left: -1px;
+  width: -webkit-fill-available;
+  max-width: 200px;
+}
+/* line 55, ../sass/catalog.scss */
+.CardFilter li button {
+  border: 1px solid #e8e8e8;
+  line-height: 67px;
+  text-align: center;
+  color: #000000;
+  font-size: 16px;
+  font-weight: 500;
+  background: transparent;
+  outline: none;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  padding-right: 45px;
+  padding-left: 20px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+/* line 74, ../sass/catalog.scss */
+.CardFilter li button.btn-active {
+  background: #395669;
+  color: #fff;
+  border: 1px solid #395669;
+  border-left: 1px solid #2d4657;
+  border-right: 1px solid  #2d4657;
+}
+/* line 81, ../sass/catalog.scss */
+.CardFilter li button.btn-active:after {
+  color: #fff;
+}
+/* line 86, ../sass/catalog.scss */
+.CardFilter li button:after {
+  content: '+';
+  position: absolute;
+  right: 20px;
+  color: #000000;
+  font-weight: 400;
+  transition: .5s all;
+  font-size: 28px;
+}
+/* line 97, ../sass/catalog.scss */
+.CardFilter li ul {
+  transition: .3s all;
+  position: absolute;
+  padding: 7px 60px 15px 21px;
+  padding-right: 21px;
+  width: intrinsic;
+  width: -moz-max-content;
+  width: -webkit-max-content;
+  width: max-content;
+  z-index: 4;
+  left: 0;
+  top: 68px;
+  transform: scaleY(0) translate(0%, 20%);
+  height: 0;
+  flex-direction: column;
+  box-sizing: border-box;
+  border: 1px solid #e8e8e8;
+  background-color: #ffffff;
+}
+/* line 117, ../sass/catalog.scss */
+.CardFilter li:hover {
+  background-color: #e8e8e8;
+}
+/* line 124, ../sass/catalog.scss */
+.CardFilter li.active button {
+  background: #395669;
+  color: #fff;
+  border: 1px solid #395669;
+  border-left: 1px solid #2d4657;
+  border-right: 1px solid  #2d4657;
+}
+/* line 131, ../sass/catalog.scss */
+.CardFilter li.active button:after {
+  transform: rotate(45deg);
+}
+/* line 136, ../sass/catalog.scss */
+.CardFilter li:hover ul {
+  transition: .5s all;
+  transform: scaleY(1);
+  height: auto;
+}
+/* line 141, ../sass/catalog.scss */
+.CardFilter li:hover ul li {
+  max-width: 275px;
+}
+/* line 144, ../sass/catalog.scss */
+.CardFilter li:hover ul li:hover {
+  background-color: initial;
+}
+/* line 153, ../sass/catalog.scss */
+.CardFilter li:last-child button {
+  font-style: italic;
+  padding-left: 0;
+  padding-right: 0;
+}
+/* line 158, ../sass/catalog.scss */
+.CardFilter li:last-child button:after {
+  display: none;
+}
+/* line 163, ../sass/catalog.scss */
+.CardFilter li .CardFilterPriceTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 18px;
+  width: calc(275px - 42px);
+  margin-bottom: 21px;
+}
+/* line 171, ../sass/catalog.scss */
+.CardFilter li .CardFilterPriceTop label {
+  display: block;
+}
+/* line 174, ../sass/catalog.scss */
+.CardFilter li .CardFilterPriceTop label span {
+  color: #b7b7b7;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+}
+/* line 184, ../sass/catalog.scss */
+.CardFilter li .CardFilterPriceTop label .form-control {
+  background: #e8e8e8;
+  outline: none;
+  border: none;
+  width: 100px;
+  height: 40px;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+/* line 197, ../sass/catalog.scss */
+.CardFilter li .CardFilterPriceTop b {
+  font-weight: 700;
+  margin-bottom: 7px;
+}
+/* line 203, ../sass/catalog.scss */
+.CardFilter li .CardFilterPrice {
+  position: relative;
+  width: 100%;
+  background: #e8e8e8;
+  height: 5px;
+  margin-bottom: 20px;
+}
+/* line 210, ../sass/catalog.scss */
+.CardFilter li .CardFilterPrice .ui-slider-range {
+  width: 100%;
+  background: #395669;
+  height: 5px;
+  position: relative;
+}
+/* line 217, ../sass/catalog.scss */
+.CardFilter li .CardFilterPrice .ui-slider-handle {
+  width: 13px;
+  height: 13px;
+  border: 1px solid #395669;
+  display: block;
+  position: absolute;
+  top: -5px;
+  background: #fff;
+}
+
+/* line 230, ../sass/catalog.scss */
+.CardFilterCheck {
+  position: relative;
+}
+/* line 233, ../sass/catalog.scss */
+.CardFilterCheck input {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* line 240, ../sass/catalog.scss */
+.CardFilterCheck span {
+  padding-left: 20px;
+  color: #000000;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 8px 0;
+  display: block;
+  cursor: pointer;
+}
+/* line 250, ../sass/catalog.scss */
+.CardFilterCheck span:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 6px;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border: 1px solid #395669;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+/* line 264, ../sass/catalog.scss */
+.CardFilterCheck input:checked ~ span:before {
+  background: #395669;
+}
+
+/* line 269, ../sass/catalog.scss */
+.FilterSort {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 36px 0;
+}
+/* line 275, ../sass/catalog.scss */
+.FilterSort li {
+  margin: 0 15px;
+  color: #b7b7b7;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+/* line 282, ../sass/catalog.scss */
+.FilterSort li a {
+  color: #000000;
+  position: relative;
+}
+/* line 286, ../sass/catalog.scss */
+.FilterSort li a.active {
+  color: #395669;
+}
+/* line 289, ../sass/catalog.scss */
+.FilterSort li a.active:after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  right: -8px;
+  width: 5px;
+  height: 9px;
+  background: url(../img/icon/arrow-btn.png) center center no-repeat;
+  background-size: cover;
+}
+
+.FilterSort li a.active.revert:after {
+    transform: rotate(180deg);
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+  /* line 308, ../sass/catalog.scss */
+  .CardFilter li button {
+    font-size: 15px;
+    padding-right: 43px;
+    padding-left: 18px;
+  }
+}
+@media only screen and (min-width: 980px) and (max-width: 1199px) {
+  /* line 319, ../sass/catalog.scss */
+  .CategoryTop h1 {
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: 500;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+  }
+
+  /* line 330, ../sass/catalog.scss */
+  .CardFilter {
+    width: 100%;
+  }
+  /* line 334, ../sass/catalog.scss */
+  .CardFilter li button {
+    line-height: 55px;
+    font-size: 12px;
+    font-weight: 500;
+    width: 100%;
+    padding-right: 32px;
+    padding-left: 9px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  /* line 344, ../sass/catalog.scss */
+  .CardFilter li button:after {
+    content: '+';
+    position: absolute;
+    right: 10px;
+    color: #000000;
+    font-weight: 400;
+    transition: .5s all;
+    font-size: 22px;
+  }
+  /* line 356, ../sass/catalog.scss */
+  .CardFilter li ul {
+    padding: 7px 40px 10px 10px;
+    z-index: 4;
+    left: 0;
+    top: 55px;
+  }
+  /* line 363, ../sass/catalog.scss */
+  .CardFilter li .CardFilterPriceTop {
+    margin-top: 14px;
+    width: calc(255px - 42px);
+    margin-bottom: 16px;
+  }
+  /* line 370, ../sass/catalog.scss */
+  .CardFilter li .CardFilterPriceTop label span {
+    font-size: 10px;
+  }
+  /* line 374, ../sass/catalog.scss */
+  .CardFilter li .CardFilterPriceTop label .form-control {
+    width: 90px;
+    height: 35px;
+    font-size: 12px;
+  }
+  /* line 382, ../sass/catalog.scss */
+  .CardFilter li .CardFilterPrice {
+    margin-bottom: 15px;
+  }
+  /* line 388, ../sass/catalog.scss */
+  .CardFilter li.active ul {
+    padding-right: 10px;
+  }
+
+  /* line 396, ../sass/catalog.scss */
+  .CardFilterCheck span {
+    padding-left: 18px;
+    font-size: 13px;
+    margin: 7px 0;
+  }
+
+  /* line 403, ../sass/catalog.scss */
+  .FilterSort {
+    margin: 26px 0;
+  }
+  /* line 406, ../sass/catalog.scss */
+  .FilterSort li {
+    margin: 0 11px;
+    color: #b7b7b7;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  /* line 417, ../sass/catalog.scss */
+  .Card.CardTpl .CardWr .CardBox {
+    margin-right: 15px;
+    width: calc(100% / 4 - 12px);
+    margin-bottom: 15px;
+  }
+}
+@media only screen and (min-width: 710px) and (max-width: 979px) {
+  /* line 427, ../sass/catalog.scss */
+  .CategoryTop {
+    height: 300px;
+  }
+  /* line 430, ../sass/catalog.scss */
+  .CategoryTop h1 {
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 500;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+  }
+
+  /* line 441, ../sass/catalog.scss */
+  .CardFilter {
+    width: 100%;
+  }
+  /* line 445, ../sass/catalog.scss */
+  .CardFilter li button {
+    line-height: 43px;
+    font-size: 10px;
+    font-weight: 500;
+    width: 100%;
+    padding-right: 23px;
+    padding-left: 5px;
+  }
+  /* line 453, ../sass/catalog.scss */
+  .CardFilter li button:after {
+    content: '+';
+    position: absolute;
+    right: 10px;
+    color: #000000;
+    font-weight: 400;
+    transition: .5s all;
+    font-size: 17px;
+  }
+  /* line 465, ../sass/catalog.scss */
+  .CardFilter li ul {
+    padding: 5px 20px 7px 7px;
+    z-index: 4;
+    left: 0;
+    top: 44px;
+  }
+  /* line 472, ../sass/catalog.scss */
+  .CardFilter li .CardFilterPriceTop {
+    margin-top: 10px;
+    width: calc(255px - 42px);
+    margin-bottom: 15px;
+  }
+  /* line 479, ../sass/catalog.scss */
+  .CardFilter li .CardFilterPriceTop label span {
+    font-size: 10px;
+  }
+  /* line 483, ../sass/catalog.scss */
+  .CardFilter li .CardFilterPriceTop label .form-control {
+    width: 90px;
+    height: 35px;
+    font-size: 12px;
+  }
+  /* line 491, ../sass/catalog.scss */
+  .CardFilter li .CardFilterPrice {
+    margin-bottom: 15px;
+  }
+  /* line 497, ../sass/catalog.scss */
+  .CardFilter li.active ul {
+    padding-right: 10px;
+  }
+
+  /* line 505, ../sass/catalog.scss */
+  .CardFilterCheck span {
+    padding-left: 15px;
+    font-size: 11px;
+    margin: 7px 0;
+  }
+  /* line 510, ../sass/catalog.scss */
+  .CardFilterCheck span:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 9px;
+    height: 9px;
+    border: 1px solid #395669;
+    box-sizing: border-box;
+    background-color: #ffffff;
+  }
+
+  /* line 525, ../sass/catalog.scss */
+  .FilterSort {
+    margin: 20px 0;
+  }
+  /* line 528, ../sass/catalog.scss */
+  .FilterSort li {
+    margin: 0 10px;
+    color: #b7b7b7;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  /* line 539, ../sass/catalog.scss */
+  .Card.CardTpl .CardWr .CardBox {
+    margin-right: 10px;
+    width: calc(100% / 3 - 10px);
+    margin-bottom: 10px;
+    padding: 15px 15px 25px 15px;
+  }
+  .Card.CardTpl .CardWr .CardBox:hover {
+    background-color: #d7e4ed;
+  }
+  /* line 545, ../sass/catalog.scss */
+  .Card.CardTpl .CardWr .CardBox:nth-child(3n) {
+    margin-right: 0px;
+  }
+  /* line 549, ../sass/catalog.scss */
+  .Card.CardTpl .CardWr .CardBox:nth-child(4n) {
+    margin-right: 10px;
+  }
+}
+@media only screen and (min-width: 120px) and (max-width: 709px) {
+  /* line 558, ../sass/catalog.scss */
+  .CategoryTop {
+    height: 50vw;
+  }
+  /* line 561, ../sass/catalog.scss */
+  .CategoryTop h1 {
+    font-size: 6vw;
+    width: 62%;
+  }
+
+  /* line 567, ../sass/catalog.scss */
+  .CardFilter {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  /* line 571, ../sass/catalog.scss */
+  /*.CardFilter li {*/
+  /*  max-width: 50%;*/
+  /*}*/
+  /* line 574, ../sass/catalog.scss */
+  .CardFilter li button {
+    line-height: calc(10vw - 2px);
+    font-size: 3vw;
+    font-weight: 500;
+    width: 100%;
+    height: 10vw;
+    padding-right: 6vw;
+    padding-left: 6vw;
+  }
+  /* line 583, ../sass/catalog.scss */
+  .CardFilter li button:after {
+    content: '+';
+    position: absolute;
+    right: 4vw;
+    color: #000000;
+    font-weight: 400;
+    transition: .5s all;
+    font-size: 5vw;
+  }
+  /* line 594, ../sass/catalog.scss */
+  .CardFilter li .CardFilterPriceTop {
+    margin-top: 14px;
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  /* line 601, ../sass/catalog.scss */
+  .CardFilter li .CardFilterPriceTop label span {
+    font-size: 10px;
+  }
+  /* line 605, ../sass/catalog.scss */
+  .CardFilter li .CardFilterPriceTop label .form-control {
+    width: 75px;
+    height: 30px;
+    font-size: 10px;
+  }
+  /* line 612, ../sass/catalog.scss */
+  .CardFilter li .CardFilterPriceTop b {
+    margin-bottom: 3px;
+  }
+  /* line 617, ../sass/catalog.scss */
+  .CardFilter li .CardFilterPrice {
+    margin-bottom: 15px;
+  }
+  /* line 623, ../sass/catalog.scss */
+  .CardFilter li.active ul {
+    padding-right: 4vw;
+  }
+  /* line 629, ../sass/catalog.scss */
+  .CardFilter li ul {
+    padding: 2vw 4vw 2vw 4vw;
+    z-index: 4;
+    left: 0;
+    top: 10vw;
+    width: 100%;
+  }
+
+  /* line 640, ../sass/catalog.scss */
+  .CardFilterCheck span {
+    padding-left: 5vw;
+    font-size: 3vw;
+    margin: 2vw 0;
+  }
+  /* line 645, ../sass/catalog.scss */
+  .CardFilterCheck span:before {
+    top: 0.5vw;
+    left: 0;
+    width: 3vw;
+    height: 3vw;
+  }
+
+  /* line 654, ../sass/catalog.scss */
+  .FilterSort {
+    margin: 5vw 0;
+  }
+  /* line 657, ../sass/catalog.scss */
+  .FilterSort li {
+    margin: 0 2vw;
+    color: #b7b7b7;
+    font-size: 3vw;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+  /* line 664, ../sass/catalog.scss */
+  .FilterSort li a.active:after {
+    content: '';
+    position: absolute;
+    top: 1vw;
+    right: -2vw;
+    width: 1vw;
+    height: 2vw;
+    background: url(../img/icon/arrow-btn.png) center center no-repeat;
+    background-size: cover;
+  }
+
+  /* line 679, ../sass/catalog.scss */
+  .Card.CardTpl .CardWr .CardBox {
+    margin-right: 0px;
+    width: 100%;
+    margin-bottom: 2vw;
+    padding: 5vw;
+  }
+  /* line 685, ../sass/catalog.scss */
+  .Card.CardTpl .CardWr .CardBox:nth-child(3n) {
+    margin-right: 0px;
+  }
+  /* line 689, ../sass/catalog.scss */
+  .Card.CardTpl .CardWr .CardBox:nth-child(4n) {
+    margin-right: 0px;
+  }
+}
