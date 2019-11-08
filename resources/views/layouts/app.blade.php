@@ -39,10 +39,10 @@
                 </li>
                 <li><a href="#" class="dropdown-toogle">Акции и скидки</a>
                     <ul>
-                        <li><a href="">скидки</a></li>
-                        <li><a href="">+ подарок</a></li>
-                        <li><a href="">новинки</a></li>
-                        <li><a href="">хиты продаж</a></li>
+                        <li><a href="/sales">скидки</a></li>
+                        <li><a href="/present">+ подарок</a></li>
+                        <li><a href="/new">новинки</a></li>
+                        <li><a href="/hit">хиты продаж</a></li>
                     </ul>
                 </li>
                 <li><a href="#" class="dropdown-toogle">Покупателям</a>
