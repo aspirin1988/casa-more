@@ -420,7 +420,7 @@
         <h1>{{$rubric->name}}</h1>
     </div>
     <div class="Card CardTpl">
-        @if(count($filter))
+
         <ul class="CardFilter">
             @if(in_array('price',$filter))
                 <li class="CardFilterBtn" data-field="price">
@@ -680,7 +680,7 @@
                 {{--            <li><a href="#">По популярности</a></li>--}}
             @endif
         </ul>
-        @endif
+
         <div class="container" id="container">
             <div class="container sixteen columns">
                 <div class="CardWr">
