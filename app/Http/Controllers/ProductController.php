@@ -172,9 +172,7 @@ class ProductController extends Controller
     {
         $title = "Хиты продаж";
 
-        $filter = [
-
-        ];
+        $filter = [];
 
 
         $method = 'hit';
@@ -204,9 +202,7 @@ class ProductController extends Controller
     {
         $title = "Подароки";
 
-        $filter = [
-
-        ];
+        $filter = [];
 
 
         $method = 'present';
