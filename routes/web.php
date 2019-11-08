@@ -170,6 +170,7 @@ Route::post('/product/filter', 'ProductController@filterProduct')->name('filter_
 Route::get('/massage_chairs', 'ProductController@massageChairs')->name('massage_chairs');
 Route::get('/sales', 'ProductController@sales')->name('massage_chairs');
 Route::get('/new', 'ProductController@new')->name('massage_chairs');
+Route::get('/hit', 'ProductController@hit')->name('massage_chairs');
 Route::get('/present', 'ProductController@present')->name('massage_chairs');
 Route::get('/massagers', 'ProductController@massagers')->name('massagers');
 Route::get('/fitness_equipment', 'ProductController@fitnessQquipment')->name('fitness_equipment');
