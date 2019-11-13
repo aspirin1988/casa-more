@@ -367,7 +367,7 @@
                             <div class="CardBoxDesc">
                                 <div class="CardBoxColor">
                                 </div>
-                                <h5>{{$product->name}}</h5>
+                                <h5>{{$product->title}}</h5>
                                 <div class="CardBoxPrice">
                                 </div>
                             </div>
