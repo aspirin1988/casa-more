@@ -23,7 +23,8 @@
 <body>
 <div class="uk-container"></div>
 <div id="app">
-    <header class="Header {{(in_array(Route::currentRouteName(),['massage_chairs','massagers','fitness_equipment','household_products','other_rubric','page_news'])?'HeaderWhite':'')}}">
+    <header
+        class="Header {{(in_array(Route::currentRouteName(),['massage_chairs','massagers','fitness_equipment','household_products','other_rubric','page_news'])?'HeaderWhite':'')}}">
         <a href="/" class="HeaderLogo">
             <img src="/img/CasaMore_Logo.png">
         </a>
@@ -32,8 +33,8 @@
                 <li>
                     <a href="#" class="dropdown-toogle">Каталог</a>
                     <ul>
-                        @foreach( App\Rubric::whereIn('slug',['household_products','massage_chairs','fitness_equipment','massagers'])->orderBy('order')->get() as $rubric )
-                        <li><a href="{{$rubric->getUrl()}}">{{$rubric->name}}</a></li>
+                        @foreach( App\Rubric::where('show_index',1)->orderBy('order')->get() as $rubric )
+                            <li><a href="{{$rubric->getUrl()}}">{{$rubric->name}}</a></li>
                         @endforeach
                     </ul>
                 </li>
@@ -79,7 +80,7 @@
                         <div class="fTopBODYBL">
                             <h4>Каталог товаров:</h4>
                             <ul>
-                                @foreach( App\Rubric::orderBy('order')->limit(4)->get() as $rubric )
+                                @foreach( App\Rubric::where('show_index',1)->orderBy('order')->get() as $rubric )
                                     <li><a href="{{$rubric->getUrl()}}">{{$rubric->name}}</a></li>
                                 @endforeach
                             </ul>
@@ -113,7 +114,8 @@
                             <p><a href="/contacts">контакты</a></p>
                             <div class="fTopBODYBLSoc">
                                 <a target="_blank" href="https://www.instagram.com/casaandmore/" class="ins"></a>
-                                <a target="_blank" href="https://www.facebook.com/casamorekz/?modal=admin_todo_tour" class="fb"></a>
+                                <a target="_blank" href="https://www.facebook.com/casamorekz/?modal=admin_todo_tour"
+                                   class="fb"></a>
                                 <a target="_blank" href="" class="yt"></a>
                             </div>
                             <p><a href="tel:+7(701)0063555">+7 (701) 006 35 55</a></p>
@@ -131,7 +133,8 @@
 
                     <div class="fBotWebCopy"><p><b>casa&more</b>, 2019. Все права защищены</p></div>
 
-                    <div class="fBotWebCopy"><p><a style="color: #aaaaaa;" href="https://pay.post.kz/ru/">Система оплаты - <img src="/img/post_kz.png" alt="Система оплаты"></a></p>
+                    <div class="fBotWebCopy"><p><a style="color: #aaaaaa;" href="https://pay.post.kz/ru/">Система оплаты
+                                - <img src="/img/post_kz.png" alt="Система оплаты"></a></p>
                     </div>
 
                     <div class="fBotWeb">
@@ -259,9 +262,9 @@
             link.on('click', function () {
                 $(this).toggleClass('close-btn');
                 modal.toggleClass('popup-active');
-                if(modal.hasClass('popup-active')){
+                if (modal.hasClass('popup-active')) {
                     document.body.style.overflowY = 'hidden';
-                }else{
+                } else {
                     document.body.style.overflowY = 'auto';
                 }
             });
@@ -278,7 +281,7 @@
         <li>
             <a href="#" class="dropdown-toogle">Каталог</a>
             <ul>
-                @foreach( App\Rubric::orderBy('order')->get() as $rubric )
+                @foreach( App\Rubric::where('show_index',1)->orderBy('order')->get() as $rubric )
                     <li><a href="{{$rubric->getUrl()}}">{{$rubric->name}}</a></li>
                 @endforeach
             </ul>

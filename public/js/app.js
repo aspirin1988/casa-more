@@ -5978,6 +5978,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['id'],
   data: function data() {
@@ -54224,6 +54231,70 @@ var render = function() {
                             return
                           }
                           _vm.$set(_vm.list, "order", $event.target.value)
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "uk-margin" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass: "uk-form-label",
+                      attrs: { for: "show_index" }
+                    },
+                    [_vm._v("Выводить на главной:*")]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "uk-form-controls" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.list.show_index,
+                          expression: "list.show_index"
+                        }
+                      ],
+                      staticClass: "uk-checkbox",
+                      attrs: {
+                        id: "show_index",
+                        type: "checkbox",
+                        placeholder: "Выводить на главной",
+                        autocomplete: "off"
+                      },
+                      domProps: {
+                        checked: Array.isArray(_vm.list.show_index)
+                          ? _vm._i(_vm.list.show_index, null) > -1
+                          : _vm.list.show_index
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.list.show_index,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = null,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 &&
+                                _vm.$set(
+                                  _vm.list,
+                                  "show_index",
+                                  $$a.concat([$$v])
+                                )
+                            } else {
+                              $$i > -1 &&
+                                _vm.$set(
+                                  _vm.list,
+                                  "show_index",
+                                  $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                                )
+                            }
+                          } else {
+                            _vm.$set(_vm.list, "show_index", $$c)
+                          }
                         }
                       }
                     })

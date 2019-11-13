@@ -29,6 +29,13 @@
                             </div>
                         </div>
                         <div class="uk-margin">
+                            <label class="uk-form-label" for="show_index">Выводить на главной:*</label>
+                            <div class="uk-form-controls">
+                                <input v-model="list.show_index" class="uk-checkbox" id="show_index" type="checkbox"
+                                       placeholder="Выводить на главной" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="uk-margin">
                             <label for="images" class="uk-form-label">Изображение для каталога:</label>
                             <div class="uk-form-controls">
                                 <div class="uk-my-fle uk-cursor-pointer">
