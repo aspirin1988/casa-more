@@ -33,7 +33,7 @@
     <div class="FormIn">
         <div class="container">
             <div>
-                <h1>{{$page->title}}</h1>
+                <h1>{!! $page->title !!}</h1>
                 <div>
                     {!! $page->text!!}
                 </div>
