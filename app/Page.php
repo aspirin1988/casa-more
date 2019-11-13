@@ -11,7 +11,11 @@ class Page extends Model
     public function getThumb()
     {
         $image = Image::where('id', $this->thumb)->first();
-        $this->thumb_image = $image->image;
+        if ($image) {
+            $this->thumb_image = $image->image;
+        } else {
+            $this->thumb_image = '/img/empty.png';
+        }
 
         return $this->thumb_image;
     }
