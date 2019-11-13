@@ -45,8 +45,7 @@ class AdminPageController extends Controller
     public function getEdit($id)
     {
         $product = Page::where('id', $id)->first();
-        $image = Image::where('id', $product->thumb)->first();
-        $product->thumb_image = $image->image;
+        $product->getThumb();
         return response()->json($product);
     }
 
