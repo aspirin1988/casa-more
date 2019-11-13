@@ -52,7 +52,7 @@
                         <li><a href="/oplata/">онлайн-оплата</a></li>
                         <li><a href="/drive/">тест-драйв</a></li>
                         <li><a href="/product-comparison">сравнение товаров</a></li>
-                        <li><a href="">новости</a></li>
+                        <li><a href="/news">новости</a></li>
                         <li><a target="_blank" href="/img/оферта.pdf">договор оферты</a></li>
                     </ul>
                 </li>
@@ -103,7 +103,7 @@
                                 <li><a href="/oplata/">онлайн-оплата</a></li>
                                 <li><a href="/drive/">тест-драйв</a></li>
                                 <li><a href="/product-comparison">сравнение товаров</a></li>
-                                <li><a href="">новости</a></li>
+                                <li><a href="/news">новости</a></li>
                                 <li><a target="_blank" href="/img/оферта.pdf">договор оферты</a></li>
                             </ul>
                         </div>
@@ -298,7 +298,7 @@
                 <li><a href="/oplata/">онлайн-оплата</a></li>
                 <li><a href="/drive/">тест-драйв</a></li>
                 <li><a href="/product-comparison">сравнение товаров</a></li>
-                <li><a href="">новости</a></li>
+                <li><a href="/news">новости</a></li>
                 <li><a target="_blank" href="/img/оферта.pdf">договор оферты</a></li>
             </ul>
         </li>
