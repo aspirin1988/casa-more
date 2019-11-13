@@ -47,11 +47,11 @@
                                 class="uk-button uk-button-danger">
                             <span uk-icon="trash"></span>
                         </button>
-                        <button v-if="!item.is_admin" @click="setUser(item)" title="Разжаловать до пользователя"
+                        <button v-if="item.is_admin" @click="setUser(item)" title="Разжаловать до пользователя"
                                 class="uk-button uk-button-secondary">
                             <span uk-icon="lock"></span>
                         </button>
-                        <button v-if="item.is_admin" @click="setAdmin(item)" title="Повысить до `админа`"
+                        <button v-if="!item.is_admin" @click="setAdmin(item)" title="Повысить до `админа`"
                                 class="uk-button uk-button-primary">
                             <span uk-icon="unlock"></span>
                         </button>

@@ -235,7 +235,7 @@
                         </div>
 
                         <div class="uk-margin">
-                            <label for="images" class="uk-form-label">Изображение для коталога:</label>
+                            <label for="images" class="uk-form-label">Изображение для каталога:</label>
                             <div class="uk-form-controls">
                                 <div class="uk-my-fle uk-cursor-pointer">
                                     <div v-if="image_list.background" class="uk-position-relative">

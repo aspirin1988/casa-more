@@ -5754,8 +5754,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['id'],
   data: function data() {
@@ -5776,19 +5774,7 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   created: function created() {
-    var _this2 = this;
-
-    this.interval = setInterval(function () {
-      _this2.Lock();
-    }, 1000 * 90);
-
     var _that = this;
-
-    window.onbeforeunload = function () {
-      clearInterval(_that.interval);
-
-      _that.UnLock();
-    };
   },
   methods: {
     getName: function getName(name) {
@@ -5805,12 +5791,12 @@ __webpack_require__.r(__webpack_exports__);
       this.current_image = item;
     },
     getGalleryListDir: function getGalleryListDir() {
-      var _this3 = this;
+      var _this2 = this;
 
       this.$http.get('/admin/image/get_media/' + this.current_dir).then(function (response) {
         var data = response.data;
-        _this3.gallery_list = data.images;
-        _this3.dir_list = data.dir_list;
+        _this2.gallery_list = data.images;
+        _this2.dir_list = data.dir_list;
       });
     },
     closeAddDir: function closeAddDir() {
@@ -5821,14 +5807,14 @@ __webpack_require__.r(__webpack_exports__);
       this.show_add_dir = true;
     },
     addDir: function addDir() {
-      var _this4 = this;
+      var _this3 = this;
 
       this.$http.post('/admin/image/add_dir', {
         'dir_name': this.dir_name
       }).then(function (response) {
-        _this4.dir_list = response.data.dir_list;
-        _this4.dir_name = '';
-        _this4.show_add_dir = false;
+        _this3.dir_list = response.data.dir_list;
+        _this3.dir_name = '';
+        _this3.show_add_dir = false;
       });
     },
     setCurrentDir: function setCurrentDir(item) {
@@ -5836,7 +5822,7 @@ __webpack_require__.r(__webpack_exports__);
       this.getGalleryListDir();
     },
     ClearThumb: function ClearThumb(item) {
-      var _this5 = this;
+      var _this4 = this;
 
       console.log(item.id);
       this.$http["delete"]('/admin/image/delete/' + item.id).then(function (response) {
@@ -5845,7 +5831,7 @@ __webpack_require__.r(__webpack_exports__);
           status: 'success'
         });
 
-        _this5.getGalleryList();
+        _this4.getGalleryList();
       });
     },
     imageGet: function imageGet(thumb) {
@@ -5867,7 +5853,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     onUpload: function onUpload(e) {
-      var _this6 = this;
+      var _this5 = this;
 
       var files = e.target.files;
       var formData = new FormData();
@@ -5888,7 +5874,7 @@ __webpack_require__.r(__webpack_exports__);
             status: 'success'
           });
 
-          _this6.getGalleryList();
+          _this5.getGalleryList();
         }
       })["catch"](function () {
         UIkit.notification({
@@ -50055,11 +50041,11 @@ var render = function() {
     {
       staticClass: "Specifications",
       model: {
-        value: this.list.length,
+        value: this.list.length > 0,
         callback: function($$v) {
-          _vm.$set(this.list, "length", $$v)
+          _vm.$set(this.list, "length > 0", $$v)
         },
-        expression: "this.list.length"
+        expression: "this.list.length > 0"
       }
     },
     [
@@ -51572,7 +51558,7 @@ var render = function() {
                   _c(
                     "label",
                     { staticClass: "uk-form-label", attrs: { for: "images" } },
-                    [_vm._v("Изображение для коталога:")]
+                    [_vm._v("Изображение для каталога:")]
                   ),
                   _vm._v(" "),
                   _c("div", { staticClass: "uk-form-controls" }, [
@@ -53633,7 +53619,7 @@ var render = function() {
                   _c(
                     "label",
                     { staticClass: "uk-form-label", attrs: { for: "images" } },
-                    [_vm._v("Изображение для коталога:")]
+                    [_vm._v("Изображение для каталога:")]
                   ),
                   _vm._v(" "),
                   _c("div", { staticClass: "uk-form-controls" }, [
@@ -56304,7 +56290,7 @@ var render = function() {
                     )
                   : _vm._e(),
                 _vm._v(" "),
-                !item.is_admin
+                item.is_admin
                   ? _c(
                       "button",
                       {
@@ -56320,7 +56306,7 @@ var render = function() {
                     )
                   : _vm._e(),
                 _vm._v(" "),
-                item.is_admin
+                !item.is_admin
                   ? _c(
                       "button",
                       {

@@ -29,13 +29,11 @@
                             </div>
                         </div>
                         <div class="uk-margin">
-                            <label for="images" class="uk-form-label">Изображение для коталога:</label>
+                            <label for="images" class="uk-form-label">Изображение для каталога:</label>
                             <div class="uk-form-controls">
                                 <div class="uk-my-fle uk-cursor-pointer">
                                     <div v-if="list.thumb_image" class="uk-position-relative">
-                                        <img @click="imageGet('background')"
-                                             style="width: 90px; height: auto;" v-if="list.thumb_image"
-                                             :src="list.thumb_image.image" alt="">
+                                        <img @click="imageGet('background')" style="width: 90px; height: auto;" v-if="list.thumb_image" :src="list.thumb_image.image" alt="">
                                         <a uk-icon="close" @click="ClearThumb('background')" class="uk-button-danger uk-border-rounded uk-margin-remove uk-icon uk-position-top-right"></a>
                                     </div>
                                     <img @click="imageGet('background')"
@@ -158,16 +156,7 @@
             });
         },
         created() {
-            this.interval = setInterval(() => {
-                this.Lock();
-            }, 1000 * 90);
-
             let _that = this;
-
-            window.onbeforeunload = () => {
-                clearInterval(_that.interval);
-                _that.UnLock();
-            }
         },
         methods: {
             getName: function (name) {

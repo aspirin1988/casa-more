@@ -120,7 +120,7 @@ Route::delete('/admin/product/delete/{id}', 'AdminProductController@delete')->na
 
 Route::post('/admin/product/get/{method}', 'AdminProductController@getList')->name('admin_product_get_list');
 Route::get('/admin/product/{method?}/{page?}', 'AdminProductController@index')->name('admin_product');
-Route::get('/admin/user/update/{id}', 'AdminUserController@update')->name('admin_product_get_list');
+Route::post('/admin/user/update/{id}', 'AdminUserController@update')->name('admin_product_get_list');
 Route::get('/admin/user/get/{method}/{page}', 'AdminUserController@getList')->name('admin_product_get_list');
 Route::get('/admin/user/{method?}/{page?}', 'AdminUserController@index')->name('admin_product');
 
