@@ -175,6 +175,7 @@ Route::get('/present', 'ProductController@present')->name('massage_chairs');
 Route::get('/massagers', 'ProductController@massagers')->name('massagers');
 Route::get('/fitness_equipment', 'ProductController@fitnessQquipment')->name('fitness_equipment');
 Route::get('/household_products', 'ProductController@householdProducts')->name('household_products');
+Route::get('/news', 'PageController@news')->name('page_news');
 Route::get('/{product}/{id}/{color?}', 'ProductController@single')->where('color', '(white|cream|graphite|brown|orange|gray)')->name('product_single');
 Route::get('/{rubric}', 'ProductController@otherProducts')->where('rubric', '('.$type_of_product.')')->name('other_rubric');
 Route::get('/{page}', 'PageController@index')->name('page_index');

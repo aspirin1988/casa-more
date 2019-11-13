@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Image;
 use App\Page;
 use Illuminate\Http\Request;
 
@@ -44,13 +45,15 @@ class AdminPageController extends Controller
     public function getEdit($id)
     {
         $product = Page::where('id', $id)->first();
-
+        $image = Image::where('id', $product->thumb)->first();
+        $product->thumb_image = $image->image;
         return response()->json($product);
     }
 
     public function save($id, Request $request)
     {
         $data = $request->all();
+        unset($data['thumb_image']);
         $brand = Page::where('id', $id)->update($data);
         return response()->json($brand);
     }

@@ -16,4 +16,10 @@ class PageController extends Controller
             return false;
         }
     }
+
+    public function news()
+    {
+        $pages = Page::where('news', true)->get();
+        return view('page.list', ['pages' => $pages]);
+    }
 }
