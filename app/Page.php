@@ -22,6 +22,6 @@ class Page extends Model
 
     public function getUrl()
     {
-        return $this->slug;
+        return '/'.$this->slug;
     }
 }
