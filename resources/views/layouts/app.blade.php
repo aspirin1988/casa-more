@@ -32,7 +32,7 @@
                 <li>
                     <a href="#" class="dropdown-toogle">Каталог</a>
                     <ul>
-                        @foreach( App\Rubric::orderBy('order')->get() as $rubric )
+                        @foreach( App\Rubric::whereIn('slug',['household_products','massage_chairs','fitness_equipment','massagers'])->orderBy('order')->get() as $rubric )
                         <li><a href="{{$rubric->getUrl()}}">{{$rubric->name}}</a></li>
                         @endforeach
                     </ul>
