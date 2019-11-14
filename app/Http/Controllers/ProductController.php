@@ -386,6 +386,7 @@ class ProductController extends Controller
 
         $remote_controller = $request->input('remote_controller');
         $type_controller = $request->input('type_controller');
+        $sub_type_of_product = $request->input('sub_type_of_product');
         $count_program = $request->input('count_program');
         $massage_area = $request->input('massage_area');
         $zero_g = $request->input('zero_g');
@@ -397,7 +398,7 @@ class ProductController extends Controller
 
         $products = Product::where('type_of_product', $method)
             ->where('status', true)
-            ->where(function ($query) use ($color, $price_to, $price_from, $remote_controller, $type_controller, $count_program, $zero_g, $warming_up, $available, $weight, $massage_area, $timer) {
+            ->where(function ($query) use ($color, $price_to, $price_from, $remote_controller, $type_controller, $count_program, $zero_g, $warming_up, $available, $weight, $massage_area, $timer,$sub_type_of_product) {
 
                 if ($color) {
                     $query->whereIn('color', $color);
@@ -441,6 +442,10 @@ class ProductController extends Controller
                 }
                 if (isset($available)) {
                     $query->where('available', $available);
+                }
+
+                if (isset($sub_type_of_product)) {
+                    $query->whereIn('sub_type_of_product', $sub_type_of_product);
                 }
 
             })
