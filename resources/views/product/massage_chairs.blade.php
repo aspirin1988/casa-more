@@ -22,6 +22,7 @@
             color: [],
             weight: [],
             type_controller: [],
+            sub_type_of_product: [],
             count_program: [],
             massage_area: [],
             remote_controller: null,
@@ -85,6 +86,20 @@
                     filter.color.splice(filter.color.indexOf($(i.target).data('color')), 1);
                     if (!filter.color.length) {
                         $('[data-field="color"]').removeClass('active');
+                    }
+                    getData();
+                }
+            });
+
+            $('.CardFilterCheck input[data-sub_type_of_product]').change(function (i) {
+                if ($(i.target).prop("checked")) {
+                    filter.sub_type_of_product.push($(i.target).data('sub_type_of_product'));
+                    $('[data-field="sub_type_of_product"]').addClass('active');
+                    getData();
+                } else {
+                    filter.sub_type_of_product.splice(filter.color.indexOf($(i.target).data('sub_type_of_product')), 1);
+                    if (!filter.sub_type_of_product.length) {
+                        $('[data-field="sub_type_of_product"]').removeClass('active');
                     }
                     getData();
                 }
@@ -560,7 +575,7 @@
             @endif
             @if(in_array('sub_type_of_product',$filter))
                 <li class="CardFilterBtn" data-field="sub_type_of_product">
-                    <button>Управление</button>
+                    <button>Тип товара</button>
                     <ul>
                         <li>
                             <label class="CardFilterCheck">

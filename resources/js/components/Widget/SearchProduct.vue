@@ -12,7 +12,7 @@
                         <path fill="none" stroke="#000" stroke-width="1.1" d="M14,14 L18,18 L14,14 Z"></path>
                     </svg>
                 </a>
-                <input v-model="search" @keypress="getSearch($event)" placeholder="Кресло Cas" type="text"
+                <input v-model="search" @keypress="getSearch($event)" placeholder="Найти" type="text"
                        class="uk-border-rounded uk-input">
             </div>
             <ul v-if="list.length" class="uk-list uk-search-list">

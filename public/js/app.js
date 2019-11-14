@@ -58832,7 +58832,7 @@ var render = function() {
             }
           ],
           staticClass: "uk-border-rounded uk-input",
-          attrs: { placeholder: "Кресло Cas", type: "text" },
+          attrs: { placeholder: "Найти", type: "text" },
           domProps: { value: _vm.search },
           on: {
             keypress: function($event) {
