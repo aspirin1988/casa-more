@@ -24,7 +24,7 @@
 <div class="uk-container"></div>
 <div id="app">
     <header
-        class="Header {{(in_array(Route::currentRouteName(),['massage_chairs','massagers','fitness_equipment','household_products','other_rubric','page_news'])?'HeaderWhite':'')}}">
+        class="Header {{(in_array(Route::currentRouteName(),['massage_chairs','massagers','fitness_equipment','household_products','other_rubric'])?'HeaderWhite':'')}}">
         <a href="/" class="HeaderLogo">
             <img src="/img/CasaMore_Logo.png">
         </a>

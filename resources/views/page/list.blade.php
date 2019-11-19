@@ -349,29 +349,19 @@
 @stop
 
 @section('content')
-    <div class="CategoryTop">
-        <h1>Новости</h1>
+    <div class="CategoryTop" style="background: transparent">
+        <h1 style="color: #010101;">Новости</h1>
     </div>
     <div class="Card CardTpl">
         <div class="container" id="container">
             <div class="container sixteen columns">
-                <div class="CardWr">
+                <div class="CardWr news-grid">
                     @foreach($pages as $product)
-                        <div class="CardBox">
-                            <div class="CardDiscount">
-                            </div>
-                            <div class="CardBoxImg">
-                                <img id="green_monster" src="{{$product->getThumb()}}"
-                                     data-big="{{$product->getThumb()}}">
-                            </div>
-                            <div class="CardBoxDesc">
-                                <div class="CardBoxColor">
-                                </div>
-                                <h5>{{$product->title}}</h5>
-                                <div class="CardBoxPrice">
-                                </div>
-                            </div>
-                            <a data-id="{{$product->id}}" class="active" href="{{$product->getUrl()}}"></a>
+                        <div class="news-grid-item">
+                            <img src="{{$product->getThumb()}}" data-big="{{$product->getThumb()}}">
+                            <time>{{date('Y-m-d',strtotime($product->created_at))}}</time>
+                            <h5>{{$product->title}}</h5>
+                            <a class="news-grid-overlay" data-id="{{$product->id}}" href="{{$product->getUrl()}}"></a>
                         </div>
                     @endforeach
                 </div>
