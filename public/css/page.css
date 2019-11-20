@@ -70,3 +70,10 @@ h1 {
     display: block;
     width: 40px;
 }
+
+@media (max-width: 640px) {
+    .container{
+        padding: 20px;
+        box-sizing: border-box;
+    }
+}
