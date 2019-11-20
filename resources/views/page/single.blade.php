@@ -34,9 +34,9 @@
         <div class="container">
             <div>
                 <h1>{!! $page->title !!}</h1>
-                <div class="page-text">
-                    @if($page->getThumb())
-                        <img style="width: 100%;" src="{{$page->getThumb()}}" alt="">
+                <div class="">
+                    @if($img = $page->getThumb() && $img !='/img/empty.png' )
+                        <img style="width: 100%;" src="{{$img}}" alt="">
                     @endif
                     {!! $page->text!!}
                 </div>
