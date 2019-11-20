@@ -35,8 +35,8 @@
             <div>
                 <h1>{!! $page->title !!}</h1>
                 <div>
-                    @if($product->getThumb())
-                        <img src="{{$product->getThumb()}}" alt="">
+                    @if($page->getThumb())
+                        <img src="{{$page->getThumb()}}" alt="">
                     @endif
                     {!! $page->text!!}
                 </div>
