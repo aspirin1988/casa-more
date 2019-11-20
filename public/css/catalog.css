@@ -701,3 +701,12 @@
   font-weight: 500;
   line-height: 27px;
 }
+
+@media (max-width: 640px) {
+    .Card.CardTpl .CardWr.news-grid{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-gap: 40px 20px;
+
+    }
+}
