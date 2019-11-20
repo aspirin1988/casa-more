@@ -34,7 +34,7 @@
         <div class="container">
             <div>
                 <h1>{!! $page->title !!}</h1>
-                <div>
+                <div class="page-text">
                     @if($page->getThumb())
                         <img src="{{$page->getThumb()}}" alt="">
                     @endif
