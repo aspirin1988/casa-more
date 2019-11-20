@@ -36,7 +36,7 @@
                 <h1>{!! $page->title !!}</h1>
                 <div class="page-text">
                     @if($page->getThumb())
-                        <img src="{{$page->getThumb()}}" alt="">
+                        <img style="width: 100%;" src="{{$page->getThumb()}}" alt="">
                     @endif
                     {!! $page->text!!}
                 </div>
