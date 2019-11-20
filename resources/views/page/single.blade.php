@@ -35,8 +35,8 @@
             <div>
                 <h1>{!! $page->title !!}</h1>
                 <div class="">
-                    @php $img = null; @endphp
-                    @if($img = $page->getThumb() && $img !='/img/empty.png' )
+                    @php $img = $page->getThumb() ; @endphp
+                    @if($img && $img !='/img/empty.png' )
                         <img style="width: 100%;" src="{{$img}}" alt="">
                     @endif
                     {!! $page->text!!}
