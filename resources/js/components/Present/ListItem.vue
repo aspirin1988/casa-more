@@ -25,7 +25,7 @@
                 </ul>
             </div>
             <div class="uk-comment-footer uk-padding-small" :class="classObject">
-                <a class="uk-button uk-button-default uk-background-muted uk-button-secondary" :href="'/admin/product/edit/'+item.id">
+                <a class="uk-button uk-button-default uk-background-muted uk-button-secondary" :href="'/admin/present/edit/'+item.id">
                     <span class="uk-text-success" uk-icon="file-edit"></span>
                 </a>
                 <button @click="del(item)" class="uk-button uk-button-danger">
