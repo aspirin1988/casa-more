@@ -55929,7 +55929,7 @@ var render = function() {
               "a",
               {
                 staticClass: "uk-link-reset",
-                attrs: { href: "/admin/product/edit/" + _vm.item.id }
+                attrs: { href: "/admin/present/edit/" + _vm.item.id }
               },
               [_vm._v(_vm._s(_vm.item.name))]
             )
@@ -55988,7 +55988,7 @@ var render = function() {
               {
                 staticClass:
                   "uk-button uk-button-default uk-background-muted uk-button-secondary",
-                attrs: { href: "/admin/product/edit/" + _vm.item.id }
+                attrs: { href: "/admin/present/edit/" + _vm.item.id }
               },
               [
                 _c("span", {
