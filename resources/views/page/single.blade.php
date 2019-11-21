@@ -37,7 +37,9 @@
                 <div class="">
                     @php $img = $page->getThumb() ; @endphp
                     @if($img && $img !='/img/empty.png' )
-                        <img style="width: 100%;" src="{{$img}}" alt="">
+                        <div class="page-text">
+                            <img style="width: 100%;" src="{{$img}}" alt="">
+                        </div>
                     @endif
                     {!! $page->text!!}
                 </div>
