@@ -177,4 +177,11 @@ class Product extends Model
 
         return $color;
     }
+
+    public function present()
+    {
+        $present = Present::where('id', $this->present)->first();
+
+        return $present;
+    }
 }

@@ -253,18 +253,18 @@
                 </div>
                 <div class="ProdPostVarSubmit">
                     <button id="submit" class="SiteBtn" type="submit">В корзину</button>
-                    @if($object->present)
-                        <div class="ProdPostGift" title="{{$object->present}}">
+                    @if( $present = $object->present())
+                        <div class="ProdPostGift" title="{{$present->name}}">
                             <i class="item-gift">
-                                <img src="/img/Layer_2_copy.png" alt="{{$object->present}}">
+                                <img width="30" src="{{$present->image}}" alt="{{$present->name}}">
                             </i>
                             <span>подарок</span>
                         </div>
                     @endif
                 </div>
-                @if($object->present)
+                @if($present)
                     <br>
-                    <p>{{$object->present}}</p>
+                    <p>{{$present->description}}</p>
                     <br>
                 @endif
             </div>

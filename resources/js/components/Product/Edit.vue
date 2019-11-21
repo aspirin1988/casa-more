@@ -91,6 +91,16 @@
                             </div>
                         </div>
                         <div class="uk-margin">
+                            <label class="uk-form-label" for="type_of_product">Подарок:</label>
+                            <div class="uk-form-controls">
+                                <select class="uk-select uk-width-1-2@m" id="type_of_product"
+                                        v-model="list.present">
+                                    <option value="0">Не назначен</option>
+                                    <option v-for="item in present_list" :value="item.id">{{item.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="uk-margin">
                             <label class="uk-form-label" for="available">В наличии:</label>
                             <div class="uk-form-controls">
                                 <input v-model="list.available" class="uk-checkbox" id="available"
@@ -474,7 +484,7 @@
 
                 <div class="uk-modal-header">
                     <h2 class="uk-modal-title">Галерея</h2>
-                    <dir>
+                    <div>
                         <ul class="uk-subnav uk-subnav-pill" uk-margin>
                             <li v-for="item in dir_list" :class="{'uk-active':item==current_dir}">
                                 <a href="#" @click="setCurrentDir(item)">{{item}}</a>
@@ -517,7 +527,7 @@
                                 </div>
                             </li>
                         </ul>
-                    </dir>
+                    </div>
                     <div class="js-upload uk-placeholder uk-text-center uk-position-relative">
                         <input :style="{opacity:0, zIndex: 1}" class="uk-height-1-1 uk-position-top-left uk-width-1-1"
                                type="file" multiple="multiple" @change="onUpload">
@@ -578,14 +588,21 @@
                 create_image: false,
                 dir_name: '',
                 type_of_product_list: [],
+                present_list: [],
             }
         },
         mounted() {
             this.getBrands();
             this.getData();
             this.getTags();
+            this.getPresents();
         },
         methods: {
+            getPresents:function(){
+                this.$http.post('/admin/present/get').then(response => {
+                    this.present_list = response.data.list;
+                });
+            },
             getName: function (name) {
                 let arr = name.split('/');
                 return arr[arr.length - 1];

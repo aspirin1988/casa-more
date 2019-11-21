@@ -65,6 +65,11 @@ Vue.component('product_list_item-component', require('./components/Product/ListI
 Vue.component('product_add-component', require('./components/Product/Add.vue').default);
 Vue.component('product_edit-component', require('./components/Product/Edit.vue').default);
 
+Vue.component('present_list-component', require('./components/Present/List.vue').default);
+Vue.component('present_list_item-component', require('./components/Present/ListItem.vue').default);
+Vue.component('present_add-component', require('./components/Present/Add.vue').default);
+Vue.component('present_edit-component', require('./components/Present/Edit.vue').default);
+
 Vue.component('tag_list-component', require('./components/Tag/List.vue').default);
 Vue.component('tag_list_item-component', require('./components/Tag/ListItem.vue').default);
 Vue.component('tag_add-component', require('./components/Tag/Add.vue').default);

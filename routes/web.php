@@ -124,6 +124,16 @@ Route::post('/admin/user/update/{id}', 'AdminUserController@update')->name('admi
 Route::get('/admin/user/get/{method}/{page}', 'AdminUserController@getList')->name('admin_product_get_list');
 Route::get('/admin/user/{method?}/{page?}', 'AdminUserController@index')->name('admin_product');
 
+Route::get('/admin/present', 'AdminPresentController@index')->name('admin_present');
+Route::get('/admin/present/add', 'AdminPresentController@add')->name('admin_present_add');
+Route::put('/admin/present/add', 'AdminPresentController@create')->name('admin_present_create');
+Route::get('/admin/present/edit/{id}', 'AdminPresentController@edit')->name('admin_present_edit');
+Route::post('/admin/present/get', 'AdminPresentController@getList')->name('admin_present_get_edit');
+Route::get('/admin/present/get/edit/{id}', 'AdminPresentController@getEdit')->name('admin_present_get_edit');
+Route::post('/admin/present/save/{id}', 'AdminPresentController@save')->name('admin_present_save');
+Route::post('/admin/present/image/upload/{id}', 'AdminPresentController@uploadImage')->name('admin_present_save');
+
+
 Route::delete('admin/media/delete/{dir}', 'AdminImageController@dirDelete')->name('admin_media_dir_delete');
 Route::get('/admin/media/{page?}', 'AdminImageController@index')->name('admin_image_index');
 Route::get('/admin/media_list/{page}', 'AdminImageController@mediaList')->name('admin_image_list');
