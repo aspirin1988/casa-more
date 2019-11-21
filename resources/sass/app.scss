@@ -310,6 +310,7 @@ main {
   margin-left: 30px;
   background: url(/img/bg-n-n01.png) left 27px no-repeat, url(/img/bg-n-n01.png) right 27px no-repeat;
   input[type="text"], input[type="password"] {
+    border:none;
     color: #0b978c;
     font-style: italic;
     font-weight: bold;

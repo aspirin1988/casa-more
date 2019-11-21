@@ -24,15 +24,6 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="uk-margin">
-                            <label class="uk-form-label" for="brand">Брэнд*:</label>
-                            <div class="uk-form-controls">
-                                <select class="uk-select uk-width-1-2@m" id="brand" v-model="list.brand">
-                                    <option value="0">Не назначен</option>
-                                    <option v-for="item in brand_list" :value="item.id">{{item.name}}</option>
-                                </select>
-                            </div>
-                        </div>
                         <div class="uk-margin"
                              v-if="list.type_of_product=='fitness_equipment' || list.type_of_product=='household_products'">
                             <label class="uk-form-label" for="sub_type_of_product">Доп тип товара*:</label>
@@ -62,68 +53,24 @@
                         <div class="uk-margin">
                             <label class="uk-form-label" for="name">Название:*</label>
                             <div class="uk-form-controls">
-                                <input v-model="list.name" class="uk-input" id="name" type="text" placeholder="Название"
+                                <input v-model="list.name" class="uk-input" id="name" type="text"
+                                       placeholder="Название"
                                        autocomplete="off">
-                            </div>
-                        </div>
-                        <div class="uk-margin">
-                            <label class="uk-form-label" for="name">Область массажа:*</label>
-                            <div class="uk-form-controls">
-                                <input v-model="list.massage_area" class="uk-input" id="massage_area" type="text"
-                                       placeholder="Область массажа"
-                                       autocomplete="off">
-                            </div>
-                        </div>
-                        <div class="uk-margin">
-                            <label class="uk-form-label" for="color">Цвет*:</label>
-                            <div class="uk-form-controls">
-                                <select class="uk-select uk-width-1-2@m" id="color" v-model="list.color">
-                                    <option value="0">Не назначен</option>
-                                    <option value="white">Белый</option>
-                                    <option value="cream">Кремовый</option>
-                                    <option value="graphite">Графит</option>
-                                    <option value="brown">Коричневый</option>
-                                    <option value="orange">Оранжевый</option>
-                                    <option value="gray">Серый</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="uk-margin">
-                            <label class="uk-form-label" for="type_controller">Тип управления*:</label>
-                            <div class="uk-form-controls">
-                                <select class="uk-select uk-width-1-2@m" id="type_controller"
-                                        v-model="list.type_controller">
-                                    <option value="0">Не назначен</option>
-                                    <option value="automatic">Автоматическое</option>
-                                    <option value="manual">Ручное</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="uk-margin">
-                            <label class="uk-form-label" for="weight">Вес:*</label>
-                            <div class="uk-form-controls">
-                                <input v-model="list.weight" class="uk-input" id="weight" type="number"
-                                       placeholder="Вес" autocomplete="off">
-                            </div>
-                        </div>
-                        <div class="uk-margin">
-                            <label class="uk-form-label" for="count_program">Количество программ:*</label>
-                            <div class="uk-form-controls">
-                                <input v-model="list.count_program" class="uk-input" id="count_program" type="number"
-                                       placeholder="Объем" autocomplete="off">
                             </div>
                         </div>
                         <div class="uk-margin">
                             <label class="uk-form-label" for="price">Цена:*</label>
                             <div class="uk-form-controls">
-                                <input v-model="list.price" class="uk-input" id="price" type="number" placeholder="Цена"
+                                <input v-model="list.price" class="uk-input" id="price" type="number"
+                                       placeholder="Цена"
                                        autocomplete="off">
                             </div>
                         </div>
                         <div class="uk-margin">
                             <label class="uk-form-label" for="price">Цена со скидкой:</label>
                             <div class="uk-form-controls">
-                                <input :value="list.price-((list.price/100)*list.discount)" class="uk-input" id="price"
+                                <input :value="list.price-((list.price/100)*list.discount)" class="uk-input"
+                                       id="price"
                                        type="number" placeholder="Цена"
                                        autocomplete="off" disabled="disabled">
                             </div>
@@ -139,45 +86,8 @@
                         <div class="uk-margin">
                             <label class="uk-form-label" for="present">Описание подарка:</label>
                             <div class="uk-form-controls">
-                                <textarea rows="10" class="uk-textarea" v-model="list.present" id="present"></textarea>
-                            </div>
-                        </div>
-                        <div class="uk-margin">
-                            <label class="uk-form-label" for="description">Описание:</label>
-                            <div class="uk-form-controls">
-                                <html-editor-component :id="'d1'" v-model="list.description"></html-editor-component>
-                            </div>
-                        </div>
-                        <div class="uk-margin">
-                            <label class="uk-form-label" for="remote_controller">Пульт управления:</label>
-                            <div class="uk-form-controls">
-                                <input v-model="list.remote_controller" class="uk-checkbox" id="remote_controller"
-                                       type="checkbox" placeholder="Пульт управления"
-                                       autocomplete="off">
-                            </div>
-                        </div>
-                        <div class="uk-margin">
-                            <label class="uk-form-label" for="zero_g">Zero-G:</label>
-                            <div class="uk-form-controls">
-                                <input v-model="list.zero_g" class="uk-checkbox" id="zero_g"
-                                       type="checkbox" placeholder="Zero-G"
-                                       autocomplete="off">
-                            </div>
-                        </div>
-                        <div class="uk-margin">
-                            <label class="uk-form-label" for="timer">Таймер:</label>
-                            <div class="uk-form-controls">
-                                <input v-model="list.timer" class="uk-checkbox" id="timer"
-                                       type="checkbox" placeholder="Таймер"
-                                       autocomplete="off">
-                            </div>
-                        </div>
-                        <div class="uk-margin">
-                            <label class="uk-form-label" for="timer">Прогрев:</label>
-                            <div class="uk-form-controls">
-                                <input v-model="list.warming_up" class="uk-checkbox" id="warming_up"
-                                       type="checkbox" placeholder="Прогрев"
-                                       autocomplete="off">
+                                    <textarea rows="10" class="uk-textarea" v-model="list.present"
+                                              id="present"></textarea>
                             </div>
                         </div>
                         <div class="uk-margin">
@@ -189,6 +99,195 @@
                             </div>
                         </div>
 
+                        <div v-if="list.type_of_product == 'massage_chairs'">
+                            <div class="uk-margin">
+                                <label class="uk-form-label" for="brand">Брэнд*:</label>
+                                <div class="uk-form-controls">
+                                    <select class="uk-select uk-width-1-2@m" id="brand" v-model="list.brand">
+                                        <option value="0">Не назначен</option>
+                                        <option v-for="item in brand_list" :value="item.id">{{item.name}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="uk-margin">
+                                <label class="uk-form-label" for="name">Область массажа:*</label>
+                                <div class="uk-form-controls">
+                                    <input v-model="list.massage_area" class="uk-input" id="massage_area" type="text"
+                                           placeholder="Область массажа"
+                                           autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="uk-margin">
+                                <label class="uk-form-label" for="color">Цвет*:</label>
+                                <div class="uk-form-controls">
+                                    <select class="uk-select uk-width-1-2@m" id="color" v-model="list.color">
+                                        <option value="0">Не назначен</option>
+                                        <option value="white">Белый</option>
+                                        <option value="cream">Кремовый</option>
+                                        <option value="graphite">Графит</option>
+                                        <option value="brown">Коричневый</option>
+                                        <option value="orange">Оранжевый</option>
+                                        <option value="gray">Серый</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="uk-margin">
+                                <label class="uk-form-label" for="type_controller">Тип управления*:</label>
+                                <div class="uk-form-controls">
+                                    <select class="uk-select uk-width-1-2@m" id="type_controller"
+                                            v-model="list.type_controller">
+                                        <option value="0">Не назначен</option>
+                                        <option value="automatic">Автоматическое</option>
+                                        <option value="manual">Ручное</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="uk-margin">
+                                <label class="uk-form-label" for="weight">Вес:*</label>
+                                <div class="uk-form-controls">
+                                    <input v-model="list.weight" class="uk-input" id="weight" type="number"
+                                           placeholder="Вес" autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="uk-margin">
+                                <label class="uk-form-label" for="count_program">Количество программ:*</label>
+                                <div class="uk-form-controls">
+                                    <input v-model="list.count_program" class="uk-input" id="count_program"
+                                           type="number"
+                                           placeholder="Объем" autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="uk-margin">
+                                <label class="uk-form-label" for="remote_controller">Пульт управления:</label>
+                                <div class="uk-form-controls">
+                                    <input v-model="list.remote_controller" class="uk-checkbox" id="remote_controller"
+                                           type="checkbox" placeholder="Пульт управления"
+                                           autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="uk-margin">
+                                <label class="uk-form-label" for="zero_g">Zero-G:</label>
+                                <div class="uk-form-controls">
+                                    <input v-model="list.zero_g" class="uk-checkbox" id="zero_g"
+                                           type="checkbox" placeholder="Zero-G"
+                                           autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="uk-margin">
+                                <label class="uk-form-label" for="timer">Таймер:</label>
+                                <div class="uk-form-controls">
+                                    <input v-model="list.timer" class="uk-checkbox" id="timer"
+                                           type="checkbox" placeholder="Таймер"
+                                           autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="uk-margin">
+                                <label class="uk-form-label" for="timer">Прогрев:</label>
+                                <div class="uk-form-controls">
+                                    <input v-model="list.warming_up" class="uk-checkbox" id="warming_up"
+                                           type="checkbox" placeholder="Прогрев"
+                                           autocomplete="off">
+                                </div>
+                            </div>
+                        </div>
+                        <div v-if="list.type_of_product == 'massagers'">
+                            <div class="uk-margin">
+                                <label class="uk-form-label" for="brand">Брэнд*:</label>
+                                <div class="uk-form-controls">
+                                    <select class="uk-select uk-width-1-2@m" id="brand" v-model="list.brand">
+                                        <option value="0">Не назначен</option>
+                                        <option v-for="item in brand_list" :value="item.id">{{item.name}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="uk-margin">
+                                <label class="uk-form-label" for="name">Область массажа:*</label>
+                                <div class="uk-form-controls">
+                                    <input v-model="list.massage_area" class="uk-input" id="massage_area" type="text"
+                                           placeholder="Область массажа"
+                                           autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="uk-margin">
+                                <label class="uk-form-label" for="color">Цвет*:</label>
+                                <div class="uk-form-controls">
+                                    <select class="uk-select uk-width-1-2@m" id="color" v-model="list.color">
+                                        <option value="0">Не назначен</option>
+                                        <option value="white">Белый</option>
+                                        <option value="cream">Кремовый</option>
+                                        <option value="graphite">Графит</option>
+                                        <option value="brown">Коричневый</option>
+                                        <option value="orange">Оранжевый</option>
+                                        <option value="gray">Серый</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="uk-margin">
+                                <label class="uk-form-label" for="type_controller">Тип управления*:</label>
+                                <div class="uk-form-controls">
+                                    <select class="uk-select uk-width-1-2@m" id="type_controller"
+                                            v-model="list.type_controller">
+                                        <option value="0">Не назначен</option>
+                                        <option value="automatic">Автоматическое</option>
+                                        <option value="manual">Ручное</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="uk-margin">
+                                <label class="uk-form-label" for="count_program">Количество программ:*</label>
+                                <div class="uk-form-controls">
+                                    <input v-model="list.count_program" class="uk-input" id="count_program"
+                                           type="number"
+                                           placeholder="Объем" autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="uk-margin">
+                                <label class="uk-form-label" for="remote_controller">Пульт управления:</label>
+                                <div class="uk-form-controls">
+                                    <input v-model="list.remote_controller" class="uk-checkbox" id="remote_controller"
+                                           type="checkbox" placeholder="Пульт управления"
+                                           autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="uk-margin">
+                                <label class="uk-form-label" for="timer">Прогрев:</label>
+                                <div class="uk-form-controls">
+                                    <input v-model="list.warming_up" class="uk-checkbox" id="warming_up"
+                                           type="checkbox" placeholder="Прогрев"
+                                           autocomplete="off">
+                                </div>
+                            </div>
+                        </div>
+                        <div v-if="list.type_of_product == 'fitness_equipment'">
+                            <div class="uk-margin">
+                                <label class="uk-form-label" for="brand">Брэнд*:</label>
+                                <div class="uk-form-controls">
+                                    <select class="uk-select uk-width-1-2@m" id="brand" v-model="list.brand">
+                                        <option value="0">Не назначен</option>
+                                        <option v-for="item in brand_list" :value="item.id">{{item.name}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="uk-margin">
+                                <label class="uk-form-label" for="type_controller">Тип управления*:</label>
+                                <div class="uk-form-controls">
+                                    <select class="uk-select uk-width-1-2@m" id="type_controller"
+                                            v-model="list.type_controller">
+                                        <option value="0">Не назначен</option>
+                                        <option value="automatic">Автоматическое</option>
+                                        <option value="manual">Ручное</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="uk-margin">
+                                <label class="uk-form-label" for="remote_controller">Пульт управления:</label>
+                                <div class="uk-form-controls">
+                                    <input v-model="list.remote_controller" class="uk-checkbox" id="remote_controller"
+                                           type="checkbox" placeholder="Пульт управления"
+                                           autocomplete="off">
+                                </div>
+                            </div>
+                        </div>
                         <div class="uk-margin">
                             <label for="tag" class="uk-form-label">Тэги:</label>
                             <div class="uk-form-controls">
@@ -231,6 +330,13 @@
                                         <span class="uk-link">загрузите вручную</span>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="description">Описание:</label>
+                            <div class="uk-form-controls">
+                                <html-editor-component :id="'d1'"
+                                                       v-model="list.description"></html-editor-component>
                             </div>
                         </div>
 

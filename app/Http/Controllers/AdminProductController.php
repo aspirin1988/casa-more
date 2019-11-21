@@ -67,7 +67,7 @@ class AdminProductController extends Controller
         $child_list = Product::where('parent_id', $product->id)->get();
         $image_list = $product->getImages();
         $image_list['background'] = Image::where('id', $product->background)->first();
-        $type_of_product_list = Rubric::orderBy('order')->get();
+        $type_of_product_list = Rubric::where('show_index',1)->orderBy('order')->get();
         return response()->json(['list' => $product, 'image_list' => $image_list, 'child_list' => $child_list, 'type_of_product_list' => $type_of_product_list]);
     }
 

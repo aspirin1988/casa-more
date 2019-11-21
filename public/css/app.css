@@ -347,6 +347,7 @@ main {
 
 .uk-search-cover input[type=text],
 .uk-search-cover input[type=password] {
+  border: none;
   color: #0b978c;
   font-style: italic;
   font-weight: bold;

@@ -1423,6 +1423,7 @@ footer {
 }
 
 .uk-search-cover input[type=text], .uk-search-cover input[type=password] {
+    border:none;
     color: #010101;
     font-family: Montserrat;
     font-size: 20px;

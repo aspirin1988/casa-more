@@ -5,7 +5,7 @@
         </div>
         <div class="uk-search-cover">
             <div class="uk-inline uk-width-1-1@l">
-                <a href="#" class="uk-form-icon uk-form-icon-flip uk-icon">
+                <a href="#" class="uk-form-icon uk-form-icon-flip uk-icon" @click="toSearch()">
                     <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
                          data-svg="search">
                         <circle fill="none" stroke="#000" stroke-width="1.1" cx="9" cy="9" r="7"></circle>
@@ -68,6 +68,10 @@
                 this.$http.post('/help/find', {'search': this.t}).then(response => {
                     this.search_list = response.data;
                 });
+            },
+            toSearch:function(){
+                location.href = '/search/?t=' + this.search;
+                return false;
             },
             getSearch: function (e) {
 
