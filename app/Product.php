@@ -136,7 +136,11 @@ class Product extends Model
 
     public function getType()
     {
-        return $this->type_[$this->type_of_product];
+        if (isset($this->type_[$this->type_of_product])) {
+            return $this->type_[$this->type_of_product];
+        } else {
+            return $this->type_[0];
+        }
     }
 
     public function getBackground()
