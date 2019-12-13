@@ -431,6 +431,15 @@
     padding-left: 8%;
   }
 }
+
+@media only screen and (min-width: 980px) and (max-width: 1440px) {
+    .ProdPostCard {
+        display: flex;
+        overflow: hidden;
+        height: calc(100vh);
+    }
+}
+
 @media only screen and (min-width: 710px) and (max-width: 979px) {
   /* line 437, ../sass/product-post/product-post-card.scss */
   .ProdPostCardL {
