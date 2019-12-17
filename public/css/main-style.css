@@ -1472,3 +1472,25 @@ footer {
 .uk-notification.uk-notification-success{
     background: #395669;
 }
+
+
+.pagination{
+    display: flex;
+    justify-content: center;
+}
+
+.pagination .page-item{
+    display: inline-block;
+    margin:  0 15px;
+    padding: 10px;
+    background: #f3f3f3;
+}
+
+.pagination .page-item.active{
+
+    background: #0D4E7B;
+}
+
+.pagination .page-item.active span{
+    color: #fff;
+}
