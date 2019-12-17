@@ -754,6 +754,7 @@
                     @endforeach
                 </div>
             </div>
+            {!! $products->render() !!}
         </div>
     </div>
 

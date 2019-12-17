@@ -136,6 +136,7 @@ class ProductController extends Controller
             'rubric' => $rubric,
         ]);
     }
+
     public function new()
     {
         $title = "Новинки";
