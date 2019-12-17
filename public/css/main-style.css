@@ -1482,7 +1482,7 @@ footer {
 .pagination .page-item{
     display: inline-block;
     margin:  0 15px;
-    padding: 10px;
+    padding: 3px 8px;
     background: #f3f3f3;
 }
 
