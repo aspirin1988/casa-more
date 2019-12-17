@@ -85,7 +85,7 @@ class ProductController extends Controller
             }
         }
 
-        $products = Product::where('type_of_product', $method)->where('status', true)->where('parent_id', false)->paginate(15);
+        $products = Product::where('type_of_product', $method)->where('status', true)->where('parent_id', false)->paginate(20);
 
         return view('product.massage_chairs', [
             'title' => $title,
@@ -279,7 +279,7 @@ class ProductController extends Controller
         }
 
 
-        $products = Product::where('type_of_product', $method)->where('status', true)->where('parent_id', false)->paginate(15);
+        $products = Product::where('type_of_product', $method)->where('status', true)->where('parent_id', false)->paginate(20);
 
 
         return view('product.massage_chairs', [
@@ -324,7 +324,7 @@ class ProductController extends Controller
             $liked[] = $order->product_id;
         }
 
-        $products = Product::where('type_of_product', $method)->where('status', true)->where('parent_id', false)->paginate(15);
+        $products = Product::where('type_of_product', $method)->where('status', true)->where('parent_id', false)->paginate(20);
 
         return view('product.massage_chairs', [
             'title' => $title,
@@ -362,7 +362,7 @@ class ProductController extends Controller
             $liked[] = $order->product_id;
         }
 
-        $products = Product::where('type_of_product', $method)->where('status', true)->where('parent_id', false)->paginate(15);
+        $products = Product::where('type_of_product', $method)->where('status', true)->where('parent_id', false)->paginate(20);
 
         return view('product.massage_chairs', [
             'title' => $title,
@@ -451,7 +451,7 @@ class ProductController extends Controller
 
             })
             ->orderBy($sort_field, $sort_method)
-            ->paginate(15);
+            ->paginate(20);
 
         $liked = [];
         $select_products = SelectedProduct::where('user_id', Auth::id())->orderBy('created_at', 'asc')->get();
@@ -551,7 +551,7 @@ class ProductController extends Controller
                 $liked[] = $order->product_id;
             }
 
-            $products = Product::where('type_of_product', $method)->where('status', true)->where('parent_id', false)->paginate(15);
+            $products = Product::where('type_of_product', $method)->where('status', true)->where('parent_id', false)->paginate(20);
 
             return view('product.massage_chairs', [
                 'title' => $title,
