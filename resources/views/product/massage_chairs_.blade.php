@@ -21,10 +21,12 @@
                 <h5>{{$product->name}}</h5>
                 <div class="CardBoxPrice">
                     <span>{{$product->price}} <b>тг</b></span>
-                    <button data-id="{{$product->id}}" class="{{( in_array($product->id,$liked) ?'CardBoxPriceLiked':'CardBoxPriceLike')}}"></button>
+                    <button data-id="{{$product->id}}"
+                            class="{{( in_array($product->id,$liked) ?'CardBoxPriceLiked':'CardBoxPriceLike')}}"></button>
                 </div>
             </div>
             <a href="{{$product->getUrl()}}"></a>
         </div>
     @endforeach
+    {!! $products->render() !!}
 </div>
