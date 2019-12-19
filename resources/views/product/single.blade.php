@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    {{__('site.'.$object->type_of_product)}} {{$object->name}} wdtn({{__('color.'.$object->color)}})
+    {{$rubric->name}} {{$object->name}}
 @endsection
 
 @section('styles')
