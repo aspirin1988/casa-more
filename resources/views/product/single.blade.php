@@ -209,7 +209,7 @@
             <ul class="ProdCrumbs">
                 <li><a href="/">Главная</a></li>
                 <li>&nbsp;/&nbsp;</li>
-                <li><a href="/{{$brand_k}}/"> {{__('site.'.$brand_k)}}</a></li>
+                <li><a href="/{{$rubric->slug}}/"> {{$rubric->name}}</a></li>
             </ul>
             <h1>{{$object->name}}</h1>
             <div clas="ProdPostVarWr">

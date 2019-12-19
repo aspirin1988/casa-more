@@ -13,6 +13,8 @@ class ProductController extends Controller
 {
     public function single($brand_k, $product_k, $color = null, Request $request)
     {
+        $rubric = Rubric::where('slug', $brand_k)->first();
+
         $product = Product::where('keyword', $product_k);
         if ($color) {
             $product->where('color', $color);
@@ -27,7 +29,7 @@ class ProductController extends Controller
                 $liked[] = $order->product_id;
             }
 
-            return view('product.single', ['object' => $product, 'brand_k' => $brand_k, 'liked' => $liked]);
+            return view('product.single', ['object' => $product, 'brand_k' => $brand_k, 'liked' => $liked,'rubric'=>$rubric]);
         } else {
             return response(view('page.404'), 404);
         }
