@@ -235,7 +235,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/serg/PhpstormProjects/casamaroe/resources/js/single.js */"./resources/js/single.js");
+module.exports = __webpack_require__(/*! /var/www/casa-more/resources/js/single.js */"./resources/js/single.js");
 
 
 /***/ })

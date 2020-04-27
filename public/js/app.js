@@ -2784,6 +2784,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['dir'],
   data: function data() {
@@ -2825,6 +2834,34 @@ __webpack_require__.r(__webpack_exports__);
         UIkit.modal(_this2.delete_dialog).hide();
 
         _this2.getList();
+      });
+    },
+    onUpload: function onUpload(e) {
+      var _this3 = this;
+
+      var files = e.target.files;
+      var formData = new FormData();
+
+      for (var i = 0; i < files.length; i++) {
+        formData.append('image', files[i]);
+      }
+
+      axios.post('/admin/upload/image', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      }).then(function (response) {
+        _this3.getList();
+
+        UIkit.notification({
+          message: 'Изображения успешно загружены!',
+          status: 'success'
+        });
+      })["catch"](function () {
+        UIkit.notification({
+          message: 'При загрузки изображений произошла ошибка!',
+          status: 'danger'
+        });
       });
     }
   }
@@ -14509,7 +14546,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.media-grid{\n    display: grid;\n    grid-template-columns: repeat(2, 1fr);\n    list-style: none;\n    grid-gap: 20px;\n}\n@media (max-width: 640px) {\n.media-grid{\n        grid-template-columns: 1fr;\n}\n}\n", ""]);
+exports.push([module.i, "\n.media-grid {\n    display: grid;\n    grid-template-columns: repeat(2, 1fr);\n    list-style: none;\n    grid-gap: 20px;\n}\n@media (max-width: 640px) {\n.media-grid {\n        grid-template-columns: 1fr;\n}\n}\n", ""]);
 
 // exports
 
@@ -48698,7 +48735,31 @@ var render = function() {
   return _c("div", [
     _c("header", { staticClass: "uk-content-header uk-background-default" }, [
       _c("div", { staticClass: "title" }, [
-        _c("h2", [_vm._v("Изображения (" + _vm._s(_vm.dir) + ")")])
+        _c("h2", [_vm._v("Изображения (" + _vm._s(_vm.dir) + ")")]),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass:
+              "js-upload uk-placeholder uk-text-center uk-position-relative"
+          },
+          [
+            _c("input", {
+              staticClass: "uk-height-1-1 uk-position-top-left uk-width-1-1",
+              style: { opacity: 0, zIndex: 1 },
+              attrs: { type: "file", multiple: "multiple" },
+              on: { change: _vm.onUpload }
+            }),
+            _vm._v(" "),
+            _c("span", { attrs: { "uk-icon": "icon: cloud-upload" } }),
+            _vm._v(" "),
+            _c("span", { staticClass: "uk-text-middle" }, [
+              _vm._v("Перетащите файлы сюда или")
+            ]),
+            _vm._v(" "),
+            _vm._m(0)
+          ]
+        )
       ])
     ]),
     _vm._v(" "),
@@ -48790,7 +48851,16 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { attrs: { "uk-form-custom": "" } }, [
+      _c("span", { staticClass: "uk-link" }, [_vm._v("загрузите вручную")])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -78987,10 +79057,10 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/serg/PhpstormProjects/casamaroe/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /home/serg/PhpstormProjects/casamaroe/resources/sass/app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! /home/serg/PhpstormProjects/casamaroe/resources/sass/admin.scss */"./resources/sass/admin.scss");
-module.exports = __webpack_require__(/*! /home/serg/PhpstormProjects/casamaroe/resources/sass/fonts.scss */"./resources/sass/fonts.scss");
+__webpack_require__(/*! /var/www/casa-more/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /var/www/casa-more/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /var/www/casa-more/resources/sass/admin.scss */"./resources/sass/admin.scss");
+module.exports = __webpack_require__(/*! /var/www/casa-more/resources/sass/fonts.scss */"./resources/sass/fonts.scss");
 
 
 /***/ })

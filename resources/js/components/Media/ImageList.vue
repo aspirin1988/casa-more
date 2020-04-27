@@ -3,6 +3,15 @@
         <header class="uk-content-header uk-background-default">
             <div class="title">
                 <h2>Изображения ({{dir}})</h2>
+                <div class="js-upload uk-placeholder uk-text-center uk-position-relative">
+                    <input :style="{opacity:0, zIndex: 1}" class="uk-height-1-1 uk-position-top-left uk-width-1-1"
+                           type="file" multiple="multiple" @change="onUpload">
+                    <span uk-icon="icon: cloud-upload"></span>
+                    <span class="uk-text-middle">Перетащите файлы сюда или</span>
+                    <div uk-form-custom>
+                        <span class="uk-link">загрузите вручную</span>
+                    </div>
+                </div>
             </div>
         </header>
         <div class="uk-margin-top">
@@ -75,19 +84,42 @@
                     UIkit.modal(this.delete_dialog).hide();
                     this.getList();
                 });
-            }
+            },
+            onUpload: function (e) {
+                let files = e.target.files;
+                let formData = new FormData();
+
+                for (let i = 0; i < files.length; i++) {
+                    formData.append('image', files[i]);
+                }
+                axios.post('/admin/upload/image',
+                    formData,
+                    {
+                        headers: {
+                            'Content-Type': 'multipart/form-data'
+                        }
+                    }
+                ).then(response => {
+                    this.getList();
+                    UIkit.notification({message: 'Изображения успешно загружены!', status: 'success'});
+                }).catch(function () {
+                    UIkit.notification({message: 'При загрузки изображений произошла ошибка!', status: 'danger'});
+                });
+
+            },
         },
     }
 </script>
 <style>
-    .media-grid{
+    .media-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         list-style: none;
         grid-gap: 20px;
     }
+
     @media (max-width: 640px) {
-        .media-grid{
+        .media-grid {
             grid-template-columns: 1fr;
         }
     }
