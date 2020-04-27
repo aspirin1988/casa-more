@@ -5884,7 +5884,7 @@ __webpack_require__.r(__webpack_exports__);
       this.$http["delete"]('/admin/product/delete/' + this.delete_item.id).then(function (response) {
         UIkit.modal(_this.delete_dialog).hide();
         setTimeout(function () {
-          location.href = '/admin/product/';
+          location.href = '/admin/product/edit/' + list.parent_id;
         }, 3000);
       });
     },

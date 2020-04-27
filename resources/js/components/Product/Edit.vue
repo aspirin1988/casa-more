@@ -15,7 +15,7 @@
                         </div>
                         <div v-if="list.parent_id" class="uk-margin">
                             <span @click="Delete()" class="uk-button uk-button-danger"
-                               title="Удалить"><i uk-icon="trash"></i></span>
+                                  title="Удалить"><i uk-icon="trash"></i></span>
                         </div>
                         <div class="uk-margin">
                             <label class="uk-form-label" for="type_of_product">Тип товара*:</label>
@@ -615,9 +615,9 @@
             deletePage: function (item) {
                 this.$http.delete('/admin/product/delete/' + this.delete_item.id).then(response => {
                     UIkit.modal(this.delete_dialog).hide();
-                    setTimeout(()=>{
-                        location.href='/admin/product/';
-                    },3000);
+                    setTimeout(() => {
+                        location.href = '/admin/product/edit/' + list.parent_id;
+                    }, 3000);
                 });
             },
             Delete: function () {
