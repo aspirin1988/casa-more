@@ -14,8 +14,8 @@
                                title="Вернутся к родительскому товару"><i uk-icon="reply"></i></a>
                         </div>
                         <div v-if="list.parent_id" class="uk-margin">
-                            <a :href="'/admin/product/delete/'+list.id" class="uk-button uk-button-danger"
-                               title="Удалить"><i uk-icon="trash"></i></a>
+                            <span @click="Delete()" class="uk-button uk-button-danger"
+                               title="Удалить"><i uk-icon="trash"></i></span>
                         </div>
                         <div class="uk-margin">
                             <label class="uk-form-label" for="type_of_product">Тип товара*:</label>

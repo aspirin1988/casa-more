@@ -52965,12 +52965,14 @@ var render = function() {
                 _vm.list.parent_id
                   ? _c("div", { staticClass: "uk-margin" }, [
                       _c(
-                        "a",
+                        "span",
                         {
                           staticClass: "uk-button uk-button-danger",
-                          attrs: {
-                            href: "/admin/product/delete/" + _vm.list.id,
-                            title: "Удалить"
+                          attrs: { title: "Удалить" },
+                          on: {
+                            click: function($event) {
+                              return _vm.Delete()
+                            }
                           }
                         },
                         [_c("i", { attrs: { "uk-icon": "trash" } })]
