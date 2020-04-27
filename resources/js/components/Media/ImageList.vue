@@ -89,6 +89,8 @@
                 let files = e.target.files;
                 let formData = new FormData();
 
+                formData.append('dir', this.dir);
+
                 for (let i = 0; i < files.length; i++) {
                     formData.append('image', files[i]);
                 }

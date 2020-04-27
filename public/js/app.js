@@ -2841,6 +2841,7 @@ __webpack_require__.r(__webpack_exports__);
 
       var files = e.target.files;
       var formData = new FormData();
+      formData.append('dir', this.dir);
 
       for (var i = 0; i < files.length; i++) {
         formData.append('image', files[i]);

@@ -147,7 +147,7 @@ class AdminImageController extends Controller
 
     public function getMediaList($dir)
     {
-        $images = Image::where('image', 'like', '%/' . $dir . '/%')->orderBy('created_at','desc')->get();
+        $images = Image::where('image', 'like', '%/' . $dir . '/%')->orderBy('created_at', 'desc')->get();
         return response()->json(['list' => $images]);
     }
 
@@ -159,7 +159,7 @@ class AdminImageController extends Controller
 
     public function uploadImage(Request $request)
     {
-        $dir = 'image';
+        $dir = $request->input('dir', 'image');
         $file = $request->file('image');
 
         $result = [];
