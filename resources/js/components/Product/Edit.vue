@@ -558,7 +558,16 @@
                     <button class="uk-button uk-button-default uk-modal-close" type="button">Закрыть</button>
                     <button class="uk-button uk-button-primary" @click="setImage()" type="button">Применить</button>
                 </div>
-
+                <div id="delete-save" ref="delete-save" uk-modal>
+                    <div class="uk-modal-dialog uk-modal-body">
+                        <h2 class="uk-modal-title uk-text-warning">Предупреждение!</h2>
+                        <p> Вы действительно хотите удалить материал?</p>
+                        <p class="uk-text-right">
+                            <button class="uk-button uk-button-default uk-modal-close" type="button">Нет</button>
+                            <button class="uk-button uk-button-primary" @click="deletePage" type="button">ДА!</button>
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -596,13 +605,26 @@
             }
         },
         mounted() {
+            this.delete_dialog = this.$refs['delete-save'];
             this.getBrands();
             this.getData();
             this.getTags();
             this.getPresents();
         },
         methods: {
-            getPresents:function(){
+            deletePage: function (item) {
+                this.$http.delete('/admin/product/delete/' + this.delete_item.id).then(response => {
+                    UIkit.modal(this.delete_dialog).hide();
+                    setTimeout(()=>{
+                        location.href='/admin/product/';
+                    },3000);
+                });
+            },
+            Delete: function () {
+                this.delete_item = this.list;
+                UIkit.modal(this.delete_dialog).show();
+            },
+            getPresents: function () {
                 this.$http.post('/admin/present/get').then(response => {
                     this.present_list = response.data.list;
                 });

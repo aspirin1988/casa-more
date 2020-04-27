@@ -5832,6 +5832,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['id'],
   data: function data() {
@@ -5862,17 +5871,32 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mounted: function mounted() {
+    this.delete_dialog = this.$refs['delete-save'];
     this.getBrands();
     this.getData();
     this.getTags();
     this.getPresents();
   },
   methods: {
-    getPresents: function getPresents() {
+    deletePage: function deletePage(item) {
       var _this = this;
 
+      this.$http["delete"]('/admin/product/delete/' + this.delete_item.id).then(function (response) {
+        UIkit.modal(_this.delete_dialog).hide();
+        setTimeout(function () {
+          location.href = '/admin/product/';
+        }, 3000);
+      });
+    },
+    Delete: function Delete() {
+      this.delete_item = this.list;
+      UIkit.modal(this.delete_dialog).show();
+    },
+    getPresents: function getPresents() {
+      var _this2 = this;
+
       this.$http.post('/admin/present/get').then(function (response) {
-        _this.present_list = response.data.list;
+        _this2.present_list = response.data.list;
       });
     },
     getName: function getName(name) {
@@ -5887,14 +5911,14 @@ __webpack_require__.r(__webpack_exports__);
       this.show_add_dir = true;
     },
     addDir: function addDir() {
-      var _this2 = this;
+      var _this3 = this;
 
       this.$http.post('/admin/image/add_dir', {
         'dir_name': this.dir_name
       }).then(function (response) {
-        _this2.dir_list = response.data.dir_list;
-        _this2.dir_name = '';
-        _this2.show_add_dir = false;
+        _this3.dir_list = response.data.dir_list;
+        _this3.dir_name = '';
+        _this3.show_add_dir = false;
       });
     },
     setCurrentDir: function setCurrentDir(item) {
@@ -5902,27 +5926,27 @@ __webpack_require__.r(__webpack_exports__);
       this.getGalleryListDir();
     },
     getBrands: function getBrands() {
-      var _this3 = this;
+      var _this4 = this;
 
       this.$http.get('/admin/brand/get/all').then(function (response) {
-        _this3.brand_list = response.data.list;
+        _this4.brand_list = response.data.list;
       });
     },
     getData: function getData() {
-      var _this4 = this;
+      var _this5 = this;
 
       this.$http.get('/admin/product/get/edit/' + this.id).then(function (response) {
-        _this4.list = response.data.list;
-        _this4.image_list = response.data.image_list;
-        _this4.child_list = response.data.child_list;
-        _this4.type_of_product_list = response.data.type_of_product_list;
+        _this5.list = response.data.list;
+        _this5.image_list = response.data.image_list;
+        _this5.child_list = response.data.child_list;
+        _this5.type_of_product_list = response.data.type_of_product_list;
       });
     },
     getTags: function getTags() {
-      var _this5 = this;
+      var _this6 = this;
 
       this.$http.get('/admin/product/get/tags/' + this.id).then(function (response) {
-        _this5.tags = response.data;
+        _this6.tags = response.data;
       });
     },
     pageSave: function pageSave() {
@@ -5946,16 +5970,16 @@ __webpack_require__.r(__webpack_exports__);
       UIkit.modal(this.$refs['modal-overflow']).show();
     },
     findTag: function findTag() {
-      var _this6 = this;
+      var _this7 = this;
 
       if (this.tag_name.length >= 2) {
         this.$http.post('/admin/find/tag', {
           tag: this.tag_name
         }).then(function (response) {
           if (response.data.length) {
-            _this6.tag_list = response.data;
+            _this7.tag_list = response.data;
           } else {
-            _this6.tag_list = [];
+            _this7.tag_list = [];
           }
         });
       } else {
@@ -5965,7 +5989,7 @@ __webpack_require__.r(__webpack_exports__);
       console.log(this.tag_list);
     },
     addTag: function addTag(item) {
-      var _this7 = this;
+      var _this8 = this;
 
       this.$http.post('/admin/product/set_tag', {
         product_id: this.id,
@@ -5984,14 +6008,14 @@ __webpack_require__.r(__webpack_exports__);
             status: 'success'
           });
 
-          _this7.getTags();
+          _this8.getTags();
         }
       });
       this.tag_name = '';
       this.tag_list = [];
     },
     removeTag: function removeTag(item) {
-      var _this8 = this;
+      var _this9 = this;
 
       var id = item.id;
       this.$http["delete"]('/admin/brand/unset_tag/' + id).then(function (response) {
@@ -6000,18 +6024,18 @@ __webpack_require__.r(__webpack_exports__);
           status: 'success'
         });
 
-        _this8.getTags();
+        _this9.getTags();
       });
     },
     getChildList: function getChildList() {
-      var _this9 = this;
+      var _this10 = this;
 
       this.$http.get('/admin/product/get/child_list/' + this.id).then(function (response) {
-        _this9.child_list = response.data;
+        _this10.child_list = response.data;
       });
     },
     AddChild: function AddChild() {
-      var _this10 = this;
+      var _this11 = this;
 
       this.new_child.parent_id = this.id;
       this.new_child.name = this.list.name;
@@ -6032,9 +6056,9 @@ __webpack_require__.r(__webpack_exports__);
             message: 'Продукт создан обновлен!',
             status: 'success'
           });
-          _this10.new_child = {};
+          _this11.new_child = {};
 
-          _this10.getChildList();
+          _this11.getChildList();
         });
       }
     },
@@ -6051,24 +6075,24 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     getGalleryList: function getGalleryList() {
-      var _this11 = this;
+      var _this12 = this;
 
       this.$http.get('/admin/product/get/images/' + this.id).then(function (response) {
         var data = response.data;
-        _this11.image_list = data.images;
+        _this12.image_list = data.images;
       });
     },
     getGalleryListDir: function getGalleryListDir() {
-      var _this12 = this;
+      var _this13 = this;
 
       this.$http.get('/admin/image/get_media/' + this.current_dir).then(function (response) {
         var data = response.data;
-        _this12.gallery_list = data.images;
-        _this12.dir_list = data.dir_list;
+        _this13.gallery_list = data.images;
+        _this13.dir_list = data.dir_list;
       });
     },
     setImage: function setImage() {
-      var _this13 = this;
+      var _this14 = this;
 
       if (!this.create_image) {
         this.list[this.current_thumb] = this.current_image.id;
@@ -6085,16 +6109,16 @@ __webpack_require__.r(__webpack_exports__);
             status: 'success'
           });
 
-          _this13.getGalleryList();
+          _this14.getGalleryList();
 
-          UIkit.modal(_this13.$refs['modal-overflow']).hide();
-          _this13.current_image = {};
-          _this13.create_image = false;
+          UIkit.modal(_this14.$refs['modal-overflow']).hide();
+          _this14.current_image = {};
+          _this14.create_image = false;
         });
       }
     },
     ClearThumb: function ClearThumb(item) {
-      var _this14 = this;
+      var _this15 = this;
 
       console.log(item.id);
       this.$http["delete"]('/admin/image/delete/' + item.id).then(function (response) {
@@ -6103,14 +6127,14 @@ __webpack_require__.r(__webpack_exports__);
           status: 'success'
         });
 
-        _this14.getGalleryList();
+        _this15.getGalleryList();
       });
     },
     SelectImage: function SelectImage(item) {
       this.current_image = item;
     },
     onUpload: function onUpload(e) {
-      var _this15 = this;
+      var _this16 = this;
 
       var files = e.target.files;
       var formData = new FormData();
@@ -6131,7 +6155,7 @@ __webpack_require__.r(__webpack_exports__);
             status: 'success'
           });
 
-          _this15.getGalleryList();
+          _this16.getGalleryList();
         }
       })["catch"](function () {
         UIkit.notification({
@@ -6141,7 +6165,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     onUploadBrochure: function onUploadBrochure(e) {
-      var _this16 = this;
+      var _this17 = this;
 
       var files = e.target.files;
       var formData = new FormData();
@@ -6160,7 +6184,7 @@ __webpack_require__.r(__webpack_exports__);
             message: 'Брошюра успешно загружены!',
             status: 'success'
           });
-          _this16.list.brochure = response.data.result;
+          _this17.list.brochure = response.data.result;
         }
       })["catch"](function () {
         UIkit.notification({
@@ -55713,7 +55737,45 @@ var render = function() {
               },
               [_vm._v("Применить")]
             )
-          ])
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              ref: "delete-save",
+              attrs: { id: "delete-save", "uk-modal": "" }
+            },
+            [
+              _c("div", { staticClass: "uk-modal-dialog uk-modal-body" }, [
+                _c("h2", { staticClass: "uk-modal-title uk-text-warning" }, [
+                  _vm._v("Предупреждение!")
+                ]),
+                _vm._v(" "),
+                _c("p", [_vm._v(" Вы действительно хотите удалить материал?")]),
+                _vm._v(" "),
+                _c("p", { staticClass: "uk-text-right" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "uk-button uk-button-default uk-modal-close",
+                      attrs: { type: "button" }
+                    },
+                    [_vm._v("Нет")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "uk-button uk-button-primary",
+                      attrs: { type: "button" },
+                      on: { click: _vm.deletePage }
+                    },
+                    [_vm._v("ДА!")]
+                  )
+                ])
+              ])
+            ]
+          )
         ])
       ]
     )
