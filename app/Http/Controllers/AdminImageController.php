@@ -147,7 +147,7 @@ class AdminImageController extends Controller
 
     public function getMediaList($dir)
     {
-        $images = Image::where('image', 'like', '%/' . $dir . '/%')->get();
+        $images = Image::where('image', 'like', '%/' . $dir . '/%')->orderBy('created_at','desc')->get();
         return response()->json(['list' => $images]);
     }
 
