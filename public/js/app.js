@@ -5828,6 +5828,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['id'],
   data: function data() {
@@ -52930,6 +52934,22 @@ var render = function() {
                           }
                         },
                         [_c("i", { attrs: { "uk-icon": "reply" } })]
+                      )
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.list.parent_id
+                  ? _c("div", { staticClass: "uk-margin" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "uk-button uk-button-danger",
+                          attrs: {
+                            href: "/admin/product/delete/" + _vm.list.id,
+                            title: "Удалить"
+                          }
+                        },
+                        [_c("i", { attrs: { "uk-icon": "trash" } })]
                       )
                     ])
                   : _vm._e(),
