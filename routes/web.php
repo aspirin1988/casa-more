@@ -138,7 +138,7 @@ Route::delete('admin/media/delete/{dir}', 'AdminImageController@dirDelete')->nam
 Route::get('/admin/media/{page?}', 'AdminImageController@index')->name('admin_image_index');
 Route::get('/admin/media_list/{page}', 'AdminImageController@mediaList')->name('admin_image_list');
 Route::get('/admin/media_list/get/{page}', 'AdminImageController@getMediaList')->name('admin_image_list');
-Route::get('/admin/image/get_media/{dir?}', 'AdminImageController@getImages')->name('admin_image_get');
+Route::get('/admin/image/get_media/{dir?}/{page?}', 'AdminImageController@getImages')->name('admin_image_get');
 Route::post('/admin/image/upload/{product_id?}', 'AdminImageController@upload')->name('admin_image_upload');
 Route::post('/admin/image/clone', 'AdminImageController@clone')->name('admin_image_clone');
 Route::post('/admin/brochure/upload/{product_id?}', 'AdminProductController@uploadBrochure')->name('admin_brochure_upload');
