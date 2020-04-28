@@ -419,9 +419,9 @@
                                 </div>
                                 <div class="CardBoxDesc">
                                     <div class="CardBoxColor">
-                                        @foreach($product->getChild() as $img)
-                                            <i class="exemple-image" data-big="{{$img->getBackground()}}"></i>
-                                        @endforeach
+{{--                                        @foreach($product->getChild() as $img)--}}
+{{--                                            <i class="exemple-image" data-big="{{$img->getBackground()}}"></i>--}}
+{{--                                        @endforeach--}}
                                     </div>
                                     <p>{{$product->getType()}}</p>
                                     <h5>{{$product->name}}</h5>
