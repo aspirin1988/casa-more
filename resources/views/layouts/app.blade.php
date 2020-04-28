@@ -192,7 +192,7 @@
             return false;
         };
     </script>
-    <script src="/js/app.js?v=21"></script>
+    <script src="/js/app.js?v=22"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
     <script src="/js/owl.carousel.min.js"></script>
