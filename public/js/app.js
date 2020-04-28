@@ -4755,6 +4755,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -51915,11 +51918,31 @@ var render = function() {
                           _vm._v("Не назначен")
                         ]),
                         _vm._v(" "),
+                        _c(
+                          "option",
+                          { attrs: { value: "household_products" } },
+                          [_vm._v("Товары для дома")]
+                        ),
+                        _vm._v(" "),
                         _c("option", { attrs: { value: "massage_chairs" } }, [
                           _vm._v("Массажные кресла")
                         ]),
                         _vm._v(" "),
-                        _c("option", { attrs: { value: "massagers" } }, [
+                        _c(
+                          "option",
+                          { attrs: { value: "Massagers_for_legs" } },
+                          [_vm._v("Массажеры для ног")]
+                        ),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "Massage_wraps" } }, [
+                          _vm._v("Массажные накидки")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "Massage_pillows" } }, [
+                          _vm._v("Массажные подушки")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "Massagers" } }, [
                           _vm._v("Массажеры")
                         ]),
                         _vm._v(" "),
@@ -51927,12 +51950,6 @@ var render = function() {
                           "option",
                           { attrs: { value: "fitness_equipment" } },
                           [_vm._v("Фитнес оборудование")]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "option",
-                          { attrs: { value: "household_products" } },
-                          [_vm._v("Товары для дома")]
                         )
                       ]
                     )
