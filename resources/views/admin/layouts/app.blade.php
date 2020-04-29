@@ -10,7 +10,7 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link href="/css/fonts.css" rel="stylesheet" type="text/css">
+    <link href="{{mix('/css/fonts.css')}}" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
     @include ('admin.styles.style')

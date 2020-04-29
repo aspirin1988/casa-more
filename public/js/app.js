@@ -5944,6 +5944,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['id'],
   data: function data() {
@@ -53795,6 +53799,10 @@ var render = function() {
                                 _vm._v("Не назначен")
                               ]),
                               _vm._v(" "),
+                              _c("option", { attrs: { value: "red" } }, [
+                                _vm._v("Красный")
+                              ]),
+                              _vm._v(" "),
                               _c("option", { attrs: { value: "white" } }, [
                                 _vm._v("Белый")
                               ]),
@@ -54396,6 +54404,10 @@ var render = function() {
                             [
                               _c("option", { attrs: { value: "0" } }, [
                                 _vm._v("Не назначен")
+                              ]),
+                              _vm._v(" "),
+                              _c("option", { attrs: { value: "red" } }, [
+                                _vm._v("Красный")
                               ]),
                               _vm._v(" "),
                               _c("option", { attrs: { value: "white" } }, [
@@ -55278,6 +55290,10 @@ var render = function() {
                                   _vm._v("Не назначен")
                                 ]),
                                 _vm._v(" "),
+                                _c("option", { attrs: { value: "red" } }, [
+                                  _vm._v("Красный")
+                                ]),
+                                _vm._v(" "),
                                 _c("option", { attrs: { value: "white" } }, [
                                   _vm._v("Белый")
                                 ]),
@@ -55418,6 +55434,12 @@ var render = function() {
                                               "option",
                                               { attrs: { value: "0" } },
                                               [_vm._v("Не назначен")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "option",
+                                              { attrs: { value: "red" } },
+                                              [_vm._v("Красный")]
                                             ),
                                             _vm._v(" "),
                                             _c(

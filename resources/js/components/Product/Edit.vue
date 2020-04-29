@@ -136,6 +136,7 @@
                                 <div class="uk-form-controls">
                                     <select class="uk-select uk-width-1-2@m" id="color" v-model="list.color">
                                         <option value="0">Не назначен</option>
+                                        <option value="red">Красный</option>
                                         <option value="white">Белый</option>
                                         <option value="cream">Кремовый</option>
                                         <option value="graphite">Графит</option>
@@ -227,6 +228,7 @@
                                 <div class="uk-form-controls">
                                     <select class="uk-select uk-width-1-2@m" id="color" v-model="list.color">
                                         <option value="0">Не назначен</option>
+                                        <option value="red">Красный</option>
                                         <option value="white">Белый</option>
                                         <option value="cream">Кремовый</option>
                                         <option value="graphite">Графит</option>
@@ -429,6 +431,7 @@
                                         <select class="uk-select uk-width-1-2@m" id="new_color"
                                                 v-model="new_child.color">
                                             <option value="0">Не назначен</option>
+                                            <option value="red">Красный</option>
                                             <option value="white">Белый</option>
                                             <option value="cream">Кремовый</option>
                                             <option value="graphite">Графит</option>
@@ -466,6 +469,7 @@
                                                         <select class="uk-select uk-width-1-2@m" :id="'volume_'+item.id"
                                                                 v-model="item.color">
                                                             <option value="0">Не назначен</option>
+                                                            <option value="red">Красный</option>
                                                             <option value="white">Белый</option>
                                                             <option value="cream">Кремовый</option>
                                                             <option value="graphite">Графит</option>
