@@ -1369,6 +1369,10 @@ footer {
     background-color: #dcc4b9;
 }
 
+.value-field span.color-gray {
+    background-color: #676767;
+}
+
 .value-field span.color-white {
     background-color: #ffffff;
     border: 1px solid #e8e8e8;
