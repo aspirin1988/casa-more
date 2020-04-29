@@ -5943,6 +5943,9 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['id'],
   data: function data() {
@@ -55213,6 +55216,8 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
+                _c("hr"),
+                _vm._v(" "),
                 _c("div", { staticClass: "uk-margin" }, [
                   _c(
                     "label",
@@ -55264,6 +55269,10 @@ var render = function() {
                     )
                   ])
                 ]),
+                _vm._v(" "),
+                _c("br"),
+                _vm._v(" "),
+                _c("br"),
                 _vm._v(" "),
                 _c("hr"),
                 _vm._v(" "),
