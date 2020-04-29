@@ -881,6 +881,9 @@
 
             setIcon: function () {
                 console.log(this.current_image);
+                console.log(typeof this.list.icons);
+                console.log(this.list.icons.length);
+
                 if( typeof this.list.icons === "object"){
                     this.list.icons.push(this.current_image);
                 }else{

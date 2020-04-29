@@ -6204,6 +6204,8 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     },
     setIcon: function setIcon() {
       console.log(this.current_image);
+      console.log(_typeof(this.list.icons));
+      console.log(this.list.icons.length);
 
       if (_typeof(this.list.icons) === "object") {
         this.list.icons.push(this.current_image);
