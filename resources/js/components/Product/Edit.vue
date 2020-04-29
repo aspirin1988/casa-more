@@ -400,23 +400,23 @@
                             </div>
                         </div>
                         <hr>
-                        <div class="uk-margin">
-                            <label for="icons" class="uk-form-label">Иконки:
-                                <button @click="createIcon" class="uk-button-primary uk-button-small uk-border-rounded"
-                                        uk-icon="plus"></button>
-                            </label>
-                            <div class="uk-form-controls">
-                                <div class="uk-child-width-1-3@s" uk-grid="">
-                                    <div class="uk-my-fle uk-cursor-pointer" v-for="(item,key) in list.icons">
-                                        <div class="uk-position-relative">
-                                            <img style="width: 90px; height: auto;" :src="item" alt="">
-                                            <a uk-icon="close" @click="ClearIcon(key)"
-                                               class="uk-button-danger uk-border-rounded uk-margin-remove uk-icon uk-position-top-right"></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+<!--                        <div class="uk-margin">-->
+<!--                            <label for="icons" class="uk-form-label">Иконки:-->
+<!--                                <button @click="createIcon" class="uk-button-primary uk-button-small uk-border-rounded"-->
+<!--                                        uk-icon="plus"></button>-->
+<!--                            </label>-->
+<!--                            <div class="uk-form-controls">-->
+<!--                                <div class="uk-child-width-1-3@s" uk-grid="">-->
+<!--                                    <div class="uk-my-fle uk-cursor-pointer" v-for="(item,key) in list.icons">-->
+<!--                                        <div class="uk-position-relative">-->
+<!--                                            <img style="width: 90px; height: auto;" :src="item" alt="">-->
+<!--                                            <a uk-icon="close" @click="ClearIcon(key)"-->
+<!--                                               class="uk-button-danger uk-border-rounded uk-margin-remove uk-icon uk-position-top-right"></a>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
                         <br>
                         <br>
                         <hr>

@@ -53169,7 +53169,7 @@ var render = function() {
                             [
                               _vm._v(
                                 _vm._s(item.name) +
-                                  "\n                                "
+                                  "\n                                    "
                               )
                             ]
                           )
@@ -54948,9 +54948,9 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n                                    " +
+                              "\n                                        " +
                                 _vm._s(item.data.name) +
-                                "\n                                    "
+                                "\n                                        "
                             ),
                             _c("a", {
                               staticClass:
@@ -55125,7 +55125,7 @@ var render = function() {
                     "label",
                     { staticClass: "uk-form-label", attrs: { for: "images" } },
                     [
-                      _vm._v("Изображения:\n                            "),
+                      _vm._v("Изображения:\n                                "),
                       _c("button", {
                         staticClass:
                           "uk-button-primary uk-button-small uk-border-rounded",
@@ -55209,58 +55209,6 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("hr"),
-                _vm._v(" "),
-                _c("div", { staticClass: "uk-margin" }, [
-                  _c(
-                    "label",
-                    { staticClass: "uk-form-label", attrs: { for: "icons" } },
-                    [
-                      _vm._v("Иконки:\n                            "),
-                      _c("button", {
-                        staticClass:
-                          "uk-button-primary uk-button-small uk-border-rounded",
-                        attrs: { "uk-icon": "plus" },
-                        on: { click: _vm.createIcon }
-                      })
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "uk-form-controls" }, [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "uk-child-width-1-3@s",
-                        attrs: { "uk-grid": "" }
-                      },
-                      _vm._l(_vm.list.icons, function(item, key) {
-                        return _c(
-                          "div",
-                          { staticClass: "uk-my-fle uk-cursor-pointer" },
-                          [
-                            _c("div", { staticClass: "uk-position-relative" }, [
-                              _c("img", {
-                                staticStyle: { width: "90px", height: "auto" },
-                                attrs: { src: item, alt: "" }
-                              }),
-                              _vm._v(" "),
-                              _c("a", {
-                                staticClass:
-                                  "uk-button-danger uk-border-rounded uk-margin-remove uk-icon uk-position-top-right",
-                                attrs: { "uk-icon": "close" },
-                                on: {
-                                  click: function($event) {
-                                    return _vm.ClearIcon(key)
-                                  }
-                                }
-                              })
-                            ])
-                          ]
-                        )
-                      }),
-                      0
-                    )
-                  ])
-                ]),
                 _vm._v(" "),
                 _c("br"),
                 _vm._v(" "),
@@ -55596,7 +55544,7 @@ var render = function() {
                         attrs: { type: "button" },
                         on: { click: _vm.pageSave }
                       },
-                      [_vm._v("Сохранить\n                        ")]
+                      [_vm._v("Сохранить\n                            ")]
                     )
                   ]
                 )
