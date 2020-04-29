@@ -880,19 +880,18 @@
             },
 
             setIcon: function () {
-                let icons = this.list.icons;
-                console.log(this.current_image);
-                console.log(typeof icons);
-                console.log(icons.length);
 
-                if( typeof icons === "object"){
+                this.list.icons = this.list.icons || [];
+
+                if (typeof this.list.icons === "object") {
                     this.list.icons.push(this.current_image);
-                }else{
-                    this.list.icons=[];
+                } else {
+                    this.list.icons = [];
                     this.list.icons.push(this.current_image);
                 }
                 UIkit.modal(this.$refs['modal-icon-overflow']).hide();
-            }, setImage: function () {
+            },
+            setImage: function () {
                 if (!this.create_image) {
                     this.list[this.current_thumb] = this.current_image.id;
                     this.image_list[this.current_thumb] = this.current_image;
