@@ -399,6 +399,7 @@
                                 </div>
                             </div>
                         </div>
+                        <hr>
                         <div class="uk-margin">
                             <label for="icons" class="uk-form-label">Иконки:
                                 <button @click="createIcon" class="uk-button-primary uk-button-small uk-border-rounded"
@@ -416,6 +417,8 @@
                                 </div>
                             </div>
                         </div>
+                        <br>
+                        <br>
                         <hr>
                         <div v-if="!list.parent_id" class="uk-margin">
                             <label class="uk-form-label" for="status">Добавить дополнительный товар</label>
@@ -877,12 +880,12 @@
             },
 
             setIcon: function () {
-                console.log(this.current_thumb);
+                console.log(this.current_image);
                 if( typeof this.list.icon === "object"){
-                    this.list.icon.push(this.current_thumb);
+                    this.list.icon.push(this.current_image);
                 }else{
                     this.list.icon=[];
-                    this.list.icon.push(this.current_thumb);
+                    this.list.icon.push(this.current_image);
                 }
                 UIkit.modal(this.$refs['modal-icon-overflow']).hide();
             },

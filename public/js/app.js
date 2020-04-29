@@ -6200,13 +6200,13 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       });
     },
     setIcon: function setIcon() {
-      console.log(this.current_thumb);
+      console.log(this.current_image);
 
       if (_typeof(this.list.icon) === "object") {
-        this.list.icon.push(this.current_thumb);
+        this.list.icon.push(this.current_image);
       } else {
         this.list.icon = [];
-        this.list.icon.push(this.current_thumb);
+        this.list.icon.push(this.current_image);
       }
 
       UIkit.modal(this.$refs['modal-icon-overflow']).hide();
