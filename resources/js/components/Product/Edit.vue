@@ -881,11 +881,11 @@
 
             setIcon: function () {
                 console.log(this.current_image);
-                if( typeof this.list.icon === "object"){
-                    this.list.icon.push(this.current_image);
+                if( typeof this.list.icons === "object"){
+                    this.list.icons.push(this.current_image);
                 }else{
-                    this.list.icon=[];
-                    this.list.icon.push(this.current_image);
+                    this.list.icons=[];
+                    this.list.icons.push(this.current_image);
                 }
                 UIkit.modal(this.$refs['modal-icon-overflow']).hide();
             },
@@ -917,6 +917,7 @@
 
             },
             SelectImage: function (item) {
+                console.log(item);
                 this.current_image = item;
             },
             onUpload: function (e) {
