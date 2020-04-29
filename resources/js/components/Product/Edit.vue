@@ -399,6 +399,23 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="uk-margin">
+                            <label for="icons" class="uk-form-label">Иконки:
+                                <button @click="createIcon" class="uk-button-primary uk-button-small uk-border-rounded"
+                                        uk-icon="plus"></button>
+                            </label>
+                            <div class="uk-form-controls">
+                                <div class="uk-child-width-1-3@s" uk-grid="">
+                                    <div class="uk-my-fle uk-cursor-pointer" v-for="(item,key) in list.icons">
+                                        <div class="uk-position-relative">
+                                            <img style="width: 90px; height: auto;" :src="item" alt="">
+                                            <a uk-icon="close" @click="ClearIcon(key)"
+                                               class="uk-button-danger uk-border-rounded uk-margin-remove uk-icon uk-position-top-right"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <hr>
                         <div v-if="!list.parent_id" class="uk-margin">
                             <label class="uk-form-label" for="status">Добавить дополнительный товар</label>
@@ -570,6 +587,85 @@
                 </div>
             </div>
         </div>
+        <div id="modal-icon-overflow" ref="modal-icon-overflow" uk-modal>
+            <div class="uk-modal-dialog">
+
+                <button class="uk-modal-close-default" type="button" uk-close></button>
+
+                <div class="uk-modal-header">
+                    <h2 class="uk-modal-title">Галерея</h2>
+                    <div>
+                        <ul class="uk-subnav uk-subnav-pill" uk-margin>
+                            <li v-for="item in dir_list" :class="{'uk-active':item==current_dir}">
+                                <a href="#" @click="setCurrentDir(item)">{{item}}</a>
+                            </li>
+                            <li class="uk-width-1-1">
+                                <div>
+                                    <div class="uk-inline">
+                                        <a class="uk-form-icon" href="#" v-if="show_add_dir" @click="addDir()"
+                                           title="Добавить директорию">
+                                            <svg width="20" height="20" viewBox="0 0 20 20"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <rect x="9" y="1" width="1" height="17"></rect>
+                                                <rect x="1" y="9" width="17" height="1"></rect>
+                                            </svg>
+                                        </a>
+                                        <input :style="{textTransform:'none'}" type="text" class="uk-input"
+                                               v-model="dir_name" v-if="show_add_dir">
+
+                                        <a :style="{padding:'0 9px'}" class="uk-button uk-button-default" href="#"
+                                           v-if="!show_add_dir" @click="showAddDir()"
+                                           title="Добавить директорию">
+                                            <svg width="20" height="20" viewBox="0 0 20 20"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <rect x="9" y="1" width="1" height="17"></rect>
+                                                <rect x="1" y="9" width="17" height="1"></rect>
+                                            </svg>
+                                        </a>
+
+                                        <a href="#" class="uk-form-icon uk-form-icon-flip" v-if="show_add_dir"
+                                           @click="closeAddDir()" title="Отмена">
+                                            <svg width="14" height="14" viewBox="0 0 14 14"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <line fill="none" stroke="#000" stroke-width="1.1" x1="1" y1="1" x2="13"
+                                                      y2="13"></line>
+                                                <line fill="none" stroke="#000" stroke-width="1.1" x1="13" y1="1" x2="1"
+                                                      y2="13"></line>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="js-upload uk-placeholder uk-text-center uk-position-relative">
+                        <input :style="{opacity:0, zIndex: 1}" class="uk-height-1-1 uk-position-top-left uk-width-1-1"
+                               type="file" multiple="multiple" @change="onUpload">
+                        <span uk-icon="icon: cloud-upload"></span>
+                        <span class="uk-text-middle">Перетащите файлы сюда или</span>
+                        <div uk-form-custom>
+                            <span class="uk-link">загрузите вручную</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="uk-modal-body" uk-overflow-auto>
+                    <div class="uk-child-width-1-3@m  uk-image-list" uk-grid="">
+                        <div v-for="item in gallery_list">
+                            <span class="uk-cursor-pointer" :class="{'uk-active':current_image == item}">
+                                <img @click="SelectImage(item)" :src="item.image" alt="">
+                                <span class="uk-label">{{getName(item.image)}}</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="uk-modal-footer uk-text-right">
+                    <button class="uk-button uk-button-default uk-modal-close" type="button">Закрыть</button>
+                    <button class="uk-button uk-button-primary" @click="setIcon()" type="button">Применить</button>
+                </div>
+            </div>
+        </div>
 
     </div>
 </template>
@@ -599,6 +695,7 @@
                 current_dir: 'image',
                 show_add_dir: false,
                 create_image: false,
+                create_icon: false,
                 dir_name: '',
                 type_of_product_list: [],
                 present_list: [],
@@ -678,8 +775,13 @@
             },
             createImage: function () {
                 this.getGalleryListDir();
-                UIkit.modal(this.$refs['modal-overflow']).show();
+                UIkit.modal(this.$refs['modal-icon-overflow']).show();
                 this.create_image = true;
+            },
+            createIcon: function () {
+                this.getGalleryListDir();
+                UIkit.modal(this.$refs['modal-overflow']).show();
+                this.create_icon = true;
             },
             imageGet: function (thumb) {
                 this.current_thumb = thumb;
@@ -774,6 +876,16 @@
                 });
             },
 
+            setIcon: function () {
+                console.log(this.current_thumb);
+                if( typeof this.list.icon === "object"){
+                    this.list.icon.push(this.current_thumb);
+                }else{
+                    this.list.icon=[];
+                    this.list.icon.push(this.current_thumb);
+                }
+                UIkit.modal(this.$refs['modal-icon-overflow']).hide();
+            },
             setImage: function () {
                 if (!this.create_image) {
                     this.list[this.current_thumb] = this.current_image.id;

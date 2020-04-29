@@ -5269,6 +5269,104 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -5869,6 +5967,7 @@ __webpack_require__.r(__webpack_exports__);
       current_dir: 'image',
       show_add_dir: false,
       create_image: false,
+      create_icon: false,
       dir_name: '',
       type_of_product_list: [],
       present_list: []
@@ -5965,8 +6064,13 @@ __webpack_require__.r(__webpack_exports__);
     },
     createImage: function createImage() {
       this.getGalleryListDir();
-      UIkit.modal(this.$refs['modal-overflow']).show();
+      UIkit.modal(this.$refs['modal-icon-overflow']).show();
       this.create_image = true;
+    },
+    createIcon: function createIcon() {
+      this.getGalleryListDir();
+      UIkit.modal(this.$refs['modal-overflow']).show();
+      this.create_icon = true;
     },
     imageGet: function imageGet(thumb) {
       this.current_thumb = thumb;
@@ -6094,6 +6198,18 @@ __webpack_require__.r(__webpack_exports__);
         _this13.gallery_list = data.images;
         _this13.dir_list = data.dir_list;
       });
+    },
+    setIcon: function setIcon() {
+      console.log(this.current_thumb);
+
+      if (_typeof(this.list.icon) === "object") {
+        this.list.icon.push(this.current_thumb);
+      } else {
+        this.list.icon = [];
+        this.list.icon.push(this.current_thumb);
+      }
+
+      UIkit.modal(this.$refs['modal-icon-overflow']).hide();
     },
     setImage: function setImage() {
       var _this14 = this;
@@ -55097,6 +55213,58 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
+                _c("div", { staticClass: "uk-margin" }, [
+                  _c(
+                    "label",
+                    { staticClass: "uk-form-label", attrs: { for: "icons" } },
+                    [
+                      _vm._v("Иконки:\n                            "),
+                      _c("button", {
+                        staticClass:
+                          "uk-button-primary uk-button-small uk-border-rounded",
+                        attrs: { "uk-icon": "plus" },
+                        on: { click: _vm.createIcon }
+                      })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "uk-form-controls" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "uk-child-width-1-3@s",
+                        attrs: { "uk-grid": "" }
+                      },
+                      _vm._l(_vm.list.icons, function(item, key) {
+                        return _c(
+                          "div",
+                          { staticClass: "uk-my-fle uk-cursor-pointer" },
+                          [
+                            _c("div", { staticClass: "uk-position-relative" }, [
+                              _c("img", {
+                                staticStyle: { width: "90px", height: "auto" },
+                                attrs: { src: item, alt: "" }
+                              }),
+                              _vm._v(" "),
+                              _c("a", {
+                                staticClass:
+                                  "uk-button-danger uk-border-rounded uk-margin-remove uk-icon uk-position-top-right",
+                                attrs: { "uk-icon": "close" },
+                                on: {
+                                  click: function($event) {
+                                    return _vm.ClearIcon(key)
+                                  }
+                                }
+                              })
+                            ])
+                          ]
+                        )
+                      }),
+                      0
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
                 _c("hr"),
                 _vm._v(" "),
                 !_vm.list.parent_id
@@ -55802,6 +55970,334 @@ var render = function() {
           )
         ])
       ]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        ref: "modal-icon-overflow",
+        attrs: { id: "modal-icon-overflow", "uk-modal": "" }
+      },
+      [
+        _c("div", { staticClass: "uk-modal-dialog" }, [
+          _c("button", {
+            staticClass: "uk-modal-close-default",
+            attrs: { type: "button", "uk-close": "" }
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "uk-modal-header" }, [
+            _c("h2", { staticClass: "uk-modal-title" }, [_vm._v("Галерея")]),
+            _vm._v(" "),
+            _c("div", [
+              _c(
+                "ul",
+                {
+                  staticClass: "uk-subnav uk-subnav-pill",
+                  attrs: { "uk-margin": "" }
+                },
+                [
+                  _vm._l(_vm.dir_list, function(item) {
+                    return _c(
+                      "li",
+                      { class: { "uk-active": item == _vm.current_dir } },
+                      [
+                        _c(
+                          "a",
+                          {
+                            attrs: { href: "#" },
+                            on: {
+                              click: function($event) {
+                                return _vm.setCurrentDir(item)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item))]
+                        )
+                      ]
+                    )
+                  }),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "uk-width-1-1" }, [
+                    _c("div", [
+                      _c("div", { staticClass: "uk-inline" }, [
+                        _vm.show_add_dir
+                          ? _c(
+                              "a",
+                              {
+                                staticClass: "uk-form-icon",
+                                attrs: {
+                                  href: "#",
+                                  title: "Добавить директорию"
+                                },
+                                on: {
+                                  click: function($event) {
+                                    return _vm.addDir()
+                                  }
+                                }
+                              },
+                              [
+                                _c(
+                                  "svg",
+                                  {
+                                    attrs: {
+                                      width: "20",
+                                      height: "20",
+                                      viewBox: "0 0 20 20",
+                                      xmlns: "http://www.w3.org/2000/svg"
+                                    }
+                                  },
+                                  [
+                                    _c("rect", {
+                                      attrs: {
+                                        x: "9",
+                                        y: "1",
+                                        width: "1",
+                                        height: "17"
+                                      }
+                                    }),
+                                    _vm._v(" "),
+                                    _c("rect", {
+                                      attrs: {
+                                        x: "1",
+                                        y: "9",
+                                        width: "17",
+                                        height: "1"
+                                      }
+                                    })
+                                  ]
+                                )
+                              ]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.show_add_dir
+                          ? _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.dir_name,
+                                  expression: "dir_name"
+                                }
+                              ],
+                              staticClass: "uk-input",
+                              style: { textTransform: "none" },
+                              attrs: { type: "text" },
+                              domProps: { value: _vm.dir_name },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.dir_name = $event.target.value
+                                }
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        !_vm.show_add_dir
+                          ? _c(
+                              "a",
+                              {
+                                staticClass: "uk-button uk-button-default",
+                                style: { padding: "0 9px" },
+                                attrs: {
+                                  href: "#",
+                                  title: "Добавить директорию"
+                                },
+                                on: {
+                                  click: function($event) {
+                                    return _vm.showAddDir()
+                                  }
+                                }
+                              },
+                              [
+                                _c(
+                                  "svg",
+                                  {
+                                    attrs: {
+                                      width: "20",
+                                      height: "20",
+                                      viewBox: "0 0 20 20",
+                                      xmlns: "http://www.w3.org/2000/svg"
+                                    }
+                                  },
+                                  [
+                                    _c("rect", {
+                                      attrs: {
+                                        x: "9",
+                                        y: "1",
+                                        width: "1",
+                                        height: "17"
+                                      }
+                                    }),
+                                    _vm._v(" "),
+                                    _c("rect", {
+                                      attrs: {
+                                        x: "1",
+                                        y: "9",
+                                        width: "17",
+                                        height: "1"
+                                      }
+                                    })
+                                  ]
+                                )
+                              ]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.show_add_dir
+                          ? _c(
+                              "a",
+                              {
+                                staticClass: "uk-form-icon uk-form-icon-flip",
+                                attrs: { href: "#", title: "Отмена" },
+                                on: {
+                                  click: function($event) {
+                                    return _vm.closeAddDir()
+                                  }
+                                }
+                              },
+                              [
+                                _c(
+                                  "svg",
+                                  {
+                                    attrs: {
+                                      width: "14",
+                                      height: "14",
+                                      viewBox: "0 0 14 14",
+                                      xmlns: "http://www.w3.org/2000/svg"
+                                    }
+                                  },
+                                  [
+                                    _c("line", {
+                                      attrs: {
+                                        fill: "none",
+                                        stroke: "#000",
+                                        "stroke-width": "1.1",
+                                        x1: "1",
+                                        y1: "1",
+                                        x2: "13",
+                                        y2: "13"
+                                      }
+                                    }),
+                                    _vm._v(" "),
+                                    _c("line", {
+                                      attrs: {
+                                        fill: "none",
+                                        stroke: "#000",
+                                        "stroke-width": "1.1",
+                                        x1: "13",
+                                        y1: "1",
+                                        x2: "1",
+                                        y2: "13"
+                                      }
+                                    })
+                                  ]
+                                )
+                              ]
+                            )
+                          : _vm._e()
+                      ])
+                    ])
+                  ])
+                ],
+                2
+              )
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "js-upload uk-placeholder uk-text-center uk-position-relative"
+              },
+              [
+                _c("input", {
+                  staticClass:
+                    "uk-height-1-1 uk-position-top-left uk-width-1-1",
+                  style: { opacity: 0, zIndex: 1 },
+                  attrs: { type: "file", multiple: "multiple" },
+                  on: { change: _vm.onUpload }
+                }),
+                _vm._v(" "),
+                _c("span", { attrs: { "uk-icon": "icon: cloud-upload" } }),
+                _vm._v(" "),
+                _c("span", { staticClass: "uk-text-middle" }, [
+                  _vm._v("Перетащите файлы сюда или")
+                ]),
+                _vm._v(" "),
+                _vm._m(4)
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "uk-modal-body", attrs: { "uk-overflow-auto": "" } },
+            [
+              _c(
+                "div",
+                {
+                  staticClass: "uk-child-width-1-3@m  uk-image-list",
+                  attrs: { "uk-grid": "" }
+                },
+                _vm._l(_vm.gallery_list, function(item) {
+                  return _c("div", [
+                    _c(
+                      "span",
+                      {
+                        staticClass: "uk-cursor-pointer",
+                        class: { "uk-active": _vm.current_image == item }
+                      },
+                      [
+                        _c("img", {
+                          attrs: { src: item.image, alt: "" },
+                          on: {
+                            click: function($event) {
+                              return _vm.SelectImage(item)
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "uk-label" }, [
+                          _vm._v(_vm._s(_vm.getName(item.image)))
+                        ])
+                      ]
+                    )
+                  ])
+                }),
+                0
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "uk-modal-footer uk-text-right" }, [
+            _c(
+              "button",
+              {
+                staticClass: "uk-button uk-button-default uk-modal-close",
+                attrs: { type: "button" }
+              },
+              [_vm._v("Закрыть")]
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "uk-button uk-button-primary",
+                attrs: { type: "button" },
+                on: {
+                  click: function($event) {
+                    return _vm.setIcon()
+                  }
+                }
+              },
+              [_vm._v("Применить")]
+            )
+          ])
+        ])
+      ]
     )
   ])
 }
@@ -55811,6 +56307,14 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "title" }, [_c("h2", [_vm._v("Продукт")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { attrs: { "uk-form-custom": "" } }, [
+      _c("span", { staticClass: "uk-link" }, [_vm._v("загрузите вручную")])
+    ])
   },
   function() {
     var _vm = this
