@@ -880,11 +880,12 @@
             },
 
             setIcon: function () {
+                let icons = this.list.icons;
                 console.log(this.current_image);
-                console.log(typeof this.list.icons);
-                console.log(this.list.icons.length);
+                console.log(typeof icons);
+                console.log(icons.length);
 
-                if( typeof this.list.icons === "object"){
+                if( typeof icons === "object"){
                     this.list.icons.push(this.current_image);
                 }else{
                     this.list.icons=[];

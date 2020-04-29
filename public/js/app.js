@@ -6203,11 +6203,12 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       });
     },
     setIcon: function setIcon() {
+      var icons = this.list.icons;
       console.log(this.current_image);
-      console.log(_typeof(this.list.icons));
-      console.log(this.list.icons.length);
+      console.log(_typeof(icons));
+      console.log(icons.length);
 
-      if (_typeof(this.list.icons) === "object") {
+      if (_typeof(icons) === "object") {
         this.list.icons.push(this.current_image);
       } else {
         this.list.icons = [];
