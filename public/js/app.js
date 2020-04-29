@@ -5269,8 +5269,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
 //
 //
 //
@@ -6204,14 +6202,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     },
     setIcon: function setIcon() {
       this.list.icons = this.list.icons || [];
-
-      if (_typeof(this.list.icons) === "object") {
-        this.list.icons.push(this.current_image);
-      } else {
-        this.list.icons = [];
-        this.list.icons.push(this.current_image);
-      }
-
+      this.list.icons.push(this.current_image.image);
       UIkit.modal(this.$refs['modal-icon-overflow']).hide();
     },
     setImage: function setImage() {

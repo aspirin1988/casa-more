@@ -882,13 +882,7 @@
             setIcon: function () {
 
                 this.list.icons = this.list.icons || [];
-
-                if (typeof this.list.icons === "object") {
-                    this.list.icons.push(this.current_image);
-                } else {
-                    this.list.icons = [];
-                    this.list.icons.push(this.current_image);
-                }
+                this.list.icons.push(this.current_image.image);
                 UIkit.modal(this.$refs['modal-icon-overflow']).hide();
             },
             setImage: function () {
