@@ -6067,12 +6067,12 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     },
     createImage: function createImage() {
       this.getGalleryListDir();
-      UIkit.modal(this.$refs['modal-icon-overflow']).show();
+      UIkit.modal(this.$refs['modal-overflow']).show();
       this.create_image = true;
     },
     createIcon: function createIcon() {
       this.getGalleryListDir();
-      UIkit.modal(this.$refs['modal-overflow']).show();
+      UIkit.modal(this.$refs['modal-icon-overflow']).show();
       this.create_icon = true;
     },
     imageGet: function imageGet(thumb) {

@@ -778,12 +778,12 @@
             },
             createImage: function () {
                 this.getGalleryListDir();
-                UIkit.modal(this.$refs['modal-icon-overflow']).show();
+                UIkit.modal(this.$refs['modal-overflow']).show();
                 this.create_image = true;
             },
             createIcon: function () {
                 this.getGalleryListDir();
-                UIkit.modal(this.$refs['modal-overflow']).show();
+                UIkit.modal(this.$refs['modal-icon-overflow']).show();
                 this.create_icon = true;
             },
             imageGet: function (thumb) {
