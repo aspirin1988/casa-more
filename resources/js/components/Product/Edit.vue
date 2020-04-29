@@ -892,8 +892,7 @@
                     this.list.icons.push(this.current_image);
                 }
                 UIkit.modal(this.$refs['modal-icon-overflow']).hide();
-            },
-            setImage: function () {
+            }, setImage: function () {
                 if (!this.create_image) {
                     this.list[this.current_thumb] = this.current_image.id;
                     this.image_list[this.current_thumb] = this.current_image;
