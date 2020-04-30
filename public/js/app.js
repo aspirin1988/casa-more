@@ -54247,436 +54247,415 @@ var render = function() {
                     ])
                   : _vm._e(),
                 _vm._v(" "),
-                _vm.list.type_of_product == "massagers"
-                  ? _c("div", [
-                      _c("div", { staticClass: "uk-margin" }, [
-                        _c(
-                          "label",
-                          {
-                            staticClass: "uk-form-label",
-                            attrs: { for: "brand" }
-                          },
-                          [_vm._v("Брэнд*:")]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "uk-form-controls" }, [
-                          _c(
-                            "select",
+                _c("div", [
+                  _c("div", { staticClass: "uk-margin" }, [
+                    _c(
+                      "label",
+                      { staticClass: "uk-form-label", attrs: { for: "brand" } },
+                      [_vm._v("Брэнд*:")]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "uk-form-controls" }, [
+                      _c(
+                        "select",
+                        {
+                          directives: [
                             {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.list.brand,
-                                  expression: "list.brand"
-                                }
-                              ],
-                              staticClass: "uk-select uk-width-1-2@m",
-                              attrs: { id: "brand" },
-                              on: {
-                                change: function($event) {
-                                  var $$selectedVal = Array.prototype.filter
-                                    .call($event.target.options, function(o) {
-                                      return o.selected
-                                    })
-                                    .map(function(o) {
-                                      var val =
-                                        "_value" in o ? o._value : o.value
-                                      return val
-                                    })
-                                  _vm.$set(
-                                    _vm.list,
-                                    "brand",
-                                    $event.target.multiple
-                                      ? $$selectedVal
-                                      : $$selectedVal[0]
-                                  )
-                                }
-                              }
-                            },
-                            [
-                              _c("option", { attrs: { value: "0" } }, [
-                                _vm._v("Не назначен")
-                              ]),
-                              _vm._v(" "),
-                              _vm._l(_vm.brand_list, function(item) {
-                                return _c(
-                                  "option",
-                                  { domProps: { value: item.id } },
-                                  [_vm._v(_vm._s(item.name))]
-                                )
-                              })
-                            ],
-                            2
-                          )
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "uk-margin" }, [
-                        _c(
-                          "label",
-                          {
-                            staticClass: "uk-form-label",
-                            attrs: { for: "name" }
-                          },
-                          [_vm._v("Область массажа:*")]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "uk-form-controls" }, [
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.list.massage_area,
-                                expression: "list.massage_area"
-                              }
-                            ],
-                            staticClass: "uk-input",
-                            attrs: {
-                              id: "massage_area",
-                              type: "text",
-                              placeholder: "Область массажа",
-                              autocomplete: "off"
-                            },
-                            domProps: { value: _vm.list.massage_area },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(
-                                  _vm.list,
-                                  "massage_area",
-                                  $event.target.value
-                                )
-                              }
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.list.brand,
+                              expression: "list.brand"
                             }
-                          })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "uk-margin" }, [
-                        _c(
-                          "label",
-                          {
-                            staticClass: "uk-form-label",
-                            attrs: { for: "color" }
-                          },
-                          [_vm._v("Цвет*:")]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "uk-form-controls" }, [
-                          _c(
-                            "select",
-                            {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.list.color,
-                                  expression: "list.color"
-                                }
-                              ],
-                              staticClass: "uk-select uk-width-1-2@m",
-                              attrs: { id: "color" },
-                              on: {
-                                change: function($event) {
-                                  var $$selectedVal = Array.prototype.filter
-                                    .call($event.target.options, function(o) {
-                                      return o.selected
-                                    })
-                                    .map(function(o) {
-                                      var val =
-                                        "_value" in o ? o._value : o.value
-                                      return val
-                                    })
-                                  _vm.$set(
-                                    _vm.list,
-                                    "color",
-                                    $event.target.multiple
-                                      ? $$selectedVal
-                                      : $$selectedVal[0]
-                                  )
-                                }
-                              }
-                            },
-                            [
-                              _c("option", { attrs: { value: "0" } }, [
-                                _vm._v("Не назначен")
-                              ]),
-                              _vm._v(" "),
-                              _c("option", { attrs: { value: "red" } }, [
-                                _vm._v("Красный")
-                              ]),
-                              _vm._v(" "),
-                              _c("option", { attrs: { value: "white" } }, [
-                                _vm._v("Белый")
-                              ]),
-                              _vm._v(" "),
-                              _c("option", { attrs: { value: "cream" } }, [
-                                _vm._v("Кремовый")
-                              ]),
-                              _vm._v(" "),
-                              _c("option", { attrs: { value: "graphite" } }, [
-                                _vm._v("Графит")
-                              ]),
-                              _vm._v(" "),
-                              _c("option", { attrs: { value: "brown" } }, [
-                                _vm._v("Коричневый")
-                              ]),
-                              _vm._v(" "),
-                              _c("option", { attrs: { value: "orange" } }, [
-                                _vm._v("Оранжевый")
-                              ]),
-                              _vm._v(" "),
-                              _c("option", { attrs: { value: "gray" } }, [
-                                _vm._v("Серый")
-                              ])
-                            ]
-                          )
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "uk-margin" }, [
-                        _c(
-                          "label",
-                          {
-                            staticClass: "uk-form-label",
-                            attrs: { for: "type_controller" }
-                          },
-                          [_vm._v("Тип управления*:")]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "uk-form-controls" }, [
-                          _c(
-                            "select",
-                            {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.list.type_controller,
-                                  expression: "list.type_controller"
-                                }
-                              ],
-                              staticClass: "uk-select uk-width-1-2@m",
-                              attrs: { id: "type_controller" },
-                              on: {
-                                change: function($event) {
-                                  var $$selectedVal = Array.prototype.filter
-                                    .call($event.target.options, function(o) {
-                                      return o.selected
-                                    })
-                                    .map(function(o) {
-                                      var val =
-                                        "_value" in o ? o._value : o.value
-                                      return val
-                                    })
-                                  _vm.$set(
-                                    _vm.list,
-                                    "type_controller",
-                                    $event.target.multiple
-                                      ? $$selectedVal
-                                      : $$selectedVal[0]
-                                  )
-                                }
-                              }
-                            },
-                            [
-                              _c("option", { attrs: { value: "0" } }, [
-                                _vm._v("Не назначен")
-                              ]),
-                              _vm._v(" "),
-                              _c("option", { attrs: { value: "automatic" } }, [
-                                _vm._v("Автоматическое")
-                              ]),
-                              _vm._v(" "),
-                              _c("option", { attrs: { value: "manual" } }, [
-                                _vm._v("Ручное")
-                              ])
-                            ]
-                          )
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "uk-margin" }, [
-                        _c(
-                          "label",
-                          {
-                            staticClass: "uk-form-label",
-                            attrs: { for: "count_program" }
-                          },
-                          [_vm._v("Количество программ:*")]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "uk-form-controls" }, [
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.list.count_program,
-                                expression: "list.count_program"
-                              }
-                            ],
-                            staticClass: "uk-input",
-                            attrs: {
-                              id: "count_program",
-                              type: "number",
-                              placeholder: "Объем",
-                              autocomplete: "off"
-                            },
-                            domProps: { value: _vm.list.count_program },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(
-                                  _vm.list,
-                                  "count_program",
-                                  $event.target.value
-                                )
-                              }
+                          ],
+                          staticClass: "uk-select uk-width-1-2@m",
+                          attrs: { id: "brand" },
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.$set(
+                                _vm.list,
+                                "brand",
+                                $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              )
                             }
+                          }
+                        },
+                        [
+                          _c("option", { attrs: { value: "0" } }, [
+                            _vm._v("Не назначен")
+                          ]),
+                          _vm._v(" "),
+                          _vm._l(_vm.brand_list, function(item) {
+                            return _c(
+                              "option",
+                              { domProps: { value: item.id } },
+                              [_vm._v(_vm._s(item.name))]
+                            )
                           })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "uk-margin" }, [
-                        _c(
-                          "label",
-                          {
-                            staticClass: "uk-form-label",
-                            attrs: { for: "remote_controller" }
-                          },
-                          [_vm._v("Пульт управления:")]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "uk-form-controls" }, [
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.list.remote_controller,
-                                expression: "list.remote_controller"
-                              }
-                            ],
-                            staticClass: "uk-checkbox",
-                            attrs: {
-                              id: "remote_controller",
-                              type: "checkbox",
-                              placeholder: "Пульт управления",
-                              autocomplete: "off"
-                            },
-                            domProps: {
-                              checked: Array.isArray(_vm.list.remote_controller)
-                                ? _vm._i(_vm.list.remote_controller, null) > -1
-                                : _vm.list.remote_controller
-                            },
-                            on: {
-                              change: function($event) {
-                                var $$a = _vm.list.remote_controller,
-                                  $$el = $event.target,
-                                  $$c = $$el.checked ? true : false
-                                if (Array.isArray($$a)) {
-                                  var $$v = null,
-                                    $$i = _vm._i($$a, $$v)
-                                  if ($$el.checked) {
-                                    $$i < 0 &&
-                                      _vm.$set(
-                                        _vm.list,
-                                        "remote_controller",
-                                        $$a.concat([$$v])
-                                      )
-                                  } else {
-                                    $$i > -1 &&
-                                      _vm.$set(
-                                        _vm.list,
-                                        "remote_controller",
-                                        $$a
-                                          .slice(0, $$i)
-                                          .concat($$a.slice($$i + 1))
-                                      )
-                                  }
-                                } else {
-                                  _vm.$set(_vm.list, "remote_controller", $$c)
-                                }
-                              }
-                            }
-                          })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "uk-margin" }, [
-                        _c(
-                          "label",
-                          {
-                            staticClass: "uk-form-label",
-                            attrs: { for: "timer" }
-                          },
-                          [_vm._v("Прогрев:")]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "uk-form-controls" }, [
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.list.warming_up,
-                                expression: "list.warming_up"
-                              }
-                            ],
-                            staticClass: "uk-checkbox",
-                            attrs: {
-                              id: "warming_up",
-                              type: "checkbox",
-                              placeholder: "Прогрев",
-                              autocomplete: "off"
-                            },
-                            domProps: {
-                              checked: Array.isArray(_vm.list.warming_up)
-                                ? _vm._i(_vm.list.warming_up, null) > -1
-                                : _vm.list.warming_up
-                            },
-                            on: {
-                              change: function($event) {
-                                var $$a = _vm.list.warming_up,
-                                  $$el = $event.target,
-                                  $$c = $$el.checked ? true : false
-                                if (Array.isArray($$a)) {
-                                  var $$v = null,
-                                    $$i = _vm._i($$a, $$v)
-                                  if ($$el.checked) {
-                                    $$i < 0 &&
-                                      _vm.$set(
-                                        _vm.list,
-                                        "warming_up",
-                                        $$a.concat([$$v])
-                                      )
-                                  } else {
-                                    $$i > -1 &&
-                                      _vm.$set(
-                                        _vm.list,
-                                        "warming_up",
-                                        $$a
-                                          .slice(0, $$i)
-                                          .concat($$a.slice($$i + 1))
-                                      )
-                                  }
-                                } else {
-                                  _vm.$set(_vm.list, "warming_up", $$c)
-                                }
-                              }
-                            }
-                          })
-                        ])
-                      ])
+                        ],
+                        2
+                      )
                     ])
-                  : _vm._e(),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "uk-margin" }, [
+                    _c(
+                      "label",
+                      { staticClass: "uk-form-label", attrs: { for: "name" } },
+                      [_vm._v("Область массажа:*")]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "uk-form-controls" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.list.massage_area,
+                            expression: "list.massage_area"
+                          }
+                        ],
+                        staticClass: "uk-input",
+                        attrs: {
+                          id: "massage_area",
+                          type: "text",
+                          placeholder: "Область массажа",
+                          autocomplete: "off"
+                        },
+                        domProps: { value: _vm.list.massage_area },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.list,
+                              "massage_area",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "uk-margin" }, [
+                    _c(
+                      "label",
+                      { staticClass: "uk-form-label", attrs: { for: "color" } },
+                      [_vm._v("Цвет*:")]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "uk-form-controls" }, [
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.list.color,
+                              expression: "list.color"
+                            }
+                          ],
+                          staticClass: "uk-select uk-width-1-2@m",
+                          attrs: { id: "color" },
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.$set(
+                                _vm.list,
+                                "color",
+                                $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              )
+                            }
+                          }
+                        },
+                        [
+                          _c("option", { attrs: { value: "0" } }, [
+                            _vm._v("Не назначен")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "red" } }, [
+                            _vm._v("Красный")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "white" } }, [
+                            _vm._v("Белый")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "cream" } }, [
+                            _vm._v("Кремовый")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "graphite" } }, [
+                            _vm._v("Графит")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "brown" } }, [
+                            _vm._v("Коричневый")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "orange" } }, [
+                            _vm._v("Оранжевый")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "gray" } }, [
+                            _vm._v("Серый")
+                          ])
+                        ]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "uk-margin" }, [
+                    _c(
+                      "label",
+                      {
+                        staticClass: "uk-form-label",
+                        attrs: { for: "type_controller" }
+                      },
+                      [_vm._v("Тип управления*:")]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "uk-form-controls" }, [
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.list.type_controller,
+                              expression: "list.type_controller"
+                            }
+                          ],
+                          staticClass: "uk-select uk-width-1-2@m",
+                          attrs: { id: "type_controller" },
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.$set(
+                                _vm.list,
+                                "type_controller",
+                                $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              )
+                            }
+                          }
+                        },
+                        [
+                          _c("option", { attrs: { value: "0" } }, [
+                            _vm._v("Не назначен")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "automatic" } }, [
+                            _vm._v("Автоматическое")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "manual" } }, [
+                            _vm._v("Ручное")
+                          ])
+                        ]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "uk-margin" }, [
+                    _c(
+                      "label",
+                      {
+                        staticClass: "uk-form-label",
+                        attrs: { for: "count_program" }
+                      },
+                      [_vm._v("Количество программ:*")]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "uk-form-controls" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.list.count_program,
+                            expression: "list.count_program"
+                          }
+                        ],
+                        staticClass: "uk-input",
+                        attrs: {
+                          id: "count_program",
+                          type: "number",
+                          placeholder: "Объем",
+                          autocomplete: "off"
+                        },
+                        domProps: { value: _vm.list.count_program },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.list,
+                              "count_program",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "uk-margin" }, [
+                    _c(
+                      "label",
+                      {
+                        staticClass: "uk-form-label",
+                        attrs: { for: "remote_controller" }
+                      },
+                      [_vm._v("Пульт управления:")]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "uk-form-controls" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.list.remote_controller,
+                            expression: "list.remote_controller"
+                          }
+                        ],
+                        staticClass: "uk-checkbox",
+                        attrs: {
+                          id: "remote_controller",
+                          type: "checkbox",
+                          placeholder: "Пульт управления",
+                          autocomplete: "off"
+                        },
+                        domProps: {
+                          checked: Array.isArray(_vm.list.remote_controller)
+                            ? _vm._i(_vm.list.remote_controller, null) > -1
+                            : _vm.list.remote_controller
+                        },
+                        on: {
+                          change: function($event) {
+                            var $$a = _vm.list.remote_controller,
+                              $$el = $event.target,
+                              $$c = $$el.checked ? true : false
+                            if (Array.isArray($$a)) {
+                              var $$v = null,
+                                $$i = _vm._i($$a, $$v)
+                              if ($$el.checked) {
+                                $$i < 0 &&
+                                  _vm.$set(
+                                    _vm.list,
+                                    "remote_controller",
+                                    $$a.concat([$$v])
+                                  )
+                              } else {
+                                $$i > -1 &&
+                                  _vm.$set(
+                                    _vm.list,
+                                    "remote_controller",
+                                    $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                                  )
+                              }
+                            } else {
+                              _vm.$set(_vm.list, "remote_controller", $$c)
+                            }
+                          }
+                        }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "uk-margin" }, [
+                    _c(
+                      "label",
+                      { staticClass: "uk-form-label", attrs: { for: "timer" } },
+                      [_vm._v("Прогрев:")]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "uk-form-controls" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.list.warming_up,
+                            expression: "list.warming_up"
+                          }
+                        ],
+                        staticClass: "uk-checkbox",
+                        attrs: {
+                          id: "warming_up",
+                          type: "checkbox",
+                          placeholder: "Прогрев",
+                          autocomplete: "off"
+                        },
+                        domProps: {
+                          checked: Array.isArray(_vm.list.warming_up)
+                            ? _vm._i(_vm.list.warming_up, null) > -1
+                            : _vm.list.warming_up
+                        },
+                        on: {
+                          change: function($event) {
+                            var $$a = _vm.list.warming_up,
+                              $$el = $event.target,
+                              $$c = $$el.checked ? true : false
+                            if (Array.isArray($$a)) {
+                              var $$v = null,
+                                $$i = _vm._i($$a, $$v)
+                              if ($$el.checked) {
+                                $$i < 0 &&
+                                  _vm.$set(
+                                    _vm.list,
+                                    "warming_up",
+                                    $$a.concat([$$v])
+                                  )
+                              } else {
+                                $$i > -1 &&
+                                  _vm.$set(
+                                    _vm.list,
+                                    "warming_up",
+                                    $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                                  )
+                              }
+                            } else {
+                              _vm.$set(_vm.list, "warming_up", $$c)
+                            }
+                          }
+                        }
+                      })
+                    ])
+                  ])
+                ]),
                 _vm._v(" "),
                 _vm.list.type_of_product == "fitness_equipment"
                   ? _c("div", [

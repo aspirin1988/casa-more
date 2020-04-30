@@ -205,7 +205,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div v-if="list.type_of_product == 'massagers'">
+                        <div>
                             <div class="uk-margin">
                                 <label class="uk-form-label" for="brand">Брэнд*:</label>
                                 <div class="uk-form-controls">
