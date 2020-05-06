@@ -12,10 +12,13 @@
                             <div class="uk-form-controls">
                                 <select class="uk-select uk-width-1-2@m" id="brand" v-model="list.type_of_product">
                                     <option value="0">Не назначен</option>
-                                    <option value="massage_chairs">Массажные кресла</option>
-                                    <option value="massagers">Массажеры</option>
-                                    <option value="fitness_equipment">Фитнес оборудование</option>
                                     <option value="household_products">Товары для дома</option>
+                                    <option value="massage_chairs">Массажные кресла</option>
+                                    <option value="Massagers_for_legs">Массажеры для ног</option>
+                                    <option value="Massage_wraps">Массажные накидки</option>
+                                    <option value="Massage_pillows">Массажные подушки</option>
+                                    <option value="Massagers">Массажеры</option>
+                                    <option value="fitness_equipment">Фитнес оборудование</option>
                                 </select>
                             </div>
                         </div>
@@ -37,6 +40,7 @@
                                     <option value="brown">Коричневый</option>
                                     <option value="orange">Оранжевый</option>
                                     <option value="gray">Серый</option>
+                                    <option value="red">Серый</option>
                                 </select>
                             </div>
                         </div>
@@ -56,7 +60,7 @@
         data() {
             return {
                 list: {
-                    brand:0,
+                    brand: 0,
                 },
                 rules: {
                     name: 'required',

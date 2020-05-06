@@ -110,6 +110,14 @@
 .ProdPostVar .ProdPostVarColor a.color-brown i {
   background-color: #59472f;
 }
+
+.ProdPostVar .ProdPostVarColor a.color-red i {
+  background-color: #eb0000;
+}
+/* line 100, ../sass/product-post/product-post-card.scss */
+.ProdPostVar .ProdPostVarColor a.color-gray i {
+    background-color: #676767;
+}
 /* line 107, ../sass/product-post/product-post-card.scss */
 .ProdPostVar .ProdPostVarColor a.color-cream i {
   background-color: #dcc4b9;

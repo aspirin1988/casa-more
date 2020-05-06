@@ -1248,6 +1248,12 @@
 .CardBox .CardBoxDesc i.color-graphite {
     background-color: #454343;
 }
+.CardBox .CardBoxDesc i.color-red {
+    background-color: #eb0000;
+}
+.CardBox .CardBoxDesc i.color-gray {
+    background-color: #676767;
+}
 .CardBox .CardBoxDesc i.color-orange {
     background-color: #FFA500;
 }

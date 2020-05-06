@@ -213,7 +213,7 @@ class ProductController extends Controller
         $rubric = Rubric::where('slug', $method)->first();
 
 
-        $products = \App\Product::where('present')->get();
+        $products = \App\Product::where('present')->paginate(20);
 
         return view('product.massage_chairs', [
             'title' => $title,

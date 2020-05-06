@@ -138,7 +138,7 @@ Route::delete('admin/media/delete/{dir}', 'AdminImageController@dirDelete')->nam
 Route::get('/admin/media/{page?}', 'AdminImageController@index')->name('admin_image_index');
 Route::get('/admin/media_list/{page}', 'AdminImageController@mediaList')->name('admin_image_list');
 Route::get('/admin/media_list/get/{page}', 'AdminImageController@getMediaList')->name('admin_image_list');
-Route::get('/admin/image/get_media/{dir?}', 'AdminImageController@getImages')->name('admin_image_get');
+Route::get('/admin/image/get_media/{dir?}/{page?}', 'AdminImageController@getImages')->name('admin_image_get');
 Route::post('/admin/image/upload/{product_id?}', 'AdminImageController@upload')->name('admin_image_upload');
 Route::post('/admin/image/clone', 'AdminImageController@clone')->name('admin_image_clone');
 Route::post('/admin/brochure/upload/{product_id?}', 'AdminProductController@uploadBrochure')->name('admin_brochure_upload');
@@ -186,6 +186,6 @@ Route::get('/massagers', 'ProductController@massagers')->name('massagers');
 Route::get('/fitness_equipment', 'ProductController@fitnessQquipment')->name('fitness_equipment');
 Route::get('/household_products', 'ProductController@householdProducts')->name('household_products');
 Route::get('/news', 'PageController@news')->name('page_news');
-Route::get('/{product}/{id}/{color?}', 'ProductController@single')->where('color', '(white|cream|graphite|brown|orange|gray)')->name('product_single');
+Route::get('/{product}/{id}/{color?}', 'ProductController@single')->where('color', '(white|cream|graphite|brown|orange|gray|red)')->name('product_single');
 Route::get('/{rubric}', 'ProductController@otherProducts')->where('rubric', '('.$type_of_product.')')->name('other_rubric');
 Route::get('/{page}', 'PageController@index')->name('page_index');

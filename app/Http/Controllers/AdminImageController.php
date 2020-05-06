@@ -19,7 +19,7 @@ class AdminImageController extends Controller
         return view('admin.media.list', ['dir' => $dir]);
     }
 
-    public function getImages($dir = 'image')
+    public function getImages($dir = 'image', $page = 1)
     {
         $img_ = public_path('img');
 
@@ -147,7 +147,7 @@ class AdminImageController extends Controller
 
     public function getMediaList($dir)
     {
-        $images = Image::where('image', 'like', '%/' . $dir . '/%')->get();
+        $images = Image::where('image', 'like', '%/' . $dir . '/%')->orderBy('created_at', 'desc')->get();
         return response()->json(['list' => $images]);
     }
 
@@ -159,7 +159,7 @@ class AdminImageController extends Controller
 
     public function uploadImage(Request $request)
     {
-        $dir = 'image';
+        $dir = $request->input('dir', 'image');
         $file = $request->file('image');
 
         $result = [];
@@ -179,6 +179,14 @@ class AdminImageController extends Controller
         $file_path = $file_path . md5($name) . '.' . $ext;
 
         Storage::put($file_path, file_get_contents($file->getRealPath()));
+
+        $input = [
+            'name' => $name,
+            'image' => $file_path,
+            'object_id' => 0,
+        ];
+
+        $result[] = Image::create($input);
 
         return response()->json(['url' => $file_path]);
     }

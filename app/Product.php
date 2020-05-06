@@ -13,6 +13,9 @@ class Product extends Model
         "massagers" => 'Массажеры',
         "fitness_equipment" => 'Фитнес оборудование',
         "household_products" => 'Товары для дома',
+        "Massagers_for_legs" => 'Массажеры для ног',
+        "Massage_wraps" => 'Массажные накидки',
+        "Massage_pillows" => 'Массажные подушки',
     ];
 
     public function getTags()

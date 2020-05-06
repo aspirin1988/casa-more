@@ -114,6 +114,7 @@ class AdminProductController extends Controller
     {
         $data = $request->all();
         unset($data['url']);
+//        $data['icons'] = json_encode($data['icons']);
         $keyword = Slug::make($data['name']);
         $data['keyword'] = str_replace(".", "-", str_replace(" ", "_", strtolower($keyword)));
         $brand = Product::where('id', $id)->update($data);

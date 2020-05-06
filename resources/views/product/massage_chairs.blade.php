@@ -754,7 +754,9 @@
                     @endforeach
                 </div>
             </div>
-            {!! $products->render() !!}
+            @if(isset($products->perPage))
+                {!! $products->render() !!}
+            @endif
         </div>
     </div>
 
