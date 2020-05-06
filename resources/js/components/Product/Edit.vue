@@ -349,6 +349,12 @@
                                                        v-model="list.description"></html-editor-component>
                             </div>
                         </div>
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="custom_style">Custom style:</label>
+                            <div class="uk-form-controls">
+                                <textarea class="uk-textarea" rows="10" id="custom_style" v-model="list.custom_style"></textarea>
+                            </div>
+                        </div>
 
                         <div class="uk-margin">
                             <label for="images" class="uk-form-label">Изображение для каталога:</label>

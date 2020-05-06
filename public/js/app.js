@@ -5790,6 +5790,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['id'],
   data: function data() {
@@ -54815,6 +54821,45 @@ var render = function() {
                     ],
                     1
                   )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "uk-margin" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass: "uk-form-label",
+                      attrs: { for: "custom_style" }
+                    },
+                    [_vm._v("Custom style:")]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "uk-form-controls" }, [
+                    _c("textarea", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.list.custom_style,
+                          expression: "list.custom_style"
+                        }
+                      ],
+                      staticClass: "uk-textarea",
+                      attrs: { rows: "10", id: "custom_style" },
+                      domProps: { value: _vm.list.custom_style },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.list,
+                            "custom_style",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "uk-margin" }, [
