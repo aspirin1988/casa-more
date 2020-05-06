@@ -8,6 +8,11 @@
     @parent
     <link rel="stylesheet" href="/css/main-style.css" type="text/css"/>
     <link rel="stylesheet" href="/css/product-post.css" type="text/css"/>
+    @if($object->custom_style)
+        <style>
+            {!! $object->custom_style !!}
+        </style>
+    @endif
 @stop
 
 @section('script')
