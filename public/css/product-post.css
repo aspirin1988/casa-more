@@ -1327,8 +1327,7 @@
   }
   /* line 157, ../sass/product-post/product-post-item.scss */
   .ProdItemBox:nth-child(2n) .ProdItemBoxText {
-    padding-left: 0;
-    padding-right: 0px;
+    padding: 0 15px;
     width: 100%;
     margin: 5vw 0;
   }
