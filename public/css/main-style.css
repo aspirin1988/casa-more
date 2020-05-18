@@ -1079,6 +1079,13 @@ footer {
     top: -6px;
 }
 
+.HeaderWhite .open-btn b{
+    background: #fff;
+}
+.open-btn b:after, .open-btn b:before {
+    background: #fff;
+}
+
 /* line 65, ../sass/all/popup-menu.scss */
 .open-btn.close-btn b {
     background: transparent;
