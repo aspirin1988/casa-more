@@ -1382,6 +1382,10 @@ footer {
     background-color: #454343;
 }
 
+.value-field span.color-red {
+    background-color: #eb0000;
+}
+
 .value-field span.color-orange {
     background-color: #FFA500;
 }
