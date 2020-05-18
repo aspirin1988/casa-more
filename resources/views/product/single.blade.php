@@ -6,7 +6,7 @@
 
 @section('styles')
     @parent
-    <link rel="stylesheet" href="/css/main-style.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/main-style.css?v=2" type="text/css"/>
     <link rel="stylesheet" href="/css/product-post.css?v=2" type="text/css"/>
     @if($object->custom_style)
         <style>

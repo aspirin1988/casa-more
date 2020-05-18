@@ -6,8 +6,8 @@
 
 @section('styles')
     @parent
-    <link rel="stylesheet" href="/css/main-style.css" type="text/css"/>
-    <link rel="stylesheet" href="/css/form-in-post.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/main-style.css?v=2" type="text/css"/>
+    <link rel="stylesheet" href="/css/form-in-post.css?v=2" type="text/css"/>
 @stop
 
 @section('script')
