@@ -2746,3 +2746,9 @@
   display: block;
   width: 40px;
 }
+
+@media (max-width: 640px) {
+    .ProdPlusInfoImg .ProdPlusInfoCard {
+        padding-bottom: 60px;
+    }
+}
