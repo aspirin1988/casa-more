@@ -6,9 +6,9 @@
 
 @section('styles')
     @parent
-    <link rel="stylesheet" href="/css/main-style.css?v=2" type="text/css"/>
-    <link rel="stylesheet" href="/css/index.css?v=2" type="text/css"/>
-    <link rel="stylesheet" href="/css/catalog.css?v=2" type="text/css"/>
+    <link rel="stylesheet" href="/css/main-style.css?v=3" type="text/css"/>
+    <link rel="stylesheet" href="/css/index.css?v=3" type="text/css"/>
+    <link rel="stylesheet" href="/css/catalog.css?v=3" type="text/css"/>
 @stop
 
 @section('script')
