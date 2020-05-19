@@ -1,4 +1,4 @@
-@php $v='?v=32'; @endphp
+@php $v='?v=42'; @endphp
 <script src="{{ asset('js/uikit/uikit.js'.$v) }}" defer></script>
 <script src="{{ asset('js/uikit/uikit-icons.js'.$v) }}" defer></script>
 <script src="{{ asset('js/uikit/app_icons.js'.$v) }}" defer></script>

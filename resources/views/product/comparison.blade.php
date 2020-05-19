@@ -6,8 +6,8 @@
 
 @section('styles')
     @parent
-    <link rel="stylesheet" href="/css/main-style.css?v=3" type="text/css"/>
-    <link rel="stylesheet" href="/css/comparison.css?v=3" type="text/css"/>
+    <link rel="stylesheet" href="/css/main-style.css?v=4" type="text/css"/>
+    <link rel="stylesheet" href="/css/comparison.css?v=4" type="text/css"/>
 @stop
 
 @section('script')

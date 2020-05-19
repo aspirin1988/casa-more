@@ -13,8 +13,8 @@
     <meta name="format-detection" content="telephone=no">
     <meta http-equiv="x-rim-auto-match" content="none">
     @section('styles')
-        <link rel="stylesheet" href="/css/main-style.css?v=3" type="text/css"/>
-        <link rel="stylesheet" href="/js/owl.carousel.min.css?v=3">
+        <link rel="stylesheet" href="/css/main-style.css?v=4" type="text/css"/>
+        <link rel="stylesheet" href="/js/owl.carousel.min.css?v=4">
         <link
             href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900&display=swap&subset=cyrillic"
             rel="stylesheet">

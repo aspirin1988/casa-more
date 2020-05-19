@@ -1082,7 +1082,7 @@ footer {
 .HeaderWhite .open-btn b{
     background: #fff;
 }
-.open-btn b:after, .open-btn b:before {
+.HeaderWhite .open-btn b:after,  .HeaderWhite .open-btn b:before {
     background: #fff;
 }
 
