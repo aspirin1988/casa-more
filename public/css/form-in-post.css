@@ -1182,7 +1182,7 @@ form .checkbox-form a {
 .CategoryTop {
   height: 350px;
   box-sizing: border-box;
-  background: #000 url(../img/chairs.png) center center no-repeat;
+  background: #000 url(/img/chairs.png) center center no-repeat;
   background-size: cover;
   position: relative;
   z-index: 1;

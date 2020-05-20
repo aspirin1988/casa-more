@@ -302,11 +302,11 @@
 }
 /* line 284, ../sass/product-post/product-post-card.scss */
 .ProdPostCardLBottom a:nth-child(2) {
-  background: url(../img/Rectangle_7_copy_2.png) 0 7px no-repeat;
+  background: url(/img/Rectangle_7_copy_2.png) 0 7px no-repeat;
 }
 /* line 288, ../sass/product-post/product-post-card.scss */
 .ProdPostCardLBottom a:nth-child(3) {
-  background: url(../img/Shape_2.png) 0 7px no-repeat;
+  background: url(/img/Shape_2.png) 0 7px no-repeat;
 }
 
 /* line 294, ../sass/product-post/product-post-card.scss */
@@ -585,12 +585,12 @@
   }
   /* line 586, ../sass/product-post/product-post-card.scss */
   .ProdPostCardLBottom a:nth-child(2) {
-    background: url(../img/Rectangle_7_copy_2.png) 0 9px no-repeat;
+    background: url(/img/Rectangle_7_copy_2.png) 0 9px no-repeat;
     background-size: 18px;
   }
   /* line 591, ../sass/product-post/product-post-card.scss */
   .ProdPostCardLBottom a:nth-child(3) {
-    background: url(../img/Shape_2.png) 0 10px no-repeat;
+    background: url(/img/Shape_2.png) 0 10px no-repeat;
     background-size: 18px;
   }
 }
@@ -736,12 +736,12 @@
   }
   /* line 745, ../sass/product-post/product-post-card.scss */
   .ProdPostCardLBottom a:nth-child(2) {
-    background: url(../img/Rectangle_7_copy_2.png) 0 9px no-repeat;
+    background: url(/img/Rectangle_7_copy_2.png) 0 9px no-repeat;
     background-size: 4vw;
   }
   /* line 750, ../sass/product-post/product-post-card.scss */
   .ProdPostCardLBottom a:nth-child(3) {
-    background: url(../img/Shape_2.png) 0 10px no-repeat;
+    background: url(/img/Shape_2.png) 0 10px no-repeat;
     background-size: 4vw;
   }
 }
