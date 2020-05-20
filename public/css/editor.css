@@ -277,14 +277,14 @@
     font-size: 12px;
     font-weight: 600;
     text-transform: uppercase;
-    background: url(../img/icon/Vector_Smart_Object.png) 0 7px no-repeat;
+    background: url(/img/icon/Vector_Smart_Object.png) 0 7px no-repeat;
     padding-left: 35px;
     min-height: 35px;
     display: flex;
     align-items: center;
 }
 .ProdPostCardLBottom a.CardBoxPriceLiked {
-    background: url(../img/icon/Vector_Smart.png) 0 7px no-repeat;
+    background: url(/img/icon/Vector_Smart.png) 0 7px no-repeat;
 }
 /* line 284, ../sass/product-post/product-post-card.scss */
 .ProdPostCardLBottom a:nth-child(2) {
@@ -553,7 +553,7 @@
         font-size: 10px;
         font-weight: 600;
         text-transform: uppercase;
-        background: url(../img/icon/Vector_Smart_Object.png) 0 9px no-repeat;
+        background: url(/img/icon/Vector_Smart_Object.png) 0 9px no-repeat;
         padding-left: 32px;
         min-height: 35px;
         display: flex;
@@ -704,7 +704,7 @@
         font-size: 3vw;
         font-weight: 600;
         text-transform: uppercase;
-        background: url(../img/icon/Vector_Smart_Object.png) 0 9px no-repeat;
+        background: url(/img/icon/Vector_Smart_Object.png) 0 9px no-repeat;
         padding-left: 6vw;
         min-height: 7vw;
         display: flex;
@@ -902,7 +902,7 @@
     background-color: #fff;
     cursor: pointer;
     border-radius: 50%;
-    background-image: url(../img/icon/2-layers.png);
+    background-image: url(/img/icon/2-layers.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 11px 18px;
@@ -922,7 +922,7 @@
 /* line 113, ../sass/product-post/product-post-card-slider.scss */
 .slick-arrow:hover {
     background-color: #395669;
-    background-image: url(../img/icon/2-layers-h.png);
+    background-image: url(/img/icon/2-layers-h.png);
 }
 
 @media only screen and (min-width: 980px) and (max-width: 1199px) {
@@ -2355,7 +2355,7 @@
 .CardBox .CardDiscount span.item-gift {
     width: 30px;
     height: 30px;
-    background: #b351bc url(../img/icon/gift-img.png) center center no-repeat;
+    background: #b351bc url(/img/icon/gift-img.png) center center no-repeat;
     background-size: 17px 19px;
     padding: 0;
 }
@@ -2441,7 +2441,7 @@
 /* line 212, ../sass/index/index-card.scss */
 .CardBox .CardBoxDesc .CardBoxPrice .CardBoxPriceLike {
     outline: none;
-    background: url(../img/icon/Vector_Smart_Object.png) center center no-repeat;
+    background: url(/img/icon/Vector_Smart_Object.png) center center no-repeat;
     background-size: contain;
     width: 25px;
     height: 20px;
@@ -2471,7 +2471,7 @@
     background-color: #f3f3f3;
     cursor: pointer;
     border-radius: 50%;
-    background-image: url(../img/icon/2-layers.png);
+    background-image: url(/img/icon/2-layers.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 11px 18px;
@@ -2491,7 +2491,7 @@
 /* line 264, ../sass/index/index-card.scss */
 .slick-arrow:hover {
     background-color: #395669;
-    background-image: url(../img/icon/2-layers-h.png);
+    background-image: url(/img/icon/2-layers-h.png);
 }
 
 /* line 270, ../sass/index/index-card.scss */
@@ -2592,7 +2592,7 @@
     /* line 373, ../sass/index/index-card.scss */
     .CardBox .CardBoxDesc .CardBoxPrice .CardBoxPriceLike {
         outline: none;
-        background: url(../img/icon/Vector_Smart_Object.png) center center no-repeat;
+        background: url(/img/icon/Vector_Smart_Object.png) center center no-repeat;
         background-size: contain;
         width: 21px;
         height: 18px;
@@ -2652,7 +2652,7 @@
     /* line 437, ../sass/index/index-card.scss */
     .CardBox .CardBoxDesc .CardBoxPrice .CardBoxPriceLike {
         outline: none;
-        background: url(../img/icon/Vector_Smart_Object.png) center center no-repeat;
+        background: url(/img/icon/Vector_Smart_Object.png) center center no-repeat;
         background-size: contain;
         width: 5vw;
         height: 4vw;
@@ -2681,7 +2681,7 @@
         background-color: #f3f3f3;
         cursor: pointer;
         border-radius: 50%;
-        background-image: url(../img/icon/2-layers.png);
+        background-image: url(/img/icon/2-layers.png);
         background-position: center center;
         background-repeat: no-repeat;
         background-size: 2vw 3vw;
