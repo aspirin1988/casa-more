@@ -348,6 +348,7 @@ a {
     box-sizing: border-box;
     border: 1px solid #ece6e1;
     margin-top: 20px;
+    overflow: hidden;
 }
 
 /* line 118, ../sass/all/header.scss */
@@ -1508,4 +1509,7 @@ footer {
 
 .pagination .page-item.active span{
     color: #fff;
+}
+.pagination .page-item a{
+    color: #000;
 }
