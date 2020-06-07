@@ -27,17 +27,18 @@
         input_count = document.querySelector('#count');
         if (input_count)
             input_count.addEventListener('change', function () {
-                current_count = parseInt(this.value);
+                window.current_count = parseInt(this.value);
                 if (!this.value) {
                     this.value = 1;
                 }
+                console.log(this.value);
             });
 
 
         if (button_submit)
             button_submit.addEventListener('click', function () {
-                product_.count = window.current_count;
-                let product = product_;
+                window.product_.count = window.current_count;
+                let product = window.product_;
                 let basket = JSON.parse(localStorage.getItem('basket'));
                 let concat = false;
 
