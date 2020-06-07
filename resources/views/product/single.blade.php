@@ -25,7 +25,7 @@
         window.product_ = {id:{{$object->id}}, price:{{$object->price}}, count: 1};
         window.current_count = 1;
         input_count = document.querySelector('#count');
-        if (input_count)
+        if (input_count) {
             input_count.addEventListener('change', function () {
                 window.current_count = parseInt(this.value);
                 if (!this.value) {
@@ -33,6 +33,15 @@
                 }
                 console.log(this.value);
             });
+            input_count.addEventListener('click', function () {
+                window.current_count = parseInt(this.value);
+                if (!this.value) {
+                    this.value = 1;
+                }
+                console.log(this.value);
+            });
+        }
+
 
 
         if (button_submit)
