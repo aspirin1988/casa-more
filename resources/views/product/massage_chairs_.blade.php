@@ -28,5 +28,7 @@
             <a href="{{$product->getUrl()}}"></a>
         </div>
     @endforeach
-    {!! $products->render() !!}
+        @if(isset($products->perPage))
+            {!! $products->render() !!}
+        @endif
 </div>
