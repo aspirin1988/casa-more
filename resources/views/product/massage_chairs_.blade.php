@@ -29,6 +29,6 @@
         </div>
     @endforeach
 {{--        @if(isset($products->perPage))--}}
-            {!! $products->links('widgets._paginate') !!}
+            {!! $products->links('widgets._paginate',['paginator'=>$products,'method'=>$method]) !!}
 {{--        @endif--}}
 </div>

@@ -461,7 +461,7 @@ class ProductController extends Controller
             $liked[] = $order->product_id;
         }
 
-        return response()->view('product.massage_chairs_', ['products' => $products, 'liked' => $liked]);
+        return response()->view('product.massage_chairs_', ['products' => $products, 'liked' => $liked,'method'=>$method]);
     }
 
     public function addToSelect(Request $request)
