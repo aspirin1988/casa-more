@@ -33,20 +33,16 @@
                 }
                 console.log(this.value);
             });
-            input_count.addEventListener('click', function () {
-                window.current_count = parseInt(this.value);
-                if (!this.value) {
-                    this.value = 1;
-                }
-                console.log(this.value);
-            });
         }
-
 
 
         if (button_submit)
             button_submit.addEventListener('click', function () {
+
+                window.current_count = parseInt(input_count.value);
+
                 window.product_.count = window.current_count;
+
                 let product = window.product_;
                 let basket = JSON.parse(localStorage.getItem('basket'));
                 let concat = false;
@@ -241,7 +237,7 @@
                             @foreach($object->getColors() as $color)
                                 <a href="{{$color->getUrl()}}"
                                    class="color-{{$color->color}} {{($color->color==$object->color?'active':'')}}"><input
-                                            type="radio" name="color"><i></i></a>
+                                        type="radio" name="color"><i></i></a>
                             @endforeach
                         </div>
                     </div>
@@ -323,7 +319,7 @@
                     <td class="value-field">
                         @foreach($object->getColors() as $color)
                             <span
-                                    class="color-{{$color->color}} {{($color->color==$object->color?'active':'')}}"></span>
+                                class="color-{{$color->color}} {{($color->color==$object->color?'active':'')}}"></span>
                         @endforeach
                     </td>
                 </tr>
@@ -434,9 +430,9 @@
                                 </div>
                                 <div class="CardBoxDesc">
                                     <div class="CardBoxColor">
-{{--                                        @foreach($product->getChild() as $img)--}}
-{{--                                            <i class="exemple-image" data-big="{{$img->getBackground()}}"></i>--}}
-{{--                                        @endforeach--}}
+                                        {{--                                        @foreach($product->getChild() as $img)--}}
+                                        {{--                                            <i class="exemple-image" data-big="{{$img->getBackground()}}"></i>--}}
+                                        {{--                                        @endforeach--}}
                                     </div>
                                     <p>{{$product->getType()}}</p>
                                     <h5>{{$product->name}}</h5>
