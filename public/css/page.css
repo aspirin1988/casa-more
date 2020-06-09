@@ -3,7 +3,7 @@ h1 {
 }
 
 .page-text {
-    max-width: 625px;
+    max-width: 768px;
     margin: 0 auto;
 }
 
@@ -39,10 +39,10 @@ h1 {
 .page-text p, .contacts-text p {
     color: #010101;
     font-family: Montserrat;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 400;
-    line-height: 27px;
-    margin-bottom: 40px;
+    line-height: 1.5;
+    margin-bottom: 20px;
 }
 .contacts-text p {
     margin-bottom: 20px;
