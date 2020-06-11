@@ -16,7 +16,8 @@
                     console.log(e);
                     let array = ['+', 1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
                     if (array[e.key] !== undefined) {
-
+                        event.preventDefault();
+                        return false;
                     }
                     if (phone_val.length < 2) {
                         phone.value = '+7';
