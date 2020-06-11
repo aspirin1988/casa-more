@@ -7,6 +7,20 @@
 @section('styles')
     @parent
     <link rel="stylesheet" href="/css/form-in.css" type="text/css"/>
+    <script>
+        window.addEventListener('load',function () {
+            let phone = document.querySelector('#phone');
+            if(phone){
+                phone.addEventListener('keypress',function (e) {
+                    console.log(e);
+                    if(e.key){
+
+                    }
+                })
+            }
+        });
+    </script>
+
 @stop
 
 @section('content')
@@ -103,17 +117,4 @@
             </div>
         </div>
     </div>
-    <script>
-        window.addEventListener('load',function () {
-           let phone = document.querySelector('#phone');
-           if(phone){
-               phone.addEventListener('keypress',function (e) {
-                   console.log(e);
-                   if(e.key){
-
-                   }
-               })
-           }
-        });
-    </script>
 @endsection
