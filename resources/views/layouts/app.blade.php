@@ -181,7 +181,7 @@
                 _token: document.head.querySelector('meta[name="csrf-token"]').content,
                 id: this.dataset['id'],
             };
-            $.post("/add/to-select", send, function (data) {
+            $.post("/add/to-select/", send, function (data) {
                 if (data.result) {
                     UIkit.notification({message: data.message, status: 'success'});
                     e.target.classList.toggle('CardBoxPriceLiked');
