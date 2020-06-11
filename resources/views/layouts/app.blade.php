@@ -182,7 +182,7 @@
             $.post("/add/to-select", send, function (data) {
                 if (data.result) {
                     UIkit.notification({message: data.message, status: 'success'});
-                    e.target.classList.remove('CardBoxPriceLiked');
+                    e.target.classList.add('CardBoxPriceLiked');
                 } else {
                     if (!data.auth) {
                         window.open('/login/', '_blank');
@@ -200,7 +200,7 @@
             $.post("/add/to-unselect", send, function (data) {
                 if (data.result) {
                     UIkit.notification({message: data.message, status: 'success'});
-                    e.target.classList.add('CardBoxPriceLiked');
+                    e.target.classList.remove('CardBoxPriceLiked');
                 } else {
                     if (!data.auth) {
                         window.open('/login/', '_blank');
