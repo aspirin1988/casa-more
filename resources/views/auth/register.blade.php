@@ -13,8 +13,6 @@
             if (phone) {
                 phone.addEventListener('keydown', function (e) {
 
-                    console.log(e);
-
                     let phone_val = phone.value;
                     let mask = '1234567890';
 
@@ -25,7 +23,6 @@
                     if (phone_val.length < 2) {
                         phone.value = '+7';
                     }
-                    console.log(phone_val.length);
                     if (phone_val.length > 11) {
                         event.preventDefault();
                         return false;
