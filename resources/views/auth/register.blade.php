@@ -13,11 +13,11 @@
             if (phone) {
                 phone.addEventListener('keyup', function (e) {
                     let phone_val = phone.value;
-                    let mask = '+1234567890';
+                    let mask = '1234567890';
                     console.log(e.key);
                     console.log(mask.indexOf(e.key));
 
-                    if (mask[e.key] !== undefined) {
+                    if (mask.indexOf(e.key) < 0) {
                         event.preventDefault();
                         return false;
                     }
