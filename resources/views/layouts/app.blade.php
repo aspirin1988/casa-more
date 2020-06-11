@@ -191,6 +191,24 @@
             });
             return false;
         };
+        window.sendToUnSelect = function (e) {
+            console.log(e.target);
+            let send = {
+                _token: document.head.querySelector('meta[name="csrf-token"]').content,
+                id: this.dataset['id'],
+            };
+            $.post("/add/to-unselect", send, function (data) {
+                if (data.result) {
+                    UIkit.notification({message: data.message, status: 'success'});
+                    e.target.classList.add('CardBoxPriceLiked');
+                } else {
+                    if (!data.auth) {
+                        window.open('/login/', '_blank');
+                    }
+                }
+            });
+            return false;
+        };
     </script>
     <script src="{{mix('/js/app.js')}}"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -200,6 +218,7 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script>
         $('.CardBoxPriceLike').on('click', sendToSelect);
+        $('.CardBoxPriceLiked').on('click', sendToUnSelect);
 
         $('.owl-carousel').owlCarousel({
             loop: true,

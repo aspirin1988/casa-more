@@ -170,6 +170,7 @@ Route::get('/all-brands', 'BrandController@allBrands')->name('all_brands');
 Route::get('/product-comparison', 'ProductController@comparison')->name('product_comparison');
 Route::get('/product-comparison/get', 'ProductController@comparisonGet')->name('product_comparison_get');
 Route::post('/add/to-select', 'ProductController@addToSelect')->name('add_to_select');
+Route::post('/add/to-unselect', 'ProductController@addToUnSelect')->name('add_to_unselect');
 Route::get('/profile', 'HomeController@index')->name('profile');
 Route::post('/product/get/list_by_tag', 'TagController@getProduct')->name('getProductTag');
 Route::post('/product/get/list_by_brand', 'BrandController@getProduct')->name('getProductBrand');
