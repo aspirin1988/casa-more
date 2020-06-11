@@ -8,13 +8,14 @@
     @parent
     <link rel="stylesheet" href="/css/form-in.css" type="text/css"/>
     <script>
-        window.addEventListener('load',function () {
+        window.addEventListener('load', function () {
             let phone = document.querySelector('#phone');
-            if(phone){
-                phone.addEventListener('keypress',function (e) {
+            if (phone) {
+                phone.addEventListener('keypress', function (e) {
                     console.log(e);
-                    if(e.key){
-
+                    let array = ['+', 1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+                    if (array[e.key] !== undefined) {
+                        console.log(e);
                     }
                 })
             }
@@ -87,7 +88,8 @@
                         @enderror
                         <label>
                             <span>Телефон:</span>
-                            <input id="phone" type="tel" name="phone" required="required" value="{{ old('phone') }}" class="text">
+                            <input id="phone" type="tel" name="phone" required="required" value="{{ old('phone') }}"
+                                   class="text">
                         </label>
                         @error('phone')
                         <span class="invalid-feedback" role="alert">
@@ -109,7 +111,9 @@
                         </label>
                         <button class="FormInBtn">Регистрация на сайте</button>
                         <label class="checkbox-form">
-                            <input type="checkbox" required="required" name="">Соглашаюсь с условиями <a target="_blank" href="/img/оферта.pdf"> договора оферты</a>
+                            <input type="checkbox" required="required" name="">Соглашаюсь с условиями <a target="_blank"
+                                                                                                         href="/img/оферта.pdf">
+                                договора оферты</a>
                             <b></b>
                         </label>
                     </form>
