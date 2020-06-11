@@ -12,6 +12,9 @@
             let phone = document.querySelector('#phone');
             if (phone) {
                 phone.addEventListener('keydown', function (e) {
+
+                    console.log(e);
+
                     let phone_val = phone.value;
                     let mask = '1234567890';
 
