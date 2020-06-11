@@ -23,7 +23,7 @@
                         phone.value = '+7';
                     }
                     console.log(phone_val.length);
-                    if (phone_val.length >= 11) {
+                    if (phone_val.length > 11) {
                         event.preventDefault();
                         return false;
                     }
