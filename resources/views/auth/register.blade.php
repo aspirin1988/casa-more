@@ -12,11 +12,16 @@
             let phone = document.querySelector('#phone');
             if (phone) {
                 phone.addEventListener('keypress', function (e) {
+                    let phone_val = phone.value;
                     console.log(e);
                     let array = ['+', 1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
                     if (array[e.key] !== undefined) {
-                        console.log(e);
+
                     }
+                    if(phone_val.length < 2){
+                        phone.value = '+7';
+                    }
+                    console.log(phone_val.length)
                 })
             }
         });
@@ -88,7 +93,7 @@
                         @enderror
                         <label>
                             <span>Телефон:</span>
-                            <input id="phone" type="tel" name="phone" required="required" value="{{ old('phone') }}"
+                            <input id="phone" type="tel" name="phone" required="required" value="{{ old('phone') ?? '+7' }}"
                                    class="text">
                         </label>
                         @error('phone')
