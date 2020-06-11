@@ -73,7 +73,7 @@
                         @enderror
                         <label>
                             <span>Телефон:</span>
-                            <input type="tel" name="phone" required="required" value="{{ old('phone') }}" class="text">
+                            <input id="phone" type="tel" name="phone" required="required" value="{{ old('phone') }}" class="text">
                         </label>
                         @error('phone')
                         <span class="invalid-feedback" role="alert">
@@ -103,4 +103,17 @@
             </div>
         </div>
     </div>
+    <script>
+        window.addEventListener('load',function () {
+           let phone = document.querySelector('#phone');
+           if(phone){
+               phone.addEventListener('keypress',function (e) {
+                   console.log(e);
+                   if(e.key){
+
+                   }
+               })
+           }
+        });
+    </script>
 @endsection
