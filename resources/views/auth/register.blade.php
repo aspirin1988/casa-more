@@ -11,7 +11,7 @@
         window.addEventListener('load', function () {
             let phone = document.querySelector('#phone');
             if (phone) {
-                phone.addEventListener('keypress', function (e) {
+                phone.addEventListener('keyup', function (e) {
                     let phone_val = phone.value;
                     console.log(e);
                     let array = ['+', 1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
