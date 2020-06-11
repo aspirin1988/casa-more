@@ -162,7 +162,6 @@
         window.UIkit.container = document.querySelector('.uk-container');
 
         window.UIkit.notification = function (obj) {
-            console.log(obj);
             if (obj) {
                 let div = document.createElement('DIV');
                 div.classList.add('uk-notification');
@@ -176,7 +175,6 @@
         };
 
         window.sendToSelect = function (e) {
-            console.log(e.target);
             let send = {
                 _token: document.head.querySelector('meta[name="csrf-token"]').content,
                 id: this.dataset['id'],
