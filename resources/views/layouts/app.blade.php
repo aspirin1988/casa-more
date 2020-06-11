@@ -202,9 +202,9 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script>
 
-        window.addEventListener('load', function () {
-            document.querySelector('[data-to-favorites]').addEventListener('click', sendToSelect);
-        });
+        // window.addEventListener('load', function () {
+        //     document.querySelector('[data-to-favorites]').addEventListener('click', sendToSelect);
+        // });
 
 
         $('.owl-carousel').owlCarousel({
