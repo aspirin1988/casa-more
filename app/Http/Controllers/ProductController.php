@@ -469,21 +469,6 @@ class ProductController extends Controller
         $id = $request->input('id');
 
         if (Auth::check()) {
-            if (SelectedProduct::where('user_id', Auth::id())->where('product_id', $id)->first()) {
-                return response()->json(['result' => true, 'auth' => true, 'message' => 'Данный товар уже в избраном!']);
-            } else {
-                SelectedProduct::create(['user_id' => Auth::id(), 'product_id' => $id]);
-                return response()->json(['result' => true, 'auth' => true, 'message' => 'Данный товар успешно добавлен избраное!']);
-            }
-        } else {
-            return response()->json(['result' => false, 'auth' => false]);
-        }
-    }
-    public function addToUnSelect(Request $request)
-    {
-        $id = $request->input('id');
-
-        if (Auth::check()) {
 
             $product = SelectedProduct::where('user_id', Auth::id())->where('product_id', $id)->first();
 
