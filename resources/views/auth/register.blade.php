@@ -18,7 +18,7 @@
                     let phone_val = phone.value;
                     let mask = '1234567890';
 
-                    if (mask.indexOf(e.key) < 0 || e.key == 'Backspace') {
+                    if (mask.indexOf(e.key) < 0 && e.keyCode !== 8) {
                         event.preventDefault();
                         return false;
                     }
