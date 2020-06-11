@@ -280,7 +280,7 @@
                 @endif
             </div>
             <div class="ProdPostCardLBottom">
-                <a data-id="{{$object->id}}"
+                <a data-to-favorites="" data-id="{{$object->id}}"
                    class="{{( in_array($object->id,$liked) ?'CardBoxPriceLiked':'CardBoxPriceLike')}}" href="#">
                     в избранное</a>
                 @if($object->type_of_product == 'massage_chairs')
