@@ -8,6 +8,15 @@
     @parent
     <link rel="stylesheet" href="/css/main-style.css?v=5" type="text/css"/>
     <link rel="stylesheet" href="/css/form-in-post.css?v=5" type="text/css"/>
+    <style>
+        .uk-container {
+            position: fixed;
+            top: 0;
+            left: 100%;
+            transform: translate(-100%, 10px);
+            z-index: 10;
+        }
+    </style>
 @stop
 
 @section('script')
