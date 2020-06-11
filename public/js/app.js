@@ -9775,13 +9775,15 @@ __webpack_require__.r(__webpack_exports__);
         if (data.success) {
           UIkit.notification({
             message: data.message,
-            status: 'success'
+            status: 'success',
+            pos: 'top-right'
           });
           _this.obj = {};
         } else {
           UIkit.notification({
             message: data.message,
-            status: 'danger'
+            status: 'danger',
+            pos: 'top-right'
           });
         }
       });

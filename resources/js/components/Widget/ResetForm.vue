@@ -31,10 +31,10 @@
                     response => {
                         let data = response.data;
                         if (data.success) {
-                            UIkit.notification({message: data.message, status: 'success'});
+                            UIkit.notification({message: data.message, status: 'success', pos: 'top-right'});
                             this.obj = {};
                         } else {
-                            UIkit.notification({message: data.message, status: 'danger'});
+                            UIkit.notification({message: data.message, status: 'danger', pos: 'top-right'});
                         }
                     },
                 )
