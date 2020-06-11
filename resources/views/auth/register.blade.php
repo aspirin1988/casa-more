@@ -18,10 +18,14 @@
                     if (array[e.key] !== undefined) {
 
                     }
-                    if(phone_val.length < 2){
+                    if (phone_val.length < 2) {
                         phone.value = '+7';
                     }
-                    console.log(phone_val.length)
+                    console.log(phone_val.length);
+                    if (phone_val.length >= 11) {
+                        event.preventDefault();
+                        return false;
+                    }
                 })
             }
         });
@@ -93,7 +97,8 @@
                         @enderror
                         <label>
                             <span>Телефон:</span>
-                            <input id="phone" type="tel" name="phone" required="required" value="{{ old('phone') ?? '+7' }}"
+                            <input id="phone" type="tel" name="phone" required="required"
+                                   value="{{ old('phone') ?? '+7' }}"
                                    class="text">
                         </label>
                         @error('phone')
