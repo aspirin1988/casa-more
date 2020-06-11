@@ -14,7 +14,7 @@
                 phone.addEventListener('keyup', function (e) {
                     let phone_val = phone.value;
                     let array = ['+', 1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-
+                    console.log(e.key);
                     console.log(array.indexOf(e.key));
 
                     if (array[e.key] !== undefined) {
