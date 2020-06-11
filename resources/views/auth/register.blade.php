@@ -17,7 +17,7 @@
                     console.log(e.key);
                     console.log(mask.indexOf(e.key));
 
-                    if (mask.indexOf(e.key) < 0) {
+                    if (mask.indexOf(e.key) < 0 || e.key == 'Backspace') {
                         event.preventDefault();
                         return false;
                     }
