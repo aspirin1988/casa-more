@@ -9855,6 +9855,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     this.t = location.search.split('?t=')[1];
+    this.t = decodeURI(this.t);
     console.log(this.t);
 
     if (this.t) {
@@ -14852,7 +14853,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.uk-search-cover + .container {\n    display: grid;\n    grid-template-columns: repeat(4, 1fr);\n    grid-gap: 20px;\n    margin: 40px auto;\n}\n.CardBox .CardBoxImg > img{\n    max-height: 270px;\n}\n", ""]);
+exports.push([module.i, "\n.uk-search-cover + .container {\n    display: grid;\n    grid-template-columns: repeat(4, 1fr);\n    grid-gap: 20px;\n    margin: 40px auto;\n}\n.CardBox .CardBoxImg > img {\n    max-height: 270px;\n}\n", ""]);
 
 // exports
 
