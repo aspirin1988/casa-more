@@ -13,11 +13,11 @@
             if (phone) {
                 phone.addEventListener('keyup', function (e) {
                     let phone_val = phone.value;
-                    let array = ['+', 1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+                    let mask = ['+', 1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
                     console.log(e.key);
-                    console.log(array.indexOf(e.key));
+                    console.log(mask.indexOf(e.key));
 
-                    if (array[e.key] !== undefined) {
+                    if (mask[e.key] !== undefined) {
                         event.preventDefault();
                         return false;
                     }
