@@ -197,40 +197,44 @@
                     </div>
                     <div id="form-3" class="tab-form Card CardTpl">
                         <div class="CardWr">
-                            @foreach($select_products as $select_product)
-                                @php $product = $select_product->product @endphp
-                                @if($product)
-                                    <div class="CardBox">
-                                        <div class="CardDiscount">
-                                            <span class="item-hits">хит</span>
-                                            @if($product->discount)
-                                                <span class="item-disc">-{{$product->discount}}%</span>
-                                            @endif
-                                        </div>
-                                        <div class="CardBoxImg">
-                                            <img id="green_monster" src="{{$product->getBackground()}}"
-                                                 data-big="{{$product->getBackground()}}">
-                                            {{--                                            <i class="CardBoxImgGift">--}}
-                                            {{--                                                <img src="/img/Layer_2_copy.png">--}}
-                                            {{--                                            </i>--}}
-                                        </div>
-                                        <div class="CardBoxDesc">
-                                            {{--                                            <div class="CardBoxColor">--}}
-                                            {{--                                                @foreach($product->getChild() as $img)--}}
-                                            {{--                                                    <i class="exemple-image" data-big="{{$img->getBackground()}}"></i>--}}
-                                            {{--                                                @endforeach--}}
-                                            {{--                                            </div>--}}
-                                            <p>{{$product->getType()}}</p>
-                                            <h5>{{$product->name}}</h5>
-                                            <div class="CardBoxPrice">
-                                                <span>{{$product->price}} <b>тг</b></span>
-                                                <button class="CardBoxPriceLike"></button>
+                            @if(count($select_products))
+                                @foreach($select_products as $select_product)
+                                    @php $product = $select_product->product @endphp
+                                    @if($product)
+                                        <div class="CardBox">
+                                            <div class="CardDiscount">
+                                                <span class="item-hits">хит</span>
+                                                @if($product->discount)
+                                                    <span class="item-disc">-{{$product->discount}}%</span>
+                                                @endif
                                             </div>
+                                            <div class="CardBoxImg">
+                                                <img id="green_monster" src="{{$product->getBackground()}}"
+                                                     data-big="{{$product->getBackground()}}">
+                                                {{--                                            <i class="CardBoxImgGift">--}}
+                                                {{--                                                <img src="/img/Layer_2_copy.png">--}}
+                                                {{--                                            </i>--}}
+                                            </div>
+                                            <div class="CardBoxDesc">
+                                                {{--                                            <div class="CardBoxColor">--}}
+                                                {{--                                                @foreach($product->getChild() as $img)--}}
+                                                {{--                                                    <i class="exemple-image" data-big="{{$img->getBackground()}}"></i>--}}
+                                                {{--                                                @endforeach--}}
+                                                {{--                                            </div>--}}
+                                                <p>{{$product->getType()}}</p>
+                                                <h5>{{$product->name}}</h5>
+                                                <div class="CardBoxPrice">
+                                                    <span>{{$product->price}} <b>тг</b></span>
+                                                    <button class="CardBoxPriceLike"></button>
+                                                </div>
+                                            </div>
+                                            <a href="{{$product->getUrl()}}"></a>
                                         </div>
-                                        <a href="{{$product->getUrl()}}"></a>
-                                    </div>
-                                @endif
-                            @endforeach
+                                    @endif
+                                @endforeach
+                            @else
+                                <h1 style="margin: 20px 0;">Вы не добавили ни один товар в избранное</h1>
+                            @endif
                         </div>
                     </div>
                     <div id="form-4" class="tab-form">
