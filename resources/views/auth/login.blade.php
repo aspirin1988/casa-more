@@ -7,6 +7,11 @@
 @section('styles')
     @parent
     <link rel="stylesheet" href="/css/form-in.css" type="text/css"/>
+    <style>
+        .invalid-feedback{
+            color: #f00;
+        }
+    </style>
 @stop
 
 @section('script')
@@ -44,19 +49,21 @@
                             <span>E-mail:</span>
                             <input type="email" name="email" value="{{ old('email') }}" class="text">
                         </label>
-                        @if ($errors->has('email'))
-                            <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                        @endif
                         <label>
                             <span>Пароль:</span>
                             <input type="password" name="password" value="{{ old('password') }}" class="text">
                         </label>
-                        @if ($errors->has('password'))
-                            <span class="invalid-feedback"><strong>{{ $errors->first('password') }}</strong></span>
-                        @endif
                         <button class="FormBtn">войти</button>
+                        @if ($errors->has('email'))
+                            <span class="invalid-feedback">
+                                <strong>{{ $errors->first('email') }}</strong>
+                            </span>
+                        @endif
+                        @if ($errors->has('password'))
+                            <span class="invalid-feedback">
+                                <strong>{{ $errors->first('password') }}</strong>
+                            </span>
+                        @endif
                     </form>
                 </div>
                 <div id="form-2" class="tab-form">
