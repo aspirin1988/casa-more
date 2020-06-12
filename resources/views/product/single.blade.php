@@ -73,10 +73,11 @@
         $(document).ready(function () {
 
             $('.CardBoxPriceLike').on('click', sendToSelect);
+            $('.CardBoxPriceLiked').on('click', sendToSelect);
 
-            $('.CardBoxPriceLiked').on('click', function () {
-                return false;
-            });
+            // $('.CardBoxPriceLiked').on('click', function () {
+            //     return false;
+            // });
 
             $('.minus').click(function () {
                 var $input = $(this).parent().find('input');
