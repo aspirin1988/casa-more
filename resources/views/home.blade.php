@@ -196,8 +196,8 @@
                         @endif
                     </div>
                     <div id="form-3" class="tab-form Card CardTpl">
-                        <div class="CardWr">
-                            @if(count($select_products))
+                        @if(count($select_products))
+                            <div class="CardWr">
                                 @foreach($select_products as $select_product)
                                     @php $product = $select_product->product @endphp
                                     @if($product)
@@ -232,10 +232,10 @@
                                         </div>
                                     @endif
                                 @endforeach
-                            @else
-                                <h1 style="margin: 20px 0;">Вы не добавили ни один товар в избранное</h1>
-                            @endif
-                        </div>
+                            </div>
+                        @else
+                            <h1 style="margin: 20px 0;">Вы не добавили ни один товар в избранное</h1>
+                        @endif
                     </div>
                     <div id="form-4" class="tab-form">
                         <form-reset-component></form-reset-component>
