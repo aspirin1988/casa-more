@@ -192,7 +192,7 @@
                                 </div>
                             @endforeach
                         @else
-                            <h1>Вы еще не совершали покупки</h1>
+                            <h1 style="margin: 20px 0;">Вы еще не совершали покупки</h1>
                         @endif
                     </div>
                     <div id="form-3" class="tab-form Card CardTpl">
