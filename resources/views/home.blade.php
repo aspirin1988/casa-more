@@ -122,7 +122,7 @@
                         </form>
                     </div>
                     <div id="form-2" class="tab-form">
-                        @if($orders)
+                        @if(count($orders))
                             @foreach($orders as $item)
                                 <div class="CartCardWr">
                                     <h5>
