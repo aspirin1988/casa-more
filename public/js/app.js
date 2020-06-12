@@ -5242,11 +5242,19 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       var comparison = JSON.parse(localStorage.getItem('comparison'));
-      this.$http.get("/product-comparison/get/?ids=" + comparison.join(',')).then(function (response) {
-        console.log(response.data); // if (response.data.success) {
 
-        _this.list = response.data.result; // }
-      });
+      if (comparison) {
+        this.$http.get("/product-comparison/get/?ids=" + comparison.join(',')).then(function (response) {
+          console.log(response.data); // if (response.data.success) {
+
+          _this.list = response.data.result; // }
+        });
+      } else {
+        this.$http.get("/product-comparison/get/all").then(function (response) {
+          console.log(response.data);
+          _this.list = response.data.result;
+        });
+      }
     },
     classObject: function classObject(color) {
       var lg_icon = 'color-' + color;

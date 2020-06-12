@@ -18,5 +18,4 @@
 
     <product-comparison-component></product-comparison-component>
 
-
 @endsection
