@@ -8551,7 +8551,7 @@ __webpack_require__.r(__webpack_exports__);
     this.getData();
   },
   methods: {
-    del: function del(id) {
+    Delete: function Delete(id) {
       var _this = this;
 
       this.$http.get('/admin/user/delete/' + id).then(function (response) {
@@ -60286,7 +60286,7 @@ var render = function() {
                         attrs: { title: "Удалить пользователя" },
                         on: {
                           click: function($event) {
-                            return _vm.del(item.id)
+                            return _vm.Delete(item.id)
                           }
                         }
                       },
