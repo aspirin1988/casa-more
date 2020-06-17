@@ -46,7 +46,7 @@
                         </div>
                         <hr>
                         <div class="uk-width-1-1 uk-text-center uk-margin-top uk-button-group uk-custom-grid@s">
-                            <button @click="pageAdd" class="uk-button uk-button-success" type="button">Создать</button>
+                            <button @click="pageAdd" class="uk-button uk-button-success" type="button">Сохранить</button>
                         </div>
                     </div>
                 </header>
