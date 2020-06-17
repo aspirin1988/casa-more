@@ -74904,6 +74904,7 @@ Vue.component('slider_list_item-component', __webpack_require__(/*! ./components
 Vue.component('slider_add-component', __webpack_require__(/*! ./components/Slider/Add.vue */ "./resources/js/components/Slider/Add.vue")["default"]);
 Vue.component('slider_edit-component', __webpack_require__(/*! ./components/Slider/Edit.vue */ "./resources/js/components/Slider/Edit.vue")["default"]);
 Vue.component('user_list-component', __webpack_require__(/*! ./components/User/List.vue */ "./resources/js/components/User/List.vue")["default"]);
+Vue.component('user_edit-component', __webpack_require__(/*! ./components/User/Update.vue */ "./resources/js/components/User/Update.vue")["default"]);
 Vue.component('product_list-component', __webpack_require__(/*! ./components/Product/List.vue */ "./resources/js/components/Product/List.vue")["default"]);
 Vue.component('product_list_item-component', __webpack_require__(/*! ./components/Product/ListItem.vue */ "./resources/js/components/Product/ListItem.vue")["default"]);
 Vue.component('product_add-component', __webpack_require__(/*! ./components/Product/Add.vue */ "./resources/js/components/Product/Add.vue")["default"]);
