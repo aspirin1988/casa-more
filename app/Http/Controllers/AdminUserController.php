@@ -22,11 +22,18 @@ class AdminUserController extends Controller
         return view('admin.users.edit', ['id'=>$id]);
     }
 
+    public function getEdit($id)
+    {
+        $user = User::where('id',$id)->first();
+
+        return response()->json($user);
+    }
+
     public function getList($method = 'all',$page,Request $request)
     {
         $list =[];
 
-        switch ($method){
+        switch ($method){˚
             case 'all':
                 $list = User::get();
                 break;

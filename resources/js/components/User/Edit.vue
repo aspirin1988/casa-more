@@ -68,6 +68,7 @@
 
 <script>
     export default {
+        props:['id'],
         data() {
             return {
                 list: {},
@@ -81,7 +82,7 @@
         },
         methods: {
             getData: function () {
-                    this.$http.post('/admin/user/get/'+this.id, this.list).then(response => {
+                    this.$http.get('/admin/user/get/'+this.id, this.list).then(response => {
                         this.list = response.data;
                     });
             },

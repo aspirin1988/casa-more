@@ -8419,6 +8419,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['id'],
   data: function data() {
     return {
       list: {},
@@ -8434,7 +8435,7 @@ __webpack_require__.r(__webpack_exports__);
     getData: function getData() {
       var _this = this;
 
-      this.$http.post('/admin/user/get/' + this.id, this.list).then(function (response) {
+      this.$http.get('/admin/user/get/' + this.id, this.list).then(function (response) {
         _this.list = response.data;
       });
     },
