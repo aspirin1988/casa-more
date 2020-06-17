@@ -5,5 +5,5 @@
 @endsection
 
 @section('content')
-    <user_edit-component :method="'{{$method}}'" :current_page="{{$page}}"></user_edit-component>
+    <user_edit-component :id="'{{$id}}'"></user_edit-component>
 @endsection
