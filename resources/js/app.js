@@ -59,7 +59,7 @@ Vue.component('slider_add-component', require('./components/Slider/Add.vue').def
 Vue.component('slider_edit-component', require('./components/Slider/Edit.vue').default);
 
 Vue.component('user_list-component', require('./components/User/List.vue').default);
-Vue.component('user_edit-component', require('./components/User/Update.vue').default);
+Vue.component('user_edit-component', require('./components/User/Edit.vue').default);
 
 Vue.component('product_list-component', require('./components/Product/List.vue').default);
 Vue.component('product_list_item-component', require('./components/Product/ListItem.vue').default);
