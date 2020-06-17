@@ -29,6 +29,13 @@ class AdminUserController extends Controller
         return response()->json($user);
     }
 
+    public function delete($id)
+    {
+        $user = User::where('id',$id)->delete();
+
+        return response()->json($user);
+    }
+
     public function getList($method = 'all',$page,Request $request)
     {
         $list =[];

@@ -8551,11 +8551,18 @@ __webpack_require__.r(__webpack_exports__);
     this.getData();
   },
   methods: {
-    getData: function getData() {
+    del: function del(id) {
       var _this = this;
 
+      this.$http.get('/admin/user/delete/' + id).then(function (response) {
+        _this.getData();
+      });
+    },
+    getData: function getData() {
+      var _this2 = this;
+
       this.$http.get('/admin/user/get/' + this.method + '/' + this.current_page).then(function (response) {
-        _this.list = response.data.list;
+        _this2.list = response.data.list;
       });
     },
     setUser: function setUser(item) {
@@ -60279,7 +60286,7 @@ var render = function() {
                         attrs: { title: "Удалить пользователя" },
                         on: {
                           click: function($event) {
-                            return _vm.del(item)
+                            return _vm.del(item.id)
                           }
                         }
                       },
