@@ -8407,17 +8407,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['id'],
   data: function data() {
@@ -59879,9 +59868,6 @@ var render = function() {
     _vm._m(0),
     _vm._v(" "),
     _c("div", { staticClass: "uk-margin" }, [
-      _vm._v(
-        '\n        birthday: null\n        created_at: "2019-09-30 09:08:30"\n        email: "aspirins24@gmail.com"\n        email_verified_at: null\n        first_name: "Sergey"\n        gender: null\n        id: 1\n        is_admin: 1\n        last_name: "Demidov"\n        phone: "+77075007039"\n        updated_at: "2019-11-07 10:33:10"\n        '
-      ),
       _c(
         "article",
         { staticClass: "uk-comment uk-textarea uk-padding-small" },

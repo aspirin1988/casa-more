@@ -33,7 +33,7 @@ class AdminUserController extends Controller
     {
         $list =[];
 
-        switch ($method){˚
+        switch ($method){
             case 'all':
                 $list = User::get();
                 break;

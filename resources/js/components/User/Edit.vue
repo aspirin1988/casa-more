@@ -4,17 +4,6 @@
             <div class="title"><h2>Пользыватель</h2></div>
         </header>
         <div class="uk-margin">
-            birthday: null
-            created_at: "2019-09-30 09:08:30"
-            email: "aspirins24@gmail.com"
-            email_verified_at: null
-            first_name: "Sergey"
-            gender: null
-            id: 1
-            is_admin: 1
-            last_name: "Demidov"
-            phone: "+77075007039"
-            updated_at: "2019-11-07 10:33:10"
             <article class="uk-comment uk-textarea uk-padding-small">
                 <header class="uk-comment-header uk-flex-middle uk-padding-small">
                     <div class="uk-form-horizontal uk-margin-large">
