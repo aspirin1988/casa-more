@@ -166,7 +166,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/serg/PhpstormProjects/casamaroe/resources/js/brand.js */"./resources/js/brand.js");
+module.exports = __webpack_require__(/*! /Users/sergeydemidov/PhpstormProjects/casa-more/resources/js/brand.js */"./resources/js/brand.js");
 
 
 /***/ })

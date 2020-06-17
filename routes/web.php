@@ -127,6 +127,7 @@ Route::get('/admin/user/{method?}/{page?}', 'AdminUserController@index')->name('
 Route::get('/admin/present', 'AdminPresentController@index')->name('admin_present');
 Route::get('/admin/present/add', 'AdminPresentController@add')->name('admin_present_add');
 Route::put('/admin/present/add', 'AdminPresentController@create')->name('admin_present_create');
+Route::delete('/admin/present/delete/{id}', 'AdminPresentController@delete')->name('admin_present_delete');
 Route::get('/admin/present/edit/{id}', 'AdminPresentController@edit')->name('admin_present_edit');
 Route::post('/admin/present/get', 'AdminPresentController@getList')->name('admin_present_get_edit');
 Route::get('/admin/present/get/edit/{id}', 'AdminPresentController@getEdit')->name('admin_present_get_edit');

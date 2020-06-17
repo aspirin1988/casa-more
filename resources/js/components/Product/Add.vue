@@ -84,7 +84,7 @@
                     this.$http.put('/admin/product/add/', this.list).then(response => {
                         let item = response.data;
                         if (item.id) {
-                            UIkit.notification({message: 'Брэнд успешно создана!', status: 'success'});
+                            UIkit.notification({message: 'Товара успешно создан!', status: 'success'});
                             setTimeout(() => {
                                 location.href = '/admin/product/edit/' + item.id;
                             }, 500);
@@ -117,7 +117,7 @@
                     } else {
                         console.log(tag_list);
                         this.list.tags = tag_list;
-                        UIkit.notification({message: "Тег успешно прикреплен к новости!", status: 'success'});
+                        UIkit.notification({message: "Тег успешно прикреплен к товарау!", status: 'success'});
                     }
                 });
 
@@ -128,7 +128,7 @@
                 let id = item.id;
                 this.$http.delete('/admin/brand/unset_tag/' + id).then(response => {
                     this.list.tags = response.data;
-                    UIkit.notification({message: "Тег успешно откреплен от новости!", status: 'success'});
+                    UIkit.notification({message: "Тег успешно откреплен от товара!", status: 'success'});
                 });
             },
         },
