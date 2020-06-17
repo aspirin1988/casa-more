@@ -71,7 +71,7 @@
         },
         methods: {
             getData: function () {
-                    this.$http.get('/admin/user/get/'+this.id, this.list).then(response => {
+                    this.$http.get('/admin/user/get/edit/'+this.id, this.list).then(response => {
                         this.list = response.data;
                     });
             },
