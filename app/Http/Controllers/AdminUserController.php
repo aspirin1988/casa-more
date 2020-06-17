@@ -17,6 +17,11 @@ class AdminUserController extends Controller
         return view('admin.users.list', ['method'=>$method,'page' => $page]);
     }
 
+    public function edit($id)
+    {
+        return view('admin.users.edit', ['id'=>$id]);
+    }
+
     public function getList($method = 'all',$page,Request $request)
     {
         $list =[];
