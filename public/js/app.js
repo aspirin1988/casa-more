@@ -60106,7 +60106,7 @@ var render = function() {
                         attrs: { type: "button" },
                         on: { click: _vm.pageAdd }
                       },
-                      [_vm._v("Создать")]
+                      [_vm._v("Сохранить")]
                     )
                   ]
                 )
