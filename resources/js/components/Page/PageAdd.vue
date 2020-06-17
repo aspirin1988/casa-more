@@ -22,7 +22,7 @@
                             </div>
                         </div>
                         <div class="uk-margin">
-                            <label class="uk-form-label" for="text">Текст:</label>
+                            <label class="uk-form-label" for="text">Текст:*</label>
                             <div class="uk-form-controls">
                                 <html-editor-component :id="'d1'" v-model="list.text"></html-editor-component>
                             </div>
@@ -70,7 +70,7 @@
                 },
                 rules: {
                     title: 'required',
-                    keyword: 'required',
+                    slug: 'required',
                     text: 'required',
                 }
             }

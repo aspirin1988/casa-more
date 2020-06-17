@@ -3363,7 +3363,7 @@ __webpack_require__.r(__webpack_exports__);
       },
       rules: {
         title: 'required',
-        keyword: 'required',
+        slug: 'required',
         text: 'required'
       }
     };
@@ -8066,7 +8066,7 @@ __webpack_require__.r(__webpack_exports__);
 
           if (item.id) {
             UIkit.notification({
-              message: 'Тэг успешно создана!',
+              message: 'Тэг успешно создан!',
               status: 'success'
             });
             setTimeout(function () {
@@ -8149,7 +8149,7 @@ __webpack_require__.r(__webpack_exports__);
       if (this.$validator.run(this.list, this.rules)) {
         this.$http.post('/admin/tag/save/' + this.id, this.list).then(function (response) {
           UIkit.notification({
-            message: 'Брэнд успешно обновлен!',
+            message: 'Тег успешно обновлен!',
             status: 'success'
           });
         });
@@ -49744,7 +49744,7 @@ var render = function() {
                   _c(
                     "label",
                     { staticClass: "uk-form-label", attrs: { for: "text" } },
-                    [_vm._v("Текст:")]
+                    [_vm._v("Текст:*")]
                   ),
                   _vm._v(" "),
                   _c(

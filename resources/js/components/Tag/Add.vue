@@ -47,7 +47,7 @@
                     this.$http.put('/admin/tag/add/', this.list).then(response => {
                         let item  = response.data;
                         if(item.id) {
-                            UIkit.notification({message: 'Тэг успешно создана!', status: 'success'});
+                            UIkit.notification({message: 'Тэг успешно создан!', status: 'success'});
                             setTimeout(() => {
                                 location.href = '/admin/tag/edit/'+item.id;
                             }, 500);
