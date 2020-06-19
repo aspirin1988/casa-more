@@ -41,10 +41,10 @@
                                     </ul>
                                 </div>
                                 <div class="uk-comment-footer uk-padding-small" :class="classObject">
-                                    <a class="uk-button uk-button-default uk-background-muted uk-button-secondary"
-                                       :href="'#'">
-                                        <span class="uk-text-success" uk-icon="file-edit"></span>
-                                    </a>
+<!--                                    <a class="uk-button uk-button-default uk-background-muted uk-button-secondary"-->
+<!--                                       :href="'#'">-->
+<!--                                        <span class="uk-text-success" uk-icon="file-edit"></span>-->
+<!--                                    </a>-->
                                 </div>
                             </header>
                             <div class="uk-comment-body uk-position-relative">

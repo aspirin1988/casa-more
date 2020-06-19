@@ -50064,30 +50064,11 @@ var render = function() {
                                   )
                                 ]),
                                 _vm._v(" "),
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass:
-                                      "uk-comment-footer uk-padding-small",
-                                    class: _vm.classObject
-                                  },
-                                  [
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass:
-                                          "uk-button uk-button-default uk-background-muted uk-button-secondary",
-                                        attrs: { href: "#" }
-                                      },
-                                      [
-                                        _c("span", {
-                                          staticClass: "uk-text-success",
-                                          attrs: { "uk-icon": "file-edit" }
-                                        })
-                                      ]
-                                    )
-                                  ]
-                                )
+                                _c("div", {
+                                  staticClass:
+                                    "uk-comment-footer uk-padding-small",
+                                  class: _vm.classObject
+                                })
                               ]
                             ),
                             _vm._v(" "),
