@@ -4,17 +4,17 @@
             <div>
                 <h4 class="uk-comment-title uk-margin-remove">
                     <a :href="'#'" class="uk-link-reset"
-                       v-html="(item.user.first_name || '') +' '+(item.user.last_name||'')"></a>
+                       v-html=" (item ? (item.user.first_name || '') +' '+(item.user.last_name||''):'')"></a>
                 </h4>
                 <ul class="uk-comment-meta uk-list uk-child-padding-remove">
                     <li>
                         <a class="uk-link-muted" href="#">
-                            ID:<strong>{{item.id || ''}}</strong>
+                            ID:<strong>{{(item ? item.id : '')}}</strong>
                         </a>
                     </li>
                     <li>
                         <a class="uk-link-muted" href="#">
-                            Тел:<a :href="'tel:'+item.user.phone">{{item.user.phone}}</a>
+                            Тел:<a :href="'tel:'+item.user.phone">{{(item?item.user.phone:'')}}</a>
                         </a>
                     </li>
                     <li>

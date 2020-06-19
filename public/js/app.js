@@ -49608,9 +49608,11 @@ var render = function() {
               attrs: { href: "#" },
               domProps: {
                 innerHTML: _vm._s(
-                  (_vm.item.user.first_name || "") +
-                    " " +
-                    (_vm.item.user.last_name || "")
+                  _vm.item
+                    ? (_vm.item.user.first_name || "") +
+                        " " +
+                        (_vm.item.user.last_name || "")
+                    : ""
                 )
               }
             })
@@ -49626,7 +49628,7 @@ var render = function() {
                   { staticClass: "uk-link-muted", attrs: { href: "#" } },
                   [
                     _vm._v("\n                        ID:"),
-                    _c("strong", [_vm._v(_vm._s(_vm.item.id || ""))])
+                    _c("strong", [_vm._v(_vm._s(_vm.item ? _vm.item.id : ""))])
                   ]
                 )
               ]),
@@ -49638,7 +49640,7 @@ var render = function() {
                   [
                     _vm._v("\n                        Тел:"),
                     _c("a", { attrs: { href: "tel:" + _vm.item.user.phone } }, [
-                      _vm._v(_vm._s(_vm.item.user.phone))
+                      _vm._v(_vm._s(_vm.item ? _vm.item.user.phone : ""))
                     ])
                   ]
                 )
