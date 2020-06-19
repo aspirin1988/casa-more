@@ -137,7 +137,15 @@
             },
             del: function (item) {
                 this.Delete(item);
+            },
+            classObject: function (item) {
+                return {
+                    'uk-status-published': item.status == true,
+                    'uk-status-new': item.status == false,
+                }
             }
+
         },
+
     }
 </script>

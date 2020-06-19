@@ -3240,6 +3240,12 @@ __webpack_require__.r(__webpack_exports__);
     },
     del: function del(item) {
       this.Delete(item);
+    },
+    classObject: function classObject(item) {
+      return {
+        'uk-status-published': item.status == true,
+        'uk-status-new': item.status == false
+      };
     }
   }
 });
