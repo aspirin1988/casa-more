@@ -19,7 +19,7 @@ class AdminOrderController extends Controller
     {
         $page--;
 
-        $orders = Order::get();
+        $orders = Order::orderBy('id','desc')->get();
 
         foreach ($orders as $key=>$order){
             $orders[$key]->user = $order->getUser();
