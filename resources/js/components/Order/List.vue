@@ -101,6 +101,8 @@
                 delete_item: {},
                 delete_dialog:false,
                 path: window.location.pathname,
+                status: ['Новый', 'Оплачен', 'В обработке'],
+
             }
         },
         mounted() {
@@ -129,6 +131,12 @@
                     UIkit.modal(this.delete_dialog).hide();
                     this.getList();
                 });
+            },
+            getStatus: function (status) {
+                return this.status[status];
+            },
+            del: function (item) {
+                this.Delete(item);
             }
         },
     }
