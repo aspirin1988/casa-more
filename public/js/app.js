@@ -49367,11 +49367,13 @@ var render = function() {
                   return _c(
                     "li",
                     [
-                      _c("order_list_item-component", {
-                        key: item.id,
-                        attrs: { item: item },
-                        on: { Delete: _vm.Delete }
-                      })
+                      item
+                        ? _c("order_list_item-component", {
+                            key: item.id,
+                            attrs: { item: item },
+                            on: { Delete: _vm.Delete }
+                          })
+                        : _vm._e()
                     ],
                     1
                   )

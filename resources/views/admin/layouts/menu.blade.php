@@ -124,7 +124,7 @@
             </i>
             <span>Заказы</span>
         </a>
-        <a href="/admin/user/all" title="Ползователи">
+        <a href="/admin/user/all" title="Пользователи">
             <i class="uk-icon">
                 <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-svg="users">
                     <circle fill="none" stroke="#000" stroke-width="1.1" cx="7.7" cy="8.6" r="3.5"></circle>
@@ -134,7 +134,7 @@
                           d="M11.4,4 C12.8,2.4 15.4,2.8 16.3,4.7 C17.2,6.6 15.7,8.9 13.6,8.9 C16.5,8.9 18.8,11.3 19.2,14.1"></path>
                 </svg>
             </i>
-            <span>Ползователи</span>
+            <span>Пользователи</span>
         </a>
     </li>
 
