@@ -14,7 +14,7 @@
                                 <div>
                                     <h4 class="uk-comment-title uk-margin-remove">
                                         <a :href="'#'" class="uk-link-reset"
-                                           v-html=" (item ? (item.user.first_name || '') +' '+(item.user.last_name||''):'')"></a>
+                                           v-html=" (item.user ? (item.user.first_name || '') +' '+(item.user.last_name||''):'')"></a>
                                     </h4>
                                     <ul class="uk-comment-meta uk-list uk-child-padding-remove">
                                         <li>

@@ -49946,7 +49946,7 @@ var render = function() {
                                         attrs: { href: "#" },
                                         domProps: {
                                           innerHTML: _vm._s(
-                                            item
+                                            item.user
                                               ? (item.user.first_name || "") +
                                                   " " +
                                                   (item.user.last_name || "")
