@@ -57,7 +57,7 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr v-for="val in item.products">
+                                    <tr v-for="val in item.products" v-if="val">
                                         <td>{{val.id}}</td>
                                         <td>{{val.name}}</td>
                                         <td>{{val.present}}</td>
@@ -95,7 +95,7 @@
         props: ['current_page'],
         data() {
             return {
-                list: [],
+                list: {},
                 page_list: null,
                 load:false,
                 delete_item: {},
@@ -113,8 +113,9 @@
         methods: {
             getList:function () {
                 this.$http.get('/admin/order/get_list/').then(response => {
-                    this.list = response.data.list;
-                    this.page_list = response.data.page_list;
+                    let data = response.data;
+                    this.list = data.list;
+                    this.page_list = data.page_list;
                     this.load = true;
                 });
             },

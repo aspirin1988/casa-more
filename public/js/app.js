@@ -3195,7 +3195,7 @@ __webpack_require__.r(__webpack_exports__);
   props: ['current_page'],
   data: function data() {
     return {
-      list: [],
+      list: {},
       page_list: null,
       load: false,
       delete_item: {},
@@ -3213,8 +3213,9 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       this.$http.get('/admin/order/get_list/').then(function (response) {
-        _this.list = response.data.list;
-        _this.page_list = response.data.page_list;
+        var data = response.data;
+        _this.list = data.list;
+        _this.page_list = data.page_list;
         _this.load = true;
       });
     },
@@ -50103,15 +50104,21 @@ var render = function() {
                                     _c(
                                       "tbody",
                                       _vm._l(item.products, function(val) {
-                                        return _c("tr", [
-                                          _c("td", [_vm._v(_vm._s(val.id))]),
-                                          _vm._v(" "),
-                                          _c("td", [_vm._v(_vm._s(val.name))]),
-                                          _vm._v(" "),
-                                          _c("td", [
-                                            _vm._v(_vm._s(val.present))
-                                          ])
-                                        ])
+                                        return val
+                                          ? _c("tr", [
+                                              _c("td", [
+                                                _vm._v(_vm._s(val.id))
+                                              ]),
+                                              _vm._v(" "),
+                                              _c("td", [
+                                                _vm._v(_vm._s(val.name))
+                                              ]),
+                                              _vm._v(" "),
+                                              _c("td", [
+                                                _vm._v(_vm._s(val.present))
+                                              ])
+                                            ])
+                                          : _vm._e()
                                       }),
                                       0
                                     )
