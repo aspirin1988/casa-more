@@ -4,12 +4,12 @@
             <div>
                 <h4 class="uk-comment-title uk-margin-remove">
                     <a :href="'#'" class="uk-link-reset"
-                       v-html="item.user.first_name+' '+(item.user.last_name||'')"></a>
+                       v-html="(item.user.first_name || '') +' '+(item.user.last_name||'')"></a>
                 </h4>
                 <ul class="uk-comment-meta uk-list uk-child-padding-remove">
                     <li>
                         <a class="uk-link-muted" href="#">
-                            ID:<strong>{{item.id}}</strong>
+                            ID:<strong>{{item.id || ''}}</strong>
                         </a>
                     </li>
                     <li>
@@ -62,16 +62,14 @@
 
 <script>
     export default {
-        props: {
-            item: {
-                type: Object,
-                required: true
-            }
-        },
+        props: ['item'],
         data() {
             return {
                 status: ['Новый', 'Оплачен', 'В обработке'],
             }
+        },
+        mounted() {
+            console.log(this.item);
         },
         computed: {
             classObject: function () {

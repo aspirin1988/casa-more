@@ -8,7 +8,7 @@
                 <widget-paginator-component :key="'upp'" :list="page_list" :current_page="current_page" :path="'/admin/brand/'"></widget-paginator-component>
                 <ul class="uk-comment-list">
                     <li v-for="item in list">
-                        <order_list_item-component v-if="item"  :item="item" :key="item.id" @Delete="Delete"></order_list_item-component>
+                        <order_list_item-component :item="item" :key="item.id" @Delete="Delete"></order_list_item-component>
                     </li>
                 </ul>
                 <widget-paginator-component :key="'down'" :list="page_list" :current_page="current_page" :path="'/admin/brand/'"></widget-paginator-component>

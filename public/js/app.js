@@ -3252,16 +3252,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: {
-    item: {
-      type: Object,
-      required: true
-    }
-  },
+  props: ['item'],
   data: function data() {
     return {
       status: ['Новый', 'Оплачен', 'В обработке']
     };
+  },
+  mounted: function mounted() {
+    console.log(this.item);
   },
   computed: {
     classObject: function classObject() {
@@ -49498,13 +49496,11 @@ var render = function() {
                   return _c(
                     "li",
                     [
-                      item
-                        ? _c("order_list_item-component", {
-                            key: item.id,
-                            attrs: { item: item },
-                            on: { Delete: _vm.Delete }
-                          })
-                        : _vm._e()
+                      _c("order_list_item-component", {
+                        key: item.id,
+                        attrs: { item: item },
+                        on: { Delete: _vm.Delete }
+                      })
                     ],
                     1
                   )
@@ -49612,7 +49608,7 @@ var render = function() {
               attrs: { href: "#" },
               domProps: {
                 innerHTML: _vm._s(
-                  _vm.item.user.first_name +
+                  (_vm.item.user.first_name || "") +
                     " " +
                     (_vm.item.user.last_name || "")
                 )
@@ -49630,7 +49626,7 @@ var render = function() {
                   { staticClass: "uk-link-muted", attrs: { href: "#" } },
                   [
                     _vm._v("\n                        ID:"),
-                    _c("strong", [_vm._v(_vm._s(_vm.item.id))])
+                    _c("strong", [_vm._v(_vm._s(_vm.item.id || ""))])
                   ]
                 )
               ]),
@@ -79741,10 +79737,10 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/sergeydemidov/PhpstormProjects/casa-more/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /Users/sergeydemidov/PhpstormProjects/casa-more/resources/sass/app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! /Users/sergeydemidov/PhpstormProjects/casa-more/resources/sass/admin.scss */"./resources/sass/admin.scss");
-module.exports = __webpack_require__(/*! /Users/sergeydemidov/PhpstormProjects/casa-more/resources/sass/fonts.scss */"./resources/sass/fonts.scss");
+__webpack_require__(/*! /var/www/casa-more/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /var/www/casa-more/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /var/www/casa-more/resources/sass/admin.scss */"./resources/sass/admin.scss");
+module.exports = __webpack_require__(/*! /var/www/casa-more/resources/sass/fonts.scss */"./resources/sass/fonts.scss");
 
 
 /***/ })
