@@ -47,7 +47,7 @@
                     this.$http.put('/admin/brand/add/', this.list).then(response => {
                         let item  = response.data;
                         if(item.id) {
-                            UIkit.notification({message: 'Брэнд успешно создана!', status: 'success'});
+                            UIkit.notification({message: 'Брэнд успешно создан!', status: 'success'});
                             setTimeout(() => {
                                 location.href = '/admin/brand/edit/'+item.id;
                             }, 500);

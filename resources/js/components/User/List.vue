@@ -43,7 +43,7 @@
                            :href="'/admin/user/edit/'+item.id">
                             <span class="uk-text-success" uk-icon="file-edit"></span>
                         </a>
-                        <button v-if="!item.hidden" @click="del(item)" title="Удалить пользователя"
+                        <button v-if="!item.hidden" @click="Delete(item.id)" title="Удалить пользователя"
                                 class="uk-button uk-button-danger">
                             <span uk-icon="trash"></span>
                         </button>
@@ -86,6 +86,11 @@
             this.getData();
         },
         methods: {
+            Delete : function(id){
+                this.$http.get('/admin/user/delete/' + id).then(response => {
+                    this.getData();
+                });
+            },
             getData: function () {
                 this.$http.get('/admin/user/get/' + this.method + '/' + this.current_page).then(response => {
                     this.list = response.data.list;

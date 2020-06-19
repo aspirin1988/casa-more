@@ -13,8 +13,8 @@
     <meta name="format-detection" content="telephone=no">
     <meta http-equiv="x-rim-auto-match" content="none">
     @section('styles')
-        <link rel="stylesheet" href="/css/main-style.css" type="text/css"/>
-        <link rel="stylesheet" href="/js/owl.carousel.min.css">
+        <link rel="stylesheet" href="/css/main-style.css?v=5" type="text/css"/>
+        <link rel="stylesheet" href="/js/owl.carousel.min.css?v=5">
         <link
             href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900&display=swap&subset=cyrillic"
             rel="stylesheet">
@@ -116,7 +116,9 @@
                                 <a target="_blank" href="https://www.instagram.com/casaandmore/" class="ins"></a>
                                 <a target="_blank" href="https://www.facebook.com/casamorekz/?modal=admin_todo_tour"
                                    class="fb"></a>
-                                <a target="_blank" href="https://www.youtube.com/channel/UCDAharBs6k1Ww6W926jdzrQ?view_as=subscriber" class="yt"></a>
+                                <a target="_blank"
+                                   href="https://www.youtube.com/channel/UCDAharBs6k1Ww6W926jdzrQ?view_as=subscriber"
+                                   class="yt"></a>
                             </div>
                             <p><a href="tel:+7(701)0063555">+7 (701) 006 35 55</a></p>
                             <p><a href="tel:+7(727)3006001">+7 (727) 300 60 01</a></p>
@@ -160,7 +162,6 @@
         window.UIkit.container = document.querySelector('.uk-container');
 
         window.UIkit.notification = function (obj) {
-            console.log(obj);
             if (obj) {
                 let div = document.createElement('DIV');
                 div.classList.add('uk-notification');
@@ -174,15 +175,14 @@
         };
 
         window.sendToSelect = function (e) {
-            console.log(e.target);
             let send = {
                 _token: document.head.querySelector('meta[name="csrf-token"]').content,
                 id: this.dataset['id'],
             };
-            $.post("/add/to-select", send, function (data) {
+            $.post("/add/to-select/", send, function (data) {
                 if (data.result) {
                     UIkit.notification({message: data.message, status: 'success'});
-                    e.target.classList.add('CardBoxPriceLiked');
+                    e.target.classList.toggle('CardBoxPriceLiked');
                 } else {
                     if (!data.auth) {
                         window.open('/login/', '_blank');
@@ -199,7 +199,11 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script>
-        $('.CardBoxPriceLike').on('click', sendToSelect);
+
+        // window.addEventListener('load', function () {
+        //     document.querySelector('[data-to-favorites]').addEventListener('click', sendToSelect);
+        // });
+
 
         $('.owl-carousel').owlCarousel({
             loop: true,

@@ -2,7 +2,7 @@
 .CategoryTop {
   height: 350px;
   box-sizing: border-box;
-  background: #000 url(../img/chairs.png) center center no-repeat;
+  background: #000 url(/img/chairs.png) center center no-repeat;
   background-size: cover;
   position: relative;
   z-index: 1;
@@ -299,7 +299,7 @@
   right: -8px;
   width: 5px;
   height: 9px;
-  background: url(../img/icon/arrow-btn.png) center center no-repeat;
+  background: url(/img/icon/arrow-btn.png) center center no-repeat;
   background-size: cover;
 }
 
@@ -645,7 +645,7 @@
     right: -2vw;
     width: 1vw;
     height: 2vw;
-    background: url(../img/icon/arrow-btn.png) center center no-repeat;
+    background: url(/img/icon/arrow-btn.png) center center no-repeat;
     background-size: cover;
   }
 

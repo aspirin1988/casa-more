@@ -6,9 +6,9 @@
 
 @section('styles')
     @parent
-    <link rel="stylesheet" href="/css/main-style.css" type="text/css"/>
-    <link rel="stylesheet" href="/css/index.css" type="text/css"/>
-    <link rel="stylesheet" href="/css/catalog.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/main-style.css?v=5" type="text/css"/>
+    <link rel="stylesheet" href="/css/index.css?v=5" type="text/css"/>
+    <link rel="stylesheet" href="/css/catalog.css?v=5" type="text/css"/>
 @stop
 
 @section('script')
@@ -754,9 +754,9 @@
                     @endforeach
                 </div>
             </div>
-            @if(isset($products->perPage))
+{{--            @if(isset($products->perPage))--}}
                 {!! $products->render() !!}
-            @endif
+{{--            @endif--}}
         </div>
     </div>
 

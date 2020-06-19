@@ -55,6 +55,8 @@
         mounted() {
             this.t = location.search.split('?t=')[1];
 
+            this.t = decodeURI(this.t);
+
             console.log(this.t);
 
             if (this.t) {
@@ -69,7 +71,7 @@
                     this.search_list = response.data;
                 });
             },
-            toSearch:function(){
+            toSearch: function () {
                 location.href = '/search/?t=' + this.search;
                 return false;
             },
@@ -101,7 +103,8 @@
         grid-gap: 20px;
         margin: 40px auto;
     }
-    .CardBox .CardBoxImg > img{
+
+    .CardBox .CardBoxImg > img {
         max-height: 270px;
     }
 </style>

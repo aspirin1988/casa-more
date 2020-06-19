@@ -1196,7 +1196,7 @@
 .CardBox .CardDiscount span.item-gift {
     width: 30px;
     height: 30px;
-    background: #b351bc url(../img/icon/gift-img.png) center center no-repeat;
+    background: #b351bc url(/img/icon/gift-img.png) center center no-repeat;
     background-size: 17px 19px;
     padding: 0;
 }
@@ -1306,7 +1306,7 @@
 /* line 212, ../sass/index/index-card.scss */
 .CardBox .CardBoxDesc .CardBoxPrice .CardBoxPriceLike {
     outline: none;
-    background: url(../img/icon/Vector_Smart_Object.png) center center no-repeat;
+    background: url(/img/icon/Vector_Smart_Object.png) center center no-repeat;
     background-size: contain;
     width: 25px;
     height: 20px;
@@ -1317,7 +1317,7 @@
 }
 .CardBox .CardBoxDesc .CardBoxPrice .CardBoxPriceLiked {
     outline: none;
-    background: url(../img/icon/Vector_Smart.png) center center no-repeat;
+    background: url(/img/icon/Vector_Smart.png) center center no-repeat;
     background-size: contain;
     width: 25px;
     height: 20px;
@@ -1350,7 +1350,7 @@
     background-color: #f3f3f3;
     cursor: pointer;
     border-radius: 50%;
-    background-image: url(../img/icon/2-layers.png);
+    background-image: url(/img/icon/2-layers.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 11px 18px;
@@ -1372,7 +1372,7 @@
 /* line 264, ../sass/index/index-card.scss */
 .slick-arrow:hover {
     background-color: #395669;
-    background-image: url(../img/icon/2-layers-h.png);
+    background-image: url(/img/icon/2-layers-h.png);
 }
 
 /* line 270, ../sass/index/index-card.scss */
@@ -1482,7 +1482,7 @@
     /* line 373, ../sass/index/index-card.scss */
     .CardBox .CardBoxDesc .CardBoxPrice .CardBoxPriceLike {
         outline: none;
-        background: url(../img/icon/Vector_Smart_Object.png) center center no-repeat;
+        background: url(/img/icon/Vector_Smart_Object.png) center center no-repeat;
         background-size: contain;
         width: 21px;
         height: 18px;
@@ -1492,7 +1492,7 @@
     }
     .CardBox .CardBoxDesc .CardBoxPrice .CardBoxPriceLiked {
         outline: none;
-        background: url(../img/icon/Vector_Smart.png) center center no-repeat;
+        background: url(/img/icon/Vector_Smart.png) center center no-repeat;
         background-size: contain;
         width: 21px;
         height: 18px;
@@ -1559,7 +1559,7 @@
     /* line 437, ../sass/index/index-card.scss */
     .CardBox .CardBoxDesc .CardBoxPrice .CardBoxPriceLike {
         outline: none;
-        background: url(../img/icon/Vector_Smart_Object.png) center center no-repeat;
+        background: url(/img/icon/Vector_Smart_Object.png) center center no-repeat;
         background-size: contain;
         width: 5vw;
         height: 4vw;
@@ -1569,7 +1569,7 @@
     }
     .CardBox .CardBoxDesc .CardBoxPrice .CardBoxPriceLiked {
         outline: none;
-        background: url(../img/icon/Vector_Smart.png) center center no-repeat;
+        background: url(/img/icon/Vector_Smart.png) center center no-repeat;
         background-size: contain;
         width: 5vw;
         height: 4vw;
@@ -1599,7 +1599,7 @@
         background-color: #f3f3f3;
         cursor: pointer;
         border-radius: 50%;
-        background-image: url(../img/icon/2-layers.png);
+        background-image: url(/img/icon/2-layers.png);
         background-position: center center;
         background-repeat: no-repeat;
         background-size: 2vw 3vw;

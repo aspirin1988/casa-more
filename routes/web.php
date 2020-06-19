@@ -121,12 +121,16 @@ Route::delete('/admin/product/delete/{id}', 'AdminProductController@delete')->na
 Route::post('/admin/product/get/{method}', 'AdminProductController@getList')->name('admin_product_get_list');
 Route::get('/admin/product/{method?}/{page?}', 'AdminProductController@index')->name('admin_product');
 Route::post('/admin/user/update/{id}', 'AdminUserController@update')->name('admin_product_get_list');
-Route::get('/admin/user/get/{method}/{page}', 'AdminUserController@getList')->name('admin_product_get_list');
+Route::get('/admin/user/edit/{id}', 'AdminUserController@edit')->name('admin_edit');
+Route::get('/admin/user/get/edit/{id}', 'AdminUserController@getEdit')->name('admin_get_edit');
+Route::get('/admin/user/delete/{id}', 'AdminUserController@delete')->name('admin_delete');
 Route::get('/admin/user/{method?}/{page?}', 'AdminUserController@index')->name('admin_product');
+Route::get('/admin/user/get/{method}/{page}', 'AdminUserController@getList')->name('admin_product_get_list');
 
 Route::get('/admin/present', 'AdminPresentController@index')->name('admin_present');
 Route::get('/admin/present/add', 'AdminPresentController@add')->name('admin_present_add');
 Route::put('/admin/present/add', 'AdminPresentController@create')->name('admin_present_create');
+Route::delete('/admin/present/delete/{id}', 'AdminPresentController@delete')->name('admin_present_delete');
 Route::get('/admin/present/edit/{id}', 'AdminPresentController@edit')->name('admin_present_edit');
 Route::post('/admin/present/get', 'AdminPresentController@getList')->name('admin_present_get_edit');
 Route::get('/admin/present/get/edit/{id}', 'AdminPresentController@getEdit')->name('admin_present_get_edit');
@@ -169,6 +173,7 @@ Route::get('/search', 'ProductController@search')->name('all_brands');
 Route::get('/all-brands', 'BrandController@allBrands')->name('all_brands');
 Route::get('/product-comparison', 'ProductController@comparison')->name('product_comparison');
 Route::get('/product-comparison/get', 'ProductController@comparisonGet')->name('product_comparison_get');
+Route::get('/product-comparison/get/all', 'ProductController@comparisonGetAll')->name('product_comparison_get_all');
 Route::post('/add/to-select', 'ProductController@addToSelect')->name('add_to_select');
 Route::get('/profile', 'HomeController@index')->name('profile');
 Route::post('/product/get/list_by_tag', 'TagController@getProduct')->name('getProductTag');

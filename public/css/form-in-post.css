@@ -234,7 +234,7 @@ form .checkbox-form a {
   /* line 234, ../sass/form-in.scss */
   .FormInTop .FormInTopBtn.exit {
     margin-left: 20px;
-    background: url(../img/icon/Shap1.png) center center no-repeat;
+    background: url(/img/icon/Shap1.png) center center no-repeat;
     background-size: 23px;
     width: 60px;
   }
@@ -326,7 +326,7 @@ form .checkbox-form a {
   /* line 323, ../sass/form-in.scss */
   .FormInTop .FormInTopBtn.exit {
     margin: 0 auto;
-    background: url(../img/icon/Shap1.png) center center no-repeat !important;
+    background: url(/img/icon/Shap1.png) center center no-repeat !important;
     background-size: 3.5vw !important;
     width: 40% !important;
     margin-left: auto !important;
@@ -797,7 +797,7 @@ form .checkbox-form a {
 .CardBox .CardDiscount span.item-gift {
   width: 30px;
   height: 30px;
-  background: #b351bc url(../img/icon/gift-img.png) center center no-repeat;
+  background: #b351bc url(/img/icon/gift-img.png) center center no-repeat;
   background-size: 17px 19px;
   padding: 0;
 }
@@ -883,7 +883,7 @@ form .checkbox-form a {
 /* line 212, ../sass/index/index-card.scss */
 .CardBox .CardBoxDesc .CardBoxPrice .CardBoxPriceLike {
   outline: none;
-  background: url(../img/icon/Vector_Smart_Object.png) center center no-repeat;
+  background: url(/img/icon/Vector_Smart_Object.png) center center no-repeat;
   background-size: contain;
   width: 25px;
   height: 20px;
@@ -893,7 +893,7 @@ form .checkbox-form a {
 }
 .CardBox .CardBoxDesc .CardBoxPrice .CardBoxPriceLiked {
   outline: none;
-  background: url(../img/icon/Vector_Smart.png) center center no-repeat;
+  background: url(/img/icon/Vector_Smart.png) center center no-repeat;
   background-size: contain;
   width: 25px;
   height: 20px;
@@ -923,7 +923,7 @@ form .checkbox-form a {
   background-color: #f3f3f3;
   cursor: pointer;
   border-radius: 50%;
-  background-image: url(../img/icon/2-layers.png);
+  background-image: url(/img/icon/2-layers.png);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 11px 18px;
@@ -943,7 +943,7 @@ form .checkbox-form a {
 /* line 264, ../sass/index/index-card.scss */
 .slick-arrow:hover {
   background-color: #395669;
-  background-image: url(../img/icon/2-layers-h.png);
+  background-image: url(/img/icon/2-layers-h.png);
 }
 
 /* line 270, ../sass/index/index-card.scss */
@@ -1044,7 +1044,7 @@ form .checkbox-form a {
   /* line 373, ../sass/index/index-card.scss */
   .CardBox .CardBoxDesc .CardBoxPrice .CardBoxPriceLike {
     outline: none;
-    background: url(../img/icon/Vector_Smart_Object.png) center center no-repeat;
+    background: url(/img/icon/Vector_Smart_Object.png) center center no-repeat;
     background-size: contain;
     width: 21px;
     height: 18px;
@@ -1054,7 +1054,7 @@ form .checkbox-form a {
   }
   .CardBox .CardBoxDesc .CardBoxPrice .CardBoxPriceLiked {
     outline: none;
-    background: url(../img/icon/Vector_Smart.png) center center no-repeat;
+    background: url(/img/icon/Vector_Smart.png) center center no-repeat;
     background-size: contain;
     width: 21px;
     height: 18px;
@@ -1114,7 +1114,7 @@ form .checkbox-form a {
   /* line 437, ../sass/index/index-card.scss */
   .CardBox .CardBoxDesc .CardBoxPrice .CardBoxPriceLike {
     outline: none;
-    background: url(../img/icon/Vector_Smart_Object.png) center center no-repeat;
+    background: url(/img/icon/Vector_Smart_Object.png) center center no-repeat;
     background-size: contain;
     width: 5vw;
     height: 4vw;
@@ -1124,7 +1124,7 @@ form .checkbox-form a {
   }
   .CardBox .CardBoxDesc .CardBoxPrice .CardBoxPriceLiked {
     outline: none;
-    background: url(../img/icon/Vector_Smart.png) center center no-repeat;
+    background: url(/img/icon/Vector_Smart.png) center center no-repeat;
     background-size: contain;
     width: 5vw;
     height: 4vw;
@@ -1153,7 +1153,7 @@ form .checkbox-form a {
     background-color: #f3f3f3;
     cursor: pointer;
     border-radius: 50%;
-    background-image: url(../img/icon/2-layers.png);
+    background-image: url(/img/icon/2-layers.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 2vw 3vw;
@@ -1182,7 +1182,7 @@ form .checkbox-form a {
 .CategoryTop {
   height: 350px;
   box-sizing: border-box;
-  background: #000 url(../img/chairs.png) center center no-repeat;
+  background: #000 url(/img/chairs.png) center center no-repeat;
   background-size: cover;
   position: relative;
   z-index: 1;
@@ -1474,7 +1474,7 @@ form .checkbox-form a {
   right: -8px;
   width: 5px;
   height: 9px;
-  background: url(../img/icon/arrow-btn.png) center center no-repeat;
+  background: url(/img/icon/arrow-btn.png) center center no-repeat;
   background-size: cover;
 }
 
@@ -1813,7 +1813,7 @@ form .checkbox-form a {
     right: -2vw;
     width: 1vw;
     height: 2vw;
-    background: url(../img/icon/arrow-btn.png) center center no-repeat;
+    background: url(/img/icon/arrow-btn.png) center center no-repeat;
     background-size: cover;
   }
 
@@ -1841,7 +1841,7 @@ form .checkbox-form a {
 /* line 17, ../sass/form-in-post.scss */
 .FormInTop .FormInTopBtn.exit {
   margin-left: 20px;
-  background: url(../img/icon/Shap1.png) center center no-repeat;
+  background: url(/img/icon/Shap1.png) center center no-repeat;
   background-size: 26px;
   width: 60px;
 }
@@ -1898,7 +1898,7 @@ form .checkbox-form a {
 
 /* line 85, ../sass/form-in-post.scss */
 .CardBox .CardBoxDesc .CardBoxPrice .CardBoxPriceLike {
-  background: url(../img/icon/VectorSmartObject2.png) center center no-repeat;
+  background: url(/img/icon/VectorSmartObject2.png) center center no-repeat;
   background-size: contain;
 }
 

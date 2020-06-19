@@ -29,7 +29,7 @@ class ProductController extends Controller
                 $liked[] = $order->product_id;
             }
 
-            return view('product.single', ['object' => $product, 'brand_k' => $brand_k, 'liked' => $liked,'rubric'=>$rubric]);
+            return view('product.single', ['object' => $product, 'brand_k' => $brand_k, 'liked' => $liked, 'rubric' => $rubric]);
         } else {
             return response(view('page.404'), 404);
         }
@@ -171,6 +171,7 @@ class ProductController extends Controller
             'rubric' => $rubric,
         ]);
     }
+
     public function hit()
     {
         $title = "Хиты продаж";
@@ -201,6 +202,7 @@ class ProductController extends Controller
             'rubric' => $rubric,
         ]);
     }
+
     public function present()
     {
         $title = "Подароки";
@@ -401,7 +403,7 @@ class ProductController extends Controller
 
         $products = Product::where('type_of_product', $method)
             ->where('status', true)
-            ->where(function ($query) use ($color, $price_to, $price_from, $remote_controller, $type_controller, $count_program, $zero_g, $warming_up, $available, $weight, $massage_area, $timer,$sub_type_of_product) {
+            ->where(function ($query) use ($color, $price_to, $price_from, $remote_controller, $type_controller, $count_program, $zero_g, $warming_up, $available, $weight, $massage_area, $timer, $sub_type_of_product) {
 
                 if ($color) {
                     $query->whereIn('color', $color);
@@ -461,7 +463,7 @@ class ProductController extends Controller
             $liked[] = $order->product_id;
         }
 
-        return response()->view('product.massage_chairs_', ['products' => $products, 'liked' => $liked]);
+        return response()->view('product.massage_chairs_', ['products' => $products, 'liked' => $liked, 'method' => $method]);
     }
 
     public function addToSelect(Request $request)
@@ -469,11 +471,15 @@ class ProductController extends Controller
         $id = $request->input('id');
 
         if (Auth::check()) {
-            if (SelectedProduct::where('user_id', Auth::id())->where('product_id', $id)->first()) {
-                return response()->json(['result' => true, 'auth' => true, 'message' => 'Данный товар уже в избраном!']);
+
+            $product = SelectedProduct::where('user_id', Auth::id())->where('product_id', $id)->first();
+
+            if ($product) {
+                $product->delete();
+                return response()->json(['result' => true, 'auth' => true, 'message' => 'Данный товар успешно исключен избранное!']);
             } else {
                 SelectedProduct::create(['user_id' => Auth::id(), 'product_id' => $id]);
-                return response()->json(['result' => true, 'auth' => true, 'message' => 'Данный товар успешно добавлен избраное!']);
+                return response()->json(['result' => true, 'auth' => true, 'message' => 'Данный товар успешно добавлен избранное!']);
             }
         } else {
             return response()->json(['result' => false, 'auth' => false]);
@@ -521,6 +527,37 @@ class ProductController extends Controller
             return response()->json(['success' => true, 'result' => $products_]);
         }
         return response()->json(['success' => false]);
+    }
+
+    public function comparisonGetAll(Request $request)
+    {
+
+        $products_ = [];
+        $products = Product::where('parent_id', 0)->where('type_of_product', 'massage_chairs')->get();
+
+        foreach ($products as $object) {
+            $product_ = [];
+            foreach ($object->getColors() as $color) {
+                $product_['color'][] = $color->color;
+            }
+
+            $product_['id'] = $object->id;
+            $product_['name'] = $object->name;
+            $product_['weight'] = $object->weight;
+            $product_['remote_controller'] = ($object->remote_controller ? "+" : "-");
+            $product_['zero_g'] = ($object->zero_g ? "+" : "-");
+            $product_['timer'] = ($object->timer ? "+" : "-");
+            $product_['type_controller'] = __('site.' . $object->type_controller);
+            $product_['count_program'] = $object->count_program;
+            $product_['warming_up'] = ($object->warming_up ? "+" : "-");
+            $product_['massage_area'] = $object->massage_area;
+            $product_['available'] = ($object->available ? "+" : "-");
+            $product_['price'] = number_format($object->price, 0, ",", " ");
+
+            $products_ [] = $product_;
+        }
+
+        return response()->json(['success' => true, 'result' => $products_]);
     }
 
 

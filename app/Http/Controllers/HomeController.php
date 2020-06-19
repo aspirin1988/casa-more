@@ -85,7 +85,7 @@ class HomeController extends Controller
                 $message['message'] = 'Пороль не успешно обнавлен!';
             } else {
                 $message['success'] = false;
-                $message['message'] = 'Пороли не совподают!';
+                $message['message'] = 'Пароли не совпадают!';
             }
         } else {
             $message['success'] = false;

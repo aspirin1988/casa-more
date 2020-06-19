@@ -46,7 +46,7 @@
                     this.$http.put('/admin/present/add/', this.list).then(response => {
                         let item = response.data;
                         if (item.id) {
-                            UIkit.notification({message: 'Подарок успешно создана!', status: 'success'});
+                            UIkit.notification({message: 'Подарок успешно создан!', status: 'success'});
                             setTimeout(() => {
                                 location.href = '/admin/present/edit/' + item.id;
                             }, 500);

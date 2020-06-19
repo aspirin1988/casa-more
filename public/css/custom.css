@@ -1,0 +1,40 @@
+.ProdImageSliderInfo {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translate(-50%, 50px);
+}
+
+@media (max-width: 640px) {
+    .ProdImageSliderInfo {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: translate(0, 0);
+        background: #c19946;
+        padding: 10px;
+    }
+    iframe{
+        width: 100%;
+        height: 50vw;
+    }
+    .ProdPlusInfoImg .ProdPlusInfoCard.ProdPlusInfoCard-3{
+        top: 4vh;
+        bottom: auto;
+        right: auto;
+        left: 0;
+    }
+
+    .ProdPlusInfoImg .ProdPlusInfoCard.ProdPlusInfoCard-4{
+        top: 12vh;
+        left: 14vw;
+        right: auto;
+        bottom: auto;
+    }
+    .ProdPlusInfoImg .ProdPlusInfoCard.ProdPlusInfoCard-1{
+        bottom: 5vh;
+        right: auto;
+        left: 26vw;
+        top: auto;
+    }
+}

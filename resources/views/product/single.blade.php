@@ -6,8 +6,13 @@
 
 @section('styles')
     @parent
-    <link rel="stylesheet" href="/css/main-style.css" type="text/css"/>
-    <link rel="stylesheet" href="/css/product-post.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/main-style.css?v=5" type="text/css"/>
+    <link rel="stylesheet" href="/css/product-post.css?v=5" type="text/css"/>
+    @if($object->custom_style)
+        <style>
+            {!! $object->custom_style !!}
+        </style>
+    @endif
 @stop
 
 @section('script')
@@ -20,19 +25,25 @@
         window.product_ = {id:{{$object->id}}, price:{{$object->price}}, count: 1};
         window.current_count = 1;
         input_count = document.querySelector('#count');
-        if (input_count)
+        if (input_count) {
             input_count.addEventListener('change', function () {
-                current_count = parseInt(this.value);
+                window.current_count = parseInt(this.value);
                 if (!this.value) {
                     this.value = 1;
                 }
+                console.log(this.value);
             });
+        }
 
 
         if (button_submit)
             button_submit.addEventListener('click', function () {
-                product_.count = window.current_count;
-                let product = product_;
+
+                window.current_count = parseInt(input_count.value);
+
+                window.product_.count = window.current_count;
+
+                let product = window.product_;
                 let basket = JSON.parse(localStorage.getItem('basket'));
                 let concat = false;
 
@@ -62,10 +73,11 @@
         $(document).ready(function () {
 
             $('.CardBoxPriceLike').on('click', sendToSelect);
+            $('.CardBoxPriceLiked').on('click', sendToSelect);
 
-            $('.CardBoxPriceLiked').on('click', function () {
-                return false;
-            });
+            // $('.CardBoxPriceLiked').on('click', function () {
+            //     return false;
+            // });
 
             $('.minus').click(function () {
                 var $input = $(this).parent().find('input');
@@ -226,7 +238,7 @@
                             @foreach($object->getColors() as $color)
                                 <a href="{{$color->getUrl()}}"
                                    class="color-{{$color->color}} {{($color->color==$object->color?'active':'')}}"><input
-                                            type="radio" name="color"><i></i></a>
+                                        type="radio" name="color"><i></i></a>
                             @endforeach
                         </div>
                     </div>
@@ -269,7 +281,7 @@
                 @endif
             </div>
             <div class="ProdPostCardLBottom">
-                <a data-id="{{$object->id}}"
+                <a data-to-favorites="" data-id="{{$object->id}}"
                    class="{{( in_array($object->id,$liked) ?'CardBoxPriceLiked':'CardBoxPriceLike')}}" href="#">
                     в избранное</a>
                 @if($object->type_of_product == 'massage_chairs')
@@ -308,7 +320,7 @@
                     <td class="value-field">
                         @foreach($object->getColors() as $color)
                             <span
-                                    class="color-{{$color->color}} {{($color->color==$object->color?'active':'')}}"></span>
+                                class="color-{{$color->color}} {{($color->color==$object->color?'active':'')}}"></span>
                         @endforeach
                     </td>
                 </tr>
@@ -419,9 +431,9 @@
                                 </div>
                                 <div class="CardBoxDesc">
                                     <div class="CardBoxColor">
-{{--                                        @foreach($product->getChild() as $img)--}}
-{{--                                            <i class="exemple-image" data-big="{{$img->getBackground()}}"></i>--}}
-{{--                                        @endforeach--}}
+                                        {{--                                        @foreach($product->getChild() as $img)--}}
+                                        {{--                                            <i class="exemple-image" data-big="{{$img->getBackground()}}"></i>--}}
+                                        {{--                                        @endforeach--}}
                                     </div>
                                     <p>{{$product->getType()}}</p>
                                     <h5>{{$product->name}}</h5>

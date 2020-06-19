@@ -17,6 +17,25 @@ class AdminUserController extends Controller
         return view('admin.users.list', ['method'=>$method,'page' => $page]);
     }
 
+    public function edit($id)
+    {
+        return view('admin.users.edit', ['id'=>$id]);
+    }
+
+    public function getEdit($id)
+    {
+        $user = User::where('id',$id)->first();
+
+        return response()->json($user);
+    }
+
+    public function delete($id)
+    {
+        $user = User::where('id',$id)->delete();
+
+        return response()->json($user);
+    }
+
     public function getList($method = 'all',$page,Request $request)
     {
         $list =[];

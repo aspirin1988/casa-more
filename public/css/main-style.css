@@ -252,7 +252,7 @@ a {
 /* line 32, ../sass/all/header.scss */
 .HeaderLogo > img {
     display: block;
-    width: 80px;
+    width: 60px;
 }
 
 /* line 38, ../sass/all/header.scss */
@@ -322,7 +322,7 @@ a {
     top: 10px;
     right: 0;
     transform: translate(0, -50%);
-    background: url(../img/icon/Layer_4.png) center center no-repeat;
+    background: url(/img/icon/Layer_4.png) center center no-repeat;
     background-size: contain;
     height: 5px;
     width: 5px;
@@ -348,6 +348,7 @@ a {
     box-sizing: border-box;
     border: 1px solid #ece6e1;
     margin-top: 20px;
+    overflow: hidden;
 }
 
 /* line 118, ../sass/all/header.scss */
@@ -423,18 +424,18 @@ a {
 
 /* line 182, ../sass/all/header.scss */
 .HeaderRight .search {
-    background-image: url(../img/icon/search.png);
+    background-image: url(/img/icon/search.png);
     cursor: pointer;
 }
 
 /* line 186, ../sass/all/header.scss */
 .HeaderRight .user {
-    background-image: url(../img/icon/man.png);
+    background-image: url(/img/icon/man.png);
 }
 
 /* line 190, ../sass/all/header.scss */
 .HeaderRight .cart {
-    background-image: url(../img/icon/cart.png);
+    background-image: url(/img/icon/cart.png);
 }
 
 /* line 195, ../sass/all/header.scss */
@@ -464,17 +465,17 @@ a {
 
 /* line 223, ../sass/all/header.scss */
 .Header.HeaderWhite .HeaderRight .search {
-    background-image: url(../img/icon/user-w.png);
+    background-image: url(/img/icon/user-w.png);
 }
 
 /* line 227, ../sass/all/header.scss */
 .Header.HeaderWhite .HeaderRight .user {
-    background-image: url(../img/icon/man-w.png);
+    background-image: url(/img/icon/man-w.png);
 }
 
 /* line 231, ../sass/all/header.scss */
 .Header.HeaderWhite .HeaderRight .cart {
-    background-image: url(../img/icon/img_174666-w.png);
+    background-image: url(/img/icon/img_174666-w.png);
 }
 
 /* line 245, ../sass/all/header.scss */
@@ -485,7 +486,7 @@ a {
 
 /* line 255, ../sass/all/header.scss */
 .Header.HeaderWhite .HeaderNav ul li a.dropdown-toogle:after {
-    background: url(../img/icon/Layer_4_copy-w.png) center center no-repeat;
+    background: url(/img/icon/Layer_4_copy-w.png) center center no-repeat;
     background-size: contain;
 }
 
@@ -723,7 +724,7 @@ footer {
     width: 35px;
     height: 35px;
     border: 2px solid #000000;
-    background-image: url(../img/icon/instagram.svg);
+    background-image: url(/img/icon/instagram.svg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 60%;
@@ -739,36 +740,36 @@ footer {
 
 /* line 107, ../sass/all/footer.scss */
 .fTopBODYBLSoc a.ins {
-    background-image: url(../img/icon/instagram.svg);
+    background-image: url(/img/icon/instagram.svg);
 }
 
 /* line 110, ../sass/all/footer.scss */
 .fTopBODYBLSoc a.ins:hover {
-    background-image: url(../img/icon/instagram-h.svg);
+    background-image: url(/img/icon/instagram-h.svg);
     border: 2px solid #c13584;
     background-color: #c13584;
 }
 
 /* line 117, ../sass/all/footer.scss */
 .fTopBODYBLSoc a.fb {
-    background-image: url(../img/icon/facebook-logo.svg);
+    background-image: url(/img/icon/facebook-logo.svg);
 }
 
 /* line 120, ../sass/all/footer.scss */
 .fTopBODYBLSoc a.fb:hover {
     border: 2px solid #3b5998;
-    background-image: url(../img/icon/facebook-logo-h.svg);
+    background-image: url(/img/icon/facebook-logo-h.svg);
     background-color: #3b5998;
 }
 
 /* line 127, ../sass/all/footer.scss */
 .fTopBODYBLSoc a.yt {
-    background-image: url(../img/icon/youtube.svg);
+    background-image: url(/img/icon/youtube.svg);
 }
 
 /* line 130, ../sass/all/footer.scss */
 .fTopBODYBLSoc a.yt:hover {
-    background-image: url(../img/icon/youtube-h.svg);
+    background-image: url(/img/icon/youtube-h.svg);
 }
 
 /* line 137, ../sass/all/footer.scss */
@@ -1079,6 +1080,13 @@ footer {
     top: -6px;
 }
 
+.HeaderWhite .open-btn b{
+    background: #fff;
+}
+.HeaderWhite .open-btn b:after,  .HeaderWhite .open-btn b:before {
+    background: #fff;
+}
+
 /* line 65, ../sass/all/popup-menu.scss */
 .open-btn.close-btn b {
     background: transparent;
@@ -1170,7 +1178,7 @@ footer {
     top: 50%;
     right: 0;
     transform: translate(0, -50%);
-    background: url(../img/icon/Layer_4.png) center center no-repeat;
+    background: url(/img/icon/Layer_4.png) center center no-repeat;
     background-size: contain;
     height: 5px;
     width: 5px;
@@ -1293,7 +1301,7 @@ footer {
 
 .CardBox .CardBoxDesc .CardBoxPrice .CardBoxPriceLiked {
     outline: none;
-    background: url(../img/icon/Vector_Smart.png) center center no-repeat;
+    background: url(/img/icon/Vector_Smart.png) center center no-repeat;
     background-size: contain;
     width: 25px;
     height: 20px;
@@ -1380,6 +1388,10 @@ footer {
 
 .value-field span.color-graphite {
     background-color: #454343;
+}
+
+.value-field span.color-red {
+    background-color: #eb0000;
 }
 
 .value-field span.color-orange {
@@ -1497,4 +1509,7 @@ footer {
 
 .pagination .page-item.active span{
     color: #fff;
+}
+.pagination .page-item a{
+    color: #000;
 }

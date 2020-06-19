@@ -55,7 +55,7 @@
             pageSave: function () {
                 if (this.$validator.run(this.list, this.rules)) {
                     this.$http.post('/admin/tag/save/' + this.id, this.list).then(response => {
-                        UIkit.notification({message: 'Брэнд успешно обновлен!', status: 'success'});
+                        UIkit.notification({message: 'Тег успешно обновлен!', status: 'success'});
                     });
                 }
             },

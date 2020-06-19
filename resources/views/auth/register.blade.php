@@ -7,6 +7,31 @@
 @section('styles')
     @parent
     <link rel="stylesheet" href="/css/form-in.css" type="text/css"/>
+    <script>
+        window.addEventListener('load', function () {
+            let phone = document.querySelector('#phone');
+            if (phone) {
+                phone.addEventListener('keydown', function (e) {
+
+                    let phone_val = phone.value;
+                    let mask = '1234567890';
+
+                    if (mask.indexOf(e.key) < 0 && e.keyCode !== 8) {
+                        event.preventDefault();
+                        return false;
+                    }
+                    if (phone_val.length < 2) {
+                        phone.value = '+7';
+                    }
+                    if (phone_val.length > 11) {
+                        event.preventDefault();
+                        return false;
+                    }
+                })
+            }
+        });
+    </script>
+
 @stop
 
 @section('content')
@@ -73,7 +98,9 @@
                         @enderror
                         <label>
                             <span>Телефон:</span>
-                            <input type="tel" name="phone" required="required" value="{{ old('phone') }}" class="text">
+                            <input id="phone" type="tel" name="phone" required="required"
+                                   value="{{ old('phone') ?? '+7' }}"
+                                   class="text">
                         </label>
                         @error('phone')
                         <span class="invalid-feedback" role="alert">
@@ -95,7 +122,9 @@
                         </label>
                         <button class="FormInBtn">Регистрация на сайте</button>
                         <label class="checkbox-form">
-                            <input type="checkbox" required="required" name="">Соглашаюсь с условиями <a target="_blank" href="/img/оферта.pdf"> договора оферты</a>
+                            <input type="checkbox" required="required" name="">Соглашаюсь с условиями <a target="_blank"
+                                                                                                         href="/img/оферта.pdf">
+                                договора оферты</a>
                             <b></b>
                         </label>
                     </form>
