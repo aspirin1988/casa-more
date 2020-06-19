@@ -3132,6 +3132,65 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['current_page'],
   data: function data() {
@@ -49493,17 +49552,213 @@ var render = function() {
                 "ul",
                 { staticClass: "uk-comment-list" },
                 _vm._l(_vm.list, function(item) {
-                  return _c(
-                    "li",
-                    [
-                      _c("order_list_item-component", {
-                        key: item.id,
-                        attrs: { item: item },
-                        on: { Delete: _vm.Delete }
-                      })
-                    ],
-                    1
-                  )
+                  return _c("li", [
+                    item
+                      ? _c(
+                          "article",
+                          {
+                            staticClass:
+                              "uk-comment uk-textarea uk-position-relative"
+                          },
+                          [
+                            _c(
+                              "header",
+                              {
+                                staticClass:
+                                  "uk-comment-header uk-question-grid"
+                              },
+                              [
+                                _c("div", [
+                                  _c(
+                                    "h4",
+                                    {
+                                      staticClass:
+                                        "uk-comment-title uk-margin-remove"
+                                    },
+                                    [
+                                      _c("a", {
+                                        staticClass: "uk-link-reset",
+                                        attrs: { href: "#" },
+                                        domProps: {
+                                          innerHTML: _vm._s(
+                                            item
+                                              ? (item.user.first_name || "") +
+                                                  " " +
+                                                  (item.user.last_name || "")
+                                              : ""
+                                          )
+                                        }
+                                      })
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "ul",
+                                    {
+                                      staticClass:
+                                        "uk-comment-meta uk-list uk-child-padding-remove"
+                                    },
+                                    [
+                                      _c("li", [
+                                        _c(
+                                          "a",
+                                          {
+                                            staticClass: "uk-link-muted",
+                                            attrs: { href: "#" }
+                                          },
+                                          [
+                                            _vm._v(
+                                              "\n                                                ID:"
+                                            ),
+                                            _c("strong", [
+                                              _vm._v(
+                                                _vm._s(item ? item.id : "")
+                                              )
+                                            ])
+                                          ]
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("li", [
+                                        _c(
+                                          "a",
+                                          {
+                                            staticClass: "uk-link-muted",
+                                            attrs: { href: "#" }
+                                          },
+                                          [
+                                            _vm._v(
+                                              "\n                                                Тел:"
+                                            ),
+                                            _c(
+                                              "a",
+                                              {
+                                                attrs: {
+                                                  href: "tel:" + item.user.phone
+                                                }
+                                              },
+                                              [
+                                                _vm._v(
+                                                  _vm._s(
+                                                    item ? item.user.phone : ""
+                                                  )
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("li", [
+                                        _c(
+                                          "a",
+                                          {
+                                            staticClass: "uk-link-muted",
+                                            attrs: { href: "#" }
+                                          },
+                                          [
+                                            _vm._v(
+                                              "\n                                                Статус:"
+                                            ),
+                                            _c("strong", [
+                                              _vm._v(
+                                                _vm._s(
+                                                  _vm.getStatus(item.status)
+                                                )
+                                              )
+                                            ])
+                                          ]
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("li", [
+                                        _c(
+                                          "a",
+                                          {
+                                            staticClass: "uk-link-muted",
+                                            attrs: { href: "#" }
+                                          },
+                                          [
+                                            _c("span", [
+                                              _vm._v("Отредактировано:")
+                                            ]),
+                                            _vm._v(" "),
+                                            _c("strong", [
+                                              _vm._v(_vm._s(item.updated_at))
+                                            ])
+                                          ]
+                                        )
+                                      ])
+                                    ]
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "uk-comment-footer uk-padding-small",
+                                    class: _vm.classObject
+                                  },
+                                  [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass:
+                                          "uk-button uk-button-default uk-background-muted uk-button-secondary",
+                                        attrs: { href: "#" }
+                                      },
+                                      [
+                                        _c("span", {
+                                          staticClass: "uk-text-success",
+                                          attrs: { "uk-icon": "file-edit" }
+                                        })
+                                      ]
+                                    )
+                                  ]
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "uk-comment-body uk-position-relative"
+                              },
+                              [
+                                _c(
+                                  "table",
+                                  {
+                                    staticClass:
+                                      "uk-table uk-table-hover uk-table-divider"
+                                  },
+                                  [
+                                    _vm._m(1, true),
+                                    _vm._v(" "),
+                                    _c(
+                                      "tbody",
+                                      _vm._l(item.products, function(val) {
+                                        return _c("tr", [
+                                          _c("td", [_vm._v(_vm._s(val.id))]),
+                                          _vm._v(" "),
+                                          _c("td", [_vm._v(_vm._s(val.name))]),
+                                          _vm._v(" "),
+                                          _c("td", [
+                                            _vm._v(_vm._s(val.present))
+                                          ])
+                                        ])
+                                      }),
+                                      0
+                                    )
+                                  ]
+                                )
+                              ]
+                            )
+                          ]
+                        )
+                      : _vm._e()
+                  ])
                 }),
                 0
               ),
@@ -49573,6 +49828,20 @@ var staticRenderFns = [
       { staticClass: "uk-content-header uk-background-default" },
       [_c("div", { staticClass: "title" }, [_c("h2", [_vm._v("Заказы")])])]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("Id")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Name")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Present")])
+      ])
+    ])
   }
 ]
 render._withStripped = true
@@ -79739,10 +80008,10 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/casa-more/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /var/www/casa-more/resources/sass/app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! /var/www/casa-more/resources/sass/admin.scss */"./resources/sass/admin.scss");
-module.exports = __webpack_require__(/*! /var/www/casa-more/resources/sass/fonts.scss */"./resources/sass/fonts.scss");
+__webpack_require__(/*! /Users/sergeydemidov/PhpstormProjects/casa-more/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /Users/sergeydemidov/PhpstormProjects/casa-more/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/sergeydemidov/PhpstormProjects/casa-more/resources/sass/admin.scss */"./resources/sass/admin.scss");
+module.exports = __webpack_require__(/*! /Users/sergeydemidov/PhpstormProjects/casa-more/resources/sass/fonts.scss */"./resources/sass/fonts.scss");
 
 
 /***/ })
