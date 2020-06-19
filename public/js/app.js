@@ -49999,13 +49999,19 @@ var render = function() {
                                               "a",
                                               {
                                                 attrs: {
-                                                  href: "tel:" + item.user.phone
+                                                  href:
+                                                    "tel:" +
+                                                    (item.user
+                                                      ? item.user.phone
+                                                      : "")
                                                 }
                                               },
                                               [
                                                 _vm._v(
                                                   _vm._s(
-                                                    item ? item.user.phone : ""
+                                                    item.user
+                                                      ? item.user.phone
+                                                      : ""
                                                   )
                                                 )
                                               ]

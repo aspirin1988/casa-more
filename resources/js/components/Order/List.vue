@@ -24,7 +24,7 @@
                                         </li>
                                         <li>
                                             <a class="uk-link-muted" href="#">
-                                                Тел:<a :href="'tel:'+item.user.phone">{{(item?item.user.phone:'')}}</a>
+                                                Тел:<a :href="'tel:'+( item.user ? item.user.phone : '')">{{( item.user ? item.user.phone : '')}}</a>
                                             </a>
                                         </li>
                                         <li>
