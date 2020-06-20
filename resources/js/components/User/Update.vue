@@ -96,8 +96,6 @@
             save: function () {
                 this.$http.post('/profile/update', this.list).then(response => {
 
-                    console.log(this.list);
-
                     let data = response.data;
 
                     if (data.success) {

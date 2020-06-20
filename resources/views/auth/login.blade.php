@@ -16,21 +16,6 @@
 
 @section('script')
     @parent
-{{--    <script>--}}
-
-{{--        $(document).ready(function () {--}}
-{{--            $(".FormIn").on("click", ".tab", function () {--}}
-{{--                event.preventDefault();--}}
-{{--                $(".FormIn").find(".active").removeClass("active");--}}
-
-{{--                $(this).addClass("active");--}}
-
-{{--                $(".tab-form").eq($(this).index()).addClass("active");--}}
-{{--                return false;--}}
-{{--            });--}}
-{{--        });--}}
-
-{{--    </script>--}}
 @stop
 
 @section('content')
@@ -52,6 +37,11 @@
                         <label>
                             <span>Пароль:</span>
                             <input type="password" name="password" value="{{ old('password') }}" class="text">
+                        </label>
+                        <label>
+                            <a href="/password/reset">
+                            <span>Забыли пароль?</span>
+                            </a>
                         </label>
                         <button class="FormBtn">войти</button>
                         @if ($errors->has('email'))

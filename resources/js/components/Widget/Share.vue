@@ -45,7 +45,6 @@
 
         methods: {
             getTitle:function () {
-                // console.log(this.title.replace("'", ''));
                 return this.title.replace("'", '')
             }
         }

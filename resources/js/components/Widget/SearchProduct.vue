@@ -57,8 +57,6 @@
 
             this.t = decodeURI(this.t);
 
-            console.log(this.t);
-
             if (this.t) {
                 this.getGrid()
             }

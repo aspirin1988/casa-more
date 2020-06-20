@@ -273,7 +273,6 @@
                 }
             },
             ClearThumb: function (item) {
-                console.log(item.id);
                 this.$http.delete('/admin/image/delete/' + item.id).then(response => {
                     UIkit.notification({message: "Изображение успешно уделено!", status: 'success'});
                     this.getGalleryList();

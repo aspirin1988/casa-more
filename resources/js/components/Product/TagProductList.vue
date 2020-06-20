@@ -170,12 +170,10 @@
                 this.show_filter = !this.show_filter;
             },
             setMax: function (e) {
-                console.log(e.target.value);
                 this.max = e.target.value;
                 this.max_ = e.target.value;
             },
             setMin: function (e) {
-                console.log(e.target.value);
                 this.min = e.target.value;
                 this.min_ = e.target.value;
             },
@@ -231,10 +229,8 @@
 
                     let image = item.image.thumb_bottle;
                     let url = "url('" + image + "')";
-                    console.log(url);
                     return url;
                 } else {
-                    console.log(item);
                     return 'url(/img/empty.png)';
                 }
             },

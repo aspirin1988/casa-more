@@ -21,7 +21,7 @@ $type_of_product = [];
 foreach ($type_of_product_list as $item) {
     $type_of_product[] = $item->slug;
 }
-$type_of_product = implode($type_of_product,'|');
+$type_of_product = implode('|',$type_of_product);
 
 
 Route::get('/', function () {

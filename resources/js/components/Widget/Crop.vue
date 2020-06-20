@@ -112,13 +112,10 @@
         },
         watch: {
             image: function () {
-                console.log(this.image);
                 this.img_w_url = this.image;
             }
         },
         mounted() {
-
-            console.log(this.image);
 
             this.img_w = new Image();
             this.img_w.src = this.img_w_url;
@@ -169,13 +166,10 @@
                     this.Move(initPoint);
                 }
 
-                console.log(initPoint);
                 this.render();
             },
 
             getMousePosTouch: function (evt) {
-
-                // console.log(evt);
 
                 evt.preventDefault();
                 evt.stopPropagation();
@@ -192,9 +186,6 @@
                     this.drag = true;
                     initPoint = Pints[0];
                 }
-
-                console.log(initPoint);
-
 
                 // initialPoint.buttons = 1;
                 // this.eventMouse(initPoint);
@@ -279,9 +270,6 @@
                     xC: (evt.pageX - pos.left) * ratioW, yC: (evt.pageY - offsetTop) * ratioH,
                 };
 
-                // console.log({drag:this.drag,resize:this.resize});
-
-
                 let mouseX, mouseY;
 
 
@@ -304,10 +292,7 @@
                 }
 
 
-                // console.log(mouse);
-                //
                 // if (((mouse.xC >= this.dots[4]['x'] - 20) && (mouse.xC <= this.dots[4]['x'] + 20)) && ((mouse.yC >= this.dots[4]['y'] - 20) && (mouse.yC <= (this.dots[4]['y'] + 20)))) {
-                //     console.log('resize');
                 //     this.resize_cur = 4;
                 // } else {
                 //     this.resize_cur = 0;

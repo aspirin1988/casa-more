@@ -321,11 +321,9 @@
 
                 if (this.$validator.run(this.order_data, rules)) {
 
-                    console.log(this.order_data);
 
                     this.$http.post('/order/create', this.order_data).then(response => {
                         let data = response.data;
-                        console.log(data);
                         if (data.result) {
                             localStorage.setItem('basket', JSON.stringify([]));
                             localStorage.setItem('basket_summary', 0);
@@ -336,7 +334,6 @@
                             console.error(data.errors);
                             for (let n in data.errors) {
                                 data.errors[n].forEach(function (i) {
-                                    console.log(i);
                                     UIkit.notification({message: i, status: 'danger'});
                                 });
                             }

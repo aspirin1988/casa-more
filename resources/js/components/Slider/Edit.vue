@@ -214,7 +214,6 @@
                     obj_.sort = i;
                     obj.push(obj_);
                 }
-                console.log(obj);
                 this.image_list = [];
                 this.image_list = obj;
             },
@@ -284,7 +283,6 @@
             },
             Save: function (item) {
                 this.$http.post('/admin/slider/slide/update/' + item.id, item).then(response => {
-                    console.log(item);
                     // this.image_list = response.data;
                 });
             },

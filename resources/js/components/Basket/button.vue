@@ -23,7 +23,6 @@
                 }else{
                     this.count = 0;
                 }
-                // console.log(data);
             }
         },
     }

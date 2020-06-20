@@ -106,7 +106,6 @@
                 } else {
                     this.tag_list = [];
                 }
-                console.log(this.tag_list);
             },
             addTag: function (item) {
                 let tag_id = item.id;
@@ -115,7 +114,6 @@
                     if (tag_list.message) {
                         UIkit.notification({message: tag_list.message, status: 'warning'});
                     } else {
-                        console.log(tag_list);
                         this.list.tags = tag_list;
                         UIkit.notification({message: "Тег успешно прикреплен к товарау!", status: 'success'});
                     }

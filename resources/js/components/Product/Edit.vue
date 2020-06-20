@@ -817,7 +817,6 @@
                 } else {
                     this.tag_list = [];
                 }
-                console.log(this.tag_list);
             },
             addTag: function (item) {
                 this.$http.post('/admin/product/set_tag', {product_id: this.id, tag: item}).then(response => {
@@ -858,11 +857,9 @@
                 this.new_child.thumb_parallax_after = this.list.thumb_parallax_after;
                 this.new_child.background = this.list.background;
 
-                console.log(this.new_child);
 
                 if (this.$validator.run(this.list, this.rules)) {
                     this.$http.put('/admin/product/add/', this.new_child).then(response => {
-                        console.log(response.data);
                         UIkit.notification({message: 'Продукт создан обновлен!', status: 'success'});
                         this.new_child = {};
                         this.getChildList();
@@ -870,7 +867,6 @@
                 }
             },
             SaveChild: function (item) {
-                console.log(item);
                 if (this.$validator.run(item, this.rules)) {
                     this.$http.post('/admin/product/save/' + item.id, item).then(response => {
                         UIkit.notification({message: 'Продукт успешно обновлен!', status: 'success'});
@@ -918,7 +914,6 @@
                 }
             },
             ClearThumb: function (item) {
-                console.log(item.id);
                 this.$http.delete('/admin/image/delete/' + item.id).then(response => {
                     UIkit.notification({message: "Изображение успешно уделено!", status: 'success'});
                     this.getGalleryList();
@@ -926,7 +921,6 @@
 
             },
             SelectImage: function (item) {
-                console.log(item);
                 this.current_image = item;
             },
             onUpload: function (e) {

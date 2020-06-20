@@ -69,7 +69,6 @@
             }
         },
         mounted() {
-            console.log(this.item);
         },
         computed: {
             classObject: function () {

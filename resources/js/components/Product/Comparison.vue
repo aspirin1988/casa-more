@@ -97,14 +97,12 @@
                 let comparison = JSON.parse(localStorage.getItem('comparison'));
                 if (comparison) {
                     this.$http.get("/product-comparison/get/?ids=" + comparison.join(',')).then(response => {
-                        console.log(response.data);
                         // if (response.data.success) {
                         this.list = response.data.result;
                         // }
                     });
                 } else {
                     this.$http.get("/product-comparison/get/all").then(response => {
-                        console.log(response.data);
                         this.list = response.data.result;
                     });
                 }
