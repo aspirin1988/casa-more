@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Storage;
 
 class AdminImageController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
+
     public function index($page = 0)
     {
         return view('admin.media.index', ['page' => $page]);

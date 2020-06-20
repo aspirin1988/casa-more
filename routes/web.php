@@ -66,7 +66,6 @@ Route::get('/admin/brand/edit/{id}', 'AdminBrandController@edit')->name('admin_b
 Route::get('/admin/brand/get/edit/{id}', 'AdminBrandController@getEdit')->name('admin_brand_get_edit');
 Route::post('/admin/brand/save/{id}', 'AdminBrandController@save')->name('admin_brand_save');
 Route::delete('/admin/brand/delete/{id}', 'AdminBrandController@delete')->name('admin_brand_delete');
-
 Route::get('/admin/brand/get/{page?}', 'AdminBrandController@getList')->name('admin_brand_get_list');
 
 
@@ -81,7 +80,6 @@ Route::post('/admin/slider/save/{id}', 'AdminSliderController@save')->name('admi
 Route::delete('/admin/slider/delete/{id}', 'AdminSliderController@delete')->name('admin_slider_delete');
 Route::delete('/admin/slider/slide/delete/{id}', 'AdminSliderController@deleteSlide')->name('admin_slider_slide_delete');
 Route::get('/admin/slider/get/{page?}', 'AdminSliderController@getList')->name('admin_slider_get_list');
-
 
 Route::get('/admin/page', 'AdminPageController@index')->name('admin_pages');
 Route::get('/admin/page/add', 'AdminPageController@add')->name('admin_page_add');
@@ -101,7 +99,6 @@ Route::get('/admin/rubric/get/edit/{id}', 'AdminRubricController@getEdit')->name
 Route::post('/admin/rubric/save/{id}', 'AdminRubricController@save')->name('admin_rubric_save');
 Route::delete('/admin/rubric/delete/{id}', 'AdminRubricController@delete')->name('admin_rubric_delete');
 Route::get('/admin/rubric/get/{rubric?}', 'AdminRubricController@getList')->name('admin_rubric_get_list');
-
 
 Route::get('/admin/product', 'AdminProductController@index')->name('admin_product');
 Route::get('/admin/product/add', 'AdminProductController@add')->name('admin_product_add');
@@ -152,7 +149,6 @@ Route::post('/admin/upload/image', 'AdminImageController@uploadImage')->name('ad
 Route::post('/admin/image/add_dir', 'AdminImageController@addDir')->name('admin_image_add_dir');
 Route::get('/admin/image/get_dir/{page?}', 'AdminImageController@getDir')->name('admin_image_get_dir');
 Route::delete('/admin/image/delete/{id}', 'AdminImageController@imageDelete')->name('admin_image_delete');
-
 
 Route::get('/admin/tag', 'AdminTagController@index')->name('admin_tags');
 Route::get('/admin/tag/add', 'AdminTagController@add')->name('admin_tag_add');
