@@ -3185,8 +3185,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['current_page'],
+  props: ['current_page', 'method'],
   data: function data() {
     return {
       list: {},
@@ -3195,7 +3196,33 @@ __webpack_require__.r(__webpack_exports__);
       delete_item: {},
       delete_dialog: false,
       path: window.location.pathname,
-      status: ['Новый', 'Оплачен', 'В обработке']
+      status: ['Новый', 'Оплачен', 'В обработке'],
+      menu: [{
+        id: 1,
+        url: '/admin/orders/all',
+        text: "Все",
+        alias: ['/admin/orders/all']
+      }, {
+        id: 2,
+        url: '/admin/orders/new',
+        text: "Новый",
+        alias: ['/admin/orders/new']
+      }, {
+        id: 3,
+        url: '/admin/orders/in-process',
+        text: "Принят",
+        alias: ['/admin/orders/in-process']
+      }, {
+        id: 4,
+        url: '/admin/orders/complete',
+        text: "Выполнен",
+        alias: ['/admin/orders/complete']
+      }, {
+        id: 5,
+        url: '/admin/orders/reject',
+        text: "Отменен",
+        alias: ['/admin/orders/reject']
+      }]
     };
   },
   mounted: function mounted() {
@@ -3206,7 +3233,7 @@ __webpack_require__.r(__webpack_exports__);
     getList: function getList() {
       var _this = this;
 
-      this.$http.get('/admin/order/get_list/').then(function (response) {
+      this.$http.get('/admin/order/get_list/' + this.method).then(function (response) {
         var data = response.data;
         _this.list = data.list;
         _this.page_list = data.page_list;
@@ -49501,7 +49528,16 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm._m(0),
+    _c(
+      "header",
+      { staticClass: "uk-content-header uk-background-default" },
+      [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("widget-sub_menu-component", { attrs: { items: _vm.menu } })
+      ],
+      1
+    ),
     _vm._v(" "),
     _c("div", { staticClass: "uk-margin-top" }, [
       _vm.list.length
@@ -49785,11 +49821,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "header",
-      { staticClass: "uk-content-header uk-background-default" },
-      [_c("div", { staticClass: "title" }, [_c("h2", [_vm._v("Заказы")])])]
-    )
+    return _c("div", { staticClass: "title" }, [_c("h2", [_vm._v("Заказы")])])
   },
   function() {
     var _vm = this

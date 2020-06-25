@@ -288,7 +288,7 @@
                     <a href="#" data-comparison="{{$object->id}}">к сравнению</a>
                 @endif
                 @if($object->brochure)
-                    <a href="{{$object->brochure}}" target="_blank">брошюра</a>
+                    <a href="{{$object->brochure}}" target="_blank">Инструкции</a>
                 @endif
             </div>
         </div>

@@ -20,18 +20,44 @@ class AdminOrderController extends Controller
         return view('admin.order.index', ['page' => $page]);
     }
 
-    public function getList($page = 1)
+    public function getList($method = 'all', $page = 1)
     {
         $page--;
 
-        $orders = Order::orderBy('id','desc')->get();
+        $status = null;
 
-        foreach ($orders as $key=>$order){
+        switch ($method) {
+
+            case 'all':
+                $status = null;
+                break;
+            case 'new':
+                $status = 0;
+                break;
+            case 'in-process':
+                $status = 1;
+                break;
+            case 'complete':
+                $status = 2;
+                break;
+            case 'reject':
+                $status = 3;
+                break;
+        }
+
+        if ($status !== null) {
+            $orders = Order::where('status', $status)->orderBy('id', 'desc')->get();
+        } else {
+            $orders = Order::orderBy('id', 'desc')->get();
+        }
+
+
+        foreach ($orders as $key => $order) {
             $orders[$key]->user = $order->getUser();
 
-            $orders[$key]->products = OrderList::where('order_id',$order->id)->get();
+            $orders[$key]->products = OrderList::where('order_id', $order->id)->get();
 
-            foreach ($orders[$key]->products as $key_ => $value){
+            foreach ($orders[$key]->products as $key_ => $value) {
                 $orders[$key]->products[$key_] = $value->getProduct();
             }
         }

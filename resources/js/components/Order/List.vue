@@ -2,6 +2,7 @@
     <div>
         <header class="uk-content-header uk-background-default">
             <div class="title"><h2>Заказы</h2></div>
+            <widget-sub_menu-component :items="menu"></widget-sub_menu-component>
         </header>
         <div class="uk-margin-top">
             <div v-if="list.length">
@@ -92,7 +93,7 @@
 
 <script>
     export default {
-        props: ['current_page'],
+        props: ['current_page','method'],
         data() {
             return {
                 list: {},
@@ -102,6 +103,13 @@
                 delete_dialog:false,
                 path: window.location.pathname,
                 status: ['Новый', 'Оплачен', 'В обработке'],
+                menu: [
+                    {id: 1, url: '/admin/orders/all', text: "Все", alias: ['/admin/orders/all']},
+                    {id: 2, url: '/admin/orders/new', text: "Новый", alias: ['/admin/orders/new']},
+                    {id: 3, url: '/admin/orders/in-process', text: "Принят", alias: ['/admin/orders/in-process']},
+                    {id: 4, url: '/admin/orders/complete', text: "Выполнен", alias: ['/admin/orders/complete']},
+                    {id: 5, url: '/admin/orders/reject', text: "Отменен", alias: ['/admin/orders/reject']},
+                ],
 
             }
         },
@@ -112,7 +120,7 @@
         },
         methods: {
             getList:function () {
-                this.$http.get('/admin/order/get_list/').then(response => {
+                this.$http.get('/admin/order/get_list/'+this.method).then(response => {
                     let data = response.data;
                     this.list = data.list;
                     this.page_list = data.page_list;
