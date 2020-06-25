@@ -56,7 +56,7 @@ Route::get('/admin/brand', 'AdminBrandController@index')->name('admin_brands');
 Route::get('/admin/brand/add', 'AdminBrandController@add')->name('admin_brand_add');
 Route::put('/admin/brand/add', 'AdminBrandController@create')->name('admin_brand_create');
 
-Route::get('/admin/orders', 'AdminOrderController@index')->name('admin_orders');
+Route::get('/admin/orders/{method?}', 'AdminOrderController@index')->name('admin_orders');
 Route::get('/admin/order/get_list/{method?}/{page?}', 'AdminOrderController@getList')->name('admin_order_get_list');
 Route::get('/admin/order/get/{id}', 'AdminOrderController@get')->name('admin_order_get');
 Route::post('/admin/order/update/{id}', 'AdminOrderController@update')->name('admin_order_update');

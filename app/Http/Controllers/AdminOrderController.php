@@ -13,11 +13,11 @@ class AdminOrderController extends Controller
         $this->middleware('admin');
     }
 
-    public function index($page = 1)
+    public function index( $method = 'all', $page = 1)
     {
         $page--;
 
-        return view('admin.order.index', ['page' => $page]);
+        return view('admin.order.index', ['method'=>$method,'page' => $page]);
     }
 
     public function getList($method = 'all', $page = 1)

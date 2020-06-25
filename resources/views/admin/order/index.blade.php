@@ -5,5 +5,5 @@
 @endsection
 
 @section('content')
-    <order_list-component :current_page="{{$page}}"></order_list-component>
+    <order_list-component :method="'{{$method}}'" :current_page="{{$page}}"></order_list-component>
 @endsection
