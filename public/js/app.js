@@ -3186,6 +3186,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['current_page', 'method'],
   data: function data() {
@@ -3196,7 +3198,7 @@ __webpack_require__.r(__webpack_exports__);
       delete_item: {},
       delete_dialog: false,
       path: window.location.pathname,
-      status: ['Новый', 'Оплачен', 'В обработке'],
+      status: ['Новый', 'Принят', 'Выполнен', "Отменен"],
       menu: [{
         id: 1,
         url: '/admin/orders/all',
@@ -3244,9 +3246,8 @@ __webpack_require__.r(__webpack_exports__);
       this.delete_item = item;
       UIkit.modal(this.delete_dialog).show();
     },
-    Update: function Update(data) {
-      this.list = data.list;
-      this.page_list = data.page_list;
+    Update: function Update() {
+      this.getList();
     },
     deletePage: function deletePage(item) {
       var _this2 = this;
@@ -3345,11 +3346,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['item'],
   data: function data() {
     return {
-      status: ['Новый', 'Оплачен', 'В обработке']
+      status: ['Новый', 'Принят', 'Выполнен', "Отменен"]
     };
   },
   mounted: function mounted() {},
@@ -3367,6 +3370,29 @@ __webpack_require__.r(__webpack_exports__);
     },
     del: function del() {
       this.$emit('Delete', this.item);
+    },
+    Ban: function Ban() {
+      this.item.status = 3;
+      this.Update();
+    },
+    Check: function Check() {
+      if (this.item.status === 0) {
+        this.item.status = 1;
+        this.Update();
+      } else if (this.item.status === 1) {
+        this.item.status = 2;
+        this.Update();
+      } else if (this.item.status === 3) {
+        this.item.status = 1;
+        this.Update();
+      }
+    },
+    Update: function Update() {
+      var _this = this;
+
+      this.$http.post('/admin/order/update/' + this.item.id, this.item).then(function (response) {
+        _this.$emit('Update', _this.item);
+      });
     }
   }
 });
@@ -49563,7 +49589,7 @@ var render = function() {
                       _c("order_list_item-component", {
                         key: item.id,
                         attrs: { item: item },
-                        on: { Delete: _vm.Delete }
+                        on: { Update: _vm.Update, Delete: _vm.Delete }
                       })
                     ],
                     1
@@ -49742,19 +49768,34 @@ var render = function() {
           },
           [
             _c(
-              "a",
+              "span",
               {
-                staticClass:
-                  "uk-button uk-button-default uk-background-muted uk-button-secondary",
-                attrs: { href: "#" }
+                staticClass: "uk-button uk-button-primary",
+                attrs: { href: "#" },
+                on: {
+                  click: function($event) {
+                    return _vm.Check()
+                  }
+                }
               },
-              [
-                _c("span", {
-                  staticClass: "uk-text-success",
-                  attrs: { "uk-icon": "file-edit" }
-                })
-              ]
-            )
+              [_c("span", { attrs: { "uk-icon": "check" } })]
+            ),
+            _vm._v(" "),
+            _vm.item.status !== 3
+              ? _c(
+                  "span",
+                  {
+                    staticClass: "uk-button uk-button-danger",
+                    attrs: { href: "#" },
+                    on: {
+                      click: function($event) {
+                        return _vm.Ban()
+                      }
+                    }
+                  },
+                  [_c("span", { attrs: { "uk-icon": "ban" } })]
+                )
+              : _vm._e()
           ]
         )
       ]),

@@ -31,10 +31,12 @@
                 </ul>
             </div>
             <div class="uk-comment-footer uk-padding-small" :class="classObject">
-                <a class="uk-button uk-button-default uk-background-muted uk-button-secondary"
-                   :href="'#'">
-                    <span class="uk-text-success" uk-icon="file-edit"></span>
-                </a>
+                <span class="uk-button uk-button-primary" @click="Check()" :href="'#'">
+                    <span uk-icon="check"></span>
+                </span>
+                <span v-if="item.status!==3" class="uk-button uk-button-danger" @click="Ban()" :href="'#'">
+                    <span uk-icon="ban"></span>
+                </span>
             </div>
         </header>
         <div class="uk-comment-body uk-position-relative">
@@ -65,7 +67,7 @@
         props: ['item'],
         data() {
             return {
-                status: ['Новый', 'Оплачен', 'В обработке'],
+                status: ['Новый', 'Принят', 'Выполнен', "Отменен"],
             }
         },
         mounted() {
@@ -84,6 +86,30 @@
             },
             del: function () {
                 this.$emit('Delete', this.item);
+            },
+            Ban: function () {
+                this.item.status = 3;
+                this.Update();
+            },
+            Check: function () {
+                if (this.item.status === 0) {
+                    this.item.status = 1;
+                    this.Update();
+                } else if (this.item.status === 1) {
+                    this.item.status = 2;
+                    this.Update();
+                } else if (this.item.status === 3) {
+                    this.item.status = 1;
+                    this.Update();
+                }
+
+
+            },
+            Update: function () {
+                this.$http.post('/admin/order/update/' + this.item.id, this.item).then(response => {
+                    this.$emit('Update', this.item)
+                });
+
             }
         }
     }

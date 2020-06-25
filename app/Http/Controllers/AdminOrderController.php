@@ -13,11 +13,11 @@ class AdminOrderController extends Controller
         $this->middleware('admin');
     }
 
-    public function index( $method = 'all', $page = 1)
+    public function index($method = 'all', $page = 1)
     {
         $page--;
 
-        return view('admin.order.index', ['method'=>$method,'page' => $page]);
+        return view('admin.order.index', ['method' => $method, 'page' => $page]);
     }
 
     public function getList($method = 'all', $page = 1)
@@ -65,4 +65,15 @@ class AdminOrderController extends Controller
         return response()->json(['list' => $orders]);
 
     }
+
+    public function update($id, Request $request)
+    {
+        $status = $request->input('status');
+
+        $result = Order::where('id', $id)->update(['status' => $status]);
+
+        return response()->json(['result' => $result]);
+
+    }
 }
+
