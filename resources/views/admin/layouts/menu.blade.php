@@ -114,7 +114,7 @@
         </a>
     </li>
     <li>
-        <a href="/admin/orders" title="Заказы">
+        <a href="/admin/orders/new" title="Заказы">
             <i class="uk-icon">
                 <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-svg="cart">
                     <circle cx="7.3" cy="17.3" r="1.4"></circle>
