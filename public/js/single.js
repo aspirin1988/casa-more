@@ -1,1 +1,243 @@
-!function(e){var t={};function r(n){if(t[n])return t[n].exports;var o=t[n]={i:n,l:!1,exports:{}};return e[n].call(o.exports,o,o.exports,r),o.l=!0,o.exports}r.m=e,r.c=t,r.d=function(e,t,n){r.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:n})},r.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},r.t=function(e,t){if(1&t&&(e=r(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var n=Object.create(null);if(r.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)r.d(n,o,function(t){return e[t]}.bind(null,o));return n},r.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return r.d(t,"a",t),t},r.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},r.p="/",r(r.s=2)}({2:function(e,t,r){e.exports=r("h2K0")},h2K0:function(e,t){!function(){var e=0,t=0,r=1,n=document.querySelector("#submit"),o=document.querySelector("#not_available"),c=document.querySelector("#count");n&&n.addEventListener("click",function(){for(var n={},o=0;o<l.length;o++){var i=l[o];i.checked&&(n=i)}t=n.dataset.id,e=n.dataset.price;var u={id:t,price:e,count:r},a=JSON.parse(localStorage.getItem("basket")),s=!1;if(a){for(var d=0;d<a.length;d++)a[d].id===u.id&&(a[d].count=parseInt(a[d].count)+parseInt(u.count),s=!0);s||a.push(u),localStorage.setItem("basket",JSON.stringify(a)),UIkit.notification({message:"Товар успешно добавлен в корзину!",status:"success"})}else(a=[]).push(u),localStorage.setItem("basket",JSON.stringify(a)),UIkit.notification({message:"Товар успешно добавлен в корзину!",status:"success"});c.value=1}),c&&c.addEventListener("change",function(){r=parseInt(this.value),this.value||(this.value=1)});document.querySelector(".uk-product-img");var i=document.querySelector(".uk-product-img .uk-product-parallax-before"),u=document.querySelector(".uk-product-img .uk-product-parallax-after");u&&u.addEventListener("mousemove",function(e){var t=u.clientHeight,r=u.clientWidth,n=10*(t/e.clientY-t/e.clientY/2),o=10*(r/e.clientX-r/e.clientX/2);Math.abs(n)>50&&(n=50*Math.sign(n)),Math.abs(o)>50&&(o=50*Math.sign(o)),i.style.transform="translate("+o+"px,"+n+"px)",u.style.transform="translate("+-1*o+"px,"+-1*n+"px)"}),select_=function(e,t){var r={};e.getAttribute("product-data").split(",").forEach(function(e){var t=e.split(":");r[t[0]]=t[1]}),p.innerText=e.dataset.price,s&&r.thumb_flower&&(s.src=r.thumb_flower.toString()),d&&r.thumb_bottle&&(d.src=r.thumb_bottle.toString()),f&&r.thumb_box&&(f.src=r.thumb_box.toString()),r.not_available?(n.style.display="none",c.style.display="none",o.style.display="block"):(n.style.display="block",c.style.display="block",o.style.display="none"),UIkit.switcher(document.querySelector(".my-switcher-container")).show(t),p.innerText=r.price};var a=document.querySelector(".switcher-container"),l=document.querySelectorAll("input[data-price]"),s=document.querySelector("img#flower"),d=document.querySelector("img#bottle"),f=document.querySelector("img#box"),p=document.querySelector("[data-insert-price]");l.forEach(function(e,t){e.addEventListener("click",function(){select_(e,t)})}),a&&l.forEach(function(e,t){e.checked&&select_(e,t)})}()}});
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "/";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./resources/js/single.js":
+/*!********************************!*\
+  !*** ./resources/js/single.js ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function () {
+  var current_price = 0;
+  var current_product = 0;
+  var current_count = 1;
+  var button_submit = document.querySelector('#submit');
+  var not_available = document.querySelector('#not_available');
+  var input_count = document.querySelector('#count');
+  if (button_submit) button_submit.addEventListener('click', function () {
+    var product_ = {};
+
+    for (var i = 0; i < prices.length; i++) {
+      var item = prices[i];
+
+      if (item.checked) {
+        product_ = item;
+      }
+    }
+
+    current_product = product_.dataset['id'];
+    current_price = product_.dataset['price'];
+    var product = {
+      id: current_product,
+      price: current_price,
+      count: current_count
+    };
+    var basket = JSON.parse(localStorage.getItem('basket'));
+    var concat = false;
+
+    if (basket) {
+      for (var _i = 0; _i < basket.length; _i++) {
+        if (basket[_i].id === product.id) {
+          basket[_i].count = parseInt(basket[_i].count) + parseInt(product.count);
+          concat = true;
+        }
+      }
+
+      if (!concat) {
+        basket.push(product);
+      }
+
+      localStorage.setItem('basket', JSON.stringify(basket));
+      UIkit.notification({
+        message: 'Товар успешно добавлен в корзину!',
+        status: 'success'
+      });
+    } else {
+      basket = [];
+      basket.push(product);
+      localStorage.setItem('basket', JSON.stringify(basket));
+      UIkit.notification({
+        message: 'Товар успешно добавлен в корзину!',
+        status: 'success'
+      });
+    }
+
+    input_count.value = 1;
+  });
+  if (input_count) input_count.addEventListener('change', function () {
+    current_count = parseInt(this.value);
+
+    if (!this.value) {
+      this.value = 1;
+    }
+  });
+  var img_container = document.querySelector('.uk-product-img');
+  var img_paralag_before = document.querySelector('.uk-product-img .uk-product-parallax-before');
+  var img_paralag_after = document.querySelector('.uk-product-img .uk-product-parallax-after');
+  if (img_paralag_after) img_paralag_after.addEventListener('mousemove', function (e) {
+    var height = img_paralag_after.clientHeight;
+    var width = img_paralag_after.clientWidth;
+    var y = (height / e.clientY - height / e.clientY / 2) * 10;
+    var x = (width / e.clientX - width / e.clientX / 2) * 10;
+
+    if (Math.abs(y) > 50) {
+      y = 50 * Math.sign(y);
+    }
+
+    if (Math.abs(x) > 50) {
+      x = 50 * Math.sign(x);
+    }
+
+    img_paralag_before.style.transform = 'translate(' + x + 'px,' + y + 'px)';
+    img_paralag_after.style.transform = 'translate(' + x * -1 + 'px,' + y * -1 + 'px)';
+  });
+
+  select_ = function select_(i, key) {
+    var result = {};
+    var pr_data = i.getAttribute('product-data');
+    var arr = pr_data.split(',');
+    arr.forEach(function (i) {
+      var values = i.split(':');
+      result[values[0]] = values[1];
+    });
+    container.innerText = i.dataset['price'];
+    if (flower && result.thumb_flower) flower.src = result.thumb_flower.toString();
+    if (bottle && result.thumb_bottle) bottle.src = result.thumb_bottle.toString();
+    if (box && result.thumb_box) box.src = result.thumb_box.toString();
+
+    if (result.not_available) {
+      button_submit.style.display = 'none';
+      input_count.style.display = 'none';
+      not_available.style.display = 'block';
+    } else {
+      button_submit.style.display = 'block';
+      input_count.style.display = 'block';
+      not_available.style.display = 'none';
+    }
+
+    UIkit.switcher(document.querySelector('.my-switcher-container')).show(key);
+    container.innerText = result.price;
+  };
+
+  var tags = document.querySelector('.switcher-container');
+  var prices = document.querySelectorAll('input[data-price]');
+  var flower = document.querySelector('img#flower');
+  var bottle = document.querySelector('img#bottle');
+  var box = document.querySelector('img#box');
+  var container = document.querySelector('[data-insert-price]');
+  prices.forEach(function (i, key) {
+    i.addEventListener('click', function () {
+      select_(i, key);
+    });
+  });
+
+  if (tags) {
+    prices.forEach(function (i, key) {
+      if (i.checked) {
+        select_(i, key);
+      }
+    });
+  }
+})();
+
+/***/ }),
+
+/***/ 2:
+/*!**************************************!*\
+  !*** multi ./resources/js/single.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! /var/www/casa-more/resources/js/single.js */"./resources/js/single.js");
+
+
+/***/ })
+
+/******/ });
