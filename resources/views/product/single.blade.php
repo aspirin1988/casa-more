@@ -8,6 +8,16 @@
     @parent
     <link rel="stylesheet" href="/css/main-style.css?v=5" type="text/css"/>
     <link rel="stylesheet" href="/css/product-post.css?v=5" type="text/css"/>
+    <style>
+        .icons-container {
+            display: grid;
+            grid-template-columns: repeat(3, 60px);
+            grid-gap: 20px;
+            justify-content: flex-start;
+            align-content: center;
+            align-items: center;
+        }
+    </style>
     @if($object->custom_style)
         <style>
             {!! $object->custom_style !!}
@@ -224,6 +234,13 @@
                 <li><a href="/{{$rubric->slug}}/"> {{$rubric->name}}</a></li>
             </ul>
             <h1>{{$object->name}}</h1>
+            @if(in_array($object->type_of_product,['massage_chairs']))
+                <div class="icons-container">
+                    <img src="/img/icon/icon_iso_(1).png" alt="">
+                    <img src="/img/icon/german_quality_(1).png" alt="">
+                    <img src="/img/icon/icon_5years_(1).png" alt="">
+                </div>
+            @endif
             <div clas="ProdPostVarWr">
                 @if($brand = $object->getBrand() )
                     <div class="ProdPostVar">
