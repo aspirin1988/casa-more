@@ -376,7 +376,10 @@
     </script>
 
     <script>
-        $('.CardBox .exemple-image').on('click', function () {
+        $('.filter-button').on('click', function () {
+            this.classList.toggle('open');
+        });
+            $('.CardBox .exemple-image').on('click', function () {
 
             let id = this.dataset['id'];
 
@@ -436,256 +439,276 @@
     </div>
     <div class="Card CardTpl">
 
-        <ul class="CardFilter">
-            @if(in_array('price',$filter))
-                <li class="CardFilterBtn" data-field="price">
-                    <button>Цена</button>
-                    <ul>
-                        <li>
-                            <div class="CardFilterPriceTop">
-                                <label>
-                                    <span>От</span>
-                                    <input type="text" id="form-control-1" class="form-control"
-                                           value="{{$min_price}}">
-                                </label>
-                                <b>-</b>
-                                <label>
-                                    <span>До</span>
-                                    <input type="text" id="form-control-2" class="form-control"
-                                           value="{{$max_price}}">
-                                </label>
-                            </div>
-                            <div class="CardFilterPrice"></div>
-                        </li>
-                    </ul>
-                </li>
-            @endif
+        @mobile
+        <div class="filter-button">
+            <svg style="width: 20px; height: 20px; margin-right: 10px" xmlns="http://www.w3.org/2000/svg"
+                 xmlns:xlink="http://www.w3.org/1999/xlink" width="22" height="20" viewBox="0 0 22 20">
+                <g>
+                    <g>
+                        <image width="22" height="20"
+                               xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAUCAYAAACJfM0wAAACeklEQVQ4T62UX0hUQRTGv3O7aREVSBRUIJGYlbBGZDtrgRT0FBHCvUsPvRSRsyIY1FuRUC8FQZHurL5EPbl3EQMfIoj+UO3dlSAjKjOsqCCigiiCLPeemLurqO3e1JqXGWbm+83MOd8ZErZ8DKAS+ba40M+1+1YQfiJhy1EAZYWJrwCWzJH6HcCicS3VR1uq57E3BIBAfMFNJtqEdbAiN7aAZnrAQF/n57DdfJJA7VpjGN4WXyyizbvB1K/HHtP2bCp+b6ZQvS9ixeqYeADAfCLel04meiZuJWzZAqAjD/c2ZlNdT2cC39rUutowx14BMBk4nXHUCa2b8lwRlVfA2A/gTfnP8tDtq+e//A0ubPkCQBWAftdReyZiPF0obPkAwGYAg66jNgWBhSWvg7ALwHPXUTWT9/6RIGEdWQj68Q5ABQOXMo46UAwuovIsGMcA/DLZXHU3dfFjIFgvboseDuXYGMzHio+mncS5yaKIHTvE4G5/zqAGtyeenn54SUsJW+4F0OfDmXemU4mbetwQlWGP4eoxAzLjqESxFwV6NWzLUwQcJ2A47ah1vjXzlVoLog43GW8tlYNA8AbLKltKy3RlvncdtTLv+dgzMNd4Oa8629ulHVG0BYILHn0Lwks3qdYWbvwQQB0bRjjT05mdEzjS1FLJpvcawIjrKO1VHQofXCppJX08JftFwGFbDhIQ+j/gqaHQz68n9iLpVJfvjlm7YiIUjCduStU2Nrabo8s/DANYY4B23Hfit/4NTDQEz7sMMtoAXuHDcrn1bm+3/m5nf2NhxapAPN1Sd5hwJpNU10pB/aIKWizYTReECeARA+0ZR90I0oyv/Qa8Q/QQp6Q82QAAAABJRU5ErkJggg=="/>
+                    </g>
+                </g>
+            </svg>
+            Фильтровать
+        </div>
+        <div class="filter-container">
+            @endmobile
 
-            @if(in_array('color',$filter))
-                <li class="CardFilterBtn" data-field="color">
-                    <button>Цвет</button>
-                    <ul>
-                        @foreach($colors as $color)
+            <ul class="CardFilter">
+                @if(in_array('price',$filter))
+                    <li class="CardFilterBtn" data-field="price">
+                        <button>Цена</button>
+                        <ul>
+                            <li>
+                                <div class="CardFilterPriceTop">
+                                    <label>
+                                        <span>От</span>
+                                        <input type="text" id="form-control-1" class="form-control"
+                                               value="{{$min_price}}">
+                                    </label>
+                                    <b>-</b>
+                                    <label>
+                                        <span>До</span>
+                                        <input type="text" id="form-control-2" class="form-control"
+                                               value="{{$max_price}}">
+                                    </label>
+                                </div>
+                                <div class="CardFilterPrice"></div>
+                            </li>
+                        </ul>
+                    </li>
+                @endif
+
+                @if(in_array('color',$filter))
+                    <li class="CardFilterBtn" data-field="color">
+                        <button>Цвет</button>
+                        <ul>
+                            @foreach($colors as $color)
+                                <li>
+                                    <label class="CardFilterCheck">
+                                        <input type="checkbox" required="required" data-color="{{$color->color}}">
+                                        <span>{{__('color.'.$color->color)}}</span>
+                                    </label>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </li>
+                @endif
+                @if(in_array('weight',$filter))
+                    <li class="CardFilterBtn" data-field="weight">
+                        <button>Вес</button>
+                        <ul>
+                            @foreach($weights as $weight)
+                                <li>
+                                    <label class="CardFilterCheck">
+                                        <input type="checkbox" required="required" data-weight="{{$weight->weight}}">
+                                        <span>{{$weight->weight}} кг</span>
+                                    </label>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </li>
+                @endif
+                @if(in_array('remote_controller',$filter))
+                    <li class="CardFilterBtn" data-field="remote_controller">
+                        <button>Пульт</button>
+                        <ul>
                             <li>
                                 <label class="CardFilterCheck">
-                                    <input type="checkbox" required="required" data-color="{{$color->color}}">
-                                    <span>{{__('color.'.$color->color)}}</span>
+                                    <input type="checkbox" name="remote_controller" required="required"
+                                           data-remote_controller="1">
+                                    <span>Да</span>
                                 </label>
                             </li>
-                        @endforeach
-                    </ul>
-                </li>
-            @endif
-            @if(in_array('weight',$filter))
-                <li class="CardFilterBtn" data-field="weight">
-                    <button>Вес</button>
-                    <ul>
-                        @foreach($weights as $weight)
                             <li>
                                 <label class="CardFilterCheck">
-                                    <input type="checkbox" required="required" data-weight="{{$weight->weight}}">
-                                    <span>{{$weight->weight}} кг</span>
+                                    <input type="checkbox" name="remote_controller" required="required"
+                                           data-remote_controller="0">
+                                    <span>Нет</span>
                                 </label>
                             </li>
-                        @endforeach
-                    </ul>
-                </li>
-            @endif
-            @if(in_array('remote_controller',$filter))
-                <li class="CardFilterBtn" data-field="remote_controller">
-                    <button>Пульт</button>
-                    <ul>
-                        <li>
-                            <label class="CardFilterCheck">
-                                <input type="checkbox" name="remote_controller" required="required"
-                                       data-remote_controller="1">
-                                <span>Да</span>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="CardFilterCheck">
-                                <input type="checkbox" name="remote_controller" required="required"
-                                       data-remote_controller="0">
-                                <span>Нет</span>
-                            </label>
-                        </li>
-                    </ul>
-                </li>
-            @endif
-            @if(in_array('zero_g',$filter))
-                <li class="CardFilterBtn" data-field="zero_g">
-                    <button>Zero-G</button>
-                    <ul>
-                        <li>
-                            <label class="CardFilterCheck">
-                                <input type="checkbox" name="zero_g" required="required"
-                                       data-zero_g="1">
-                                <span>Да</span>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="CardFilterCheck">
-                                <input type="checkbox" name="zero_g" required="required"
-                                       data-zero_g="0">
-                                <span>Нет</span>
-                            </label>
-                        </li>
-                    </ul>
-                </li>
-            @endif
-            @if(in_array('warming_up',$filter))
-                <li class="CardFilterBtn" data-field="timer">
-                    <button>Таймер</button>
-                    <ul>
-                        <li>
-                            <label class="CardFilterCheck">
-                                <input type="checkbox" name="timer" required="required"
-                                       data-timer="1">
-                                <span>Да</span>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="CardFilterCheck">
-                                <input type="checkbox" name="timer" required="required"
-                                       data-timer="0">
-                                <span>Нет</span>
-                            </label>
-                        </li>
-                    </ul>
-                </li>
-            @endif
-            @if(in_array('type_controller',$filter))
-                <li class="CardFilterBtn" data-field="type_controller">
-                    <button>Управление</button>
-                    <ul>
-                        <li>
-                            <label class="CardFilterCheck">
-                                <input type="checkbox" required="required" data-type_controller="auto">
-                                <span>Автоматическое</span>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="CardFilterCheck">
-                                <input type="checkbox" required="required" data-type_controller="manual">
-                                <span>Ручное</span>
-                            </label>
-                        </li>
-                    </ul>
-                </li>
-            @endif
-            @if(in_array('sub_type_of_product',$filter))
-                <li class="CardFilterBtn" data-field="sub_type_of_product">
-                    <button>Тип товара</button>
-                    <ul>
-                        <li>
-                            <label class="CardFilterCheck">
-                                <input type="checkbox" required="required" data-sub_type_of_product="candles">
-                                <span>Свечи</span>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="CardFilterCheck">
-                                <input type="checkbox" required="required" data-sub_type_of_product="soap">
-                                <span>Мыло</span>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="CardFilterCheck">
-                                <input type="checkbox" required="required" data-sub_type_of_product="perfume for home">
-                                <span>Парфюм для дома</span>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="CardFilterCheck">
-                                <input type="checkbox" required="required" data-sub_type_of_product="bath bombs">
-                                <span>Бомбы для ванн</span>
-                            </label>
-                        </li>
-                    </ul>
-                </li>
-            @endif
-            @if(in_array('count_program',$filter) && $programs)
-                <li class="CardFilterBtn" data-field="count_program">
-                    <button>Программы</button>
-                    <ul>
-                        @foreach($programs as $program)
+                        </ul>
+                    </li>
+                @endif
+                @if(in_array('zero_g',$filter))
+                    <li class="CardFilterBtn" data-field="zero_g">
+                        <button>Zero-G</button>
+                        <ul>
+                            <li>
+                                <label class="CardFilterCheck">
+                                    <input type="checkbox" name="zero_g" required="required"
+                                           data-zero_g="1">
+                                    <span>Да</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="CardFilterCheck">
+                                    <input type="checkbox" name="zero_g" required="required"
+                                           data-zero_g="0">
+                                    <span>Нет</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </li>
+                @endif
+                @if(in_array('warming_up',$filter))
+                    <li class="CardFilterBtn" data-field="timer">
+                        <button>Таймер</button>
+                        <ul>
+                            <li>
+                                <label class="CardFilterCheck">
+                                    <input type="checkbox" name="timer" required="required"
+                                           data-timer="1">
+                                    <span>Да</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="CardFilterCheck">
+                                    <input type="checkbox" name="timer" required="required"
+                                           data-timer="0">
+                                    <span>Нет</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </li>
+                @endif
+                @if(in_array('type_controller',$filter))
+                    <li class="CardFilterBtn" data-field="type_controller">
+                        <button>Управление</button>
+                        <ul>
+                            <li>
+                                <label class="CardFilterCheck">
+                                    <input type="checkbox" required="required" data-type_controller="auto">
+                                    <span>Автоматическое</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="CardFilterCheck">
+                                    <input type="checkbox" required="required" data-type_controller="manual">
+                                    <span>Ручное</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </li>
+                @endif
+                @if(in_array('sub_type_of_product',$filter))
+                    <li class="CardFilterBtn" data-field="sub_type_of_product">
+                        <button>Тип товара</button>
+                        <ul>
+                            <li>
+                                <label class="CardFilterCheck">
+                                    <input type="checkbox" required="required" data-sub_type_of_product="candles">
+                                    <span>Свечи</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="CardFilterCheck">
+                                    <input type="checkbox" required="required" data-sub_type_of_product="soap">
+                                    <span>Мыло</span>
+                                </label>
+                            </li>
                             <li>
                                 <label class="CardFilterCheck">
                                     <input type="checkbox" required="required"
-                                           data-program="{{$program->count_program}}">
-                                    <span>{{$program->count_program}}</span>
+                                           data-sub_type_of_product="perfume for home">
+                                    <span>Парфюм для дома</span>
                                 </label>
                             </li>
-                        @endforeach
-                    </ul>
-                </li>
-            @endif
-            @if(in_array('warming_up',$filter))
-                <li class="CardFilterBtn" data-field="warming_up">
-                    <button>Прогрев</button>
-                    <ul>
-                        <li>
-                            <label class="CardFilterCheck">
-                                <input type="checkbox" name="warming_up" required="required"
-                                       data-warming_up="1">
-                                <span>Да</span>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="CardFilterCheck">
-                                <input type="checkbox" name="warming_up" required="required"
-                                       data-warming_up="0">
-                                <span>Нет</span>
-                            </label>
-                        </li>
-                    </ul>
-                </li>
-            @endif
-            @if(in_array('available',$filter))
-                <li class="CardFilterBtn" data-field="available">
-                    <button>Наличие</button>
-                    <ul>
-                        <li>
-                            <label class="CardFilterCheck">
-                                <input type="checkbox" name="available" required="required"
-                                       data-available="1">
-                                <span>Да</span>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="CardFilterCheck">
-                                <input type="checkbox" name="available" required="required"
-                                       data-available="0">
-                                <span>Нет</span>
-                            </label>
-                        </li>
-                    </ul>
-
-                </li>
-            @endif
-
-            @if(in_array('massage_area',$filter) && $massage_areas )
-                <li class="CardFilterBtn" data-field="massage_area">
-                    <button>Область</button>
-                    <ul>
-                        @foreach($massage_areas as $massage_area)
                             <li>
                                 <label class="CardFilterCheck">
-                                    <input type="checkbox" required="required"
-                                           data-massage_area="{{$massage_area}}">
-                                    <span>{{$massage_area}}</span>
+                                    <input type="checkbox" required="required" data-sub_type_of_product="bath bombs">
+                                    <span>Бомбы для ванн</span>
                                 </label>
                             </li>
-                        @endforeach
-                    </ul>
-                </li>
-            @endif
-            @if($filter)
-                <li class="CardFilterBtn" data-field="clear">
-                    <button>Очистить</button>
-                </li>
-            @endif
-        </ul>
+                        </ul>
+                    </li>
+                @endif
+                @if(in_array('count_program',$filter) && $programs)
+                    <li class="CardFilterBtn" data-field="count_program">
+                        <button>Программы</button>
+                        <ul>
+                            @foreach($programs as $program)
+                                <li>
+                                    <label class="CardFilterCheck">
+                                        <input type="checkbox" required="required"
+                                               data-program="{{$program->count_program}}">
+                                        <span>{{$program->count_program}}</span>
+                                    </label>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </li>
+                @endif
+                @if(in_array('warming_up',$filter))
+                    <li class="CardFilterBtn" data-field="warming_up">
+                        <button>Прогрев</button>
+                        <ul>
+                            <li>
+                                <label class="CardFilterCheck">
+                                    <input type="checkbox" name="warming_up" required="required"
+                                           data-warming_up="1">
+                                    <span>Да</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="CardFilterCheck">
+                                    <input type="checkbox" name="warming_up" required="required"
+                                           data-warming_up="0">
+                                    <span>Нет</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </li>
+                @endif
+                @if(in_array('available',$filter))
+                    <li class="CardFilterBtn" data-field="available">
+                        <button>Наличие</button>
+                        <ul>
+                            <li>
+                                <label class="CardFilterCheck">
+                                    <input type="checkbox" name="available" required="required"
+                                           data-available="1">
+                                    <span>Да</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="CardFilterCheck">
+                                    <input type="checkbox" name="available" required="required"
+                                           data-available="0">
+                                    <span>Нет</span>
+                                </label>
+                            </li>
+                        </ul>
+
+                    </li>
+                @endif
+
+                @if(in_array('massage_area',$filter) && $massage_areas )
+                    <li class="CardFilterBtn" data-field="massage_area">
+                        <button>Область</button>
+                        <ul>
+                            @foreach($massage_areas as $massage_area)
+                                <li>
+                                    <label class="CardFilterCheck">
+                                        <input type="checkbox" required="required"
+                                               data-massage_area="{{$massage_area}}">
+                                        <span>{{$massage_area}}</span>
+                                    </label>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </li>
+                @endif
+                @if($filter)
+                    <li class="CardFilterBtn" data-field="clear">
+                        <button>Очистить</button>
+                    </li>
+                @endif
+            </ul>
+            @mobile
+        </div>
+        @endmobile
         <ul class="FilterSort">
             @if($filter)
 
@@ -754,9 +777,9 @@
                     @endforeach
                 </div>
             </div>
-{{--            @if(isset($products->perPage))--}}
-                {!! $products->render() !!}
-{{--            @endif--}}
+            {{--            @if(isset($products->perPage))--}}
+            {!! $products->render() !!}
+            {{--            @endif--}}
         </div>
     </div>
 

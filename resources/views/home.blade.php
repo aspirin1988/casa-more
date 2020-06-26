@@ -132,9 +132,29 @@
                                                 style="margin-left: 10px;background: #0d8c00;color: #fff;padding: 5px 10px;"
                                                 data-order="{{$item->id}}">Оплачен</span>
                                         @else
-                                            <span
-                                                style="margin-left: 10px;background: #f0506e;color: #fff;padding: 5px 10px;"
+                                            @mobile
+                                            <span style="background: #f0506e;color: #fff;padding: 10px;"
                                                 data-order="{{$item->id}}">Не оплачен</span>
+
+                                            <button data-order-id="{{$item->id}}"
+                                                    style="background: #395669; color: #fff;border: none; cursor: pointer ">
+                                                <svg width="30" height="30" viewBox="0 0 20 20" class=""
+                                                     style="padding: 3px 5px;"
+                                                     xmlns="http://www.w3.org/2000/svg" data-svg="future">
+                                                    <polyline fill="#fff" stroke="#fff"
+                                                              points="19 2 18 2 18 6 14 6 14 7 19 7 19 2"></polyline>
+                                                    <path fill="none" stroke="#fff" stroke-width="1.1"
+                                                          d="M18,6.548 C16.709,3.29 13.354,1 9.6,1 C4.6,1 0.6,5 0.6,10 C0.6,15 4.6,19 9.6,19 C14.6,19 18.6,15 18.6,10"></path>
+                                                </svg>
+                                            </button>
+                                            <button data-repay-id="{{$item->id}}"
+                                                    style="background: #ee395b; color: #fff;border: none; cursor: pointer; padding: 10px ">
+                                                Запросить счет еще раз
+                                            </button>
+                                            @elsemobile
+                                            <span style="margin-left: 10px;background: #f0506e;color: #fff;padding: 5px 10px;"
+                                                  data-order="{{$item->id}}">Не оплачен</span>
+
                                             <button data-order-id="{{$item->id}}"
                                                     style="background: #395669; color: #fff;border: none; cursor: pointer ">
                                                 <svg width="30" height="30" viewBox="0 0 20 20" class=""
@@ -150,6 +170,7 @@
                                                     style="background: #ee395b; color: #fff;border: none; cursor: pointer ">
                                                 Запросить счет еще раз
                                             </button>
+                                            @endmobile
                                         @endif
 
                                     </h5>

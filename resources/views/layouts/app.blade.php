@@ -167,6 +167,9 @@
                 div.classList.add('uk-notification');
                 div.classList.add('uk-notification-' + obj.status);
                 div.innerHTML = obj.message;
+                div.addEventListener('click',function () {
+                    div.style.display='none';
+                });
                 UIkit.container.append(div);
                 setTimeout(function () {
                     div.remove();

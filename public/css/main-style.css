@@ -594,8 +594,8 @@ a {
 
     /* line 366, ../sass/all/header.scss */
     .HeaderLogo {
-        width: 100%;
-        margin-right: 5vw;
+        width: auto;
+        margin-right: 47vw;
     }
 
     /* line 370, ../sass/all/header.scss */
@@ -1253,6 +1253,9 @@ footer {
 }
 
 @media only screen and (min-width: 120px) and (max-width: 709px) {
+    .popup-active{
+        overflow-y: auto;
+    }
     /* line 219, ../sass/all/popup-menu.scss */
     .open-btn {
         display: flex;

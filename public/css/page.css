@@ -73,6 +73,9 @@ h1 {
 }
 
 @media (max-width: 640px) {
+    .container img{
+        width: 100%;
+    }
     .container{
         padding: 20px;
         box-sizing: border-box;

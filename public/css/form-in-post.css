@@ -263,7 +263,7 @@ form .checkbox-form a {
   /* line 263, ../sass/form-in.scss */
   form label {
     margin-bottom: 4vw;
-    padding-right: 14vw;
+    padding-right: 10vw;
   }
   /* line 267, ../sass/form-in.scss */
   form label:nth-child(3) {
@@ -335,8 +335,8 @@ form .checkbox-form a {
 @media only screen and (max-width: 320px) and (min-width: 120px) {
   /* line 338, ../sass/form-in.scss */
   form .text {
-    height: 45px;
-    line-height: 45px;
+    height: 10vw;
+    line-height: 10vw;
     width: 180px;
   }
 }
@@ -1912,7 +1912,7 @@ form .checkbox-form a {
 @media only screen and (max-width: 709px) and (min-width: 120px) {
   /* line 107, ../sass/form-in-post.scss */
   #form-4 form label:nth-child(1) {
-    margin-bottom: 9vw;
+    margin-bottom: 5vw;
   }
 
   /* line 114, ../sass/form-in-post.scss */
@@ -1923,6 +1923,7 @@ form .checkbox-form a {
   .CartCardWr h5 {
     font-size: 4vw;
     margin-bottom: 4vw;
+      flex-direction: column;
   }
 }
 
