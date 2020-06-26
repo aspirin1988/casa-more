@@ -520,6 +520,30 @@ class ProductController extends Controller
                 $product_['available'] = ($object->available ? "+" : "-");
                 $product_['price'] = number_format($object->price, 0, ",", " ");
 
+                $product_['massage_intensity_adjustment'] = ($object->massage_intensity_adjustment ? "+" : "-");
+                $product_['type_massage'] = $object->type_massage;
+                $product_['massage_speed_adjustment'] = ($object->massage_speed_adjustment ? "+" : "-");
+                $product_['number_rollers_back'] = $object->number_rollers_back;
+                $product_['number_rollers_foot'] = $object->number_rollers_foot;
+                $product_['number_airbags'] = $object->number_airbags;
+                $product_['auto_shut_off'] = ($object->auto_shut_off ? "+" : "-");
+                $product_['carriage_length'] = $object->carriage_length;
+                $product_['carriage_type'] = $object->carriage_type;
+                $product_['bluetooth'] = ($object->bluetooth ? "+" : "-");
+                $product_['antistress_system_braintronics'] = ($object->antistress_system_braintronics ? "+" : "-");
+                $product_['control_panel'] = ($object->control_panel ? "+" : "-");
+                $product_['user_memorization'] = ($object->user_memorization ? "+" : "-");
+                $product_['maximum_user_weight'] = $object->maximum_user_weight;
+                $product_['backrest_angle'] = $object->backrest_angle;
+                $product_['footrest_tilt_angle'] = $object->footrest_tilt_angle;
+                $product_['minimum_distance_wall'] = $object->minimum_distance_wall;
+                $product_['main_voltage'] = $object->main_voltage;
+                $product_['power'] = $object->power;
+                $product_['frequency'] = $object->frequency;
+                $product_['dimensions'] = $object->dimensions;
+                $product_['manufacturer_warranty'] = $object->manufacturer_warranty;
+
+
                 $products_ [] = $product_;
             }
 
@@ -553,6 +577,30 @@ class ProductController extends Controller
             $product_['massage_area'] = $object->massage_area;
             $product_['available'] = ($object->available ? "+" : "-");
             $product_['price'] = number_format($object->price, 0, ",", " ");
+
+            $product_['massage_intensity_adjustment'] = ($object->massage_intensity_adjustment ? "+" : "-");
+            $product_['type_massage'] = $object->type_massage;
+            $product_['massage_speed_adjustment'] = ($object->massage_speed_adjustment ? "+" : "-");
+            $product_['number_rollers_back'] = $object->number_rollers_back;
+            $product_['number_rollers_foot'] = $object->number_rollers_foot;
+            $product_['number_airbags'] = $object->number_airbags;
+            $product_['auto_shut_off'] = ($object->auto_shut_off ? "+" : "-");
+            $product_['carriage_length'] = $object->carriage_length;
+            $product_['carriage_type'] = $object->carriage_type;
+            $product_['bluetooth'] = ($object->bluetooth ? "+" : "-");
+            $product_['antistress_system_braintronics'] = ($object->antistress_system_braintronics ? "+" : "-");
+            $product_['control_panel'] = ($object->control_panel ? "+" : "-");
+            $product_['user_memorization'] = ($object->user_memorization ? "+" : "-");
+            $product_['maximum_user_weight'] = $object->maximum_user_weight;
+            $product_['backrest_angle'] = $object->backrest_angle;
+            $product_['footrest_tilt_angle'] = $object->footrest_tilt_angle;
+            $product_['minimum_distance_wall'] = $object->minimum_distance_wall;
+            $product_['main_voltage'] = $object->main_voltage;
+            $product_['power'] = $object->power;
+            $product_['frequency'] = $object->frequency;
+            $product_['dimensions'] = $object->dimensions;
+            $product_['manufacturer_warranty'] = $object->manufacturer_warranty;
+
 
             $products_ [] = $product_;
         }

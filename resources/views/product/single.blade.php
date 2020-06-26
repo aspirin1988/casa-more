@@ -377,7 +377,6 @@
                         {{($object->timer?"+":"-")}}
                     </td>
                 </tr>
-
                 <tr>
                     <td class="name-field">Тип управления:</td>
                     <td class="value-field">
@@ -424,12 +423,6 @@
                     <td class="name-field">Ручное отключение:</td>
                     <td class="value-field">
                         {{($object->manual_shutdown?"+":"-")}}
-                    </td>
-                </tr>
-                <tr>
-                    <td class="name-field">Автоматическое отключение:</td>
-                    <td class="value-field">
-                        {{($object->auto_shut_off?"+":"-")}}
                     </td>
                 </tr>
                 <tr>
@@ -540,7 +533,6 @@
                         {{($object->available?"+":"-")}}
                     </td>
                 </tr>
-
                 <tr>
                     <td class="name-field">Цена:</td>
                     <td class="value-field">

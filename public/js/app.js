@@ -5325,6 +5325,102 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['brand'],
   data: function data() {
@@ -53391,6 +53487,38 @@ var render = function() {
             "tr",
             [
               _c("td", { staticClass: "name-field" }, [
+                _vm._v("Панель управления:")
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.list, function(item) {
+                return _c("td", { staticClass: "value-field" }, [
+                  _vm._v(_vm._s(item.control_panel))
+                ])
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "tr",
+            [
+              _c("td", { staticClass: "name-field" }, [
+                _vm._v("Запоминание пользователя:")
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.list, function(item) {
+                return _c("td", { staticClass: "value-field" }, [
+                  _vm._v(_vm._s(item.user_memorization))
+                ])
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "tr",
+            [
+              _c("td", { staticClass: "name-field" }, [
                 _vm._v("Система Zero-G:")
               ]),
               _vm._v(" "),
@@ -53467,12 +53595,340 @@ var render = function() {
             "tr",
             [
               _c("td", { staticClass: "name-field" }, [
+                _vm._v("Синхронизация с музыкой:")
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.list, function(item) {
+                return _c("td", { staticClass: "value-field" }, [
+                  _vm._v(_vm._s(item.sync_with_music))
+                ])
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "tr",
+            [
+              _c("td", { staticClass: "name-field" }, [_vm._v("Bluetooth:")]),
+              _vm._v(" "),
+              _vm._l(_vm.list, function(item) {
+                return _c("td", { staticClass: "value-field" }, [
+                  _vm._v(_vm._s(item.bluetooth))
+                ])
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "tr",
+            [
+              _c("td", { staticClass: "name-field" }, [
+                _vm._v("Регулировка интенсивности массажа:")
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.list, function(item) {
+                return _c("td", { staticClass: "value-field" }, [
+                  _vm._v(_vm._s(item.massage_intensity_adjustment))
+                ])
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "tr",
+            [
+              _c("td", { staticClass: "name-field" }, [
+                _vm._v("Регулировка скорости массажа:")
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.list, function(item) {
+                return _c("td", { staticClass: "value-field" }, [
+                  _vm._v(_vm._s(item.massage_speed_adjustment))
+                ])
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "tr",
+            [
+              _c("td", { staticClass: "name-field" }, [
+                _vm._v("Ручное отключение:")
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.list, function(item) {
+                return _c("td", { staticClass: "value-field" }, [
+                  _vm._v(_vm._s(item.manual_shutdown))
+                ])
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "tr",
+            [
+              _c("td", { staticClass: "name-field" }, [
+                _vm._v("Автоматическое отключение:")
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.list, function(item) {
+                return _c("td", { staticClass: "value-field" }, [
+                  _vm._v(_vm._s(item.auto_shut_off))
+                ])
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "tr",
+            [
+              _c("td", { staticClass: "name-field" }, [
+                _vm._v("Антистресс система Braintronics:")
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.list, function(item) {
+                return _c("td", { staticClass: "value-field" }, [
+                  _vm._v(_vm._s(item.antistress_system_braintronics))
+                ])
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "tr",
+            [
+              _c("td", { staticClass: "name-field" }, [
+                _vm._v("Число роликов в области спины:")
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.list, function(item) {
+                return _c("td", { staticClass: "value-field" }, [
+                  _vm._v(_vm._s(item.number_rollers_back))
+                ])
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "tr",
+            [
+              _c("td", { staticClass: "name-field" }, [
+                _vm._v("Число роликов в области ступней:")
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.list, function(item) {
+                return _c("td", { staticClass: "value-field" }, [
+                  _vm._v(_vm._s(item.number_rollers_foot))
+                ])
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "tr",
+            [
+              _c("td", { staticClass: "name-field" }, [
+                _vm._v("Общее число воздушных подушек:")
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.list, function(item) {
+                return _c("td", { staticClass: "value-field" }, [
+                  _vm._v(_vm._s(item.number_airbags))
+                ])
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "tr",
+            [
+              _c("td", { staticClass: "name-field" }, [_vm._v("Тип каретки:")]),
+              _vm._v(" "),
+              _vm._l(_vm.list, function(item) {
+                return _c("td", { staticClass: "value-field" }, [
+                  _vm._v(_vm._s(item.carriage_type))
+                ])
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "tr",
+            [
+              _c("td", { staticClass: "name-field" }, [
+                _vm._v("Длина каретки:")
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.list, function(item) {
+                return _c("td", { staticClass: "value-field" }, [
+                  _vm._v(_vm._s(item.carriage_length))
+                ])
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "tr",
+            [
+              _c("td", { staticClass: "name-field" }, [
                 _vm._v("Область массажа:")
               ]),
               _vm._v(" "),
               _vm._l(_vm.list, function(item) {
                 return _c("td", { staticClass: "value-field" }, [
                   _vm._v(_vm._s(item.massage_area))
+                ])
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "tr",
+            [
+              _c("td", { staticClass: "name-field" }, [
+                _vm._v("Виды массажа:")
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.list, function(item) {
+                return _c("td", { staticClass: "value-field" }, [
+                  _vm._v(_vm._s(item.type_massage))
+                ])
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "tr",
+            [
+              _c("td", { staticClass: "name-field" }, [
+                _vm._v("Максимальный вес пользователя:")
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.list, function(item) {
+                return _c("td", { staticClass: "value-field" }, [
+                  _vm._v(_vm._s(item.maximum_user_weight))
+                ])
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "tr",
+            [
+              _c("td", { staticClass: "name-field" }, [
+                _vm._v("Угол наклона спинки:")
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.list, function(item) {
+                return _c("td", { staticClass: "value-field" }, [
+                  _vm._v(_vm._s(item.backrest_angle))
+                ])
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "tr",
+            [
+              _c("td", { staticClass: "name-field" }, [
+                _vm._v("Угол наклона подножки:")
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.list, function(item) {
+                return _c("td", { staticClass: "value-field" }, [
+                  _vm._v(_vm._s(item.footrest_tilt_angle))
+                ])
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "tr",
+            [
+              _c("td", { staticClass: "name-field" }, [
+                _vm._v("Минимальное расстояние от стены:")
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.list, function(item) {
+                return _c("td", { staticClass: "value-field" }, [
+                  _vm._v(_vm._s(item.minimum_distance_wall))
+                ])
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "tr",
+            [
+              _c("td", { staticClass: "name-field" }, [
+                _vm._v("Основное напряжение:")
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.list, function(item) {
+                return _c("td", { staticClass: "value-field" }, [
+                  _vm._v(_vm._s(item.main_voltage))
+                ])
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "tr",
+            [
+              _c("td", { staticClass: "name-field" }, [_vm._v("Частота:")]),
+              _vm._v(" "),
+              _vm._l(_vm.list, function(item) {
+                return _c("td", { staticClass: "value-field" }, [
+                  _vm._v(_vm._s(item.frequency))
+                ])
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "tr",
+            [
+              _c("td", { staticClass: "name-field" }, [_vm._v("Габариты:")]),
+              _vm._v(" "),
+              _vm._l(_vm.list, function(item) {
+                return _c("td", { staticClass: "value-field" }, [
+                  _vm._v(_vm._s(item.dimensions))
+                ])
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "tr",
+            [
+              _c("td", { staticClass: "name-field" }, [
+                _vm._v("Гарантия производителя:")
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.list, function(item) {
+                return _c("td", { staticClass: "value-field" }, [
+                  _vm._v(_vm._s(item.manufacturer_warranty))
                 ])
               })
             ],
