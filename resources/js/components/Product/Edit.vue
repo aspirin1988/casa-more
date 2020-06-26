@@ -88,20 +88,28 @@
                             </div>
                         </div>
                         <div class="uk-margin">
-                            <label class="uk-form-label" for="present">Описание подарка:</label>
+                            <label class="uk-form-label" for="present_description">Описание подарка:</label>
                             <div class="uk-form-controls">
-                                    <textarea rows="10" class="uk-textarea" v-model="list.present"
-                                              id="present"></textarea>
+                                    <textarea rows="10" class="uk-textarea" v-model="list.present_description"
+                                              id="present_description"></textarea>
                             </div>
                         </div>
                         <div class="uk-margin">
-                            <label class="uk-form-label" for="type_of_product">Подарок:</label>
+                            <label class="uk-form-label" for="present">Подарок:</label>
                             <div class="uk-form-controls">
-                                <select class="uk-select uk-width-1-2@m" id="type_of_product"
+                                <select class="uk-select uk-width-1-2@m" id="present"
                                         v-model="list.present">
                                     <option value="0">Не назначен</option>
                                     <option v-for="item in present_list" :value="item.id">{{item.name}}</option>
                                 </select>
+                            </div>
+                        </div>
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="caspian_link">Ссылка на каспий:</label>
+                            <div class="uk-form-controls">
+                                <input v-model="list.caspian_link" class="uk-input" id="caspian_link" type="text"
+                                       placeholder="Ссылка на каспий"
+                                       autocomplete="off">
                             </div>
                         </div>
                         <div class="uk-margin">

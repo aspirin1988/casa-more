@@ -6367,6 +6367,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['id'],
   data: function data() {
@@ -54441,7 +54449,10 @@ var render = function() {
                 _c("div", { staticClass: "uk-margin" }, [
                   _c(
                     "label",
-                    { staticClass: "uk-form-label", attrs: { for: "present" } },
+                    {
+                      staticClass: "uk-form-label",
+                      attrs: { for: "present_description" }
+                    },
                     [_vm._v("Описание подарка:")]
                   ),
                   _vm._v(" "),
@@ -54451,19 +54462,23 @@ var render = function() {
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.list.present,
-                          expression: "list.present"
+                          value: _vm.list.present_description,
+                          expression: "list.present_description"
                         }
                       ],
                       staticClass: "uk-textarea",
-                      attrs: { rows: "10", id: "present" },
-                      domProps: { value: _vm.list.present },
+                      attrs: { rows: "10", id: "present_description" },
+                      domProps: { value: _vm.list.present_description },
                       on: {
                         input: function($event) {
                           if ($event.target.composing) {
                             return
                           }
-                          _vm.$set(_vm.list, "present", $event.target.value)
+                          _vm.$set(
+                            _vm.list,
+                            "present_description",
+                            $event.target.value
+                          )
                         }
                       }
                     })
@@ -54473,10 +54488,7 @@ var render = function() {
                 _c("div", { staticClass: "uk-margin" }, [
                   _c(
                     "label",
-                    {
-                      staticClass: "uk-form-label",
-                      attrs: { for: "type_of_product" }
-                    },
+                    { staticClass: "uk-form-label", attrs: { for: "present" } },
                     [_vm._v("Подарок:")]
                   ),
                   _vm._v(" "),
@@ -54493,7 +54505,7 @@ var render = function() {
                           }
                         ],
                         staticClass: "uk-select uk-width-1-2@m",
-                        attrs: { id: "type_of_product" },
+                        attrs: { id: "present" },
                         on: {
                           change: function($event) {
                             var $$selectedVal = Array.prototype.filter
@@ -54529,6 +54541,50 @@ var render = function() {
                       ],
                       2
                     )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "uk-margin" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass: "uk-form-label",
+                      attrs: { for: "caspian_link" }
+                    },
+                    [_vm._v("Ссылка на каспий:")]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "uk-form-controls" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.list.caspian_link,
+                          expression: "list.caspian_link"
+                        }
+                      ],
+                      staticClass: "uk-input",
+                      attrs: {
+                        id: "caspian_link",
+                        type: "text",
+                        placeholder: "Ссылка на каспий",
+                        autocomplete: "off"
+                      },
+                      domProps: { value: _vm.list.caspian_link },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.list,
+                            "caspian_link",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
                   ])
                 ]),
                 _vm._v(" "),

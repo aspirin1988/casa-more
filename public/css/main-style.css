@@ -459,6 +459,7 @@ a {
 .Header.HeaderWhite .HeaderNav ul li .dropdown-toogle + ul li a {
     color: #000;
 }
+
 .Header.HeaderWhite .HeaderNav ul li .dropdown-toogle + ul li:hover a {
     color: #395669;
 }
@@ -907,7 +908,7 @@ footer {
 
     /* line 262, ../sass/all/footer.scss */
     .fBot .fBotWebCopy {
-        margin-bottom:3vw;
+        margin-bottom: 3vw;
     }
 
     /* line 265, ../sass/all/footer.scss */
@@ -948,6 +949,20 @@ footer {
     width: -webkit-max-content;
     width: max-content;
     transition: .3s ease-in-out;
+}
+
+.SiteBtnCaspi {
+    margin-left: 30px;
+    padding: 0 1.5em;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    border: 2px solid #f14635;
+    color: #f14635;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 /* line 24, ../sass/all/buttons.scss */
@@ -1080,10 +1095,11 @@ footer {
     top: -6px;
 }
 
-.HeaderWhite .open-btn b{
+.HeaderWhite .open-btn b {
     background: #fff;
 }
-.HeaderWhite .open-btn b:after,  .HeaderWhite .open-btn b:before {
+
+.HeaderWhite .open-btn b:after, .HeaderWhite .open-btn b:before {
     background: #fff;
 }
 
@@ -1253,9 +1269,10 @@ footer {
 }
 
 @media only screen and (min-width: 120px) and (max-width: 709px) {
-    .popup-active{
+    .popup-active {
         overflow-y: auto;
     }
+
     /* line 219, ../sass/all/popup-menu.scss */
     .open-btn {
         display: flex;
@@ -1295,10 +1312,11 @@ footer {
 
 }
 
-.CardBox a[data-id]{
+.CardBox a[data-id] {
     display: none;
 }
-.CardBox a[data-id].active{
+
+.CardBox a[data-id].active {
     display: block;
 }
 
@@ -1442,7 +1460,7 @@ footer {
 }
 
 .uk-search-cover input[type=text], .uk-search-cover input[type=password] {
-    border:none;
+    border: none;
     color: #010101;
     font-family: Montserrat;
     font-size: 20px;
@@ -1467,7 +1485,8 @@ footer {
     right: 0;
     left: auto;
 }
-.uk-list.uk-search-list{
+
+.uk-list.uk-search-list {
     display: block;
     width: 700px;
 }
@@ -1484,35 +1503,36 @@ footer {
     line-height: 25px;
 }
 
-.uk-notification:first-child{
+.uk-notification:first-child {
     margin-top: 50px;
 }
 
-.uk-notification.uk-notification-success{
+.uk-notification.uk-notification-success {
     background: #395669;
 }
 
 
-.pagination{
+.pagination {
     display: flex;
     justify-content: center;
 }
 
-.pagination .page-item{
+.pagination .page-item {
     display: inline-block;
-    margin:  0 15px;
+    margin: 0 15px;
     padding: 3px 8px;
     background: #f3f3f3;
 }
 
-.pagination .page-item.active{
+.pagination .page-item.active {
 
     background: #0D4E7B;
 }
 
-.pagination .page-item.active span{
+.pagination .page-item.active span {
     color: #fff;
 }
-.pagination .page-item a{
+
+.pagination .page-item a {
     color: #000;
 }
