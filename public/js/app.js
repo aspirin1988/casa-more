@@ -6069,6 +6069,204 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['id'],
   data: function data() {
@@ -6103,18 +6301,42 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mounted: function mounted() {
+    var _this = this;
+
     this.delete_dialog = this.$refs['delete-save'];
     this.getBrands();
     this.getData();
     this.getTags();
     this.getPresents();
+    window.addEventListener('keydown', function (event) {
+      if (event.ctrlKey && event.shiftKey) {
+        switch (event.keyCode) {
+          case 83:
+            event.preventDefault();
+            _this.exit = true;
+
+            _this.pageSave();
+
+            break;
+        }
+      } else if (event.ctrlKey) {
+        switch (event.keyCode) {
+          case 83:
+            event.preventDefault();
+
+            _this.pageSave();
+
+            break;
+        }
+      }
+    });
   },
   methods: {
     deletePage: function deletePage(item) {
-      var _this = this;
+      var _this2 = this;
 
       this.$http["delete"]('/admin/product/delete/' + this.delete_item.id).then(function (response) {
-        UIkit.modal(_this.delete_dialog).hide();
+        UIkit.modal(_this2.delete_dialog).hide();
         setTimeout(function () {
           location.href = '/admin/product/edit/' + list.parent_id;
         }, 3000);
@@ -6125,10 +6347,10 @@ __webpack_require__.r(__webpack_exports__);
       UIkit.modal(this.delete_dialog).show();
     },
     getPresents: function getPresents() {
-      var _this2 = this;
+      var _this3 = this;
 
       this.$http.post('/admin/present/get').then(function (response) {
-        _this2.present_list = response.data.list;
+        _this3.present_list = response.data.list;
       });
     },
     getName: function getName(name) {
@@ -6143,14 +6365,14 @@ __webpack_require__.r(__webpack_exports__);
       this.show_add_dir = true;
     },
     addDir: function addDir() {
-      var _this3 = this;
+      var _this4 = this;
 
       this.$http.post('/admin/image/add_dir', {
         'dir_name': this.dir_name
       }).then(function (response) {
-        _this3.dir_list = response.data.dir_list;
-        _this3.dir_name = '';
-        _this3.show_add_dir = false;
+        _this4.dir_list = response.data.dir_list;
+        _this4.dir_name = '';
+        _this4.show_add_dir = false;
       });
     },
     setCurrentDir: function setCurrentDir(item) {
@@ -6158,27 +6380,27 @@ __webpack_require__.r(__webpack_exports__);
       this.getGalleryListDir();
     },
     getBrands: function getBrands() {
-      var _this4 = this;
+      var _this5 = this;
 
       this.$http.get('/admin/brand/get/all').then(function (response) {
-        _this4.brand_list = response.data.list;
+        _this5.brand_list = response.data.list;
       });
     },
     getData: function getData() {
-      var _this5 = this;
+      var _this6 = this;
 
       this.$http.get('/admin/product/get/edit/' + this.id).then(function (response) {
-        _this5.list = response.data.list;
-        _this5.image_list = response.data.image_list;
-        _this5.child_list = response.data.child_list;
-        _this5.type_of_product_list = response.data.type_of_product_list;
+        _this6.list = response.data.list;
+        _this6.image_list = response.data.image_list;
+        _this6.child_list = response.data.child_list;
+        _this6.type_of_product_list = response.data.type_of_product_list;
       });
     },
     getTags: function getTags() {
-      var _this6 = this;
+      var _this7 = this;
 
       this.$http.get('/admin/product/get/tags/' + this.id).then(function (response) {
-        _this6.tags = response.data;
+        _this7.tags = response.data;
       });
     },
     pageSave: function pageSave() {
@@ -6187,6 +6409,11 @@ __webpack_require__.r(__webpack_exports__);
           UIkit.notification({
             message: 'Продукт успешно обновлен!',
             status: 'success'
+          });
+        }, function (reject) {
+          UIkit.notification({
+            message: 'При сохранении продукта произошла ошибка!',
+            status: 'danger'
           });
         });
       }
@@ -6207,16 +6434,16 @@ __webpack_require__.r(__webpack_exports__);
       UIkit.modal(this.$refs['modal-overflow']).show();
     },
     findTag: function findTag() {
-      var _this7 = this;
+      var _this8 = this;
 
       if (this.tag_name.length >= 2) {
         this.$http.post('/admin/find/tag', {
           tag: this.tag_name
         }).then(function (response) {
           if (response.data.length) {
-            _this7.tag_list = response.data;
+            _this8.tag_list = response.data;
           } else {
-            _this7.tag_list = [];
+            _this8.tag_list = [];
           }
         });
       } else {
@@ -6224,7 +6451,7 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     addTag: function addTag(item) {
-      var _this8 = this;
+      var _this9 = this;
 
       this.$http.post('/admin/product/set_tag', {
         product_id: this.id,
@@ -6243,14 +6470,14 @@ __webpack_require__.r(__webpack_exports__);
             status: 'success'
           });
 
-          _this8.getTags();
+          _this9.getTags();
         }
       });
       this.tag_name = '';
       this.tag_list = [];
     },
     removeTag: function removeTag(item) {
-      var _this9 = this;
+      var _this10 = this;
 
       var id = item.id;
       this.$http["delete"]('/admin/brand/unset_tag/' + id).then(function (response) {
@@ -6259,18 +6486,18 @@ __webpack_require__.r(__webpack_exports__);
           status: 'success'
         });
 
-        _this9.getTags();
+        _this10.getTags();
       });
     },
     getChildList: function getChildList() {
-      var _this10 = this;
+      var _this11 = this;
 
       this.$http.get('/admin/product/get/child_list/' + this.id).then(function (response) {
-        _this10.child_list = response.data;
+        _this11.child_list = response.data;
       });
     },
     AddChild: function AddChild() {
-      var _this11 = this;
+      var _this12 = this;
 
       this.new_child.parent_id = this.id;
       this.new_child.name = this.list.name;
@@ -6289,9 +6516,9 @@ __webpack_require__.r(__webpack_exports__);
             message: 'Продукт создан обновлен!',
             status: 'success'
           });
-          _this11.new_child = {};
+          _this12.new_child = {};
 
-          _this11.getChildList();
+          _this12.getChildList();
         });
       }
     },
@@ -6306,20 +6533,20 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     getGalleryList: function getGalleryList() {
-      var _this12 = this;
+      var _this13 = this;
 
       this.$http.get('/admin/product/get/images/' + this.id).then(function (response) {
         var data = response.data;
-        _this12.image_list = data.images;
+        _this13.image_list = data.images;
       });
     },
     getGalleryListDir: function getGalleryListDir() {
-      var _this13 = this;
+      var _this14 = this;
 
       this.$http.get('/admin/image/get_media/' + this.current_dir).then(function (response) {
         var data = response.data;
-        _this13.gallery_list = data.images;
-        _this13.dir_list = data.dir_list;
+        _this14.gallery_list = data.images;
+        _this14.dir_list = data.dir_list;
       });
     },
     setIcon: function setIcon() {
@@ -6328,7 +6555,7 @@ __webpack_require__.r(__webpack_exports__);
       UIkit.modal(this.$refs['modal-icon-overflow']).hide();
     },
     setImage: function setImage() {
-      var _this14 = this;
+      var _this15 = this;
 
       if (!this.create_image) {
         this.list[this.current_thumb] = this.current_image.id;
@@ -6345,16 +6572,16 @@ __webpack_require__.r(__webpack_exports__);
             status: 'success'
           });
 
-          _this14.getGalleryList();
+          _this15.getGalleryList();
 
-          UIkit.modal(_this14.$refs['modal-overflow']).hide();
-          _this14.current_image = {};
-          _this14.create_image = false;
+          UIkit.modal(_this15.$refs['modal-overflow']).hide();
+          _this15.current_image = {};
+          _this15.create_image = false;
         });
       }
     },
     ClearThumb: function ClearThumb(item) {
-      var _this15 = this;
+      var _this16 = this;
 
       this.$http["delete"]('/admin/image/delete/' + item.id).then(function (response) {
         UIkit.notification({
@@ -6362,14 +6589,14 @@ __webpack_require__.r(__webpack_exports__);
           status: 'success'
         });
 
-        _this15.getGalleryList();
+        _this16.getGalleryList();
       });
     },
     SelectImage: function SelectImage(item) {
       this.current_image = item;
     },
     onUpload: function onUpload(e) {
-      var _this16 = this;
+      var _this17 = this;
 
       var files = e.target.files;
       var formData = new FormData();
@@ -6390,7 +6617,7 @@ __webpack_require__.r(__webpack_exports__);
             status: 'success'
           });
 
-          _this16.getGalleryList();
+          _this17.getGalleryList();
         }
       })["catch"](function () {
         UIkit.notification({
@@ -6400,7 +6627,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     onUploadBrochure: function onUploadBrochure(e) {
-      var _this17 = this;
+      var _this18 = this;
 
       var files = e.target.files;
       var formData = new FormData();
@@ -6419,7 +6646,7 @@ __webpack_require__.r(__webpack_exports__);
             message: 'Брошюра успешно загружены!',
             status: 'success'
           });
-          _this17.list.brochure = response.data.result;
+          _this18.list.brochure = response.data.result;
         }
       })["catch"](function () {
         UIkit.notification({
@@ -53442,7 +53669,7 @@ var render = function() {
                             [
                               _vm._v(
                                 _vm._s(item.name) +
-                                  "\n                                    "
+                                  "\n                                "
                               )
                             ]
                           )
@@ -53979,7 +54206,7 @@ var render = function() {
                           "label",
                           {
                             staticClass: "uk-form-label",
-                            attrs: { for: "name" }
+                            attrs: { for: "massage_area" }
                           },
                           [_vm._v("Область массажа:*")]
                         ),
@@ -54010,6 +54237,50 @@ var render = function() {
                                 _vm.$set(
                                   _vm.list,
                                   "massage_area",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "uk-margin" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "uk-form-label",
+                            attrs: { for: "type_massage" }
+                          },
+                          [_vm._v("Вид массажа:")]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "uk-form-controls" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.list.type_massage,
+                                expression: "list.type_massage"
+                              }
+                            ],
+                            staticClass: "uk-input",
+                            attrs: {
+                              id: "type_massage",
+                              type: "text",
+                              placeholder: "Вид массажа",
+                              autocomplete: "off"
+                            },
+                            domProps: { value: _vm.list.type_massage },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.list,
+                                  "type_massage",
                                   $event.target.value
                                 )
                               }
@@ -54211,6 +54482,406 @@ var render = function() {
                           "label",
                           {
                             staticClass: "uk-form-label",
+                            attrs: { for: "maximum_user_weight" }
+                          },
+                          [
+                            _vm._v(
+                              "Максимальный вес\n                                пользователя:"
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "uk-form-controls" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.list.maximum_user_weight,
+                                expression: "list.maximum_user_weight"
+                              }
+                            ],
+                            staticClass: "uk-input",
+                            attrs: {
+                              id: "maximum_user_weight",
+                              type: "text",
+                              placeholder: "Максимальный вес пользователя",
+                              autocomplete: "off"
+                            },
+                            domProps: { value: _vm.list.maximum_user_weight },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.list,
+                                  "maximum_user_weight",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "uk-margin" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "uk-form-label",
+                            attrs: { for: "backrest_angle" }
+                          },
+                          [_vm._v("Угол наклона спинки:")]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "uk-form-controls" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.list.backrest_angle,
+                                expression: "list.backrest_angle"
+                              }
+                            ],
+                            staticClass: "uk-input",
+                            attrs: {
+                              id: "backrest_angle",
+                              type: "text",
+                              placeholder: "Угол наклона спинки",
+                              autocomplete: "off"
+                            },
+                            domProps: { value: _vm.list.backrest_angle },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.list,
+                                  "backrest_angle",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "uk-margin" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "uk-form-label",
+                            attrs: { for: "footrest_tilt_angle" }
+                          },
+                          [_vm._v("Угол наклона подножки:")]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "uk-form-controls" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.list.footrest_tilt_angle,
+                                expression: "list.footrest_tilt_angle"
+                              }
+                            ],
+                            staticClass: "uk-input",
+                            attrs: {
+                              id: "footrest_tilt_angle",
+                              type: "text",
+                              placeholder: "Угол наклона подножки",
+                              autocomplete: "off"
+                            },
+                            domProps: { value: _vm.list.footrest_tilt_angle },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.list,
+                                  "footrest_tilt_angle",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "uk-margin" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "uk-form-label",
+                            attrs: { for: "main_voltage" }
+                          },
+                          [_vm._v("Основное напряжение:")]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "uk-form-controls" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.list.main_voltage,
+                                expression: "list.main_voltage"
+                              }
+                            ],
+                            staticClass: "uk-input",
+                            attrs: {
+                              id: "main_voltage",
+                              type: "text",
+                              placeholder: "Основное напряжение",
+                              autocomplete: "off"
+                            },
+                            domProps: { value: _vm.list.main_voltage },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.list,
+                                  "main_voltage",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "uk-margin" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "uk-form-label",
+                            attrs: { for: "power" }
+                          },
+                          [_vm._v("Мощность:")]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "uk-form-controls" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.list.power,
+                                expression: "list.power"
+                              }
+                            ],
+                            staticClass: "uk-input",
+                            attrs: {
+                              id: "power",
+                              type: "text",
+                              placeholder: "Мощность",
+                              autocomplete: "off"
+                            },
+                            domProps: { value: _vm.list.power },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(_vm.list, "power", $event.target.value)
+                              }
+                            }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "uk-margin" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "uk-form-label",
+                            attrs: { for: "frequency" }
+                          },
+                          [_vm._v("Частота:")]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "uk-form-controls" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.list.frequency,
+                                expression: "list.frequency"
+                              }
+                            ],
+                            staticClass: "uk-input",
+                            attrs: {
+                              id: "frequency",
+                              type: "text",
+                              placeholder: "Частота",
+                              autocomplete: "off"
+                            },
+                            domProps: { value: _vm.list.frequency },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.list,
+                                  "frequency",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "uk-margin" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "uk-form-label",
+                            attrs: { for: "dimensions" }
+                          },
+                          [_vm._v("Габариты:")]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "uk-form-controls" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.list.dimensions,
+                                expression: "list.dimensions"
+                              }
+                            ],
+                            staticClass: "uk-input",
+                            attrs: {
+                              id: "dimensions",
+                              type: "text",
+                              placeholder: "Габариты",
+                              autocomplete: "off"
+                            },
+                            domProps: { value: _vm.list.dimensions },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.list,
+                                  "dimensions",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "uk-margin" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "uk-form-label",
+                            attrs: { for: "manufacturer_warranty" }
+                          },
+                          [_vm._v("Гарантия производителя:")]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "uk-form-controls" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.list.manufacturer_warranty,
+                                expression: "list.manufacturer_warranty"
+                              }
+                            ],
+                            staticClass: "uk-input",
+                            attrs: {
+                              id: "manufacturer_warranty",
+                              type: "text",
+                              placeholder: "Гарантия производителя",
+                              autocomplete: "off"
+                            },
+                            domProps: { value: _vm.list.manufacturer_warranty },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.list,
+                                  "manufacturer_warranty",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "uk-margin" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "uk-form-label",
+                            attrs: { for: "minimum_distance_wall" }
+                          },
+                          [
+                            _vm._v(
+                              "Минимальное расстояние от\n                                стены:"
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "uk-form-controls" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.list.minimum_distance_wall,
+                                expression: "list.minimum_distance_wall"
+                              }
+                            ],
+                            staticClass: "uk-input",
+                            attrs: {
+                              id: "minimum_distance_wall",
+                              type: "text",
+                              placeholder: "Минимальное расстояние от стены",
+                              autocomplete: "off"
+                            },
+                            domProps: { value: _vm.list.minimum_distance_wall },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.list,
+                                  "minimum_distance_wall",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "uk-margin" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "uk-form-label",
                             attrs: { for: "count_program" }
                           },
                           [_vm._v("Количество программ:*")]
@@ -54242,6 +54913,234 @@ var render = function() {
                                 _vm.$set(
                                   _vm.list,
                                   "count_program",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "uk-margin" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "uk-form-label",
+                            attrs: { for: "number_rollers_back" }
+                          },
+                          [
+                            _vm._v(
+                              "Число роликов в области\n                                спины:"
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "uk-form-controls" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.list.number_rollers_back,
+                                expression: "list.number_rollers_back"
+                              }
+                            ],
+                            staticClass: "uk-input",
+                            attrs: {
+                              id: "number_rollers_back",
+                              type: "text",
+                              placeholder: "Число роликов в области спины",
+                              autocomplete: "off"
+                            },
+                            domProps: { value: _vm.list.number_rollers_back },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.list,
+                                  "number_rollers_back",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "uk-margin" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "uk-form-label",
+                            attrs: { for: "number_rollers_foot" }
+                          },
+                          [
+                            _vm._v(
+                              "Число роликов в области\n                                ступней:"
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "uk-form-controls" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.list.number_rollers_foot,
+                                expression: "list.number_rollers_foot"
+                              }
+                            ],
+                            staticClass: "uk-input",
+                            attrs: {
+                              id: "number_rollers_foot",
+                              type: "text",
+                              placeholder: "Число роликов в области ступней",
+                              autocomplete: "off"
+                            },
+                            domProps: { value: _vm.list.number_rollers_foot },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.list,
+                                  "number_rollers_foot",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "uk-margin" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "uk-form-label",
+                            attrs: { for: "number_airbags" }
+                          },
+                          [_vm._v("Общее число воздушных подушек:")]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "uk-form-controls" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.list.number_airbags,
+                                expression: "list.number_airbags"
+                              }
+                            ],
+                            staticClass: "uk-input",
+                            attrs: {
+                              id: "number_airbags",
+                              type: "text",
+                              placeholder: "Общее число воздушных подушек",
+                              autocomplete: "off"
+                            },
+                            domProps: { value: _vm.list.number_airbags },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.list,
+                                  "number_airbags",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "uk-margin" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "uk-form-label",
+                            attrs: { for: "carriage_type" }
+                          },
+                          [_vm._v("Тип каретки:")]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "uk-form-controls" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.list.carriage_type,
+                                expression: "list.carriage_type"
+                              }
+                            ],
+                            staticClass: "uk-input",
+                            attrs: {
+                              id: "carriage_type",
+                              type: "text",
+                              placeholder: "Тип каретки",
+                              autocomplete: "off"
+                            },
+                            domProps: { value: _vm.list.carriage_type },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.list,
+                                  "carriage_type",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "uk-margin" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "uk-form-label",
+                            attrs: { for: "carriage_length" }
+                          },
+                          [_vm._v("Длина каретки:")]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "uk-form-controls" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.list.carriage_length,
+                                expression: "list.carriage_length"
+                              }
+                            ],
+                            staticClass: "uk-input",
+                            attrs: {
+                              id: "carriage_length",
+                              type: "text",
+                              placeholder: "Длина каретки",
+                              autocomplete: "off"
+                            },
+                            domProps: { value: _vm.list.carriage_length },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.list,
+                                  "carriage_length",
                                   $event.target.value
                                 )
                               }
@@ -54309,6 +55208,633 @@ var render = function() {
                                   }
                                 } else {
                                   _vm.$set(_vm.list, "remote_controller", $$c)
+                                }
+                              }
+                            }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "uk-margin" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "uk-form-label",
+                            attrs: { for: "massage_intensity_adjustment" }
+                          },
+                          [
+                            _vm._v(
+                              "Регулировка\n                                интенсивности:"
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "uk-form-controls" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.list.massage_intensity_adjustment,
+                                expression: "list.massage_intensity_adjustment"
+                              }
+                            ],
+                            staticClass: "uk-checkbox",
+                            attrs: {
+                              id: "massage_intensity_adjustment",
+                              type: "checkbox",
+                              placeholder: "Регулировка интенсивности массажа",
+                              autocomplete: "off"
+                            },
+                            domProps: {
+                              checked: Array.isArray(
+                                _vm.list.massage_intensity_adjustment
+                              )
+                                ? _vm._i(
+                                    _vm.list.massage_intensity_adjustment,
+                                    null
+                                  ) > -1
+                                : _vm.list.massage_intensity_adjustment
+                            },
+                            on: {
+                              change: function($event) {
+                                var $$a = _vm.list.massage_intensity_adjustment,
+                                  $$el = $event.target,
+                                  $$c = $$el.checked ? true : false
+                                if (Array.isArray($$a)) {
+                                  var $$v = null,
+                                    $$i = _vm._i($$a, $$v)
+                                  if ($$el.checked) {
+                                    $$i < 0 &&
+                                      _vm.$set(
+                                        _vm.list,
+                                        "massage_intensity_adjustment",
+                                        $$a.concat([$$v])
+                                      )
+                                  } else {
+                                    $$i > -1 &&
+                                      _vm.$set(
+                                        _vm.list,
+                                        "massage_intensity_adjustment",
+                                        $$a
+                                          .slice(0, $$i)
+                                          .concat($$a.slice($$i + 1))
+                                      )
+                                  }
+                                } else {
+                                  _vm.$set(
+                                    _vm.list,
+                                    "massage_intensity_adjustment",
+                                    $$c
+                                  )
+                                }
+                              }
+                            }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "uk-margin" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "uk-form-label",
+                            attrs: { for: "massage_speed_adjustment" }
+                          },
+                          [_vm._v("Регулировка скорости:")]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "uk-form-controls" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.list.massage_speed_adjustment,
+                                expression: "list.massage_speed_adjustment"
+                              }
+                            ],
+                            staticClass: "uk-checkbox",
+                            attrs: {
+                              id: "massage_speed_adjustment",
+                              type: "checkbox",
+                              placeholder: "Регулировка скорости массажа",
+                              autocomplete: "off"
+                            },
+                            domProps: {
+                              checked: Array.isArray(
+                                _vm.list.massage_speed_adjustment
+                              )
+                                ? _vm._i(
+                                    _vm.list.massage_speed_adjustment,
+                                    null
+                                  ) > -1
+                                : _vm.list.massage_speed_adjustment
+                            },
+                            on: {
+                              change: function($event) {
+                                var $$a = _vm.list.massage_speed_adjustment,
+                                  $$el = $event.target,
+                                  $$c = $$el.checked ? true : false
+                                if (Array.isArray($$a)) {
+                                  var $$v = null,
+                                    $$i = _vm._i($$a, $$v)
+                                  if ($$el.checked) {
+                                    $$i < 0 &&
+                                      _vm.$set(
+                                        _vm.list,
+                                        "massage_speed_adjustment",
+                                        $$a.concat([$$v])
+                                      )
+                                  } else {
+                                    $$i > -1 &&
+                                      _vm.$set(
+                                        _vm.list,
+                                        "massage_speed_adjustment",
+                                        $$a
+                                          .slice(0, $$i)
+                                          .concat($$a.slice($$i + 1))
+                                      )
+                                  }
+                                } else {
+                                  _vm.$set(
+                                    _vm.list,
+                                    "massage_speed_adjustment",
+                                    $$c
+                                  )
+                                }
+                              }
+                            }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "uk-margin" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "uk-form-label",
+                            attrs: { for: "manual_shutdown" }
+                          },
+                          [_vm._v("Ручное отключение:")]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "uk-form-controls" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.list.manual_shutdown,
+                                expression: "list.manual_shutdown"
+                              }
+                            ],
+                            staticClass: "uk-checkbox",
+                            attrs: {
+                              id: "manual_shutdown",
+                              type: "checkbox",
+                              placeholder: "Ручное отключение",
+                              autocomplete: "off"
+                            },
+                            domProps: {
+                              checked: Array.isArray(_vm.list.manual_shutdown)
+                                ? _vm._i(_vm.list.manual_shutdown, null) > -1
+                                : _vm.list.manual_shutdown
+                            },
+                            on: {
+                              change: function($event) {
+                                var $$a = _vm.list.manual_shutdown,
+                                  $$el = $event.target,
+                                  $$c = $$el.checked ? true : false
+                                if (Array.isArray($$a)) {
+                                  var $$v = null,
+                                    $$i = _vm._i($$a, $$v)
+                                  if ($$el.checked) {
+                                    $$i < 0 &&
+                                      _vm.$set(
+                                        _vm.list,
+                                        "manual_shutdown",
+                                        $$a.concat([$$v])
+                                      )
+                                  } else {
+                                    $$i > -1 &&
+                                      _vm.$set(
+                                        _vm.list,
+                                        "manual_shutdown",
+                                        $$a
+                                          .slice(0, $$i)
+                                          .concat($$a.slice($$i + 1))
+                                      )
+                                  }
+                                } else {
+                                  _vm.$set(_vm.list, "manual_shutdown", $$c)
+                                }
+                              }
+                            }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "uk-margin" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "uk-form-label",
+                            attrs: { for: "bluetooth" }
+                          },
+                          [_vm._v("Bluetooth:")]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "uk-form-controls" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.list.bluetooth,
+                                expression: "list.bluetooth"
+                              }
+                            ],
+                            staticClass: "uk-checkbox",
+                            attrs: {
+                              id: "bluetooth",
+                              type: "checkbox",
+                              placeholder: "Bluetooth",
+                              autocomplete: "off"
+                            },
+                            domProps: {
+                              checked: Array.isArray(_vm.list.bluetooth)
+                                ? _vm._i(_vm.list.bluetooth, null) > -1
+                                : _vm.list.bluetooth
+                            },
+                            on: {
+                              change: function($event) {
+                                var $$a = _vm.list.bluetooth,
+                                  $$el = $event.target,
+                                  $$c = $$el.checked ? true : false
+                                if (Array.isArray($$a)) {
+                                  var $$v = null,
+                                    $$i = _vm._i($$a, $$v)
+                                  if ($$el.checked) {
+                                    $$i < 0 &&
+                                      _vm.$set(
+                                        _vm.list,
+                                        "bluetooth",
+                                        $$a.concat([$$v])
+                                      )
+                                  } else {
+                                    $$i > -1 &&
+                                      _vm.$set(
+                                        _vm.list,
+                                        "bluetooth",
+                                        $$a
+                                          .slice(0, $$i)
+                                          .concat($$a.slice($$i + 1))
+                                      )
+                                  }
+                                } else {
+                                  _vm.$set(_vm.list, "bluetooth", $$c)
+                                }
+                              }
+                            }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "uk-margin" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "uk-form-label",
+                            attrs: { for: "antistress_system_braintronics" }
+                          },
+                          [_vm._v("Антистресс система:")]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "uk-form-controls" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.list.antistress_system_braintronics,
+                                expression:
+                                  "list.antistress_system_braintronics"
+                              }
+                            ],
+                            staticClass: "uk-checkbox",
+                            attrs: {
+                              id: "antistress_system_braintronics",
+                              type: "checkbox",
+                              placeholder: "Антистресс система Braintronics",
+                              autocomplete: "off"
+                            },
+                            domProps: {
+                              checked: Array.isArray(
+                                _vm.list.antistress_system_braintronics
+                              )
+                                ? _vm._i(
+                                    _vm.list.antistress_system_braintronics,
+                                    null
+                                  ) > -1
+                                : _vm.list.antistress_system_braintronics
+                            },
+                            on: {
+                              change: function($event) {
+                                var $$a =
+                                    _vm.list.antistress_system_braintronics,
+                                  $$el = $event.target,
+                                  $$c = $$el.checked ? true : false
+                                if (Array.isArray($$a)) {
+                                  var $$v = null,
+                                    $$i = _vm._i($$a, $$v)
+                                  if ($$el.checked) {
+                                    $$i < 0 &&
+                                      _vm.$set(
+                                        _vm.list,
+                                        "antistress_system_braintronics",
+                                        $$a.concat([$$v])
+                                      )
+                                  } else {
+                                    $$i > -1 &&
+                                      _vm.$set(
+                                        _vm.list,
+                                        "antistress_system_braintronics",
+                                        $$a
+                                          .slice(0, $$i)
+                                          .concat($$a.slice($$i + 1))
+                                      )
+                                  }
+                                } else {
+                                  _vm.$set(
+                                    _vm.list,
+                                    "antistress_system_braintronics",
+                                    $$c
+                                  )
+                                }
+                              }
+                            }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "uk-margin" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "uk-form-label",
+                            attrs: { for: "control_panel" }
+                          },
+                          [_vm._v("Панель управления:")]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "uk-form-controls" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.list.control_panel,
+                                expression: "list.control_panel"
+                              }
+                            ],
+                            staticClass: "uk-checkbox",
+                            attrs: {
+                              id: "control_panel",
+                              type: "checkbox",
+                              placeholder: "Панель управления",
+                              autocomplete: "off"
+                            },
+                            domProps: {
+                              checked: Array.isArray(_vm.list.control_panel)
+                                ? _vm._i(_vm.list.control_panel, null) > -1
+                                : _vm.list.control_panel
+                            },
+                            on: {
+                              change: function($event) {
+                                var $$a = _vm.list.control_panel,
+                                  $$el = $event.target,
+                                  $$c = $$el.checked ? true : false
+                                if (Array.isArray($$a)) {
+                                  var $$v = null,
+                                    $$i = _vm._i($$a, $$v)
+                                  if ($$el.checked) {
+                                    $$i < 0 &&
+                                      _vm.$set(
+                                        _vm.list,
+                                        "control_panel",
+                                        $$a.concat([$$v])
+                                      )
+                                  } else {
+                                    $$i > -1 &&
+                                      _vm.$set(
+                                        _vm.list,
+                                        "control_panel",
+                                        $$a
+                                          .slice(0, $$i)
+                                          .concat($$a.slice($$i + 1))
+                                      )
+                                  }
+                                } else {
+                                  _vm.$set(_vm.list, "control_panel", $$c)
+                                }
+                              }
+                            }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "uk-margin" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "uk-form-label",
+                            attrs: { for: "user_memorization" }
+                          },
+                          [_vm._v("Запоминание пользователя:")]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "uk-form-controls" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.list.user_memorization,
+                                expression: "list.user_memorization"
+                              }
+                            ],
+                            staticClass: "uk-checkbox",
+                            attrs: {
+                              id: "user_memorization",
+                              type: "checkbox",
+                              placeholder: "Запоминание пользователя",
+                              autocomplete: "off"
+                            },
+                            domProps: {
+                              checked: Array.isArray(_vm.list.user_memorization)
+                                ? _vm._i(_vm.list.user_memorization, null) > -1
+                                : _vm.list.user_memorization
+                            },
+                            on: {
+                              change: function($event) {
+                                var $$a = _vm.list.user_memorization,
+                                  $$el = $event.target,
+                                  $$c = $$el.checked ? true : false
+                                if (Array.isArray($$a)) {
+                                  var $$v = null,
+                                    $$i = _vm._i($$a, $$v)
+                                  if ($$el.checked) {
+                                    $$i < 0 &&
+                                      _vm.$set(
+                                        _vm.list,
+                                        "user_memorization",
+                                        $$a.concat([$$v])
+                                      )
+                                  } else {
+                                    $$i > -1 &&
+                                      _vm.$set(
+                                        _vm.list,
+                                        "user_memorization",
+                                        $$a
+                                          .slice(0, $$i)
+                                          .concat($$a.slice($$i + 1))
+                                      )
+                                  }
+                                } else {
+                                  _vm.$set(_vm.list, "user_memorization", $$c)
+                                }
+                              }
+                            }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "uk-margin" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "uk-form-label",
+                            attrs: { for: "auto_shut_off" }
+                          },
+                          [_vm._v("Автоматическое отключение:")]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "uk-form-controls" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.list.auto_shut_off,
+                                expression: "list.auto_shut_off"
+                              }
+                            ],
+                            staticClass: "uk-checkbox",
+                            attrs: {
+                              id: "auto_shut_off",
+                              type: "checkbox",
+                              placeholder: "Автоматическое отключение",
+                              autocomplete: "off"
+                            },
+                            domProps: {
+                              checked: Array.isArray(_vm.list.auto_shut_off)
+                                ? _vm._i(_vm.list.auto_shut_off, null) > -1
+                                : _vm.list.auto_shut_off
+                            },
+                            on: {
+                              change: function($event) {
+                                var $$a = _vm.list.auto_shut_off,
+                                  $$el = $event.target,
+                                  $$c = $$el.checked ? true : false
+                                if (Array.isArray($$a)) {
+                                  var $$v = null,
+                                    $$i = _vm._i($$a, $$v)
+                                  if ($$el.checked) {
+                                    $$i < 0 &&
+                                      _vm.$set(
+                                        _vm.list,
+                                        "auto_shut_off",
+                                        $$a.concat([$$v])
+                                      )
+                                  } else {
+                                    $$i > -1 &&
+                                      _vm.$set(
+                                        _vm.list,
+                                        "auto_shut_off",
+                                        $$a
+                                          .slice(0, $$i)
+                                          .concat($$a.slice($$i + 1))
+                                      )
+                                  }
+                                } else {
+                                  _vm.$set(_vm.list, "auto_shut_off", $$c)
+                                }
+                              }
+                            }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "uk-margin" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "uk-form-label",
+                            attrs: { for: "sync_with_music" }
+                          },
+                          [_vm._v("Синхронизация с музыкой:")]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "uk-form-controls" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.list.sync_with_music,
+                                expression: "list.sync_with_music"
+                              }
+                            ],
+                            staticClass: "uk-checkbox",
+                            attrs: {
+                              id: "sync_with_music",
+                              type: "checkbox",
+                              placeholder: "Синхронизация с музыкой",
+                              autocomplete: "off"
+                            },
+                            domProps: {
+                              checked: Array.isArray(_vm.list.sync_with_music)
+                                ? _vm._i(_vm.list.sync_with_music, null) > -1
+                                : _vm.list.sync_with_music
+                            },
+                            on: {
+                              change: function($event) {
+                                var $$a = _vm.list.sync_with_music,
+                                  $$el = $event.target,
+                                  $$c = $$el.checked ? true : false
+                                if (Array.isArray($$a)) {
+                                  var $$v = null,
+                                    $$i = _vm._i($$a, $$v)
+                                  if ($$el.checked) {
+                                    $$i < 0 &&
+                                      _vm.$set(
+                                        _vm.list,
+                                        "sync_with_music",
+                                        $$a.concat([$$v])
+                                      )
+                                  } else {
+                                    $$i > -1 &&
+                                      _vm.$set(
+                                        _vm.list,
+                                        "sync_with_music",
+                                        $$a
+                                          .slice(0, $$i)
+                                          .concat($$a.slice($$i + 1))
+                                      )
+                                  }
+                                } else {
+                                  _vm.$set(_vm.list, "sync_with_music", $$c)
                                 }
                               }
                             }
@@ -54798,9 +56324,9 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n                                        " +
+                              "\n                                    " +
                                 _vm._s(item.data.name) +
-                                "\n                                        "
+                                "\n                                    "
                             ),
                             _c("a", {
                               staticClass:
@@ -55014,7 +56540,7 @@ var render = function() {
                     "label",
                     { staticClass: "uk-form-label", attrs: { for: "images" } },
                     [
-                      _vm._v("Изображения:\n                                "),
+                      _vm._v("Изображения:\n                            "),
                       _c("button", {
                         staticClass:
                           "uk-button-primary uk-button-small uk-border-rounded",
@@ -55443,7 +56969,7 @@ var render = function() {
                         attrs: { type: "button" },
                         on: { click: _vm.pageSave }
                       },
-                      [_vm._v("Сохранить\n                            ")]
+                      [_vm._v("Сохранить\n                        ")]
                     )
                   ]
                 )

@@ -354,6 +354,18 @@
                     </td>
                 </tr>
                 <tr>
+                    <td class="name-field">Панель управления:</td>
+                    <td class="value-field">
+                        {{($object->control_panel?"+":"-")}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="name-field">Запоминание пользователя:</td>
+                    <td class="value-field">
+                        {{($object->user_memorization?"+":"-")}}
+                    </td>
+                </tr>
+                <tr>
                     <td class="name-field">Система Zero-G:</td>
                     <td class="value-field">
                         {{($object->zero_g?"+":"-")}}
@@ -367,7 +379,7 @@
                 </tr>
 
                 <tr>
-                    <td class="name-field">Тип управления::</td>
+                    <td class="name-field">Тип управления:</td>
                     <td class="value-field">
                         {{__('site.'.$object->type_controller)}}
                     </td>
@@ -385,9 +397,141 @@
                     </td>
                 </tr>
                 <tr>
+                    <td class="name-field">Синхронизация с музыкой:</td>
+                    <td class="value-field">
+                        {{($object->sync_with_music?"+":"-")}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="name-field">Bluetooth:</td>
+                    <td class="value-field">
+                        {{($object->bluetooth?"+":"-")}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="name-field">Регулировка интенсивности массажа:</td>
+                    <td class="value-field">
+                        {{($object->massage_intensity_adjustment?"+":"-")}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="name-field">Регулировка скорости массажа:</td>
+                    <td class="value-field">
+                        {{($object->massage_speed_adjustment?"+":"-")}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="name-field">Ручное отключение:</td>
+                    <td class="value-field">
+                        {{($object->manual_shutdown?"+":"-")}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="name-field">Автоматическое отключение:</td>
+                    <td class="value-field">
+                        {{($object->auto_shut_off?"+":"-")}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="name-field">Автоматическое отключение:</td>
+                    <td class="value-field">
+                        {{($object->auto_shut_off?"+":"-")}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="name-field">Антистресс система Braintronics:</td>
+                    <td class="value-field">
+                        {{($object->antistress_system_braintronics?"+":"-")}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="name-field">Число роликов в области спины:</td>
+                    <td class="value-field">
+                        {{$object->number_rollers_back}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="name-field">Число роликов в области ступней:</td>
+                    <td class="value-field">
+                        {{$object->number_rollers_foot}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="name-field">Общее число воздушных подушек:</td>
+                    <td class="value-field">
+                        {{$object->number_airbags}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="name-field">Тип каретки:</td>
+                    <td class="value-field">
+                        {{$object->carriage_type}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="name-field">Длина каретки:</td>
+                    <td class="value-field">
+                        {{$object->carriage_length}}
+                    </td>
+                </tr>
+                <tr>
                     <td class="name-field">Область массажа:</td>
                     <td class="value-field">
                         {{$object->massage_area}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="name-field">Виды массажа:</td>
+                    <td class="value-field">
+                        {{$object->type_massage}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="name-field">Максимальный вес пользователя:</td>
+                    <td class="value-field">
+                        {{$object->maximum_user_weight}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="name-field">Угол наклона спинки:</td>
+                    <td class="value-field">
+                        {{$object->backrest_angle}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="name-field">Угол наклона подножки:</td>
+                    <td class="value-field">
+                        {{$object->footrest_tilt_angle}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="name-field">Минимальное расстояние от стены:</td>
+                    <td class="value-field">
+                        {{$object->minimum_distance_wall}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="name-field">Основное напряжение:</td>
+                    <td class="value-field">
+                        {{$object->main_voltage}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="name-field">Частота:</td>
+                    <td class="value-field">
+                        {{$object->frequency}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="name-field">Габариты:</td>
+                    <td class="value-field">
+                        {{$object->dimensions}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="name-field">Гарантия производителя:</td>
+                    <td class="value-field">
+                        {{$object->manufacturer_warranty}}
                     </td>
                 </tr>
                 <tr>
