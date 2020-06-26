@@ -240,6 +240,10 @@
                 this.getGalleryListDir();
                 UIkit.modal(this.$refs['modal-overflow']).show();
             },
+            setCurrentDir: function (item) {
+                this.current_dir = item;
+                this.getGalleryListDir();
+            },
             getGalleryList: function () {
                 this.$http.get('/admin/product/get/images/' + this.id).then(response => {
                     let data = response.data;

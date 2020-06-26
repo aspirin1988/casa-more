@@ -3779,6 +3779,10 @@ __webpack_require__.r(__webpack_exports__);
       this.getGalleryListDir();
       UIkit.modal(this.$refs['modal-overflow']).show();
     },
+    setCurrentDir: function setCurrentDir(item) {
+      this.current_dir = item;
+      this.getGalleryListDir();
+    },
     getGalleryList: function getGalleryList() {
       var _this4 = this;
 
