@@ -31,12 +31,20 @@
                 </ul>
             </div>
             <div class="uk-comment-footer uk-padding-small" :class="classObject">
-                <span class="uk-button uk-button-primary" @click="Check()" :href="'#'">
+                <div class="uk-margin uk-width-1-1">
+                    <select class="uk-select uk-width-1-1" v-model="item.status" >
+                        <option value="0" >Новый</option>
+                        <option value="1" >Принят</option>
+                        <option value="2" >Выполнен</option>
+                        <option value="3" >Отменен</option>
+                    </select>
+                </div>
+                <span class="uk-button uk-button-primary" @click="Check()" title="Сменить статус"  :href="'#'">
                     <span uk-icon="check"></span>
                 </span>
-                <span v-if="item.status!==3" class="uk-button uk-button-danger" @click="Ban()" :href="'#'">
-                    <span uk-icon="ban"></span>
-                </span>
+<!--                <span v-if="item.status!==3" class="uk-button uk-button-danger" @click="Ban()" :href="'#'">-->
+<!--                    <span uk-icon="ban"></span>-->
+<!--                </span>-->
             </div>
         </header>
         <div class="uk-comment-body uk-position-relative">
@@ -92,16 +100,17 @@
                 this.Update();
             },
             Check: function () {
-                if (this.item.status === 0) {
-                    this.item.status = 1;
-                    this.Update();
-                } else if (this.item.status === 1) {
-                    this.item.status = 2;
-                    this.Update();
-                } else if (this.item.status === 3) {
-                    this.item.status = 1;
-                    this.Update();
-                }
+                this.Update();
+                // if (this.item.status === 0) {
+                //     this.item.status = 1;
+                //     this.Update();
+                // } else if (this.item.status === 1) {
+                //     this.item.status = 2;
+                //     this.Update();
+                // } else if (this.item.status === 3) {
+                //     this.item.status = 1;
+                //     this.Update();
+                // }
 
 
             },

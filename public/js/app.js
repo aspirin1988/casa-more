@@ -3348,6 +3348,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['item'],
   data: function data() {
@@ -3376,16 +3384,16 @@ __webpack_require__.r(__webpack_exports__);
       this.Update();
     },
     Check: function Check() {
-      if (this.item.status === 0) {
-        this.item.status = 1;
-        this.Update();
-      } else if (this.item.status === 1) {
-        this.item.status = 2;
-        this.Update();
-      } else if (this.item.status === 3) {
-        this.item.status = 1;
-        this.Update();
-      }
+      this.Update(); // if (this.item.status === 0) {
+      //     this.item.status = 1;
+      //     this.Update();
+      // } else if (this.item.status === 1) {
+      //     this.item.status = 2;
+      //     this.Update();
+      // } else if (this.item.status === 3) {
+      //     this.item.status = 1;
+      //     this.Update();
+      // }
     },
     Update: function Update() {
       var _this = this;
@@ -49713,7 +49721,7 @@ var render = function() {
                   "a",
                   { staticClass: "uk-link-muted", attrs: { href: "#" } },
                   [
-                    _vm._v("\n                        ID:"),
+                    _vm._v("\n                            ID:"),
                     _c("strong", [_vm._v(_vm._s(_vm.item ? _vm.item.id : ""))])
                   ]
                 )
@@ -49724,7 +49732,7 @@ var render = function() {
                   "a",
                   { staticClass: "uk-link-muted", attrs: { href: "#" } },
                   [
-                    _vm._v("\n                        Тел:"),
+                    _vm._v("\n                            Тел:"),
                     _c("a", { attrs: { href: "tel:" + _vm.item.user.phone } }, [
                       _vm._v(_vm._s(_vm.item ? _vm.item.user.phone : ""))
                     ])
@@ -49737,7 +49745,7 @@ var render = function() {
                   "a",
                   { staticClass: "uk-link-muted", attrs: { href: "#" } },
                   [
-                    _vm._v("\n                        Статус:"),
+                    _vm._v("\n                            Статус:"),
                     _c("strong", [
                       _vm._v(_vm._s(_vm.getStatus(_vm.item.status)))
                     ])
@@ -49767,11 +49775,56 @@ var render = function() {
             class: _vm.classObject
           },
           [
+            _c("div", { staticClass: "uk-margin uk-width-1-1" }, [
+              _c(
+                "select",
+                {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.item.status,
+                      expression: "item.status"
+                    }
+                  ],
+                  staticClass: "uk-select uk-width-1-1",
+                  on: {
+                    change: function($event) {
+                      var $$selectedVal = Array.prototype.filter
+                        .call($event.target.options, function(o) {
+                          return o.selected
+                        })
+                        .map(function(o) {
+                          var val = "_value" in o ? o._value : o.value
+                          return val
+                        })
+                      _vm.$set(
+                        _vm.item,
+                        "status",
+                        $event.target.multiple
+                          ? $$selectedVal
+                          : $$selectedVal[0]
+                      )
+                    }
+                  }
+                },
+                [
+                  _c("option", { attrs: { value: "0" } }, [_vm._v("Новый")]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "1" } }, [_vm._v("Принят")]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "2" } }, [_vm._v("Выполнен")]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "3" } }, [_vm._v("Отменен")])
+                ]
+              )
+            ]),
+            _vm._v(" "),
             _c(
               "span",
               {
                 staticClass: "uk-button uk-button-primary",
-                attrs: { href: "#" },
+                attrs: { title: "Сменить статус", href: "#" },
                 on: {
                   click: function($event) {
                     return _vm.Check()
@@ -49779,23 +49832,7 @@ var render = function() {
                 }
               },
               [_c("span", { attrs: { "uk-icon": "check" } })]
-            ),
-            _vm._v(" "),
-            _vm.item.status !== 3
-              ? _c(
-                  "span",
-                  {
-                    staticClass: "uk-button uk-button-danger",
-                    attrs: { href: "#" },
-                    on: {
-                      click: function($event) {
-                        return _vm.Ban()
-                      }
-                    }
-                  },
-                  [_c("span", { attrs: { "uk-icon": "ban" } })]
-                )
-              : _vm._e()
+            )
           ]
         )
       ]),
