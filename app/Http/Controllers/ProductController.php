@@ -476,10 +476,10 @@ class ProductController extends Controller
 
             if ($product) {
                 $product->delete();
-                return response()->json(['result' => true, 'auth' => true, 'message' => 'Данный товар успешно исключен избранное!']);
+                return response()->json(['result' => true, 'auth' => true, 'message' => 'Данный товар успешно исключен из избранного!']);
             } else {
                 SelectedProduct::create(['user_id' => Auth::id(), 'product_id' => $id]);
-                return response()->json(['result' => true, 'auth' => true, 'message' => 'Данный товар успешно добавлен избранное!']);
+                return response()->json(['result' => true, 'auth' => true, 'message' => 'Данный товар успешно добавлен в избранное!']);
             }
         } else {
             return response()->json(['result' => false, 'auth' => false]);
