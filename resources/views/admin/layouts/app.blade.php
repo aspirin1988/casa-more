@@ -24,7 +24,7 @@
             <img id="logo-big" class="uk-visible@m" style="width: 80px" src="/img/CasaMore_Logo.png" alt="">
             <ul class="uk-navbar-nav  uk-visible@m">
                 <li>
-                    <a href="#" id="trigger_menu"  onclick="window.show_trigger(this)">
+                    <a href="#" id="trigger_menu" onclick="window.show_trigger(this)">
                         <span class="uk-icon uk-button-default" uk-icon="more-vertical" style="padding: 5px"></span>
                     </a>
                 </li>
@@ -39,7 +39,13 @@
                     <div class="uk-navbar-dropdown uk-navbar-dropdown-bottom-right">
                         <ul class="uk-nav uk-navbar-dropdown-nav">
                             <li class="uk-active">
-                                <img src="{{\Illuminate\Support\Facades\Auth::user()->photo}}" alt="">
+                                <svg width="165" height="50" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
+                                     data-svg="user">
+                                    <circle fill="none" stroke="#000" stroke-width="1.1" cx="9.9" cy="6.4"
+                                            r="4.4"></circle>
+                                    <path fill="none" stroke="#000" stroke-width="1.1"
+                                          d="M1.5,19 C2.3,14.5 5.8,11.2 10,11.2 C14.2,11.2 17.7,14.6 18.5,19.2"></path>
+                                </svg>
                             </li>
                             <li class="uk-nav-header">{{Auth::user()->job}}</li>
                             {{--<li><a href="{{route('admin_user_profile')}}">{{__('app.Settings')}}</a></li>--}}
