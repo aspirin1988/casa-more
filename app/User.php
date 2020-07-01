@@ -43,4 +43,9 @@ class User extends Authenticatable
     {
         return boolval($this->is_admin);
     }
+
+    public function getFullName()
+    {
+        return $this->first_name. ' '.$this->last_name;
+    }
 }

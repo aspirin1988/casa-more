@@ -35,7 +35,7 @@
         <div class="uk-navbar-right">
             <ul class="uk-navbar-nav">
                 <li>
-                    <a href="#" class="" aria-expanded="false">{{ Auth::user()->name }}</a>
+                    <a href="#" class="" aria-expanded="false">{{ Auth::user()->getFullName() }}</a>
                     <div class="uk-navbar-dropdown uk-navbar-dropdown-bottom-right">
                         <ul class="uk-nav uk-navbar-dropdown-nav">
                             <li class="uk-active">
