@@ -305,7 +305,7 @@
                    class="{{( in_array($object->id,$liked) ?'CardBoxPriceLiked':'CardBoxPriceLike')}}" href="#">
                     в избранное</a>
                 @if($object->type_of_product == 'massage_chairs')
-                    <a href="#" data-comparison="{{$object->id}}">к сравнению</a>
+                    <a href="/product-comparison" >к сравнению</a>
                 @endif
                 @if($object->brochure)
                     <a href="{{$object->brochure}}" target="_blank">Инструкции</a>

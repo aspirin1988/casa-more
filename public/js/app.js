@@ -3832,7 +3832,7 @@ __webpack_require__.r(__webpack_exports__);
       this.list.thumb = 0;
       axios.post('/admin/page/save/' + this.id, this.list).then(function (response) {
         UIkit.notification({
-          message: "Изображение успешно уделено!",
+          message: "Изображение успешно удалено!",
           status: 'success'
         });
         axios.get('/admin/page/get/edit/' + _this7.id).then(function (response) {

@@ -279,7 +279,7 @@
             ClearThumb: function () {
                 this.list.thumb = 0;
                 axios.post('/admin/page/save/' + this.id, this.list).then(response => {
-                    UIkit.notification({message: "Изображение успешно уделено!", status: 'success'});
+                    UIkit.notification({message: "Изображение успешно удалено!", status: 'success'});
                     axios.get('/admin/page/get/edit/' + this.id).then(response => {
                         this.list = response.data;
                     });
