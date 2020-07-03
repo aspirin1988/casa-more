@@ -276,12 +276,14 @@
                     });
                 }
             },
-            ClearThumb: function (item) {
-                this.$http.delete('/admin/image/delete/' + item.id).then(response => {
+            ClearThumb: function () {
+                this.list.thumb = 0;
+                axios.post('/admin/page/save/' + this.id, this.list).then(response => {
                     UIkit.notification({message: "Изображение успешно уделено!", status: 'success'});
-                    this.getGalleryList();
+                    axios.get('/admin/page/get/edit/' + this.id).then(response => {
+                        this.list = response.data;
+                    });
                 });
-
             },
             SelectImage: function (item) {
                 this.current_image = item;

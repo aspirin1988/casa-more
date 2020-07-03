@@ -3826,16 +3826,18 @@ __webpack_require__.r(__webpack_exports__);
         });
       }
     },
-    ClearThumb: function ClearThumb(item) {
+    ClearThumb: function ClearThumb() {
       var _this7 = this;
 
-      this.$http["delete"]('/admin/image/delete/' + item.id).then(function (response) {
+      this.list.thumb = 0;
+      axios.post('/admin/page/save/' + this.id, this.list).then(function (response) {
         UIkit.notification({
           message: "Изображение успешно уделено!",
           status: 'success'
         });
-
-        _this7.getGalleryList();
+        axios.get('/admin/page/get/edit/' + _this7.id).then(function (response) {
+          _this7.list = response.data;
+        });
       });
     },
     SelectImage: function SelectImage(item) {
