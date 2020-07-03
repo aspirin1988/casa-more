@@ -150,15 +150,6 @@
                 <td class="name-field">Цена:</td>
                 <td class="value-field" v-for="item in list">{{item.price}}</td>
             </tr>
-
-
-
-
-            <tr>
-                <td class="name-field">&nbsp;</td>
-                <td class="name-field" v-for="item in list" @click="Delete(item.id)"><span class="close"></span></td>
-            </tr>
-
             </tbody>
         </table>
     </div>

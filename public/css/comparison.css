@@ -2,6 +2,34 @@
     max-width: 1125px;
 }
 
+.Specifications::-webkit-scrollbar-track
+{
+    background-color:  #ebeef0;
+}
+
+.Specifications::-webkit-scrollbar
+{
+    width: 6px;
+    background-color: #ebeef0;
+}
+
+.Specifications::-webkit-scrollbar-thumb
+{
+    background-color: #395669;
+}
+
+.Specifications::-webkit-scrollbar-button:single-button {
+    background: #fff url('/img/Polygon_1.png') no-repeat center center/contain;
+    display: block;
+    /*border: 8px #ebeef0 solid;*/
+    height: 13px;
+    width: 16px;
+}
+
+.Specifications::-webkit-scrollbar-button:single-button:increment {
+    background: #fff url('/img/Polygon_r1.png') no-repeat center center/contain;
+}
+
 .Specifications .Specifications-title {
     color: #010101;
     font-family: Montserrat;

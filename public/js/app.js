@@ -5418,15 +5418,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['brand'],
   data: function data() {
@@ -53972,29 +53963,6 @@ var render = function() {
                 return _c("td", { staticClass: "value-field" }, [
                   _vm._v(_vm._s(item.price))
                 ])
-              })
-            ],
-            2
-          ),
-          _vm._v(" "),
-          _c(
-            "tr",
-            [
-              _c("td", { staticClass: "name-field" }, [_vm._v(" ")]),
-              _vm._v(" "),
-              _vm._l(_vm.list, function(item) {
-                return _c(
-                  "td",
-                  {
-                    staticClass: "name-field",
-                    on: {
-                      click: function($event) {
-                        return _vm.Delete(item.id)
-                      }
-                    }
-                  },
-                  [_c("span", { staticClass: "close" })]
-                )
               })
             ],
             2
