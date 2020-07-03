@@ -198,6 +198,7 @@ class Product extends Model
             return $this->brochure;
         }else{
             $parent = $this->getParent();
+            dd($parent);
             if($parent){
                 return $this->brochure;
             }else{
