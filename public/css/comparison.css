@@ -10,6 +10,7 @@
 .Specifications::-webkit-scrollbar
 {
     width: 6px;
+    height: 9px;
     background-color: #ebeef0;
 }
 
@@ -22,8 +23,8 @@
     background: #fff url('/img/Polygon_1.png') no-repeat center center/contain;
     display: block;
     /*border: 8px #ebeef0 solid;*/
-    height: 13px;
-    width: 16px;
+    height: 12px;
+    width: 12px;
 }
 
 .Specifications::-webkit-scrollbar-button:single-button:increment {
