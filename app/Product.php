@@ -191,4 +191,18 @@ class Product extends Model
 
         return $present;
     }
+
+    public function getBrochure()
+    {
+        if($this->brochure){
+            return $this->brochure;
+        }else{
+            $parent = $this->getParent();
+            if($parent){
+                return $parent->brochure;
+            }else{
+                return null;
+            }
+        }
+    }
 }

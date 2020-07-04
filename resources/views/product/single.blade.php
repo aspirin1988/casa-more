@@ -307,8 +307,8 @@
                 @if($object->type_of_product == 'massage_chairs')
                     <a href="/product-comparison" >к сравнению</a>
                 @endif
-                @if($object->brochure)
-                    <a href="{{$object->brochure}}" target="_blank">Инструкции</a>
+                @if($object->getBrochure())
+                    <a href="{{$object->getBrochure()}}" target="_blank">Инструкция</a>
                 @endif
             </div>
         </div>

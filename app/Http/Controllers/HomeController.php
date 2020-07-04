@@ -36,7 +36,12 @@ class HomeController extends Controller
         $orders = Order::where('user_id', $id)->orderBy('created_at', 'DESC')->get();
         $select_products = SelectedProduct::where('user_id', $id)->orderBy('created_at', 'asc')->get();
         foreach ($orders as $key => $order) {
-            $orders[$key]->products = $order->getProductList();
+            $order_ = $order->getProductList();
+            if($order_) {
+                $orders[$key]->products = $order_;
+            }else{
+                unset($orders[$key]);
+            }
         }
 
         foreach ($select_products as $key => $select_product) {

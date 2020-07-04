@@ -24,8 +24,13 @@ class Order extends Model
         $order_list = OrderList::where('order_id', $this->id)->get();
         foreach ($order_list as $key => $item) {
             $count = $item->count;
-            $order_list[$key] = $item->getProduct();
-            $order_list[$key]->count = $count;
+            $product = $item->getProduct();
+            if($product) {
+                $order_list[$key] = $item->getProduct();
+                $order_list[$key]->count = $count;
+            }else{
+                unset($order_list[$key]);
+            }
         }
 
         return $order_list;
