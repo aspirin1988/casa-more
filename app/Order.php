@@ -28,6 +28,8 @@ class Order extends Model
             if($product) {
                 $order_list[$key] = $item->getProduct();
                 $order_list[$key]->count = $count;
+            }else{
+                unset($order_list[$key]);
             }
         }
 
