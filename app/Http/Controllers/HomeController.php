@@ -38,11 +38,13 @@ class HomeController extends Controller
         foreach ($orders as $key => $order) {
             $order_ = $order->getProductList();
             if($order_) {
-                $orders[$key]->products = $order->getProductList();
+                $orders[$key]->products = $order_;
             }else{
                 unset($orders[$key]);
             }
         }
+
+        dd($orders);
 
         foreach ($select_products as $key => $select_product) {
             $select_products[$key]->product = Product::where('id',$select_product->product_id)->first();
