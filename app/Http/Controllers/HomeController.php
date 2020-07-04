@@ -44,8 +44,6 @@ class HomeController extends Controller
             }
         }
 
-        dd($orders);
-
         foreach ($select_products as $key => $select_product) {
             $select_products[$key]->product = Product::where('id',$select_product->product_id)->first();
         }
