@@ -339,7 +339,7 @@ class HelpController extends Controller
 
     public function testMail()
     {
-        $order = Order::where('id', 3)->first();
+        $order = Order::where('id', 386)->first();
         $product_list = $order->getProductList();
         $order->prodicts = $product_list;
 //        $order->status = 1;
