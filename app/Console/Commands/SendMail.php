@@ -49,9 +49,8 @@ class SendMail extends Command
         $user = User::where('id', 1)->first();
 
         Mail::send('emails.for_the_seller', ['order' => $order, 'user' => $user], function ($m) {
-            $m->from('aspirin_1988@mail.ru', 'Sergey Demidov');
-            $m->to('aspirin_1988@mail.ru', 'Sergey Demidov')->subject('Новый заказ "" ');
-            $m->to('aspirins24@gmail.com', 'Sergey Demidov')->subject('Новый заказ "" ');
+            $m->from('styalmaty@gmail.com', 'Casada Kazakhstan');
+            $m->to('styalmaty@gmail.com', 'Casada Kazakhstan')->subject('Новый заказ "" ');
         });
     }
 }

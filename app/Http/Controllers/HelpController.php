@@ -160,15 +160,12 @@ class HelpController extends Controller
                 $user = User::where('id', $order->user_id)->first();
 
                 Mail::send('emails.for_the_seller', ['order' => $order, 'user' => $user], function ($m) use ($order) {
-                    $m->from('aspirin_1988@mail.ru', 'Sergey Demidov');
-
-                    $m->to('aspirin_1988@mail.ru', 'Sergey Demidov')->subject('Новый заказ "' . $order->id . '" ');
-                    $m->to('aspirins24@gmail.com', 'Sergey Demidov')->subject('Новый заказ "' . $order->id . '" ');
-//                $m->to('vladimir.aiki@gmail.com', 'Владимир Булавин')->subject('Новый заказ "http://laguna-parfumes.kz" ');
+                    $m->from('styalmaty@gmail.com', 'Casada Kazakhstan');
+                    $m->to('styalmaty@gmail.com', 'Casada Kazakhstan')->subject('Новый заказ "' . $order->id . '" ');
                 });
 
                 Mail::send('emails.order_success', ['order' => $order, 'user' => $user], function ($m) use ($user) {
-                    $m->from('aspirin_1988@mail.ru', 'Sergey Demidov');
+                    $m->from('styalmaty@gmail.com', 'Casada Kazakhstan');
                     $m->to($user->email, $user->first_name . ' ' . $user->last_name)->subject('Отчёт о Вашем заказе "" ');
                 });
 
@@ -306,7 +303,7 @@ class HelpController extends Controller
                 $order['user_id'] = $user_id;
 
                 Mail::send('emails.register', ['password' => $password, 'user' => $user], function ($m) use ($user) {
-                    $m->from('aspirin_1988@mail.ru', 'Sergey Demidov');
+                    $m->from('styalmaty@gmail.com', 'Casada Kazakhstan');
                     $m->to($user->email, $user->first_name . ' ' . $user->last_name)->subject('Регистрация на сайте "" ');
                 });
 
@@ -338,6 +335,22 @@ class HelpController extends Controller
         } else {
             return response()->json(['result' => false]);
         }
+    }
+
+    public function testMail()
+    {
+        $order = Order::where('id', 3)->first();
+        $product_list = $order->getProductList();
+        $order->prodicts = $product_list;
+//        $order->status = 1;
+//        $order->save();
+
+        $user = User::where('id', 1)->first();
+
+        Mail::send('emails.for_the_seller', ['order' => $order, 'user' => $user], function ($m) {
+            $m->from('styalmaty@gmail.com', 'Casada Kazakhstan');
+            $m->to('styalmaty@gmail.com', 'Casada Kazakhstan')->subject('Новый заказ "" ');
+        });
     }
 
     protected function randomPassword()
