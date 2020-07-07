@@ -349,7 +349,7 @@ class HelpController extends Controller
 
         Mail::send('emails.for_the_seller', ['order' => $order, 'user' => $user], function ($m) {
             $m->from('styalmaty@gmail.com', 'Casada Kazakhstan');
-            $m->to('styalmaty@gmail.com', 'Casada Kazakhstan')->subject('Новый заказ "" ');
+            $m->to('aspirins24@gmail.com', 'Sergey Demidov')->subject('Новый заказ "" ');
         });
     }
 
