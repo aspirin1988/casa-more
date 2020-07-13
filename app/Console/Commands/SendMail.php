@@ -40,7 +40,7 @@ class SendMail extends Command
      */
     public function handle()
     {
-        $order = Order::where('id', 3)->first();
+        $order = Order::where('id', 386)->first();
         $product_list = $order->getProductList();
         $order->prodicts = $product_list;
 //        $order->status = 1;
@@ -50,7 +50,7 @@ class SendMail extends Command
 
         Mail::send('emails.for_the_seller', ['order' => $order, 'user' => $user], function ($m) {
             $m->from('styalmaty@gmail.com', 'Casada Kazakhstan');
-            $m->to('styalmaty@gmail.com', 'Casada Kazakhstan')->subject('Новый заказ "" ');
+            $m->to('aspirins24@gmail.com', 'Sergey Demidov')->subject('Новый заказ "" ');
         });
     }
 }
