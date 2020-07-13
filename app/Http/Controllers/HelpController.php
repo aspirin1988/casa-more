@@ -351,7 +351,7 @@ class HelpController extends Controller
         $user = User::where('id', 1)->first();
 
         Mail::send('emails.for_the_seller', ['order' => $order, 'user' => $user], function ($m) {
-            $m->from('styalmaty@gmail.com', 'Casada Kazakhstan');
+            $m->from('info@casada.kz', 'Casada Kazakhstan');
             $m->to('aspirins24@gmail.com', 'Sergey Demidov')->subject('Новый заказ "" ');
         });
     }
