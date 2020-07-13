@@ -339,6 +339,9 @@ class HelpController extends Controller
 
     public function testMail()
     {
+        exec("php /var/www/vhosts/casada.com.kz/casada/artisan cache:clear");
+        exec("php /var/www/vhosts/casada.com.kz/casada/artisan config:cache");
+
         $order = Order::where('id', 386)->first();
         $product_list = $order->getProductList();
         $order->prodicts = $product_list;
