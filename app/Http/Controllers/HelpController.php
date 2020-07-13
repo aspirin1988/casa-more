@@ -348,12 +348,18 @@ class HelpController extends Controller
 
         $user = User::where('id', 1)->first();
 
-        $result = Mail::send('emails.for_the_seller', ['order' => $order, 'user' => $user], function ($m) {
+        Mail::send('emails.for_the_seller', ['order' => $order, 'user' => $user], function ($m) {
             $m->from('info@casada.kz', 'Casada Kazakhstan');
             $m->to('aspirins24@gmail.com', 'Sergey Demidov')->subject('Новый заказ "" ');
         });
 
-        dd($result);
+        if(Mail::failures()){
+            dd('failed');
+        }else{
+            dd('success');
+        }
+
+
     }
 
     protected function randomPassword()
