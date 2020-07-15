@@ -352,6 +352,14 @@ class HelpController extends Controller
             $m->from('info@casada.kz', 'Casada Kazakhstan');
             $m->to('aspirins24@gmail.com', 'Sergey Demidov')->subject('Новый заказ "" ');
         });
+
+        if(Mail::failures()){
+            dd('failed');
+        }else{
+            dd('success');
+        }
+
+
     }
 
     protected function randomPassword()
