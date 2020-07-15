@@ -379,7 +379,7 @@
         $('.filter-button').on('click', function () {
             this.classList.toggle('open');
         });
-            $('.CardBox .exemple-image').on('click', function () {
+        $('.CardBox .exemple-image').on('click', function () {
 
             let id = this.dataset['id'];
 
@@ -777,9 +777,9 @@
                     @endforeach
                 </div>
             </div>
-            {{--            @if(isset($products->perPage))--}}
-            {!! $products->render() !!}
-            {{--            @endif--}}
+            @if(isset($products->perPage))
+                {!! $products->render() !!}
+            @endif
         </div>
     </div>
 
