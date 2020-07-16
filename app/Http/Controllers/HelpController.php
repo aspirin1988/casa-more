@@ -160,13 +160,13 @@ class HelpController extends Controller
                 $user = User::where('id', $order->user_id)->first();
 
                 Mail::send('emails.for_the_seller', ['order' => $order, 'user' => $user], function ($m) use ($order) {
-                    $m->from('styalmaty@gmail.com', 'Casada Kazakhstan');
-                    $m->to('styalmaty@gmail.com', 'Casada Kazakhstan')->subject('Новый заказ "' . $order->id . '" ');
+                    $m->from('info@casada.kz', 'Casada Kazakhstan');
+                    $m->to('sales@casada.kz', 'sales')->subject('Новый заказ "' . $order->id . '" ');
                 });
 
-                Mail::send('emails.order_success', ['order' => $order, 'user' => $user], function ($m) use ($user) {
-                    $m->from('styalmaty@gmail.com', 'Casada Kazakhstan');
-                    $m->to($user->email, $user->first_name . ' ' . $user->last_name)->subject('Отчёт о Вашем заказе "" ');
+                Mail::send('emails.order_success', ['order' => $order, 'user' => $user], function ($m) use ($user,$order) {
+                    $m->from('info@casada.kz', 'Casada Kazakhstan');
+                    $m->to($user->email, $user->first_name . ' ' . $user->last_name)->subject('Отчёт о Вашем заказе "'.$order->id.'" ');
                 });
 
             } else {
@@ -303,8 +303,8 @@ class HelpController extends Controller
                 $order['user_id'] = $user_id;
 
                 Mail::send('emails.register', ['password' => $password, 'user' => $user], function ($m) use ($user) {
-                    $m->from('styalmaty@gmail.com', 'Casada Kazakhstan');
-                    $m->to($user->email, $user->first_name . ' ' . $user->last_name)->subject('Регистрация на сайте "" ');
+                    $m->from('info@casada.kz', 'Casada Kazakhstan');
+                    $m->to($user->email, $user->first_name . ' ' . $user->last_name)->subject('Регистрация на сайте "casada.kz" ');
                 });
 
                 Auth::login($user);
@@ -348,9 +348,9 @@ class HelpController extends Controller
 
         $user = User::where('id', 1)->first();
 
-        Mail::send('emails.for_the_seller', ['order' => $order, 'user' => $user], function ($m) {
+        Mail::send('emails.for_the_seller', ['order' => $order, 'user' => $user], function ($m,$order) {
             $m->from('info@casada.kz', 'Casada Kazakhstan');
-            $m->to('aspirins24@gmail.com', 'Sergey Demidov')->subject('Новый заказ "" ');
+            $m->to('aspirins24@gmail.com', 'Sergey Demidov')->subject('Новый заказ "'.$order->id.'" ');
         });
 
         if(Mail::failures()){
