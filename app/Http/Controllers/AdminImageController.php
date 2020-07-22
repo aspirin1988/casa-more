@@ -158,7 +158,7 @@ class AdminImageController extends Controller
 
     public function imageDelete($id)
     {
-        $images = Image::where('id', $id)->delete();
+        $images = Image::where('id', $id)->update(['object_id' => 0]);
         return response()->json(['result' => $images]);
     }
 
