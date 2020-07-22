@@ -972,6 +972,7 @@ footer {
 }
 
 .SiteBtnCaspi:hover {
+    border: 2px solid #f14635;
     background: #f14635;
     color: #fff;
 
