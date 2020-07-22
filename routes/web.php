@@ -41,7 +41,7 @@ Route::post('/order/create', 'HelpController@createOrder')->name('createOrder');
 
 Route::post('/pay/refund', 'HelpController@refund')->name('refund');
 
-Route::get('/mail/test', 'HelpController@testMail');
+//Route::get('/mail/test', 'HelpController@testMail');
 
 Route::get('/pay/success/{id}', 'HelpController@success')->name('testPay');
 Route::get('/repay/order/{id}', 'HelpController@orderRePay')->name('testPay');

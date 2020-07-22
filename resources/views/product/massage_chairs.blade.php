@@ -786,7 +786,7 @@
     <div class="IndexBull IndexBullForm">
         <ul class="IndexBullWr">
             <li class="IndexBull-item">
-                <a href="#">
+                <a href="/sales/">
                     <span>Скидки и бонусы</span>
                     <img src="/img/icon/podarok.png">
                 </a>
