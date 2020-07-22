@@ -951,6 +951,12 @@ footer {
     transition: .3s ease-in-out;
 }
 
+.SiteBtn:hover {
+    background: #395669;
+    border: 2px solid #395669;
+    color: #fff;
+}
+
 .SiteBtnCaspi {
     margin-left: 30px;
     padding: 0 1.5em;
@@ -972,11 +978,6 @@ footer {
 }
 
 /* line 24, ../sass/all/buttons.scss */
-.SiteBtn:hover {
-    background: #395669;
-    border: 2px solid #395669;
-    color: #fff;
-}
 
 @media only screen and (min-width: 980px) and (max-width: 1199px) {
     /* line 32, ../sass/all/buttons.scss */
