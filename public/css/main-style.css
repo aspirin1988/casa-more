@@ -965,6 +965,12 @@ footer {
     text-transform: uppercase;
 }
 
+.SiteBtnCaspi:hover {
+    background: #f14635;
+    color: #fff;
+
+}
+
 /* line 24, ../sass/all/buttons.scss */
 .SiteBtn:hover {
     background: #395669;
