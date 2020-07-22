@@ -576,7 +576,7 @@
                                         <img @click="imageGet('background')"
                                              style="width: 90px; height: auto;" v-if="image_list.background"
                                              :src="image_list.background.image" alt="">
-                                        <a uk-icon="close" @click="ClearThumb('background')"
+                                        <a uk-icon="close" @click="ClearField('background')"
                                            class="uk-button-danger uk-border-rounded uk-margin-remove uk-icon uk-position-top-right"></a>
                                     </div>
                                     <img @click="imageGet('background')"
@@ -952,6 +952,9 @@
 
         },
         methods: {
+            ClearField:function(field){
+                this.list[field] = null;
+            },
             deletePage: function (item) {
                 this.$http.delete('/admin/product/delete/' + this.delete_item.id).then(response => {
                     UIkit.modal(this.delete_dialog).hide();

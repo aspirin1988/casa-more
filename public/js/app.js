@@ -6433,6 +6433,9 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   methods: {
+    ClearField: function ClearField(field) {
+      this.list[field] = null;
+    },
     deletePage: function deletePage(item) {
       var _this2 = this;
 
@@ -57003,7 +57006,7 @@ var render = function() {
                               attrs: { "uk-icon": "close" },
                               on: {
                                 click: function($event) {
-                                  return _vm.ClearThumb("background")
+                                  return _vm.ClearField("background")
                                 }
                               }
                             })
