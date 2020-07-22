@@ -954,6 +954,7 @@
         methods: {
             ClearField:function(field){
                 this.image_list[field] = null;
+                this.list[field] = null;
             },
             deletePage: function (item) {
                 this.$http.delete('/admin/product/delete/' + this.delete_item.id).then(response => {
