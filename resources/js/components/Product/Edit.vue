@@ -319,7 +319,8 @@
                                 </div>
                             </div>
                             <div class="uk-margin">
-                                <label class="uk-form-label" for="massage_speed_adjustment">Регулировка скорости:</label>
+                                <label class="uk-form-label" for="massage_speed_adjustment">Регулировка
+                                    скорости:</label>
                                 <div class="uk-form-controls">
                                     <input v-model="list.massage_speed_adjustment" class="uk-checkbox"
                                            id="massage_speed_adjustment"
@@ -344,7 +345,8 @@
                                 </div>
                             </div>
                             <div class="uk-margin">
-                                <label class="uk-form-label" for="antistress_system_braintronics">Антистресс система:</label>
+                                <label class="uk-form-label" for="antistress_system_braintronics">Антистресс
+                                    система:</label>
                                 <div class="uk-form-controls">
                                     <input v-model="list.antistress_system_braintronics" class="uk-checkbox"
                                            id="antistress_system_braintronics"
@@ -952,7 +954,7 @@
 
         },
         methods: {
-            ClearField:function(field){
+            ClearField: function (field) {
                 this.image_list[field] = null;
                 this.list[field] = null;
             },
@@ -1165,7 +1167,13 @@
                 for (let i = 0; i < files.length; i++) {
                     formData.append('file[]', files[i]);
                 }
-                axios.post('/admin/image/upload/' + this.id,
+
+                let url = '/admin/image/upload/';
+                if (this.current_thumb !== 'background') {
+                    url = url + this.id;
+                }
+
+                axios.post(url,
                     formData,
                     {
                         headers: {

@@ -5418,6 +5418,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['brand'],
   data: function data() {
@@ -5477,6 +5481,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
 //
 //
 //
@@ -6711,7 +6717,13 @@ __webpack_require__.r(__webpack_exports__);
         formData.append('file[]', files[i]);
       }
 
-      axios.post('/admin/image/upload/' + this.id, formData, {
+      var url = '/admin/image/upload/';
+
+      if (this.current_thumb !== 'background') {
+        url = url + this.id;
+      }
+
+      axios.post(url, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -53903,6 +53915,20 @@ var render = function() {
           _c(
             "tr",
             [
+              _c("td", { staticClass: "name-field" }, [_vm._v("Мощность:")]),
+              _vm._v(" "),
+              _vm._l(_vm.list, function(item) {
+                return _c("td", { staticClass: "value-field" }, [
+                  _vm._v(_vm._s(item.power))
+                ])
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "tr",
+            [
               _c("td", { staticClass: "name-field" }, [_vm._v("Частота:")]),
               _vm._v(" "),
               _vm._l(_vm.list, function(item) {
@@ -55791,7 +55817,11 @@ var render = function() {
                             staticClass: "uk-form-label",
                             attrs: { for: "massage_speed_adjustment" }
                           },
-                          [_vm._v("Регулировка скорости:")]
+                          [
+                            _vm._v(
+                              "Регулировка\n                                скорости:"
+                            )
+                          ]
                         ),
                         _vm._v(" "),
                         _c("div", { staticClass: "uk-form-controls" }, [
@@ -55998,7 +56028,11 @@ var render = function() {
                             staticClass: "uk-form-label",
                             attrs: { for: "antistress_system_braintronics" }
                           },
-                          [_vm._v("Антистресс система:")]
+                          [
+                            _vm._v(
+                              "Антистресс\n                                система:"
+                            )
+                          ]
                         ),
                         _vm._v(" "),
                         _c("div", { staticClass: "uk-form-controls" }, [

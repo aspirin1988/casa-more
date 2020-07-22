@@ -130,6 +130,10 @@
                 <td class="value-field" v-for="item in list">{{item.main_voltage}}</td>
             </tr>
             <tr>
+                <td class="name-field">Мощность:</td>
+                <td class="value-field" v-for="item in list">{{item.power}}</td>
+            </tr>
+            <tr>
                 <td class="name-field">Частота:</td>
                 <td class="value-field" v-for="item in list">{{item.frequency}}</td>
             </tr>

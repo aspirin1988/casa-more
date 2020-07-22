@@ -513,6 +513,12 @@
                     </td>
                 </tr>
                 <tr>
+                    <td class="name-field">Мощность:</td>
+                    <td class="value-field">
+                        {{$object->power}}
+                    </td>
+                </tr>
+                <tr>
                     <td class="name-field">Частота:</td>
                     <td class="value-field">
                         {{$object->frequency}}
