@@ -53558,7 +53558,7 @@ var render = function() {
             "tr",
             [
               _c("td", { staticClass: "name-field" }, [
-                _vm._v("Тип управления::")
+                _vm._v("Тип управления:")
               ]),
               _vm._v(" "),
               _vm._l(_vm.list, function(item) {
