@@ -6434,7 +6434,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     ClearField: function ClearField(field) {
-      this.list[field] = null;
+      this.image_list[field] = null;
     },
     deletePage: function deletePage(item) {
       var _this2 = this;

@@ -953,7 +953,7 @@
         },
         methods: {
             ClearField:function(field){
-                this.list[field] = null;
+                this.image_list[field] = null;
             },
             deletePage: function (item) {
                 this.$http.delete('/admin/product/delete/' + this.delete_item.id).then(response => {
