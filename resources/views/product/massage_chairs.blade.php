@@ -764,10 +764,11 @@
                                 <p>{{$product->getType()}}</p>
                                 <h5>{{$product->name}}</h5>
                                 <div class="CardBoxPrice">
-                                    <span>{{$product->getPrice()}} <b>тг</b></span>
-                                    @if($product->getOldPrice())
-                                    <span>{{$product->getOldPrice()}} <b>тг</b></span>
-                                    @endif
+                                    <span>{{$product->getPrice()}} <b>тг</b>
+                                        @if($product->getOldPrice())
+                                            <small>{{$product->getOldPrice()}}</small>
+                                        @endif
+                                    </span>
                                     <button data-id="{{$product->id}}"
                                             class="{{( in_array($product->id,$liked) ?'CardBoxPriceLiked':'CardBoxPriceLike')}}"></button>
                                 </div>
