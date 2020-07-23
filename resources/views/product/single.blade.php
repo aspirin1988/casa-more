@@ -323,7 +323,7 @@
 
     {!! $object->description !!}
 
-    @if(in_array($object->type_of_product,['massage_chairs','massagers','fitness_equipment']))
+    @if(in_array($object->type_of_product,['massage_chairs','massagers']))
 
         <div class="Specifications">
             <div class="Specifications-title">Технические характеристики:</div>
