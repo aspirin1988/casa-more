@@ -67,13 +67,15 @@ class Product extends Model
 
     public static function getBestsellers($count = 4)
     {
+        $products_id =[];
         $tag = Tag::where('keyword', 'hit')->first();
 
-        $products = [];
-
-        if ($tag) {
-            $products = $tag->getProducts($count);
+        $relations = ProdictTagRelation::where('tag_id', $tag->id)->get();
+        foreach ($relations as $relation){
+            $products_id[] = $relation->product_id;
         }
+
+        $products = Product::whereIn('id',$products_id)->paginate(20);
 
         return $products;
     }
@@ -86,11 +88,6 @@ class Product extends Model
         foreach ($relations as $relation){
             $products_id[] = $relation->product_id;
         }
-
-//        $products = [];
-//        if ($tag) {
-//            $products = $tag->getProducts($count);
-//        }
 
         $products = Product::whereIn('id',$products_id)->paginate(20);
 
