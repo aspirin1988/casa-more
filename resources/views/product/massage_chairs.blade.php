@@ -777,6 +777,7 @@
                     @endforeach
                 </div>
             </div>
+            @dd($products)
             @if($products->per_page))
                 {!! $products->render() !!}
             @endif
