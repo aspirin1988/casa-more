@@ -120,17 +120,18 @@
                                        autocomplete="off">
                             </div>
                         </div>
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="brand">Брэнд*:</label>
+                            <div class="uk-form-controls">
+                                <select class="uk-select uk-width-1-2@m" id="brand" v-model="list.brand">
+                                    <option value="0">Не назначен</option>
+                                    <option v-for="item in brand_list" :value="item.id">{{item.name}}</option>
+                                </select>
+                            </div>
+                        </div>
 
                         <div v-if="list.type_of_product == 'massage_chairs'">
-                            <div class="uk-margin">
-                                <label class="uk-form-label" for="brand">Брэнд*:</label>
-                                <div class="uk-form-controls">
-                                    <select class="uk-select uk-width-1-2@m" id="brand" v-model="list.brand">
-                                        <option value="0">Не назначен</option>
-                                        <option v-for="item in brand_list" :value="item.id">{{item.name}}</option>
-                                    </select>
-                                </div>
-                            </div>
+
                             <div class="uk-margin">
                                 <label class="uk-form-label" for="massage_area">Область массажа:*</label>
                                 <div class="uk-form-controls">
@@ -482,15 +483,15 @@
                         <!--                            </div>-->
                         <!--                        </div>-->
                         <div v-if="list.type_of_product == 'fitness_equipment'">
-                            <div class="uk-margin">
-                                <label class="uk-form-label" for="brand">Брэнд*:</label>
-                                <div class="uk-form-controls">
-                                    <select class="uk-select uk-width-1-2@m" id="brand" v-model="list.brand">
-                                        <option value="0">Не назначен</option>
-                                        <option v-for="item in brand_list" :value="item.id">{{item.name}}</option>
-                                    </select>
-                                </div>
-                            </div>
+<!--                            <div class="uk-margin">-->
+<!--                                <label class="uk-form-label" for="brand">Брэнд*:</label>-->
+<!--                                <div class="uk-form-controls">-->
+<!--                                    <select class="uk-select uk-width-1-2@m" id="brand" v-model="list.brand">-->
+<!--                                        <option value="0">Не назначен</option>-->
+<!--                                        <option v-for="item in brand_list" :value="item.id">{{item.name}}</option>-->
+<!--                                    </select>-->
+<!--                                </div>-->
+<!--                            </div>-->
                             <div class="uk-margin">
                                 <label class="uk-form-label" for="type_controller">Тип управления*:</label>
                                 <div class="uk-form-controls">
