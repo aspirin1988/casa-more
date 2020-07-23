@@ -702,7 +702,7 @@
                 @endif
                 @if($filter)
                     <li class="CardFilterBtn" data-field="clear">
-                        <button>Очистить</button>
+                        <button onclick="location.reload()" >Очистить</button>
                     </li>
                 @endif
             </ul>
