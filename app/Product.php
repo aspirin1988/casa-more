@@ -97,6 +97,8 @@ class Product extends Model
 
         $relations = ProdictTagRelation::where('tag_id', $tag->id)->get();
 
+        dd($relations);
+
         foreach ($relations as $relation){
             $products_id[] = $relation->product_id;
         }
