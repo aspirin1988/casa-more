@@ -777,7 +777,7 @@
                     @endforeach
                 </div>
             </div>
-            @if($products->lastPage && $products->lastPage > 1)
+            @if($products->hasPages())
                 {!! $products->render() !!}
             @endif
         </div>
