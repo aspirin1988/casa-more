@@ -92,18 +92,18 @@ class Product extends Model
 
     public static function getPromotions($count = 4)
     {
-        $products_id =[];
-        $tag = Tag::where('keyword', 'discount')->first();
+//        $products_id =[];
+//        $tag = Tag::where('keyword', 'discount')->first();
+//
+//        $relations = ProdictTagRelation::where('tag_id', $tag->id)->get();
+//
+//        dd($relations);
+//
+//        foreach ($relations as $relation){
+//            $products_id[] = $relationk->product_id;
+//        }
 
-        $relations = ProdictTagRelation::where('tag_id', $tag->id)->get();
-
-        dd($relations);
-
-        foreach ($relations as $relation){
-            $products_id[] = $relation->product_id;
-        }
-
-        $products = Product::whereIn('id',$products_id)->paginate(20);
+        $products = Product::where('discount','>',0)->paginate(20);
 
         return $products;
     }
