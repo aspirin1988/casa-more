@@ -124,6 +124,14 @@ class Product extends Model
         }
     }
 
+    public function getOldPrice()
+    {
+        if ($this->discount) {
+            return $this->price;
+        }
+        return  null;
+    }
+
     public static function getPresent($count = 4, $exclude = [])
     {
         $tag = Tag::where('keyword', 'present')->first();
