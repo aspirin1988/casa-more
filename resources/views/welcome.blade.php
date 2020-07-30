@@ -237,8 +237,17 @@
                             @foreach($promotions as $product)
                                 <div class="CardBox">
                                     <div class="CardDiscount">
-                                        <span class="item-hits">хит</span>
-                                        <span class="item-new">new</span>
+                                        @foreach($product->getTags() as $tag)
+                                            @switch($tag->data->keyword )
+                                                @case('new')
+                                                <span class="item-new">new</span>
+                                                @break
+                                                @case('hit')
+                                                <span class="item-hits">хит</span>
+                                                @break
+                                            @endswitch
+                                        @endforeach
+
                                         @if($product->discount)
                                             <span class="item-disc">-{{$product->discount}}%</span>
                                         @endif
@@ -288,9 +297,20 @@
                             @foreach($promotions as $product)
                                 <div class="CardBox">
                                     <div class="CardDiscount">
-                                        <span class="item-hits">хит</span>
-                                        <span class="item-new">new</span>
-                                        <span class="item-disc">-20%</span>
+                                        @foreach($product->getTags() as $tag)
+                                            @switch($tag->data->keyword )
+                                                @case('new')
+                                                <span class="item-new">new</span>
+                                                @break
+                                                @case('hit')
+                                                <span class="item-hits">хит</span>
+                                                @break
+                                            @endswitch
+                                        @endforeach
+
+                                        @if($product->discount)
+                                            <span class="item-disc">-{{$product->discount}}%</span>
+                                        @endif
                                         @if($product->present)
                                             <span class="item-gift"></span>
                                         @endif
@@ -337,9 +357,20 @@
                             @foreach($present as $product)
                                 <div class="CardBox">
                                     <div class="CardDiscount">
-                                        <span class="item-hits">хит</span>
-                                        <span class="item-new">new</span>
-                                        <span class="item-disc">-20%</span>
+                                        @foreach($product->getTags() as $tag)
+                                            @switch($tag->data->keyword )
+                                                @case('new')
+                                                <span class="item-new">new</span>
+                                                @break
+                                                @case('hit')
+                                                <span class="item-hits">хит</span>
+                                                @break
+                                            @endswitch
+                                        @endforeach
+
+                                        @if($product->discount)
+                                            <span class="item-disc">-{{$product->discount}}%</span>
+                                        @endif
                                         @if($product->present)
                                             <span class="item-gift"></span>
                                         @endif
