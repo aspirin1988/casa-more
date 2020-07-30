@@ -563,7 +563,7 @@
             @endphp
             @foreach($items as $item)
                 <li class="IndexBull-item">
-                    <a href="#">
+                    <a href="{{$item->link}}">
                         <span>{{$item->title}}</span>
                         <img src="{{$item->data['desktop']->image}}">
                     </a>
