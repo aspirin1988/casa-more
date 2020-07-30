@@ -18,9 +18,30 @@
         <link
             href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900&display=swap&subset=cyrillic"
             rel="stylesheet">
-    @show
+@show
+<!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-WXTF5NR');</script>
+    <!-- End Google Tag Manager -->
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WXTF5NR"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
 <div class="uk-container"></div>
 <div id="app">
     <header
@@ -167,8 +188,8 @@
                 div.classList.add('uk-notification');
                 div.classList.add('uk-notification-' + obj.status);
                 div.innerHTML = obj.message;
-                div.addEventListener('click',function () {
-                    div.style.display='none';
+                div.addEventListener('click', function () {
+                    div.style.display = 'none';
                 });
                 UIkit.container.append(div);
                 setTimeout(function () {
