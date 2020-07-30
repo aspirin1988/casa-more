@@ -67,7 +67,7 @@
                         <li><a href="/hit">хиты продаж</a></li>
                     </ul>
                 </li>
-                @php $oplata = Page::where('slug', 'oplata')->first(); @endphp
+                @php $oplata = \App\Page::where('slug', 'oplata')->first(); @endphp
                 <li><a href="#" class="dropdown-toogle">Покупателям</a>
                     <ul>
                         <li><a target="_blank" href="/garant/">Гарантия</a></li>
