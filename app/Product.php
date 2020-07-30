@@ -67,29 +67,29 @@ class Product extends Model
 
     public static function getBestsellers($count = 4)
     {
-        $products_id =[];
+        $products_id = [];
         $tag = Tag::where('keyword', 'hit')->first();
 
         $relations = ProdictTagRelation::where('tag_id', $tag->id)->get();
-        foreach ($relations as $relation){
+        foreach ($relations as $relation) {
             $products_id[] = $relation->product_id;
         }
 
-        $products = Product::whereIn('id',$products_id)->paginate(20);
+        $products = Product::whereIn('id', $products_id)->paginate(20);
 
         return $products;
     }
 
     public static function getNewItems($count = 4)
     {
-        $products_id =[];
+        $products_id = [];
         $tag = Tag::where('keyword', 'new')->first();
         $relations = ProdictTagRelation::where('tag_id', $tag->id)->get();
-        foreach ($relations as $relation){
+        foreach ($relations as $relation) {
             $products_id[] = $relation->product_id;
         }
 
-        $products = Product::whereIn('id',$products_id)->paginate(20);
+        $products = Product::whereIn('id', $products_id)->paginate(20);
 
         return $products;
     }
@@ -107,7 +107,7 @@ class Product extends Model
 //            $products_id[] = $relationk->product_id;
 //        }
 
-        $products = Product::where('discount','>',0)->paginate(20);
+        $products = Product::where('discount', '>', 0)->paginate(20);
 
         return $products;
     }
@@ -139,7 +139,7 @@ class Product extends Model
         if ($this->discount) {
             return $this->price;
         }
-        return  null;
+        return null;
     }
 
     public static function getPresent($count = 4, $exclude = [])
@@ -157,11 +157,20 @@ class Product extends Model
 
     public function getType()
     {
-        if (isset($this->type_[strtolower($this->type_of_product)])) {
-            return $this->type_[strtolower($this->type_of_product)];
+        $type = Rubric::where('slug', $this->type_of_product)->first();
+
+
+        if ($type) {
+            return $type->name;
         } else {
             return $this->type_[0];
         }
+
+//        if (isset($this->type_[strtolower($this->type_of_product)])) {
+//            return $this->type_[strtolower($this->type_of_product)];
+//        } else {
+//
+//        }
     }
 
     public function getBackground()
@@ -212,13 +221,13 @@ class Product extends Model
 
     public function getBrochure()
     {
-        if($this->brochure){
+        if ($this->brochure) {
             return $this->brochure;
-        }else{
+        } else {
             $parent = $this->getParent();
-            if($parent){
+            if ($parent) {
                 return $parent->brochure;
-            }else{
+            } else {
                 return null;
             }
         }
