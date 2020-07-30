@@ -67,11 +67,12 @@
                         <li><a href="/hit">хиты продаж</a></li>
                     </ul>
                 </li>
+                @php $oplata = Page::where('slug', 'oplata')->first(); @endphp
                 <li><a href="#" class="dropdown-toogle">Покупателям</a>
                     <ul>
                         <li><a target="_blank" href="/garant/">Гарантия</a></li>
                         <li><a href="/delivery/">доставка</a></li>
-                        <li><a href="/oplata/">онлайн-оплата</a></li>
+                        <li><a href="/{{$oplata->slug}}/">{{$oplata->title}}</a></li>
                         <li><a href="/drive/">тест-драйв</a></li>
                         <li><a href="/product-comparison">сравнение товаров</a></li>
                         <li><a href="/news">новости</a></li>
