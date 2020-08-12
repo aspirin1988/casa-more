@@ -5418,6 +5418,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['brand'],
   data: function data() {
@@ -5477,6 +5481,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
 //
 //
 //
@@ -6433,6 +6440,10 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   methods: {
+    ClearField: function ClearField(field) {
+      this.image_list[field] = null;
+      this.list[field] = null;
+    },
     deletePage: function deletePage(item) {
       var _this2 = this;
 
@@ -6707,7 +6718,13 @@ __webpack_require__.r(__webpack_exports__);
         formData.append('file[]', files[i]);
       }
 
-      axios.post('/admin/image/upload/' + this.id, formData, {
+      var url = '/admin/image/upload/';
+
+      if (this.current_thumb !== 'background') {
+        url = url + this.id;
+      }
+
+      axios.post(url, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -53554,7 +53571,7 @@ var render = function() {
             "tr",
             [
               _c("td", { staticClass: "name-field" }, [
-                _vm._v("Тип управления::")
+                _vm._v("Тип управления:")
               ]),
               _vm._v(" "),
               _vm._l(_vm.list, function(item) {
@@ -53899,6 +53916,20 @@ var render = function() {
           _c(
             "tr",
             [
+              _c("td", { staticClass: "name-field" }, [_vm._v("Мощность:")]),
+              _vm._v(" "),
+              _vm._l(_vm.list, function(item) {
+                return _c("td", { staticClass: "value-field" }, [
+                  _vm._v(_vm._s(item.power))
+                ])
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "tr",
+            [
               _c("td", { staticClass: "name-field" }, [_vm._v("Частота:")]),
               _vm._v(" "),
               _vm._l(_vm.list, function(item) {
@@ -54107,7 +54138,7 @@ var render = function() {
                             [
                               _vm._v(
                                 _vm._s(item.name) +
-                                  "\n                                "
+                                  "\n                                    "
                               )
                             ]
                           )
@@ -54622,71 +54653,67 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
+                _c("div", { staticClass: "uk-margin" }, [
+                  _c(
+                    "label",
+                    { staticClass: "uk-form-label", attrs: { for: "brand" } },
+                    [_vm._v("Брэнд*:")]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "uk-form-controls" }, [
+                    _c(
+                      "select",
+                      {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.list.brand,
+                            expression: "list.brand"
+                          }
+                        ],
+                        staticClass: "uk-select uk-width-1-2@m",
+                        attrs: { id: "brand" },
+                        on: {
+                          change: function($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function(o) {
+                                return o.selected
+                              })
+                              .map(function(o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.$set(
+                              _vm.list,
+                              "brand",
+                              $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            )
+                          }
+                        }
+                      },
+                      [
+                        _c("option", { attrs: { value: "0" } }, [
+                          _vm._v("Не назначен")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.brand_list, function(item) {
+                          return _c(
+                            "option",
+                            { domProps: { value: item.id } },
+                            [_vm._v(_vm._s(item.name))]
+                          )
+                        })
+                      ],
+                      2
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
                 _vm.list.type_of_product == "massage_chairs"
                   ? _c("div", [
-                      _c("div", { staticClass: "uk-margin" }, [
-                        _c(
-                          "label",
-                          {
-                            staticClass: "uk-form-label",
-                            attrs: { for: "brand" }
-                          },
-                          [_vm._v("Брэнд*:")]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "uk-form-controls" }, [
-                          _c(
-                            "select",
-                            {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.list.brand,
-                                  expression: "list.brand"
-                                }
-                              ],
-                              staticClass: "uk-select uk-width-1-2@m",
-                              attrs: { id: "brand" },
-                              on: {
-                                change: function($event) {
-                                  var $$selectedVal = Array.prototype.filter
-                                    .call($event.target.options, function(o) {
-                                      return o.selected
-                                    })
-                                    .map(function(o) {
-                                      var val =
-                                        "_value" in o ? o._value : o.value
-                                      return val
-                                    })
-                                  _vm.$set(
-                                    _vm.list,
-                                    "brand",
-                                    $event.target.multiple
-                                      ? $$selectedVal
-                                      : $$selectedVal[0]
-                                  )
-                                }
-                              }
-                            },
-                            [
-                              _c("option", { attrs: { value: "0" } }, [
-                                _vm._v("Не назначен")
-                              ]),
-                              _vm._v(" "),
-                              _vm._l(_vm.brand_list, function(item) {
-                                return _c(
-                                  "option",
-                                  { domProps: { value: item.id } },
-                                  [_vm._v(_vm._s(item.name))]
-                                )
-                              })
-                            ],
-                            2
-                          )
-                        ])
-                      ]),
-                      _vm._v(" "),
                       _c("div", { staticClass: "uk-margin" }, [
                         _c(
                           "label",
@@ -54972,7 +54999,7 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "Максимальный вес\n                                пользователя:"
+                              "Максимальный вес\n                                    пользователя:"
                             )
                           ]
                         ),
@@ -55324,7 +55351,7 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "Минимальное расстояние от\n                                стены:"
+                              "Минимальное расстояние от\n                                    стены:"
                             )
                           ]
                         ),
@@ -55416,7 +55443,7 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "Число роликов в области\n                                спины:"
+                              "Число роликов в области\n                                    спины:"
                             )
                           ]
                         ),
@@ -55464,7 +55491,7 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "Число роликов в области\n                                ступней:"
+                              "Число роликов в области\n                                    ступней:"
                             )
                           ]
                         ),
@@ -55710,7 +55737,7 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "Регулировка\n                                интенсивности:"
+                              "Регулировка\n                                    интенсивности:"
                             )
                           ]
                         ),
@@ -55787,7 +55814,11 @@ var render = function() {
                             staticClass: "uk-form-label",
                             attrs: { for: "massage_speed_adjustment" }
                           },
-                          [_vm._v("Регулировка скорости:")]
+                          [
+                            _vm._v(
+                              "Регулировка\n                                    скорости:"
+                            )
+                          ]
                         ),
                         _vm._v(" "),
                         _c("div", { staticClass: "uk-form-controls" }, [
@@ -55994,7 +56025,11 @@ var render = function() {
                             staticClass: "uk-form-label",
                             attrs: { for: "antistress_system_braintronics" }
                           },
-                          [_vm._v("Антистресс система:")]
+                          [
+                            _vm._v(
+                              "Антистресс\n                                    система:"
+                            )
+                          ]
                         ),
                         _vm._v(" "),
                         _c("div", { staticClass: "uk-form-controls" }, [
@@ -56535,69 +56570,6 @@ var render = function() {
                           "label",
                           {
                             staticClass: "uk-form-label",
-                            attrs: { for: "brand" }
-                          },
-                          [_vm._v("Брэнд*:")]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "uk-form-controls" }, [
-                          _c(
-                            "select",
-                            {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.list.brand,
-                                  expression: "list.brand"
-                                }
-                              ],
-                              staticClass: "uk-select uk-width-1-2@m",
-                              attrs: { id: "brand" },
-                              on: {
-                                change: function($event) {
-                                  var $$selectedVal = Array.prototype.filter
-                                    .call($event.target.options, function(o) {
-                                      return o.selected
-                                    })
-                                    .map(function(o) {
-                                      var val =
-                                        "_value" in o ? o._value : o.value
-                                      return val
-                                    })
-                                  _vm.$set(
-                                    _vm.list,
-                                    "brand",
-                                    $event.target.multiple
-                                      ? $$selectedVal
-                                      : $$selectedVal[0]
-                                  )
-                                }
-                              }
-                            },
-                            [
-                              _c("option", { attrs: { value: "0" } }, [
-                                _vm._v("Не назначен")
-                              ]),
-                              _vm._v(" "),
-                              _vm._l(_vm.brand_list, function(item) {
-                                return _c(
-                                  "option",
-                                  { domProps: { value: item.id } },
-                                  [_vm._v(_vm._s(item.name))]
-                                )
-                              })
-                            ],
-                            2
-                          )
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "uk-margin" }, [
-                        _c(
-                          "label",
-                          {
-                            staticClass: "uk-form-label",
                             attrs: { for: "type_controller" }
                           },
                           [_vm._v("Тип управления*:")]
@@ -56810,9 +56782,9 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n                                    " +
+                              "\n                                        " +
                                 _vm._s(item.data.name) +
-                                "\n                                    "
+                                "\n                                        "
                             ),
                             _c("a", {
                               staticClass:
@@ -57003,7 +56975,7 @@ var render = function() {
                               attrs: { "uk-icon": "close" },
                               on: {
                                 click: function($event) {
-                                  return _vm.ClearThumb("background")
+                                  return _vm.ClearField("background")
                                 }
                               }
                             })
@@ -57026,7 +56998,7 @@ var render = function() {
                     "label",
                     { staticClass: "uk-form-label", attrs: { for: "images" } },
                     [
-                      _vm._v("Изображения:\n                            "),
+                      _vm._v("Изображения:\n                                "),
                       _c("button", {
                         staticClass:
                           "uk-button-primary uk-button-small uk-border-rounded",
@@ -57455,7 +57427,7 @@ var render = function() {
                         attrs: { type: "button" },
                         on: { click: _vm.pageSave }
                       },
-                      [_vm._v("Сохранить\n                        ")]
+                      [_vm._v("Сохранить\n                            ")]
                     )
                   ]
                 )

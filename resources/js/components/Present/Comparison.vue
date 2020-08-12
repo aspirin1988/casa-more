@@ -34,7 +34,7 @@
                 <td class="value-field" v-for="item in list">{{item.timer}}</td>
             </tr>
             <tr>
-                <td class="name-field">Тип управления::</td>
+                <td class="name-field">Тип управления:</td>
                 <td class="value-field" v-for="item in list">{{item.type_controller}}</td>
             </tr>
             <tr>

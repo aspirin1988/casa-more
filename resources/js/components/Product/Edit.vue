@@ -120,17 +120,18 @@
                                        autocomplete="off">
                             </div>
                         </div>
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="brand">Брэнд*:</label>
+                            <div class="uk-form-controls">
+                                <select class="uk-select uk-width-1-2@m" id="brand" v-model="list.brand">
+                                    <option value="0">Не назначен</option>
+                                    <option v-for="item in brand_list" :value="item.id">{{item.name}}</option>
+                                </select>
+                            </div>
+                        </div>
 
                         <div v-if="list.type_of_product == 'massage_chairs'">
-                            <div class="uk-margin">
-                                <label class="uk-form-label" for="brand">Брэнд*:</label>
-                                <div class="uk-form-controls">
-                                    <select class="uk-select uk-width-1-2@m" id="brand" v-model="list.brand">
-                                        <option value="0">Не назначен</option>
-                                        <option v-for="item in brand_list" :value="item.id">{{item.name}}</option>
-                                    </select>
-                                </div>
-                            </div>
+
                             <div class="uk-margin">
                                 <label class="uk-form-label" for="massage_area">Область массажа:*</label>
                                 <div class="uk-form-controls">
@@ -319,7 +320,8 @@
                                 </div>
                             </div>
                             <div class="uk-margin">
-                                <label class="uk-form-label" for="massage_speed_adjustment">Регулировка скорости:</label>
+                                <label class="uk-form-label" for="massage_speed_adjustment">Регулировка
+                                    скорости:</label>
                                 <div class="uk-form-controls">
                                     <input v-model="list.massage_speed_adjustment" class="uk-checkbox"
                                            id="massage_speed_adjustment"
@@ -344,7 +346,8 @@
                                 </div>
                             </div>
                             <div class="uk-margin">
-                                <label class="uk-form-label" for="antistress_system_braintronics">Антистресс система:</label>
+                                <label class="uk-form-label" for="antistress_system_braintronics">Антистресс
+                                    система:</label>
                                 <div class="uk-form-controls">
                                     <input v-model="list.antistress_system_braintronics" class="uk-checkbox"
                                            id="antistress_system_braintronics"
@@ -480,15 +483,15 @@
                         <!--                            </div>-->
                         <!--                        </div>-->
                         <div v-if="list.type_of_product == 'fitness_equipment'">
-                            <div class="uk-margin">
-                                <label class="uk-form-label" for="brand">Брэнд*:</label>
-                                <div class="uk-form-controls">
-                                    <select class="uk-select uk-width-1-2@m" id="brand" v-model="list.brand">
-                                        <option value="0">Не назначен</option>
-                                        <option v-for="item in brand_list" :value="item.id">{{item.name}}</option>
-                                    </select>
-                                </div>
-                            </div>
+<!--                            <div class="uk-margin">-->
+<!--                                <label class="uk-form-label" for="brand">Брэнд*:</label>-->
+<!--                                <div class="uk-form-controls">-->
+<!--                                    <select class="uk-select uk-width-1-2@m" id="brand" v-model="list.brand">-->
+<!--                                        <option value="0">Не назначен</option>-->
+<!--                                        <option v-for="item in brand_list" :value="item.id">{{item.name}}</option>-->
+<!--                                    </select>-->
+<!--                                </div>-->
+<!--                            </div>-->
                             <div class="uk-margin">
                                 <label class="uk-form-label" for="type_controller">Тип управления*:</label>
                                 <div class="uk-form-controls">
@@ -576,7 +579,7 @@
                                         <img @click="imageGet('background')"
                                              style="width: 90px; height: auto;" v-if="image_list.background"
                                              :src="image_list.background.image" alt="">
-                                        <a uk-icon="close" @click="ClearThumb('background')"
+                                        <a uk-icon="close" @click="ClearField('background')"
                                            class="uk-button-danger uk-border-rounded uk-margin-remove uk-icon uk-position-top-right"></a>
                                     </div>
                                     <img @click="imageGet('background')"
@@ -952,6 +955,10 @@
 
         },
         methods: {
+            ClearField: function (field) {
+                this.image_list[field] = null;
+                this.list[field] = null;
+            },
             deletePage: function (item) {
                 this.$http.delete('/admin/product/delete/' + this.delete_item.id).then(response => {
                     UIkit.modal(this.delete_dialog).hide();
@@ -1161,7 +1168,13 @@
                 for (let i = 0; i < files.length; i++) {
                     formData.append('file[]', files[i]);
                 }
-                axios.post('/admin/image/upload/' + this.id,
+
+                let url = '/admin/image/upload/';
+                if (this.current_thumb !== 'background') {
+                    url = url + this.id;
+                }
+
+                axios.post(url,
                     formData,
                     {
                         headers: {

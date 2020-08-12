@@ -323,7 +323,7 @@
 
     {!! $object->description !!}
 
-    @if(in_array($object->type_of_product,['massage_chairs','massagers','fitness_equipment']))
+    @if(in_array($object->type_of_product,['massage_chairs','massagers']))
 
         <div class="Specifications">
             <div class="Specifications-title">Технические характеристики:</div>
@@ -513,6 +513,12 @@
                     </td>
                 </tr>
                 <tr>
+                    <td class="name-field">Мощность:</td>
+                    <td class="value-field">
+                        {{$object->power}}
+                    </td>
+                </tr>
+                <tr>
                     <td class="name-field">Частота:</td>
                     <td class="value-field">
                         {{$object->frequency}}
@@ -557,7 +563,7 @@
             @endphp
             @foreach($items as $item)
                 <li class="IndexBull-item">
-                    <a href="#">
+                    <a href="{{$item->link}}">
                         <span>{{$item->title}}</span>
                         <img src="{{$item->data['desktop']->image}}">
                     </a>

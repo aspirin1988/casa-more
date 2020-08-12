@@ -29,7 +29,11 @@
                 <p>{{$product->getType()}}</p>
                 <h5>{{$product->name}}</h5>
                 <div class="CardBoxPrice">
-                    <span>{{$product->price}} <b>тг</b></span>
+                                    <span>{{$product->getPrice()}} <b>тг</b>
+                                        @if($product->getOldPrice())
+                                            <small>{{$product->getOldPrice()}}</small>
+                                        @endif
+                                    </span>
                     <button data-id="{{$product->id}}"
                             class="{{( in_array($product->id,$liked) ?'CardBoxPriceLiked':'CardBoxPriceLike')}}"></button>
                 </div>
@@ -37,7 +41,7 @@
             <a href="{{$product->getUrl()}}"></a>
         </div>
     @endforeach
-{{--        @if(isset($products->perPage))--}}
-            {!! $products->links('widgets._paginate',['paginator'=>$products,'method'=>$method]) !!}
-{{--        @endif--}}
+    {{--        @if(isset($products->perPage))--}}
+    {!! $products->links('widgets._paginate',['paginator'=>$products,'method'=>$method]) !!}
+    {{--        @endif--}}
 </div>

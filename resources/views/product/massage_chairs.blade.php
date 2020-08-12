@@ -702,7 +702,7 @@
                 @endif
                 @if($filter)
                     <li class="CardFilterBtn" data-field="clear">
-                        <button>Очистить</button>
+                        <button onclick="location.reload()" >Очистить</button>
                     </li>
                 @endif
             </ul>
@@ -764,7 +764,11 @@
                                 <p>{{$product->getType()}}</p>
                                 <h5>{{$product->name}}</h5>
                                 <div class="CardBoxPrice">
-                                    <span>{{$product->price}} <b>тг</b></span>
+                                    <span>{{$product->getPrice()}} <b>тг</b>
+                                        @if($product->getOldPrice())
+                                            <small>{{$product->getOldPrice()}}</small>
+                                        @endif
+                                    </span>
                                     <button data-id="{{$product->id}}"
                                             class="{{( in_array($product->id,$liked) ?'CardBoxPriceLiked':'CardBoxPriceLike')}}"></button>
                                 </div>
@@ -777,7 +781,7 @@
                     @endforeach
                 </div>
             </div>
-            @if(isset($products->perPage))
+            @if($products->hasPages())
                 {!! $products->render() !!}
             @endif
         </div>

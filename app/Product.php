@@ -67,37 +67,47 @@ class Product extends Model
 
     public static function getBestsellers($count = 4)
     {
+        $products_id = [];
         $tag = Tag::where('keyword', 'hit')->first();
 
-        $products = [];
-
-        if ($tag) {
-            $products = $tag->getProducts($count);
+        $relations = ProdictTagRelation::where('tag_id', $tag->id)->get();
+        foreach ($relations as $relation) {
+            $products_id[] = $relation->product_id;
         }
+
+        $products = Product::whereIn('id', $products_id)->paginate(20);
 
         return $products;
     }
 
     public static function getNewItems($count = 4)
     {
+        $products_id = [];
         $tag = Tag::where('keyword', 'new')->first();
-
-        $products = [];
-        if ($tag) {
-            $products = $tag->getProducts($count);
+        $relations = ProdictTagRelation::where('tag_id', $tag->id)->get();
+        foreach ($relations as $relation) {
+            $products_id[] = $relation->product_id;
         }
+
+        $products = Product::whereIn('id', $products_id)->paginate(20);
 
         return $products;
     }
 
     public static function getPromotions($count = 4)
     {
-        $tag = Tag::where('keyword', 'discount')->first();
+//        $products_id =[];
+//        $tag = Tag::where('keyword', 'discount')->first();
+//
+//        $relations = ProdictTagRelation::where('tag_id', $tag->id)->get();
+//
+//        dd($relations);
+//
+//        foreach ($relations as $relation){
+//            $products_id[] = $relationk->product_id;
+//        }
 
-        $products = [];
-        if ($tag) {
-            $products = $tag->getProducts($count);
-        }
+        $products = Product::where('discount', '>', 0)->paginate(20);
 
         return $products;
     }
@@ -124,6 +134,14 @@ class Product extends Model
         }
     }
 
+    public function getOldPrice()
+    {
+        if ($this->discount) {
+            return $this->price;
+        }
+        return null;
+    }
+
     public static function getPresent($count = 4, $exclude = [])
     {
         $tag = Tag::where('keyword', 'present')->first();
@@ -139,11 +157,20 @@ class Product extends Model
 
     public function getType()
     {
-        if (isset($this->type_[$this->type_of_product])) {
-            return $this->type_[$this->type_of_product];
+        $type = Rubric::where('slug', $this->type_of_product)->first();
+
+
+        if ($type) {
+            return $type->name;
         } else {
             return $this->type_[0];
         }
+
+//        if (isset($this->type_[strtolower($this->type_of_product)])) {
+//            return $this->type_[strtolower($this->type_of_product)];
+//        } else {
+//
+//        }
     }
 
     public function getBackground()
@@ -194,13 +221,13 @@ class Product extends Model
 
     public function getBrochure()
     {
-        if($this->brochure){
+        if ($this->brochure) {
             return $this->brochure;
-        }else{
+        } else {
             $parent = $this->getParent();
-            if($parent){
+            if ($parent) {
                 return $parent->brochure;
-            }else{
+            } else {
                 return null;
             }
         }

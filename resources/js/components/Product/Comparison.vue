@@ -42,7 +42,7 @@
                 <td class="value-field" v-for="item in list">{{item.timer}}</td>
             </tr>
             <tr>
-                <td class="name-field">Тип управления::</td>
+                <td class="name-field">Тип управления:</td>
                 <td class="value-field" v-for="item in list">{{item.type_controller}}</td>
             </tr>
             <tr>
@@ -128,6 +128,10 @@
             <tr>
                 <td class="name-field">Основное напряжение:</td>
                 <td class="value-field" v-for="item in list">{{item.main_voltage}}</td>
+            </tr>
+            <tr>
+                <td class="name-field">Мощность:</td>
+                <td class="value-field" v-for="item in list">{{item.power}}</td>
             </tr>
             <tr>
                 <td class="name-field">Частота:</td>
