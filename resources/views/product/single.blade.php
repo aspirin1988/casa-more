@@ -6,8 +6,8 @@
 
 @section('styles')
     @parent
-    <link rel="stylesheet" href="/css/main-style.css?v=6" type="text/css"/>
-    <link rel="stylesheet" href="/css/product-post.css?v=6" type="text/css"/>
+    <link rel="stylesheet" href="/css/main-style.css?v=7" type="text/css"/>
+    <link rel="stylesheet" href="/css/product-post.css?v=7" type="text/css"/>
     <style>
         .icons-container {
             display: grid;
