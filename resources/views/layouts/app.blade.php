@@ -142,8 +142,7 @@
                                    href="https://www.youtube.com/channel/UCDAharBs6k1Ww6W926jdzrQ?view_as=subscriber"
                                    class="yt"></a>
                             </div>
-                            <p><a href="tel:+7(701)0063555">+7 (701) 006 35 55</a></p>
-                            <p><a href="tel:+7(727)3006001">+7 (727) 300 60 01</a></p>
+                            <p><a href="tel:+7(701)0063555">+7 (701)006 35 55</a></p>
                             <p><a href="mailto:styalmaty@gmail.com">styalmaty@gmail.com</a></p>
                         </div>
                     </div>
