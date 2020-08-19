@@ -161,7 +161,7 @@ class HelpController extends Controller
 
                 Mail::send('emails.for_the_seller', ['order' => $order, 'user' => $user], function ($m) use ($order) {
                     $m->from('info@casada.kz', 'Casada Kazakhstan');
-                    $m->to('sales@casada.kz', 'sales')->subject('Новый заказ "' . $order->id . '" ');
+                    $m->to('info@casada.kz', 'Casada Kazakhstan')->subject('Новый заказ "' . $order->id . '" ');
                 });
 
                 Mail::send('emails.order_success', ['order' => $order, 'user' => $user], function ($m) use ($user,$order) {
@@ -350,7 +350,7 @@ class HelpController extends Controller
 
         Mail::send('emails.for_the_seller', ['order' => $order, 'user' => $user], function ($m) use($order) {
             $m->from('info@casada.kz', 'Casada Kazakhstan');
-            $m->to('sales@casada.kz', 'sales')->subject('Новый заказ "'.$order->id.'" ');
+            $m->to('info@casada.kz', 'Casada Kazakhstan')->subject('Новый заказ "'.$order->id.'" ');
         });
 
         if(Mail::failures()){
