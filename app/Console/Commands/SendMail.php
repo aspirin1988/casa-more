@@ -50,7 +50,7 @@ class SendMail extends Command
 
         Mail::send('emails.for_the_seller', ['order' => $order, 'user' => $user], function ($m) {
             $m->from('info@casada.kz', 'Casada Kazakhstan');
-            $m->to('aspirins24@gmail.com', 'Sergey Demidov')->subject('Новый заказ "" ');
+            $m->to('sales@casada.kz', 'sales')->subject('Новый заказ "" ');
         });
     }
 }
