@@ -6,8 +6,9 @@
 
 @section('styles')
     @parent
-    <link rel="stylesheet" href="/css/form-in.css" type="text/css"/>
-    <link rel="stylesheet" href="/css/page.css" type="text/css"/>
+    @php $v=  config('app.css_js_version', '?v=72')  ; @endphp
+    <link rel="stylesheet" href="/css/form-in.css?v={{$v}}" type="text/css"/>
+    <link rel="stylesheet" href="/css/page.css?v={{$v}}" type="text/css"/>
 @stop
 
 @section('script')

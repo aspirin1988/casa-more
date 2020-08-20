@@ -1045,8 +1045,7 @@
 .slick-arrow.slick-next {
     transform: rotate(180deg);
     right: 10px;
-    background-color: #395669;
-    background-image: url('/img/icon/2-layers-h.png');
+    background-image: url('/img/icon/2-layers.png');
 }
 
 /* line 113, ../sass/product-post/product-post-card-slider.scss */

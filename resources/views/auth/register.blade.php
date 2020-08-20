@@ -6,7 +6,8 @@
 
 @section('styles')
     @parent
-    <link rel="stylesheet" href="/css/form-in.css" type="text/css"/>
+    @php $v=  config('app.css_js_version', '?v=72')  ; @endphp
+    <link rel="stylesheet" href="/css/form-in.css?v={{$v}}" type="text/css"/>
     <script>
         window.addEventListener('load', function () {
             let phone = document.querySelector('#phone');

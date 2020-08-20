@@ -13,8 +13,9 @@
     <meta name="format-detection" content="telephone=no">
     <meta http-equiv="x-rim-auto-match" content="none">
     @section('styles')
-        <link rel="stylesheet" href="/css/main-style.css?v=5" type="text/css"/>
-        <link rel="stylesheet" href="/js/owl.carousel.min.css?v=5">
+        @php $v=  config('app.css_js_version', '?v=72')  ; @endphp
+        <link rel="stylesheet" href="/css/main-style.css?v={{$v}}" type="text/css"/>
+        <link rel="stylesheet" href="/js/owl.carousel.min.css?v={{$v}}">
         <link
             href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900&display=swap&subset=cyrillic"
             rel="stylesheet">

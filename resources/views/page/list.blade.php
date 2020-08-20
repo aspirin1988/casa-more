@@ -6,9 +6,10 @@
 
 @section('styles')
     @parent
-    <link rel="stylesheet" href="/css/main-style.css?v=5" type="text/css"/>
-    <link rel="stylesheet" href="/css/index.css?v=5" type="text/css"/>
-    <link rel="stylesheet" href="/css/catalog.css?v=5" type="text/css"/>
+    @php $v=  config('app.css_js_version', '?v=72')  ; @endphp
+    <link rel="stylesheet" href="/css/main-style.css?v={{$v}}" type="text/css"/>
+    <link rel="stylesheet" href="/css/index.css?v={{$v}}" type="text/css"/>
+    <link rel="stylesheet" href="/css/catalog.css?v={{$v}}" type="text/css"/>
 @stop
 
 @section('script')
