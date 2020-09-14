@@ -1858,6 +1858,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -1877,6 +1892,7 @@ __webpack_require__.r(__webpack_exports__);
       total_amount: 0,
       delivery: false,
       consent: false,
+      pay: false,
       street: '',
       home: '',
       flat: ''
@@ -1950,6 +1966,10 @@ __webpack_require__.r(__webpack_exports__);
       this.delivery = delivery;
       return false;
     },
+    TabPay: function TabPay(pay) {
+      this.pay = pay;
+      return false;
+    },
     setOrder: function setOrder(method) {
       this.delivery = method;
     },
@@ -1972,6 +1992,10 @@ __webpack_require__.r(__webpack_exports__);
 
         this.count += parseInt(this.list[i].count);
         this.summary += this.list[i].count * this.list[i].price;
+      }
+
+      if (this.summary > 500000) {
+        this.pay = true;
       }
 
       localStorage.setItem('basket', JSON.stringify(this.list));
@@ -2059,6 +2083,7 @@ __webpack_require__.r(__webpack_exports__);
       this.order_data.phone = this.phone;
       this.order_data.delivery = this.delivery;
       this.order_data.list_product = this.list;
+      this.order_data.pay = this.pay;
 
       if (this.$validator.run(this.order_data, rules)) {
         this.$http.post('/order/create', this.order_data).then(function (response) {
@@ -48529,6 +48554,72 @@ var render = function() {
               _vm._v(" "),
               _c("b", [_vm._v(_vm._s(_vm.summary) + " тг")])
             ]),
+            _vm._v(" "),
+            _c("h2", [_vm._v("Способ оплаты")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "FormInTop" }, [
+              _vm.summary <= 500000
+                ? _c(
+                    "span",
+                    {
+                      staticClass: "FormInTopBtn tab",
+                      class: { active: !_vm.pay },
+                      on: {
+                        click: function($event) {
+                          return _vm.TabPay(false)
+                        }
+                      }
+                    },
+                    [_vm._v("Картой")]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _c(
+                "span",
+                {
+                  staticClass: "FormInTopBtn tab",
+                  class: { active: _vm.pay },
+                  on: {
+                    click: function($event) {
+                      return _vm.TabPay(true)
+                    }
+                  }
+                },
+                [_vm._v("Курьеру при доставке")]
+              )
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "tab-form",
+                class: { active: !_vm.delivery },
+                attrs: { id: "form-3" }
+              },
+              [
+                _c(
+                  "button",
+                  { staticClass: "FormInBtn", on: { click: _vm.sendOrder } },
+                  [_vm._v("Перейти к оплате")]
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "tab-form",
+                class: { active: _vm.delivery },
+                attrs: { id: "form-4" }
+              },
+              [
+                _c(
+                  "button",
+                  { staticClass: "FormInBtn", on: { click: _vm.sendOrder } },
+                  [_vm._v("Оформить заказ")]
+                )
+              ]
+            ),
             _vm._v(" "),
             _c(
               "button",

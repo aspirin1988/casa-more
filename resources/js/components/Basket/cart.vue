@@ -106,6 +106,21 @@
                         <div class="CartCardFinalPrice">
                             <span>Итого:</span> <b>{{summary}} тг</b>
                         </div>
+
+                        <h2>Способ оплаты</h2>
+                        <div class="FormInTop">
+                            <span v-if="summary<=500000" @click="TabPay(false)" :class="{'active':!pay}"
+                                  class="FormInTopBtn tab">Картой</span>
+                            <span @click="TabPay(true)" :class="{'active':pay}"
+                                  class="FormInTopBtn tab">Курьеру при доставке</span>
+                        </div>
+                        <div id="form-3" :class="{'active':!delivery}" class="tab-form">
+                            <button @click="sendOrder" class="FormInBtn">Перейти к оплате</button>
+                        </div>
+                        <div id="form-4" :class="{'active':delivery}" class="tab-form">
+                            <button @click="sendOrder" class="FormInBtn">Оформить заказ</button>
+                        </div>
+
                         <button @click="sendOrder" class="FormInBtn">Перейти к оплате</button>
                         <label class="checkbox-form" style="position: relative; padding-left: 27px; margin-top: 20px; margin-left: auto; margin-right: auto; display: flex; flex-direction: row; font-size: 10px; overflow: hidden; align-items: flex-start; padding-right: 0; letter-spacing: 0.5px; cursor: pointer;     margin-bottom: 80px;">
                             <input type="checkbox" v-model="consent">Соглашаюсь с условиями <a target="_blank" href="/img/оферта.pdf"> договора
@@ -139,6 +154,7 @@
                 total_amount: 0,
                 delivery: false,
                 consent: false,
+                pay: false,
                 street: '',
                 home: '',
                 flat: '',
@@ -213,6 +229,10 @@
                 this.delivery = delivery;
                 return false;
             },
+            TabPay: function (pay) {
+                this.pay = pay;
+                return false;
+            },
             setOrder: function (method) {
                 this.delivery = method;
             },
@@ -232,6 +252,9 @@
                     this.count += parseInt(this.list[i].count);
 
                     this.summary += (this.list[i].count * this.list[i].price);
+                }
+                if(this.summary > 500000){
+                    this.pay = true;
                 }
                 localStorage.setItem('basket', JSON.stringify(this.list));
                 localStorage.setItem('basket_summary', this.summary);
@@ -318,6 +341,7 @@
                 this.order_data.phone = this.phone;
                 this.order_data.delivery = this.delivery;
                 this.order_data.list_product = this.list;
+                this.order_data.pay = this.pay;
 
                 if (this.$validator.run(this.order_data, rules)) {
 
