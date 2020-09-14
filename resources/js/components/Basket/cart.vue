@@ -116,7 +116,7 @@
                             <span style="width:260px;" @click="TabPay(true)" :class="{'active':pay}"
                                   class="FormInTopBtn tab">Курьеру при доставке</span>
                         </div>
-                        <div class="tab-form active" style="justify-content: center; width: 100%;" v-if="{'active':!pay}" >
+                        <div class="tab-form active" style="justify-content: center; width: 100%;" v-if="!pay" >
                             <button @click="sendOrder" class="FormInBtn">Перейти к оплате</button>
                         </div>
                         <div class="tab-form active" style="justify-content: center; width: 100%;" v-else="" >

@@ -48605,7 +48605,7 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            { active: !_vm.pay }
+            !_vm.pay
               ? _c(
                   "div",
                   {
