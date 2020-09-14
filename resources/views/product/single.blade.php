@@ -75,12 +75,12 @@
                         basket.push(product);
                     }
                     localStorage.setItem('basket', JSON.stringify(basket));
-                    UIkit.notification({message: 'Товар успешно добавлен в корзину!', status: 'success'});
+                    UIkit.notification({message: 'Товар успеш   но добавлен в корзину!', status: 'success','timeout':2000});
                 } else {
                     basket = [];
                     basket.push(product);
                     localStorage.setItem('basket', JSON.stringify(basket));
-                    UIkit.notification({message: 'Товар успешно добавлен в корзину!', status: 'success'});
+                    UIkit.notification({message: 'Товар успешно добавлен в корзину!', status: 'success','timeout':2000});
                 }
                 input_count.value = 1;
             });
@@ -417,12 +417,12 @@
                         {{($object->warming_up?"+":"-")}}
                     </td>
                 </tr>
-                <tr>
-                    <td class="name-field">Синхронизация с музыкой:</td>
-                    <td class="value-field">
-                        {{($object->sync_with_music?"+":"-")}}
-                    </td>
-                </tr>
+{{--                <tr>--}}
+{{--                    <td class="name-field">Синхронизация с музыкой:</td>--}}
+{{--                    <td class="value-field">--}}
+{{--                        {{($object->sync_with_music?"+":"-")}}--}}
+{{--                    </td>--}}
+{{--                </tr>--}}
                 <tr>
                     <td class="name-field">Bluetooth:</td>
                     <td class="value-field">

@@ -53884,9 +53884,9 @@ var render = function() {
               _vm._l(_vm.list, function(item) {
                 return _c("td", { staticClass: "value-field" }, [
                   _vm._v(
-                    "\n                " +
+                    "\n                    " +
                       _vm._s(item.weight) +
-                      "\n            "
+                      "\n                "
                   )
                 ])
               })
@@ -54012,22 +54012,6 @@ var render = function() {
               _vm._l(_vm.list, function(item) {
                 return _c("td", { staticClass: "value-field" }, [
                   _vm._v(_vm._s(item.warming_up))
-                ])
-              })
-            ],
-            2
-          ),
-          _vm._v(" "),
-          _c(
-            "tr",
-            [
-              _c("td", { staticClass: "name-field" }, [
-                _vm._v("Синхронизация с музыкой:")
-              ]),
-              _vm._v(" "),
-              _vm._l(_vm.list, function(item) {
-                return _c("td", { staticClass: "value-field" }, [
-                  _vm._v(_vm._s(item.sync_with_music))
                 ])
               })
             ],

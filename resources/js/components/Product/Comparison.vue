@@ -53,10 +53,10 @@
                 <td class="name-field">Прогрев:</td>
                 <td class="value-field" v-for="item in list">{{item.warming_up}}</td>
             </tr>
-            <tr>
-                <td class="name-field">Синхронизация с музыкой:</td>
-                <td class="value-field" v-for="item in list">{{item.sync_with_music}}</td>
-            </tr>
+<!--            <tr>-->
+<!--                <td class="name-field">Синхронизация с музыкой:</td>-->
+<!--                <td class="value-field" v-for="item in list">{{item.sync_with_music}}</td>-->
+<!--            </tr>-->
             <tr>
                 <td class="name-field">Bluetooth:</td>
                 <td class="value-field" v-for="item in list">{{item.bluetooth}}</td>
