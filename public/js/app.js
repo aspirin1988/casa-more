@@ -48605,38 +48605,41 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "tab-form",
-                class: { active: !_vm.pay },
-                staticStyle: { "justify-content": "center", width: "100%" },
-                attrs: { id: "form-3" }
-              },
-              [
-                _c(
-                  "button",
-                  { staticClass: "FormInBtn", on: { click: _vm.sendOrder } },
-                  [_vm._v("Перейти к оплате")]
+            { active: !_vm.pay }
+              ? _c(
+                  "div",
+                  {
+                    staticClass: "tab-form active",
+                    staticStyle: { "justify-content": "center", width: "100%" }
+                  },
+                  [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "FormInBtn",
+                        on: { click: _vm.sendOrder }
+                      },
+                      [_vm._v("Перейти к оплате")]
+                    )
+                  ]
                 )
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "tab-form",
-                class: { active: _vm.pay },
-                staticStyle: { "justify-content": "center", width: "100%" }
-              },
-              [
-                _c(
-                  "button",
-                  { staticClass: "FormInBtn", on: { click: _vm.sendOrder } },
-                  [_vm._v("Оформить заказ")]
-                )
-              ]
-            ),
+              : _c(
+                  "div",
+                  {
+                    staticClass: "tab-form active",
+                    staticStyle: { "justify-content": "center", width: "100%" }
+                  },
+                  [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "FormInBtn",
+                        on: { click: _vm.sendOrder }
+                      },
+                      [_vm._v("Оформить заказ")]
+                    )
+                  ]
+                ),
             _vm._v(" "),
             _c(
               "label",
