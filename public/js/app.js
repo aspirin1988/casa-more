@@ -1873,6 +1873,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -48570,6 +48572,18 @@ var render = function() {
                           return _vm.TabPay(false)
                         }
                       }
+                    },
+                    [_vm._v("Картой")]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.summary > 500000
+                ? _c(
+                    "span",
+                    {
+                      staticClass: "FormInTopBtn tab",
+                      class: { active: !_vm.pay },
+                      staticStyle: { width: "260px", opacity: "0.5" }
                     },
                     [_vm._v("Картой")]
                   )

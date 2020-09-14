@@ -111,6 +111,8 @@
                         <div class="FormInTop">
                             <span style="width:260px;" v-if="summary<=500000" @click="TabPay(false)" :class="{'active':!pay}"
                                   class="FormInTopBtn tab">Картой</span>
+                            <span style="width:260px; opacity: 0.5;" v-if="summary>500000" :class="{'active':!pay}"
+                                  class="FormInTopBtn tab">Картой</span>
                             <span style="width:260px;" @click="TabPay(true)" :class="{'active':pay}"
                                   class="FormInTopBtn tab">Курьеру при доставке</span>
                         </div>
