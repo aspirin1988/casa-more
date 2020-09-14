@@ -109,19 +109,19 @@
 
                         <h2>Способ оплаты</h2>
                         <div class="FormInTop">
-                            <span v-if="summary<=500000" @click="TabPay(false)" :class="{'active':!pay}"
+                            <span style="width:260px;" v-if="summary<=500000" @click="TabPay(false)" :class="{'active':!pay}"
                                   class="FormInTopBtn tab">Картой</span>
-                            <span @click="TabPay(true)" :class="{'active':pay}"
+                            <span style="width:260px;" @click="TabPay(true)" :class="{'active':pay}"
                                   class="FormInTopBtn tab">Курьеру при доставке</span>
                         </div>
-                        <div id="form-3" :class="{'active':!delivery}" class="tab-form">
+                        <div id="form-3" :class="{'active':!pay}" class="tab-form">
                             <button @click="sendOrder" class="FormInBtn">Перейти к оплате</button>
                         </div>
-                        <div id="form-4" :class="{'active':delivery}" class="tab-form">
+                        <div id="form-4" :class="{'active':pay}" class="tab-form">
                             <button @click="sendOrder" class="FormInBtn">Оформить заказ</button>
                         </div>
 
-                        <button @click="sendOrder" class="FormInBtn">Перейти к оплате</button>
+<!--                        <button @click="sendOrder" class="FormInBtn">Перейти к оплате</button>-->
                         <label class="checkbox-form" style="position: relative; padding-left: 27px; margin-top: 20px; margin-left: auto; margin-right: auto; display: flex; flex-direction: row; font-size: 10px; overflow: hidden; align-items: flex-start; padding-right: 0; letter-spacing: 0.5px; cursor: pointer;     margin-bottom: 80px;">
                             <input type="checkbox" v-model="consent">Соглашаюсь с условиями <a target="_blank" href="/img/оферта.pdf"> договора
                             оферты</a>

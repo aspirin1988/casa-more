@@ -264,6 +264,8 @@ class HelpController extends Controller
     public function createOrder(Request $request)
     {
         $data = $request->all();
+        $pay = $data['pay'];
+        unset($data['pay']);
         $email = $request->input('email');
         $phone = $request->input('phone');
         if ($email) {
@@ -321,15 +323,21 @@ class HelpController extends Controller
                 $order->addProduct($item['id'], $item['count']);
             }
 
-            $pay_link = $this->testPay($email, $phone, $summ, $order->id);
+            if($pay || $summ > 500000 ){
+                return response()->json(['result' => true, 'redirect_to' => '/profile/']);
+            }else {
 
-            if (isset($pay_link['result'])) {
-                $order->payment_id = $pay_link['result']['payment'];
-                $order->save();
 
-                return response()->json(['result' => true, 'redirect_to' => $pay_link['result']['url']]);
-            } else {
-                return response()->json(['result' => false, 'link' => $pay_link]);
+                $pay_link = $this->testPay($email, $phone, $summ, $order->id);
+
+                if (isset($pay_link['result'])) {
+                    $order->payment_id = $pay_link['result']['payment'];
+                    $order->save();
+
+                    return response()->json(['result' => true, 'redirect_to' => $pay_link['result']['url']]);
+                } else {
+                    return response()->json(['result' => false, 'link' => $pay_link]);
+                }
             }
 
         } else {
