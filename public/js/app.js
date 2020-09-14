@@ -48596,6 +48596,7 @@ var render = function() {
               {
                 staticClass: "tab-form",
                 class: { active: !_vm.pay },
+                staticStyle: { "justify-content": "center", width: "100%" },
                 attrs: { id: "form-3" }
               },
               [
@@ -48612,7 +48613,7 @@ var render = function() {
               {
                 staticClass: "tab-form",
                 class: { active: _vm.pay },
-                attrs: { id: "form-4" }
+                staticStyle: { "justify-content": "center", width: "100%" }
               },
               [
                 _c(

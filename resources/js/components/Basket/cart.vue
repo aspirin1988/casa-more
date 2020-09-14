@@ -114,10 +114,10 @@
                             <span style="width:260px;" @click="TabPay(true)" :class="{'active':pay}"
                                   class="FormInTopBtn tab">Курьеру при доставке</span>
                         </div>
-                        <div id="form-3" :class="{'active':!pay}" class="tab-form">
+                        <div style="justify-content: center; width: 100%;" id="form-3" :class="{'active':!pay}" class="tab-form">
                             <button @click="sendOrder" class="FormInBtn">Перейти к оплате</button>
                         </div>
-                        <div id="form-4" :class="{'active':pay}" class="tab-form">
+                        <div style="justify-content: center; width: 100%;" :class="{'active':pay}" class="tab-form">
                             <button @click="sendOrder" class="FormInBtn">Оформить заказ</button>
                         </div>
 
