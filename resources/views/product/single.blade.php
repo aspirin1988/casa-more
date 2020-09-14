@@ -10,17 +10,7 @@
     <link rel="stylesheet" href="/css/main-style.css?v={{$v}}" type="text/css"/>
     <link rel="stylesheet" href="/css/product-post.css?v={{$v}}" type="text/css"/>
     <style>
-        .scroll-right{
-            position: fixed;
-            background: #395569;
-            width: 30px;
-            height: 80%;
-            right: calc((100% - 1125px)/2);
-            top: 100px;
-            cursor: pointer;
-            background: #395569 url('/img/icon/2-layers-h.png') no-repeat center center;
-            transform: rotate(180deg);
-        }
+
         @media (max-width: 640px) {
             .scroll-right{
                 display: none;
@@ -106,10 +96,7 @@
             //     return false;
             // });
 
-            $('.scroll-right').click(function () {
-                var pos = $('.Specifications').scrollLeft() + 50;
-                $('.Specifications').scrollLeft(pos);
-            });
+
 
             $('.minus').click(function () {
                 var $input = $(this).parent().find('input');
@@ -583,7 +570,7 @@
 
                 </tbody>
             </table>
-            <div class="scroll-right" ></div>
+{{--            <div class="scroll-right" ></div>--}}
         </div>
 
     @endif

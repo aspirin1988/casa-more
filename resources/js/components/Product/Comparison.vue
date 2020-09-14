@@ -156,6 +156,7 @@
             </tr>
             </tbody>
         </table>
+        <div class="scroll-right" ></div>
     </div>
 
 </template>
@@ -170,6 +171,10 @@
         },
         mounted() {
             this.getList();
+            $('.scroll-right').click(function () {
+                var pos = $('.Specifications').scrollLeft() + 50;
+                $('.Specifications').scrollLeft(pos);
+            });
         },
         methods: {
             Delete: function (id) {
@@ -211,3 +216,21 @@
 
     }
 </script>
+<style>
+    .scroll-right{
+        position: fixed;
+        background: #395569;
+        width: 30px;
+        height: 80%;
+        right: calc((100% - 1125px)/2);
+        top: 100px;
+        cursor: pointer;
+        background: #395569 url('/img/icon/2-layers-h.png') no-repeat center center;
+        transform: rotate(180deg);
+    }
+    @media (max-width: 640px) {
+        .scroll-right{
+            display: none;
+        }
+    }
+</style>
